@@ -204,11 +204,12 @@ Memory Bank System совместим с:
 
 ## Завершение фазы BUILD (проект)
 
-Перед тем как считать BUILD завершённым, по правилам проекта нужно **запустить инструменты**, которые выводят ошибки в консоль/IDE, а не полагаться только на зелёные тесты.
+Разработка по **TDD** (red → green → refactor). Перед тем как считать BUILD завершённым:
 
-- Полный перечень и порядок: [testing-guidelines.md](../project/testing-guidelines.md) — раздел «Проверки инструментами»; детали по фронтенду — [testing-guidelines-frontend.md](../project/testing-guidelines-frontend.md).
-- Конкретные скрипты — всегда сверять с `package.json` и `tsconfig*.json`.
-- Для PWA-шагов дополнительно: `pnpm build`, `pnpm preview`, проверка в DevTools / Lighthouse (см. [tech-stack-pwa.md](../project/tech-stack-pwa.md)).
+1. Прогнать тесты и статический анализ по [testing-guidelines.md](../project/testing-guidelines.md) («Проверки инструментами») и [testing-guidelines-frontend.md](../project/testing-guidelines-frontend.md): как минимум `pnpm test --run`, при затронутых E2E — `pnpm test:e2e`, плюс `pnpm lint` / `pnpm build`.
+2. Конкретные скрипты — всегда сверять с `package.json` и `tsconfig*.json`.
+3. Для PWA-шагов дополнительно: `pnpm preview`, проверка в DevTools / Lighthouse (см. [tech-stack-pwa.md](../project/tech-stack-pwa.md)).
+4. Не полагаться только на «зелёные» тесты без lint/build — и наоборот: зелёный lint без тестов недостаточен.
 
 ## Чеклист Memory Bank
 

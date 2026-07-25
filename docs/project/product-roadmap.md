@@ -35,7 +35,8 @@
 - **PWA-слой:** manifest + service worker (целевой путь — `vite-plugin-pwa` + Workbox после базовых ручных шагов).
 - **Деплой:** любой HTTPS-хостинг; localhost — для разработки.
 - **Состояние UI:** React `useState` / Context; без тяжёлого state-менеджера на старте.
-- **Стили:** CSS (SCSS доступен при необходимости).
+- **Стили:** только SCSS (`sass-embedded`).
+- **Качество:** разработка по TDD; до фич — Vitest + Playwright (фаза 0 плана реализации).
 
 ---
 
@@ -71,6 +72,7 @@
 
 Первая версия, которую можно назвать PWA:
 
+- [ ] Тестовое окружение: Vitest + Playwright (фаза 0)
 - [ ] Базовое React-приложение с навигацией по учебным разделам
 - [ ] Web App Manifest и набор иконок
 - [ ] Service Worker (ручной или через vite-plugin-pwa)
@@ -81,21 +83,24 @@
 
 ### Связь с шагами плана (implementation-plan)
 
-| Цель MVP       | Шаги плана                                             |
-| -------------- | ------------------------------------------------------ |
-| Каркас UI      | `step-app-shell`, `step-lessons-navigation`            |
-| Manifest       | `step-web-app-manifest`                                |
-| Service Worker | `step-service-worker-register`, `step-vite-plugin-pwa` |
-| Офлайн         | `step-offline-fallback`                                |
-| Install UX     | `step-install-prompt`                                  |
+| Цель MVP           | Шаги плана                                             |
+| ------------------ | ------------------------------------------------------ |
+| Тестовое окружение | `step-test-environment`, `step-playwright-setup`       |
+| Каркас UI          | `step-app-shell`, `step-lessons-navigation`            |
+| Manifest           | `step-web-app-manifest`                                |
+| Service Worker     | `step-service-worker-register`, `step-vite-plugin-pwa` |
+| Офлайн             | `step-offline-fallback`                                |
+| Install UX         | `step-install-prompt`                                  |
 
 ---
 
 ## 7. Долгосрочные цели
 
 - [ ] Полный набор учебных экранов с интерактивными демо (кэш, update flow)
-- [ ] E2E-тесты критичных PWA-сценариев (Playwright)
+- [ ] Расширенные E2E-сценарии PWA (offline/install в CI, где стабильно)
 - [ ] (Опционально) Push-уведомления — `step-push-notifications`
+
+> Базовая инфра Playwright и smoke E2E — в MVP (фаза 0). Здесь — углубление покрытия критичных PWA-сценариев.
 
 ---
 
@@ -105,6 +110,7 @@
 
 - **pnpm** — обязательный менеджер пакетов
 - **React 19**, **TypeScript**, **Vite** — версии из `package.json`
+- **TDD** — обязателен; Vitest + Playwright до продуктовых шагов
 - PWA в production только по **HTTPS**
 - Safari/iOS: часть API (install prompt, push) ограничена — документировать в UI
 

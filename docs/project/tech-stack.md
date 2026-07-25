@@ -12,7 +12,7 @@
 - **Менеджер пакетов:** использовать `pnpm` (ориентир — `packageManager` в `package.json`).
 - **Детали frontend:** брать из [tech-stack-frontend.md](tech-stack-frontend.md).
 - **Детали PWA:** брать из [tech-stack-pwa.md](tech-stack-pwa.md).
-- **Правила тестирования:** брать из [testing-guidelines.md](testing-guidelines.md) и [testing-guidelines-frontend.md](testing-guidelines-frontend.md).
+- **Правила тестирования:** TDD обязателен; Vitest + Playwright — [testing-guidelines.md](testing-guidelines.md) и [testing-guidelines-frontend.md](testing-guidelines-frontend.md).
 
 ## Разделы
 
@@ -26,4 +26,4 @@
 - [ ] Перед выбором библиотек проверен `package.json`.
 - [ ] Выбран профильный документ (frontend / PWA) под текущую задачу.
 - [ ] Не добавлены правила, дублирующие профильные документы без необходимости.
-- [ ] Для тестов использованы правила из `testing-guidelines.md` и при необходимости `testing-guidelines-frontend.md`.
+- [ ] Для тестов соблюдён TDD и правила из `testing-guidelines.md` / `testing-guidelines-frontend.md`.

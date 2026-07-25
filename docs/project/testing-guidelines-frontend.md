@@ -4,9 +4,9 @@
 
 ## Область применения
 
-Unit- и интеграционные тесты React-приложения (Vite). **Vitest пока может быть не установлен** — сверять с `package.json`.
+Unit-, интеграционные и E2E-тесты React-приложения (Vite). После фазы 0 (`step-test-environment`, `step-playwright-setup`) Vitest и Playwright обязательны — сверять версии и скрипты с `package.json`.
 
-**TDD:** цикл из [testing-guidelines.md](./testing-guidelines.md).
+**TDD:** обязательный цикл из [testing-guidelines.md](./testing-guidelines.md).
 
 ---
 
@@ -16,19 +16,26 @@ Unit- и интеграционные тесты React-приложения (Vit
 | -------------- | -------------------------- | ------------------------------------------ |
 | **Unit**       | Хуки, компоненты с логикой | `useOnlineStatus`, `InstallBanner`         |
 | **Интеграция** | Экраны, навигация          | переключение учебных разделов              |
-| **E2E**        | Критичные PWA-сценарии     | загрузка, offline shell (после Playwright) |
+| **E2E**        | Критичные UX / PWA         | загрузка, оболочка, offline shell, install |
 
 Presentational-компоненты без логики — по необходимости.
 
 ---
 
-## Стек (целевой)
+## Стек
 
-Vitest, @testing-library/react, @testing-library/jest-dom, @testing-library/user-event, jsdom. Версии — `package.json` после `step-vitest-setup`.
+- **Unit/integration:** Vitest, @testing-library/react, @testing-library/jest-dom, @testing-library/user-event, jsdom
+- **E2E:** Playwright
 
-## Конфигурация (целевая)
+Версии — только из `package.json` (после фазы 0).
 
-`vite.config.ts`: блок `test` с `globals: true`, `environment: 'jsdom'`, `setupFiles: ['./vitest.setup.ts']`.
+## Конфигурация Vitest
+
+`vite.config.ts`: блок `test` с `globals: true`, `environment: 'jsdom'`, `setupFiles: ['./vitest.setup.ts']` (или актуальные пути из репозитория).
+
+## Конфигурация Playwright
+
+`playwright.config.ts`: `webServer` на `pnpm preview` (предпочтительно для PWA) или `pnpm dev`; тесты в `e2e/*.spec.ts`.
 
 ## Статический анализ
 
@@ -37,32 +44,35 @@ Vitest, @testing-library/react, @testing-library/jest-dom, @testing-library/user
 
 ## Структура тестов
 
-Файл теста — рядом с модулем: `ComponentName.test.tsx` рядом с `ComponentName.tsx`. E2E — в `e2e/*.spec.ts` (когда появится Playwright).
+- Unit/integration: рядом с модулем — `ComponentName.test.tsx` / `hookName.test.ts`
+- E2E: `e2e/*.spec.ts`
 
-## Правила пользовательских событий
+## Правила пользовательских событий (Testing Library)
 
 Ввод и Enter раздельно: `await user.type(input, 'текст')`, затем `await user.keyboard('{Enter}')`.
 
-## Работа с моками
+## Работа с моками (Vitest)
 
 `afterEach(() => vi.restoreAllMocks())`. `vi.clearAllMocks()` — в `beforeEach`.
 
 ## Service Worker в тестах
 
-Мокать `navigator.serviceWorker` через `vi.stubGlobal` или skip тестов, требующих реального SW; E2E — проверять SW в `pnpm preview`.
+- Unit: мокать `navigator.serviceWorker` через `vi.stubGlobal` или skip тестов, требующих реального SW
+- E2E: проверять SW против `pnpm preview`, не полагаться на HMR-dev без явной настройки
 
-## E2E (Playwright, опционально)
+## E2E (Playwright)
 
-- Dev-сервер: `pnpm dev` или `pnpm preview` для PWA
-- Селекторы: `getByRole`, `data-testid`
-- Язык в `describe`/`it`: русский
+- Селекторы: `getByRole`, при необходимости `data-testid`
+- Язык в `describe` / `it`: русский
+- PWA-сценарии (offline, install) — с оговорками по стабильности в CI; документировать skip/ручную часть в шаге плана
 
 ---
 
 ## Чеклист
 
 - [ ] `pnpm lint` и `pnpm build` проходят
-- [ ] При наличии Vitest: `pnpm test --run`
-- [ ] `within()` для ограничения области поиска
+- [ ] `pnpm test --run` проходит
+- [ ] `pnpm test:e2e` проходит (или зафиксировано исключение для шага)
+- [ ] `within()` для ограничения области поиска (Testing Library)
 - [ ] Семантические запросы (`getByRole`)
-- [ ] Моки восстанавливаются в `afterEach`
+- [ ] Моки Vitest восстанавливаются в `afterEach`

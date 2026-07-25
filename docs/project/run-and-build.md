@@ -46,7 +46,17 @@ pnpm lint
 
 ## Тестирование
 
-На текущем этапе Vitest/Playwright в `package.json` **не подключены**. После добавления — команды и правила в [testing-guidelines.md](./testing-guidelines.md).
+Разработка по **TDD**. После фазы 0 плана реализации:
+
+```bash
+pnpm test
+pnpm test --run
+pnpm test:e2e
+```
+
+Правила и политика покрытия — [testing-guidelines.md](./testing-guidelines.md), [testing-guidelines-frontend.md](./testing-guidelines-frontend.md).
+
+До закрытия `step-test-environment` / `step-playwright-setup` скрипты могут ещё отсутствовать в `package.json`.
 
 ## Релиз
 

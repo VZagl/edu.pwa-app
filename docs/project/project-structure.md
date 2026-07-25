@@ -13,13 +13,14 @@
 - `.cursor/` — правила и команды для Cursor/агентов (`commands/`, `rules/`)
 - `docs/` — документация
 - `src/` — исходный код React-приложения
+- `e2e/` — E2E-тесты Playwright (после `step-playwright-setup`)
 - `public/` — статические файлы (favicon, иконки; позже — manifest, SW)
 - `index.html` — точка входа HTML
 - `README.md`
 
 ## Документация `docs/`
 
-- `docs/common/` — общие правила (dev-environment, git-commit-description, naming-conventions, memory-bank-usage, agent-*)
+- `docs/common/` — общие правила (dev-environment, git-commit-description, memory-bank-usage, agent-*)
 - `docs/project/` — материалы проекта:
   - [project-structure.md](project-structure.md) — эта страница
   - [run-and-build.md](run-and-build.md) — запуск и сборка
@@ -36,7 +37,8 @@
 
 - `main.tsx` — точка входа React
 - `App.tsx` — корневой компонент
-- `App.css`, `index.css` — стили
+- `App.scss`, `index.scss` — стили (только SCSS)
+- `*.test.tsx` / `*.test.ts` — unit/integration рядом с модулями (Vitest)
 - `assets/` — изображения и прочие ресурсы, импортируемые из кода
 
 **Планируемая эволюция структуры** (по мере учебных шагов):
@@ -45,6 +47,8 @@
 - `src/pages/` или `src/screens/` — экраны/разделы учебного приложения
 - `src/hooks/` — кастомные хуки (в т.ч. PWA: online/offline, install prompt)
 - `src/pwa/` — регистрация SW, утилиты обновления (после соответствующих шагов)
+- `e2e/` — сценарии Playwright
+- `vitest.setup.ts`, `playwright.config.ts` — после фазы 0
 
 ## Каталог `public/`
 
@@ -63,8 +67,8 @@
 components/
 └── InstallBanner/
     ├── InstallBanner.tsx
-    ├── InstallBanner.css
-    └── InstallBanner.test.tsx   # когда появится Vitest
+    ├── InstallBanner.scss
+    └── InstallBanner.test.tsx
 
 hooks/
 └── useOnlineStatus/
