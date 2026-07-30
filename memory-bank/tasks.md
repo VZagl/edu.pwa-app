@@ -9,7 +9,7 @@
 - **Инициализировано (VAN):** 2026-07-30
 - **Уровень сложности:** Level 2 — Simple Enhancement
 - **Тип:** Enhancement / Testing (E2E)
-- **Статус:** PLAN COMPLETE → ожидание `/build`
+- **Статус:** BUILD COMPLETE → ожидание `/reflect`
 - **Git Branch:** `feat/step-playwright-setup` (из `develop`)
 
 ### Описание
@@ -57,12 +57,12 @@ Workflow: VAN → PLAN → BUILD → REFLECT
 
 ## Technology Validation Checkpoints (BUILD)
 
-- [ ] `@playwright/test` добавлен в `devDependencies` (`pnpm add -D @playwright/test`)
-- [ ] Браузеры установлены (`pnpm test:e2e:install`)
-- [ ] `playwright.config.ts` валиден (`pnpm exec playwright test --list`)
-- [ ] `pnpm build` проходит (webServer зависит от сборки)
-- [ ] `pnpm test:e2e` — smoke green
-- [ ] Регрессия: `pnpm test --run`, `pnpm lint`, `pnpm build`
+- [x] `@playwright/test` добавлен в `devDependencies` (`pnpm add -D @playwright/test`)
+- [x] Браузеры установлены (`pnpm test:e2e:install`)
+- [x] `playwright.config.ts` валиден (`pnpm exec playwright test --list`)
+- [x] `pnpm build` проходит (webServer зависит от сборки)
+- [x] `pnpm test:e2e` — smoke green
+- [x] Регрессия: `pnpm test --run`, `pnpm lint`, `pnpm build`
 
 ## Creative Phases Required
 
@@ -147,10 +147,17 @@ export default defineConfig({
 
 ### Шаг 4: BUILD verify (чеклист закрытия BUILD)
 
-- [ ] `pnpm test:e2e` — smoke green
-- [ ] `pnpm test --run` — регрессия Vitest
-- [ ] `pnpm lint`
-- [ ] `pnpm build`
+- [x] `pnpm test:e2e` — smoke green
+- [x] `pnpm test --run` — регрессия Vitest
+- [x] `pnpm lint`
+- [x] `pnpm build`
+
+### Build Progress
+
+- **RED:** `e2e/smoke.spec.ts` создан; `pnpm test:e2e` → fail (скрипт отсутствовал) ✅
+- **GREEN:** `@playwright/test@1.62.0`, `playwright.config.ts`, скрипты `test:e2e` / `test:e2e:install`, Chromium установлен ✅
+- **Fix:** Vitest `include: ['src/**/*.{test,spec}...']` — исключить `e2e/` из unit-раннера ✅
+- **Docs:** `run-and-build.md`, `techContext.md` обновлены ✅
 
 ---
 
@@ -180,7 +187,7 @@ export default defineConfig({
 - [x] VAN: платформа, Memory Bank, сложность
 - [x] GIT: Работа в feature-ветке `feat/step-playwright-setup`
 - [x] PLAN: детальный план реализации
-- [ ] BUILD: TDD (smoke E2E) + конфиг + verify
+- [x] BUILD: TDD (smoke E2E) + конфиг + verify
 - [ ] REFLECT
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 

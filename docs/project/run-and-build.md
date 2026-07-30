@@ -51,12 +51,13 @@ pnpm lint
 ```bash
 pnpm test
 pnpm test --run
+pnpm test:e2e:install   # первый запуск / CI — установка Chromium
 pnpm test:e2e
 ```
 
-Правила и политика покрытия — [testing-guidelines.md](./testing-guidelines.md), [testing-guidelines-frontend.md](./testing-guidelines-frontend.md).
+E2E поднимает production-preview через `webServer` в `playwright.config.ts` (`pnpm build && pnpm preview` на `http://localhost:4173`).
 
-До закрытия `step-test-environment` / `step-playwright-setup` скрипты могут ещё отсутствовать в `package.json`.
+Правила и политика покрытия — [testing-guidelines.md](./testing-guidelines.md), [testing-guidelines-frontend.md](./testing-guidelines-frontend.md).
 
 ## Релиз
 

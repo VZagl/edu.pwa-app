@@ -2,15 +2,19 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                             |
-| ---------------------------------- | ------------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                 |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)       |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)             |
-| Playwright (step-playwright-setup) | 🔄 PLAN COMPLETE → BUILD (2026-07-30) |
-| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0)     |
-| Навигация уроков                   | ⏳ Не начато                          |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                          |
+| Область                            | Состояние                         |
+| ---------------------------------- | --------------------------------- |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)             |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)   |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)         |
+| Playwright (step-playwright-setup) | ✅ BUILD COMPLETE (2026-07-30)    |
+| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0) |
+| Навигация уроков                   | ⏳ Не начато                      |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                      |
+
+## [2026-07-30]: step-playwright-setup — BUILD COMPLETE
+
+Подключён Playwright E2E: `@playwright/test@1.62.0`, `playwright.config.ts` (webServer: build+preview), `e2e/smoke.spec.ts`, скрипты `test:e2e` / `test:e2e:install`. Vitest ограничен `src/**`. Verify: E2E smoke, Vitest, lint, build — OK. Следующий шаг: `/reflect`.
 
 ## [2026-07-30]: step-playwright-setup — PLAN COMPLETE
 
