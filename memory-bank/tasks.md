@@ -1,21 +1,13 @@
-# Memory Bank: Задачи
+# Tasks
 
-## Текущая задача
+## Current Task
 
-[Задача ещё не определена]
+Нет активной задачи. Запустить `/van [описание задачи]` для начала новой задачи.
 
-## Статус
+## Last Completed Task
 
-- [ ] Определение задачи (`/van`)
-- [ ] План реализации (при Level 2+)
-- [ ] Выполнение (`/build`)
-- [ ] Рефлексия (`/reflect`)
-- [ ] CLOSE: Финализировать задачу командой `/close-task`
-
-## Требования
-
-[Требования ещё не определены]
-
-## Последняя завершённая
-
-(нет)
+- **Task ID:** `step-test-environment`
+- **Название:** Тестовое окружение Vitest
+- **Дата завершения:** 2026-07-30
+- **Статус:** COMPLETED
+- **Completed:** [memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md](memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md)

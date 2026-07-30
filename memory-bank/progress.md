@@ -6,15 +6,17 @@
 | ---------------------------------- | --------------------------------- |
 | Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)             |
 | Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)   |
-| Vitest (step-test-environment)     | ⏳ В backlog (высокий)            |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)         |
 | Playwright (step-playwright-setup) | ⏳ В backlog (средний)            |
 | Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0) |
 | Навигация уроков                   | ⏳ Не начато                      |
 | Manifest / SW / Offline / Install  | ⏳ Не начато                      |
 
-## Последняя завершённая задача
+## [2026-07-30]: step-test-environment — ЗАВЕРШЕНО
 
-(нет — история будет в `memory-bank/completed-tasks/`)
+Подключено окружение unit/integration-тестов (Vitest + Testing Library + jsdom); smoke без `App`; verify OK.
+
+**Completed:** [memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md](memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md)
 
 ## Вехи (кратко)
 
@@ -22,5 +24,6 @@
 | ---------- | -------------------------------------------------------------------- | ------ |
 | 2026-07-23 | Инициализация репозитория, адаптация docs под учебное PWA            | ✅     |
 | 2026-07-24 | Инициализация Memory Bank; TDD + фаза 0 (Vitest/Playwright) в планах | ✅     |
+| 2026-07-30 | Закрыт `step-test-environment` (Vitest)                              | ✅     |
 
 Полный журнал продуктовых вех: `docs/project/product-roadmap.md` §9.

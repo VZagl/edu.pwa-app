@@ -1,25 +1,17 @@
 # Active Context
 
-## Текущий режим
+## Current Focus
 
-IDLE (Memory Bank инициализирован; планы обновлены под TDD)
+Нет активной задачи. Запустить `/van` для инициализации.
 
-## Текущий фокус
+## Current Mode
 
-Нет активной задачи. Следующая к взятию: **step-test-environment**.
+IDLE — ожидание новой задачи
 
-## Статус
+## Next Steps
 
-- Ядро Memory Bank заполнено
-- В планах: фаза 0 (Vitest + Playwright) до продуктовых шагов; TDD обязателен
-- В backlog (высокий): **step-test-environment**
+Запустить `/van [описание задачи]` для начала новой задачи.
 
-## Последние изменения
+## Context for AI
 
-- 2026-07-24: пакет TDD — фаза 0 в implementation-plan, guidelines, roadmap, Memory Bank
-
-## Следующие шаги
-
-1. `/van` — взять в работу `step-test-environment`
-2. Затем `step-playwright-setup` → `step-app-shell`
-3. Цикл по уровню сложности; в BUILD — TDD; финал — `/close-task`
+Учебный PWA на React + Vite (frontend only). Менеджер пакетов — pnpm. План шагов: `docs/project/implementation-plan.md`. Фаза 0: Vitest закрыт (`step-test-environment`); следующий шаг — Playwright (`step-playwright-setup` в backlog).

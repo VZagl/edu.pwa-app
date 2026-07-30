@@ -2,15 +2,7 @@
 
 ## Высокий
 
-- [ ] Тестовое окружение Vitest (step-test-environment)
-  - **Создано:** 2026-07-24
-  - Подключить Vitest + Testing Library + jsdom: зависимости, блок `test` в `vite.config.ts`, `vitest.setup.ts`, скрипты `test` / `test:watch`, smoke unit-тест.
-  - **Цель:** `pnpm test --run` проходит; можно писать unit/integration по TDD
-  - **Файлы:** `package.json`, `vite.config.ts`, `vitest.setup.ts`, smoke-тест в `src/`
-  - **Тесты:** smoke unit (окружение)
-  - **Источник:** docs/project/implementation-plan.md (step-test-environment, Order: 0.1.1)
-  - **Связано с:** —
-  - **Причина:** блокер для всех продуктовых шагов; первый шаг фазы 0
+(Нет активных задач)
 
 ## Средний
 
