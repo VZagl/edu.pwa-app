@@ -67,7 +67,7 @@
 
 **Описание**
 
-Подключить Vitest + Testing Library + jsdom: зависимости в `package.json`, блок `test` в `vite.config.ts`, `vitest.setup.ts`, скрипты `test` / `test:watch`. Smoke unit-тест, подтверждающий работу окружения. Обновить [testing-guidelines-frontend.md](testing-guidelines-frontend.md) при расхождении с фактической конфигурацией.
+Подключить Vitest + Testing Library + jsdom: зависимости в `package.json`, блок `test` в `vite.config.ts`, `vitest.setup.ts`, скрипт `test` (`vitest`; для однократного прогона — `pnpm test --run`). Smoke unit-тест, подтверждающий работу окружения. Обновить [testing-guidelines-frontend.md](testing-guidelines-frontend.md) при расхождении с фактической конфигурацией.
 
 **Цель:** `pnpm test --run` проходит; можно писать unit/integration по TDD.
 
