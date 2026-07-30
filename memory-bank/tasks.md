@@ -9,7 +9,7 @@
 - **Инициализировано (VAN):** 2026-07-30
 - **Уровень сложности:** Level 2 — Simple Enhancement
 - **Тип:** Enhancement / Testing (E2E)
-- **Статус:** BUILD COMPLETE → ожидание `/reflect`
+- **Статус:** REFLECT COMPLETE → ожидание `/archive`
 - **Git Branch:** `feat/step-playwright-setup` (из `develop`)
 
 ### Описание
@@ -188,8 +188,15 @@ export default defineConfig({
 - [x] GIT: Работа в feature-ветке `feat/step-playwright-setup`
 - [x] PLAN: детальный план реализации
 - [x] BUILD: TDD (smoke E2E) + конфиг + verify
-- [ ] REFLECT
+- [x] REFLECT
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+## Reflection Highlights
+
+- **What Went Well**: TDD red→green; узкий smoke (title + `#root`); перенос паттернов из `step-test-environment`; guidelines без правок.
+- **Challenges**: конфликт Vitest/e2e; build перед preview; установка браузеров.
+- **Lessons Learned**: явный `include` для Vitest; preview для E2E; отдельный `test:e2e:install`.
+- **Next Steps**: `/close-task`; далее `step-app-shell`.
 
 ## Last Completed Task
 

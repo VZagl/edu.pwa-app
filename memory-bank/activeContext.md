@@ -2,13 +2,13 @@
 
 ## Current Focus
 
-`step-playwright-setup` — BUILD COMPLETE. Playwright E2E подключён (фаза 0, Order: 0.1.2).
+`step-playwright-setup` — REFLECT COMPLETE. Playwright E2E подключён (фаза 0, Order: 0.1.2).
 
 **Git Branch:** `feat/step-playwright-setup` (из `develop`)
 
 ## Current Mode
 
-BUILD COMPLETE → следующий шаг: `/reflect`
+REFLECT COMPLETE → следующий шаг: `/close-task`
 
 ## Complexity
 
@@ -16,8 +16,8 @@ Level 2 — Simple Enhancement (как `step-test-environment`).
 
 ## Next Steps
 
-1. Запустить `/reflect` — рефлексия по задаче.
-2. Затем `/close-task`; merge в `develop` через `/git-merge-to-develop` (по запросу).
+1. Запустить `/close-task` — финализация задачи.
+2. Merge в `develop` через `/git-merge-to-develop` (по запросу).
 
 ## Context for AI
 
