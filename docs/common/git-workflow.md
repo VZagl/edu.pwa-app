@@ -27,6 +27,39 @@ git checkout -b fix/BUG-456-auth-redirect-loop
 git checkout -b refactor/improve-logging-middleware
 ```
 
+### Задачи Memory Bank и feature-ветки
+
+При старте задачи через `/van` (Memory Bank System) каждая задача получает отдельную короткоживущую feature-ветку. Операционные шаги — в `docs/common/memory-bank-usage.md` → «Git-ветка».
+
+**Соглашение об именовании (из `task_id`):**
+
+| Тип задачи                 | Шаблон                                     | Пример (`task_id`: `step-base-ui-layout`) |
+| -------------------------- | ------------------------------------------ | ----------------------------------------- |
+| Шаг плана / фича           | `feat/<task_id>`                           | `feat/step-base-ui-layout`                |
+| Исправление бага           | `fix/<task_id>`                            | `fix/step-auth-redirect`                  |
+| Рефакторинг / docs-only MB | `chore/<task_id>` или `refactor/<task_id>` | `chore/step-update-deps`                  |
+
+**Workflow:**
+
+1. Базовая ветка: `develop` (или `main`, если `develop` отсутствует)
+2. `git fetch origin` → `git checkout <base>` → `git pull origin <base>`
+3. `git checkout -b <prefix>/<task_id>` (префикс — по типу задачи)
+4. Все коммиты задачи остаются в этой ветке до merge через `/git-merge-to-develop` или вручную
+
+**Правила:**
+
+- Не вносить продуктовые изменения в `develop`/`main` при активной задаче Memory Bank
+- Имя ветки фиксируется в `memory-bank/tasks.md` при инициализации `/van`
+- После `/close-task` при необходимости выполнить merge в `develop` через `/git-merge-to-develop` или вручную (только с явным подтверждением пользователя). **Удаление feature-ветки не выполняется по умолчанию** — можно предложить пользователю; удалять **только после явного подтверждения**
+
+### Удаление feature-веток
+
+На текущем этапе проекта (учебный репозиторий, без продакшен-цикла) feature-ветки **не удаляются автоматически**.
+
+- **Запрещено** без **явного подтверждения** пользователя выполнять `git branch -d`, `git branch -D`, `git push --delete` и аналогичные команды удаления ветки
+- **Запрещено** без явного подтверждения вносить **любые изменения в репозиторий** (commit, merge, push, удаление ветки, force push и т.д.)
+- После merge можно **предложить** удалить feature-ветку; выполнять удаление только если пользователь явно согласился
+
 ## Сообщения коммитов
 
 **Основное правило:** Каждый коммит представляет одно логическое изменение.
@@ -81,7 +114,8 @@ git merge --no-ff fix/test-todolist-key-validation -F .git-commit-msg.txt
 rm .git-commit-msg.txt  # или del в Windows
 
 git push origin develop
-git branch -d fix/test-todolist-key-validation  # Удалить временную ветку
+# Удаление feature-ветки — опционально, только после явного подтверждения пользователя:
+# git branch -d fix/test-todolist-key-validation
 ```
 
 **Определение типа merge-коммита:**
@@ -166,9 +200,9 @@ git commit -F .git-commit-msg.txt  # chore: разрешить конфликт�
 
 ## Чеклист работы с Git
 
-- [ ] Создана feature-ветка из develop/main с правильным именем
+- [ ] Создана feature-ветка из develop/main с правильным именем (для задач Memory Bank — при `/van`, см. «Задачи Memory Bank и feature-ветки»)
 - [ ] Коммиты атомарные и следуют Conventional Commits
 - [ ] Выполнен rebase на develop перед PR
 - [ ] Merge с --no-ff и сообщением в формате Conventional Commits
 - [ ] Конфликты разрешены вручную
-- [ ] Временная ветка удалена после merge
+- [ ] Удаление feature-ветки — только по явному подтверждению пользователя (по умолчанию ветку не удалять)

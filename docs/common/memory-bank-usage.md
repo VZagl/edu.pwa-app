@@ -138,13 +138,43 @@ memory-bank/completed-tasks/
 
 ### Интеграция с /van
 
-При инициализации задачи командой `/van` в чеклист `memory-bank/tasks.md` **обязательно** добавляется финальный пункт:
+**Прочитать этот раздел до** обновления `tasks.md` или `activeContext.md` при инициализации новой задачи.
+
+#### Git-ветка (обязательно)
+
+**Когда применяется:** `/van` инициализирует **новую** задачу Memory Bank (не прогон VAN QA без новой задачи).
+
+1. **Проверить состояние git**
+   - Выполнить `git branch --show-current`
+   - Выполнить `git status --short` — рабочая директория должна быть чистой перед переключением веток
+
+2. **Создать или переключить feature-ветку** (именование: `docs/common/git-workflow.md` → «Задачи Memory Bank и feature-ветки»)
+   - Базовая ветка: `develop`, или `main`, если `develop` отсутствует
+   - `git fetch origin` → переключиться на базу → `git pull origin <base>`
+   - `git checkout -b <branch>` или `git checkout <branch>`, если ветка для этого `task_id` уже существует
+   - Если текущая ветка относится к **другой** задаче — остановиться и спросить пользователя
+
+3. **Зафиксировать в Memory Bank** (до или вместе с инициализацией задачи):
+   - `memory-bank/tasks.md` → Current Task: **Git Branch:** `<branch-name>`
+   - `memory-bank/activeContext.md` → Current Focus: то же имя ветки
+   - Чеклист в `tasks.md`: `- [ ] GIT: Работа в feature-ветке <branch-name>`
+
+4. **Подтверждение:** показать имя ветки и базовую ветку; запросить подтверждение перед `git checkout` / `git checkout -b` и перед изменениями файлов Memory Bank. Read-only команды git (`git branch`, `git status`, `git fetch`) подтверждения не требуют.
+
+**Правило:** одна задача Memory Bank = одна feature-ветка. Не вносить продуктовые изменения в `develop`/`main`, пока задача активна.
+
+При `/close-task` указать ветку в completed-tasks → **## Ссылки** → **Ветка:** (из `tasks.md` или `git branch --show-current`).
+
+#### Чеклист задачи
+
+При инициализации задачи командой `/van` в чеклист `memory-bank/tasks.md` **обязательно** добавляются пункты:
 
 ```markdown
+- [ ] GIT: Работа в feature-ветке <branch-name>
 - [ ] CLOSE: Финализировать задачу командой /close-task
 ```
 
-Этот шаг также указывается в `activeContext.md` → "Next Steps".
+Эти шаги также указываются в `activeContext.md` → "Next Steps".
 
 ## Работа с backlog
 
@@ -183,7 +213,7 @@ memory-bank/completed-tasks/
 ### Жизненный цикл задачи из backlog
 
 1. Задача описана в `backlog.md` в разделе соответствующего приоритета
-2. `/van` берёт задачу в работу → создаёт запись в `tasks.md`
+2. `/van` берёт задачу в работу → создаёт feature-ветку и запись в `tasks.md` (см. «Git-ветка» выше)
 3. Задача проходит фазы: PLAN → [CREATIVE] → BUILD → REFLECT → [ARCHIVE]
 4. `/close-task` финализирует: создаёт completed-запись, удаляет из backlog
 
@@ -213,6 +243,7 @@ Memory Bank System совместим с:
 
 ## Чеклист Memory Bank
 
+- [ ] Feature-ветка создана или выбрана и записана в `tasks.md` и `activeContext.md` (см. «Git-ветка» в интеграции с `/van`)
 - [ ] `tasks.md` обновлён с текущей задачей
 - [ ] `activeContext.md` отражает текущий фокус
 - [ ] Завершённая задача перенесена в `archive/` (если нужен архив)

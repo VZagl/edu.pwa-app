@@ -65,6 +65,8 @@ Closes #123
 
 Речь о коммитах **трекинга и сопутствующей документации задачи** в Memory Bank: `/van`, `/plan`, `/creative`, `/reflect`, `/archive`, `/close-task` и аналогичные шаги **без** реализации прикладного кода (см. `docs/common/memory-bank-usage.md`, `.cursor/commands/*.md`). **Фаза `/build`** — реализация задачи в коде: коммиты после `/build` оформлять как **`feat` / `fix` / `refactor` и т.д.** (scope области фичи), **не** как `docs(memory-bank)` — даже при правках `tasks.md`, `progress.md` или `activeContext.md` в том же коммите.
 
+**Коммит `/van`:** в теле коммита указать имя feature-ветки, если она создана или выбрана (см. `docs/common/memory-bank-usage.md` → «Git-ветка»). Типичный первый пункт тела: постановка в `tasks.md` (Level, ветка, цель, чеклист).
+
 **Сателлиты workflow (не считать «смешением с прикладным кодом»):**
 
 - `memory-bank/**` — основной объём;
