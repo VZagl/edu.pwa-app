@@ -17,22 +17,22 @@
 
 ## Скрипты
 
-| Команда           | Назначение                                 |
-| ----------------- | ------------------------------------------ |
-| `pnpm install`    | зависимости                                |
-| `pnpm dev`        | Vite HMR (`http://localhost:5173`)         |
-| `pnpm build`      | `tsc -b` + `vite build` → `dist/`          |
-| `pnpm preview`    | превью production-сборки (удобно для PWA)  |
-| `pnpm lint`       | ESLint                                     |
-| `pnpm test`       | Vitest (после `step-test-environment`)     |
-| `pnpm test --run` | Vitest без watch (BUILD/CI)                |
-| `pnpm test:e2e`   | Playwright (после `step-playwright-setup`) |
+| Команда                 | Назначение                                      |
+| ----------------------- | ----------------------------------------------- |
+| `pnpm install`          | зависимости                                     |
+| `pnpm dev`              | Vite HMR (`http://localhost:5173`)              |
+| `pnpm build`            | `tsc -b` + `vite build` → `dist/`               |
+| `pnpm preview`          | превью production-сборки (удобно для PWA)       |
+| `pnpm lint`             | ESLint                                          |
+| `pnpm test`             | Vitest                                          |
+| `pnpm test --run`       | Vitest без watch (BUILD/CI)                     |
+| `pnpm test:e2e`         | Playwright E2E                                  |
+| `pnpm test:e2e:install` | установка Chromium для E2E (первый запуск / CI) |
 
 ## Тесты
 
 - **TDD обязателен.** До закрытия фазы 0 продуктовые шаги не начинать.
-- Целевой стек: Vitest + Testing Library (unit/integration), Playwright (E2E).
-- Сейчас в `package.json` раннеры могут ещё отсутствовать — шаги `step-test-environment`, `step-playwright-setup`.
+- Стек: Vitest + Testing Library (unit/integration), Playwright (E2E) — подключены в фазе 0.
 - Правила: `docs/project/testing-guidelines.md`, `testing-guidelines-frontend.md`.
 
 ## PWA (целевой стек, по плану)

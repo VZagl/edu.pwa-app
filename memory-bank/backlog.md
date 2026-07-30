@@ -2,20 +2,6 @@
 
 ## Высокий
 
-(Нет активных задач)
-
-## Средний
-
-- [ ] Playwright E2E-окружение (step-playwright-setup)
-  - **Создано:** 2026-07-24
-  - Подключить Playwright: конфиг, `e2e/`, скрипт `test:e2e`, smoke E2E (открытие приложения).
-  - **Цель:** `pnpm test:e2e` проходит; можно писать E2E по TDD
-  - **Файлы:** `package.json`, `playwright.config.ts`, `e2e/`
-  - **Тесты:** smoke E2E
-  - **Источник:** docs/project/implementation-plan.md (step-playwright-setup, Order: 0.1.2)
-  - **Связано с:** step-test-environment
-  - **Причина:** второй шаг фазы 0; блокирован до Vitest
-
 - [ ] Базовая оболочка приложения (step-app-shell)
   - **Создано:** 2026-07-24
   - Базовая разметка: header, main, простая навигация. Заменить стартовый шаблон Vite на оболочку учебного PWA (название проекта, место под контент уроков). Стили — только SCSS.
@@ -24,7 +10,11 @@
   - **Тесты:** unit/integration — оболочка; E2E — загрузка с оболочкой (TDD)
   - **Источник:** docs/project/implementation-plan.md (step-app-shell, Order: 1.1.1)
   - **Связано с:** step-test-environment, step-playwright-setup
-  - **Причина:** первый продуктовый шаг фазы 1; блокирован до фазы 0
+  - **Причина:** Следующий шаг после step-playwright-setup
+
+## Средний
+
+(Нет активных задач)
 
 ## Низкий
 

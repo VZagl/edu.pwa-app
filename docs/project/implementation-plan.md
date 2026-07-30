@@ -95,7 +95,7 @@
 
 **Зависит от:** step-test-environment
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/07/step-playwright-setup_2026-07-30.md](memory-bank/completed-tasks/2026/07/step-playwright-setup_2026-07-30.md)
 
 ---
 
@@ -333,15 +333,15 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 ## Критерии готовности по фазам
 
-| Фаза | Критерий                                                 | Статус |
-| ---- | -------------------------------------------------------- | ------ |
-| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | —      |
-| 1    | Каркас и навигация по урокам (с тестами)                 | —      |
-| 2    | Manifest валиден                                         | —      |
-| 3    | SW в production, UX обновления                           | —      |
-| 4    | Офлайн-fallback работает                                 | —      |
-| 5    | Install flow / инструкции                                | —      |
-| 6    | Lighthouse PWA checklist зафиксирован                    | —      |
+| Фаза | Критерий                                                 | Статус       |
+| ---- | -------------------------------------------------------- | ------------ |
+| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена |
+| 1    | Каркас и навигация по урокам (с тестами)                 | —            |
+| 2    | Manifest валиден                                         | —            |
+| 3    | SW в production, UX обновления                           | —            |
+| 4    | Офлайн-fallback работает                                 | —            |
+| 5    | Install flow / инструкции                                | —            |
+| 6    | Lighthouse PWA checklist зафиксирован                    | —            |
 
 ---
 
