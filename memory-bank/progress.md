@@ -7,10 +7,14 @@
 | Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)             |
 | Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)   |
 | Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)         |
-| Playwright (step-playwright-setup) | ⏳ В backlog (средний)            |
+| Playwright (step-playwright-setup) | 🔄 VAN → PLAN (2026-07-30)        |
 | Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0) |
 | Навигация уроков                   | ⏳ Не начато                      |
 | Manifest / SW / Offline / Install  | ⏳ Не начато                      |
+
+## [2026-07-30]: step-playwright-setup — VAN INIT
+
+Инициализирована задача Playwright E2E (Level 2). Зависимость Vitest закрыта. Ожидается `/plan`.
 
 ## [2026-07-30]: step-test-environment — ЗАВЕРШЕНО
 

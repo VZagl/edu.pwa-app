@@ -2,19 +2,19 @@
 
 ## Высокий
 
-(Нет активных задач)
-
-## Средний
-
 - [ ] Playwright E2E-окружение (step-playwright-setup)
   - **Создано:** 2026-07-24
+  - **Статус:** VAN COMPLETE → `/plan` (2026-07-30)
+  - **Ветка:** `feat/step-playwright-setup`
   - Подключить Playwright: конфиг, `e2e/`, скрипт `test:e2e`, smoke E2E (открытие приложения).
   - **Цель:** `pnpm test:e2e` проходит; можно писать E2E по TDD
   - **Файлы:** `package.json`, `playwright.config.ts`, `e2e/`
   - **Тесты:** smoke E2E
   - **Источник:** docs/project/implementation-plan.md (step-playwright-setup, Order: 0.1.2)
-  - **Связано с:** step-test-environment
-  - **Причина:** второй шаг фазы 0; блокирован до Vitest
+  - **Связано с:** step-test-environment (завершён)
+  - **Причина:** второй шаг фазы 0; зависимость Vitest закрыта
+
+## Средний
 
 - [ ] Базовая оболочка приложения (step-app-shell)
   - **Создано:** 2026-07-24
