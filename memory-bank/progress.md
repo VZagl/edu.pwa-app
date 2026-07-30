@@ -2,19 +2,19 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                         |
-| ---------------------------------- | --------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)             |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)   |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)         |
-| Playwright (step-playwright-setup) | 🔄 VAN → PLAN (2026-07-30)        |
-| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0) |
-| Навигация уроков                   | ⏳ Не начато                      |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                      |
+| Область                            | Состояние                             |
+| ---------------------------------- | ------------------------------------- |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                 |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)       |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)             |
+| Playwright (step-playwright-setup) | 🔄 PLAN COMPLETE → BUILD (2026-07-30) |
+| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0)     |
+| Навигация уроков                   | ⏳ Не начато                          |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                          |
 
-## [2026-07-30]: step-playwright-setup — VAN INIT
+## [2026-07-30]: step-playwright-setup — PLAN COMPLETE
 
-Инициализирована задача Playwright E2E (Level 2). Зависимость Vitest закрыта. Ожидается `/plan`.
+Детальный план: `@playwright/test`, `playwright.config.ts` (webServer: build+preview), `e2e/smoke.spec.ts`, скрипт `test:e2e`. CREATIVE не требуется. Следующий шаг: `/build`.
 
 ## [2026-07-30]: step-test-environment — ЗАВЕРШЕНО
 
