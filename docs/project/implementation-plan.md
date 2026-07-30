@@ -77,7 +77,7 @@
 
 **Зависит от:** —
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md](memory-bank/completed-tasks/2026/07/step-test-environment_2026-07-30.md)
 
 ---
 
