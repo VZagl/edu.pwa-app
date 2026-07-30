@@ -30,6 +30,7 @@
 - **Deps:** vitest `^4.1.10`, jsdom `^30.0.1`, @testing-library/react/jest-dom/user-event
 - **Testing:** `pnpm test --run` — 2 passed; lint/build — OK
 - **Docs:** `testing-guidelines-frontend.md` без правок (совпадает с конфигом)
-- **Next:** `/reflect`
+- **Reflection:** `memory-bank/reflection/reflection-step-test-environment.md`
+- **Next:** `/close-task`
 
 Полный журнал продуктовых вех: `docs/project/product-roadmap.md` §9.

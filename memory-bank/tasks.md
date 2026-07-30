@@ -41,9 +41,17 @@ Type: Enhancement
 - [x] Planning complete (`/plan`)
 - [x] Technology validation complete (выполняется в `/build`)
 - [x] Implementation complete
-- [ ] Reflection (`/reflect`)
+- [x] Reflection (`/reflect`)
 - [ ] CLOSE (`/close-task`)
 - [x] GIT: работа в feature-ветке `feat/step-test-environment`
+
+## Reflection Highlights
+
+- **What Went Well**: TDD red→green; узкий smoke без App; Vite 8 + vitest/config; docs без правок
+- **Challenges**: граница smoke vs UI; типы globals; не раздувать docs
+- **Lessons Learned**: tooling-smoke отдельно от продукта; guidelines = source of truth; Level 2 без CREATIVE ок
+- **Next Steps**: `/close-task` → `step-playwright-setup`
+- **Документ**: `memory-bank/reflection/reflection-step-test-environment.md`
 
 ## Requirements
 
@@ -134,4 +142,4 @@ Type: Enhancement
 
 ## Последняя завершённая
 
-BUILD complete (2026-07-30) → NEXT: `/reflect`
+REFLECT complete (2026-07-30) → NEXT: `/close-task`
