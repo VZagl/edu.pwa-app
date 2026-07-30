@@ -2,15 +2,15 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                         |
-| ---------------------------------- | --------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)             |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)   |
-| Vitest (step-test-environment)     | ⏳ В backlog (высокий)            |
-| Playwright (step-playwright-setup) | ⏳ В backlog (средний)            |
-| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0) |
-| Навигация уроков                   | ⏳ Не начато                      |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                      |
+| Область                            | Состояние                                  |
+| ---------------------------------- | ------------------------------------------ |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                      |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)            |
+| Vitest (step-test-environment)     | 🔄 В работе (`feat/step-test-environment`) |
+| Playwright (step-playwright-setup) | ⏳ В backlog (средний)                     |
+| Каркас UI (step-app-shell)         | ⏳ В backlog (блокирован фазой 0)          |
+| Навигация уроков                   | ⏳ Не начато                               |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                               |
 
 ## Последняя завершённая задача
 
