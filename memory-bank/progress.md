@@ -2,19 +2,23 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                                       |
-| ---------------------------------- | ----------------------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                           |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                 |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
-| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
-| Каркас UI (step-app-shell)         | 🔄 В работе (PLAN), ветка `feat/step-app-shell` |
-| Навигация уроков                   | ⏳ Не начато                                    |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                                    |
+| Область                            | Состояние                                           |
+| ---------------------------------- | --------------------------------------------------- |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                               |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                     |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                           |
+| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                           |
+| Каркас UI (step-app-shell)         | 🔄 В работе (CREATIVE), ветка `feat/step-app-shell` |
+| Навигация уроков                   | ⏳ Не начато                                        |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                                        |
+
+## [2026-08-01]: step-app-shell — планирование (PLAN)
+
+Детальный план реализации Level 2: оболочка header/nav/main, React Router (library mode), миграция CSS→SCSS, TDD (`App.test.tsx` + E2E smoke). `BrowserRouter` в `main.tsx`, один маршрут `/`. Creative phases: layout, nav, SCSS. Следующий шаг: `/creative`.
 
 ## [2026-08-01]: step-app-shell — инициализация (VAN)
 
-Задача взята из backlog. Создана feature-ветка `feat/step-app-shell` от `develop`. Complexity Level 2. Навигация — React Router (установка на VAN QA). Следующий шаг: `/plan`.
+Задача взята из backlog. Создана feature-ветка `feat/step-app-shell` от `develop`. Complexity Level 2. Навигация — React Router (установка на VAN QA).
 
 ## [2026-07-30]: step-playwright-setup — ЗАВЕРШЕНО
 
@@ -31,5 +35,6 @@
 | 2026-07-30 | Закрыт `step-test-environment` (Vitest)                              | ✅     |
 | 2026-07-30 | Закрыт `step-playwright-setup` (Playwright); фаза 0 завершена        | ✅     |
 | 2026-08-01 | Старт `step-app-shell`; ветка `feat/step-app-shell`                  | 🔄     |
+| 2026-08-01 | PLAN `step-app-shell` завершён; следующий — `/creative`              | ✅     |
 
 Полный журнал продуктовых вех: `docs/project/product-roadmap.md` §9.

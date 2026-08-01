@@ -5,6 +5,7 @@
 - **Task ID:** `step-app-shell`
 - **Название:** Базовая оболочка приложения
 - **Complexity:** Level 2
+- **Type:** Enhancement
 - **Git Branch:** `feat/step-app-shell`
 - **Источник:** `docs/project/implementation-plan.md` (Order: 1.1.1)
 - **Дата старта:** 2026-08-01
@@ -18,29 +19,114 @@
 - `step-test-environment` ✅
 - `step-playwright-setup` ✅
 
-### VAN QA — зависимости
+### Technology Stack
 
-- [ ] Установить `react-router` (`pnpm add react-router`) на этапе VAN QA
-- `@react-router/dev` **не** использовать (framework mode)
+- **Framework:** React 19 + TypeScript
+- **Build Tool:** Vite 8
+- **Стили:** SCSS (`sass-embedded`)
+- **Роутинг:** `react-router` (library mode) — установка на VAN QA
+- **Unit/Integration:** Vitest + Testing Library
+- **E2E:** Playwright (preview)
+
+### Technology Validation Checkpoints
+
+- [ ] `pnpm add react-router`
+- [ ] Минимальный POC: `BrowserRouter` + один `Route` — dev/build без ошибок
+- [ ] Импорты из `'react-router'`: `BrowserRouter`, `Routes`, `Route`, `NavLink`/`Link`
+- [ ] `@react-router/dev` **не** использовать (framework mode)
+- [ ] Vitest: рендер с `MemoryRouter` или прямой `BrowserRouter` в jsdom
+- [ ] `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+
+### Status
+
+- [x] Initialization complete
+- [x] Planning complete
+- [ ] Technology validation complete
+- [ ] Creative phase complete
+- [ ] Implementation complete
+- [ ] Reflection complete
 
 ### Чеклист
 
 - [x] GIT: Работа в feature-ветке `feat/step-app-shell`
-- [ ] PLAN: Детальный план реализации (`/plan`)
+- [x] PLAN: Детальный план реализации (`/plan`)
 - [ ] CREATIVE: UI/layout решения (`/creative`)
 - [ ] VAN QA: Установка `react-router`, техническая валидация
 - [ ] BUILD: TDD — `App.test.tsx`, E2E smoke с оболочкой и навигацией
-- [ ] BUILD: `App.tsx` — оболочка + маршруты (`BrowserRouter`, `Routes`, `Route`, `Link`/`NavLink`)
+- [ ] BUILD: `App.tsx` — оболочка + маршруты (`Routes`, `Route`, `NavLink`)
+- [ ] BUILD: `main.tsx` — `BrowserRouter`, импорт `index.scss`
 - [ ] BUILD: Миграция `App.css` → `App.scss`, `index.css` → `index.scss`
+- [ ] BUILD: `index.html` — `lang="ru"`
 - [ ] BUILD: Verify — lint, build, `pnpm test --run`, `pnpm test:e2e`
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
-### Файлы (ориентир)
+### Implementation Plan
 
-- `src/main.tsx`, `src/App.tsx`, `src/App.scss`, `src/index.scss`
-- `src/App.test.tsx`, `e2e/smoke.spec.ts`
-- `package.json` (на VAN QA)
+#### Фаза 0: `/creative` — UI/layout (до BUILD)
+
+- [ ] Структура оболочки: header / nav / main
+- [ ] Название проекта в header (русский UI)
+- [ ] Минимальный набор маршрутов: `/` — главная с placeholder «контент уроков здесь»
+- [ ] Mobile-first SCSS: отступы, focus, адаптив nav
+- [ ] Решение по nav: один активный пункт «Главная» (разделы уроков — `step-lessons-navigation`)
+
+#### Фаза 1: VAN QA — зависимости
+
+1. `pnpm add react-router`
+2. Проверить сборку и импорты
+3. Зафиксировать версию в `package.json`
+
+#### Фаза 2: BUILD — TDD (red → green → refactor)
+
+**2.1 Unit/Integration — `src/App.test.tsx` (RED)**
+
+- `describe('Оболочка приложения')` — header с названием, nav, main с контентом маршрута
+- Селекторы: `getByRole('banner')`, `getByRole('navigation')`, `getByRole('main')`
+- Обёртка: `MemoryRouter` (если `BrowserRouter` в `main.tsx`)
+- Язык тестов: русский
+
+**2.2 E2E — `e2e/smoke.spec.ts` (RED)**
+
+- Title `edu.pwa-app`, видимы header, nav, main
+- В main — узнаваемый текст (название / приветствие)
+
+**2.3 Реализация (GREEN)**
+
+| Файл                           | Действие                                                 |
+| ------------------------------ | -------------------------------------------------------- |
+| `src/main.tsx`                 | `BrowserRouter`, импорт `./index.scss`                   |
+| `src/App.tsx`                  | Удалить шаблон Vite; layout + `Routes`/`Route`/`NavLink` |
+| `src/App.scss`                 | Стили оболочки (mobile-first)                            |
+| `src/index.scss`               | Глобальные reset/typography (из `index.css`)             |
+| `src/App.css`, `src/index.css` | Удалить после миграции                                   |
+| `index.html`                   | `lang="ru"`                                              |
+
+**2.4 Refactor + Verify**
+
+- `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+
+### Creative Phases Required
+
+- [ ] **App Shell Layout** — расположение header/nav (горизонтальный nav vs hamburger на mobile)
+- [ ] **Навигация** — NavLink vs Link; active state; количество пунктов на этом шаге
+- [ ] **SCSS-структура** — классы, breakpoints, CSS-переменные
+- [ ] **Маршруты** — только `/` или заготовки nav под `step-lessons-navigation`
+
+### Challenges & Mitigations
+
+- **React Router v7 — единый пакет `react-router`:** VAN QA — проверить импорты; не ставить `@react-router/dev`
+- **Тестирование роутера:** `MemoryRouter` в unit; E2E через preview
+- **Миграция CSS → SCSS:** перенести нужное из `index.css`; стили шаблона Vite не переносить
+- **Scope creep (уроки в nav):** ограничить шаг оболочкой; разделы — `step-lessons-navigation`
+- **`index.html lang="en"`:** сменить на `ru` в BUILD
+
+### Файлы (итоговый список)
+
+**Изменить:** `src/main.tsx`, `src/App.tsx`, `src/App.test.tsx` (новый), `e2e/smoke.spec.ts`, `index.html`, `package.json`  
+**Создать:** `src/App.scss`, `src/index.scss`  
+**Удалить:** `src/App.css`, `src/index.css`  
+**Опционально:** неиспользуемые ассеты шаблона в `src/assets/`
 
 ## Last Completed Task
 
