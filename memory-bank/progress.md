@@ -2,15 +2,19 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                       |
-| ---------------------------------- | ------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)           |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24) |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)       |
-| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)       |
-| Каркас UI (step-app-shell)         | ⏳ В backlog (Высокий)          |
-| Навигация уроков                   | ⏳ Не начато                    |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                    |
+| Область                            | Состояние                                       |
+| ---------------------------------- | ----------------------------------------------- |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                           |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                 |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
+| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
+| Каркас UI (step-app-shell)         | 🔄 В работе (PLAN), ветка `feat/step-app-shell` |
+| Навигация уроков                   | ⏳ Не начато                                    |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                                    |
+
+## [2026-08-01]: step-app-shell — инициализация (VAN)
+
+Задача взята из backlog. Создана feature-ветка `feat/step-app-shell` от `develop`. Complexity Level 2. Навигация — React Router (установка на VAN QA). Следующий шаг: `/plan`.
 
 ## [2026-07-30]: step-playwright-setup — ЗАВЕРШЕНО
 
@@ -26,5 +30,6 @@
 | 2026-07-24 | Инициализация Memory Bank; TDD + фаза 0 (Vitest/Playwright) в планах | ✅     |
 | 2026-07-30 | Закрыт `step-test-environment` (Vitest)                              | ✅     |
 | 2026-07-30 | Закрыт `step-playwright-setup` (Playwright); фаза 0 завершена        | ✅     |
+| 2026-08-01 | Старт `step-app-shell`; ветка `feat/step-app-shell`                  | 🔄     |
 
 Полный журнал продуктовых вех: `docs/project/product-roadmap.md` §9.
