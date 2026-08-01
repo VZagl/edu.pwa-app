@@ -54,7 +54,7 @@
 
 Файлы отдаются как есть по корневому URL:
 
-- `favicon.svg`, `icons.svg` — текущие статические ресурсы
+- `favicon.svg` — иконка вкладки браузера (до шага manifest — временная; позже PWA-иконки в `icons/` по [config-schema.md](config-schema.md))
 - (план) `manifest.webmanifest` — Web App Manifest
 - (план) `icons/` — иконки PWA разных размеров
 - (план) service worker — генерируется сборкой или лежит в `public/` на учебном этапе

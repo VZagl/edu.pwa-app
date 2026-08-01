@@ -2,29 +2,24 @@
 
 ## Current Focus
 
-**step-app-shell** — базовая оболочка приложения (header, nav, main, React Router)
+**step-app-shell** — BUILD завершён ✅
 
 **Git Branch:** `feat/step-app-shell`
 
 ## Current Mode
 
-POST-VAN-QA — техническая валидация завершена, следующий шаг: `/build`
+BUILD complete — следующий шаг: `/reflect`
 
 ## Next Steps
 
-1. `/build` — TDD-реализация оболочки по [creative-app-shell.md](creative/creative-app-shell.md)
-2. `/reflect` → `/close-task`
+1. `/reflect` — рефлексия по задаче
+2. `/close-task` — финализация и архивация
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 0 завершена; фаза 1, этап 1.1 (каркас UI)
-- **VAN QA complete:** `react-router@^8.3.0` установлен; POC в `main.tsx`/`App.tsx`; тест `src/router-poc.test.tsx`
-- **Импорты:** `BrowserRouter`, `Routes`, `Route`, `NavLink`, `Link`, `MemoryRouter` — из `'react-router'` (не `react-router-dom`, не `@react-router/dev`)
+- Фаза 0 завершена; фаза 1, этап 1.1 (каркас UI) — BUILD done
+- **Реализовано:** stacked layout (header → nav → main), `NavLink` «Главная», SCSS `index.scss` + `App.scss` (BEM `app-shell__*`), маршруты `/` + catch-all 404
+- **Тесты:** `src/App.test.tsx` (3 теста), `e2e/smoke.spec.ts` (оболочка + приветствие), `src/router-poc.test.tsx` (VAN QA)
+- **Verify:** lint ✅, build ✅, `pnpm test --run` (6 тестов) ✅, `pnpm test:e2e` ✅
 - **Creative:** [memory-bank/creative/creative-app-shell.md](creative/creative-app-shell.md)
-- **Layout (BUILD):** stacked — header → nav → main
-- **Nav (BUILD):** `NavLink`, один пункт «Главная»
-- **SCSS (BUILD):** `index.scss` + `App.scss`, BEM `app-shell__*`
-- **Маршруты (BUILD):** `/` + catch-all 404
-- POC временно оборачивает шаблон Vite в `Routes`/`Route` — BUILD заменит на оболочку
-- `router-poc.test.tsx` — валидационный тест VAN QA; `App.test.tsx` создаётся в BUILD

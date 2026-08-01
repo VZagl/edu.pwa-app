@@ -2,15 +2,19 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                                        |
-| ---------------------------------- | ------------------------------------------------ |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                            |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                  |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                        |
-| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                        |
-| Каркас UI (step-app-shell)         | 🔄 В работе (BUILD), ветка `feat/step-app-shell` |
-| Навигация уроков                   | ⏳ Не начато                                     |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                                     |
+| Область                            | Состояние                                               |
+| ---------------------------------- | ------------------------------------------------------- |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                                   |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                         |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                               |
+| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                               |
+| Каркас UI (step-app-shell)         | 🔄 BUILD done → `/reflect`, ветка `feat/step-app-shell` |
+| Навигация уроков                   | ⏳ Не начато                                            |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                                            |
+
+## [2026-08-01]: step-app-shell — BUILD
+
+TDD-реализация оболочки: `App.tsx` (stacked layout, NavLink «Главная», HomePage/NotFoundPage), SCSS `index.scss` + `App.scss`, удалены `App.css`/`index.css`, `index.html lang="ru"`. Тесты: `App.test.tsx` (3), обновлён `e2e/smoke.spec.ts`. Verify: lint, build, test (6), e2e — OK. Следующий шаг: `/reflect`.
 
 ## [2026-08-01]: step-app-shell — VAN QA
 
@@ -43,6 +47,7 @@ Design decisions зафиксированы: stacked layout (header → nav → 
 | 2026-07-30 | Закрыт `step-test-environment` (Vitest)                                   | ✅     |
 | 2026-07-30 | Закрыт `step-playwright-setup` (Playwright); фаза 0 завершена             | ✅     |
 | 2026-08-01 | Старт `step-app-shell`; ветка `feat/step-app-shell`                       | 🔄     |
+| 2026-08-01 | BUILD `step-app-shell` завершён; следующий — `/reflect`                   | ✅     |
 | 2026-08-01 | VAN QA `step-app-shell` завершён (`react-router@8`); следующий — `/build` | ✅     |
 | 2026-08-01 | CREATIVE `step-app-shell` завершён; следующий — VAN QA → `/build`         | ✅     |
 | 2026-08-01 | PLAN `step-app-shell` завершён; следующий — `/creative`                   | ✅     |

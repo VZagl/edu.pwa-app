@@ -43,7 +43,7 @@
 - [x] Planning complete
 - [x] Technology validation complete
 - [x] Creative phase complete
-- [ ] Implementation complete
+- [x] Implementation complete
 - [ ] Reflection complete
 
 ### Чеклист
@@ -52,12 +52,12 @@
 - [x] PLAN: Детальный план реализации (`/plan`)
 - [x] CREATIVE: UI/layout решения (`/creative`)
 - [x] VAN QA: Установка `react-router`, техническая валидация
-- [ ] BUILD: TDD — `App.test.tsx`, E2E smoke с оболочкой и навигацией
-- [ ] BUILD: `App.tsx` — оболочка + маршруты (`Routes`, `Route`, `NavLink`)
-- [ ] BUILD: `main.tsx` — `BrowserRouter`, импорт `index.scss`
-- [ ] BUILD: Миграция `App.css` → `App.scss`, `index.css` → `index.scss`
-- [ ] BUILD: `index.html` — `lang="ru"`
-- [ ] BUILD: Verify — lint, build, `pnpm test --run`, `pnpm test:e2e`
+- [x] BUILD: TDD — `App.test.tsx`, E2E smoke с оболочкой и навигацией
+- [x] BUILD: `App.tsx` — оболочка + маршруты (`Routes`, `Route`, `NavLink`)
+- [x] BUILD: `main.tsx` — `BrowserRouter`, импорт `index.scss`
+- [x] BUILD: Миграция `App.css` → `App.scss`, `index.css` → `index.scss`
+- [x] BUILD: `index.html` — `lang="ru"`
+- [x] BUILD: Verify — lint, build, `pnpm test --run`, `pnpm test:e2e`
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
