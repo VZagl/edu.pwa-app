@@ -12,6 +12,7 @@
 - Для локального состояния компонента использовать `useState` по умолчанию.
 - Для нелокального состояния (несколько экранов/модулей) — React Context или выделенный store; **не добавлять** state-менеджер без явной необходимости и согласования.
 - Стили: только SCSS (отдельные `.scss` рядом с компонентом); через `sass-embedded`.
+- **Экспорт модулей в `src/`:** только **named export** (`export function Foo`, `export { Foo }`). **`export default` не использовать.** Импорт: `import { Foo } from './Foo'`.
 - Правила раздела «Антипаттерны и ограничения производительности» обязательны при написании и рефакторинге кода.
 
 ## Стек
@@ -28,9 +29,39 @@
 - При добавлении headless-примитивов (диалоги, табы и т.п.) предпочитать библиотеки **без навязанной дизайн-системы** и с поддержкой TypeScript.
 - Целевая платформа — **браузер** (телефон, планшет, десктоп); mobile-first, на широких экранах — полноценный адаптив (не «растянутая мобильная» вёрстка).
 
+## Модули и экспорт
+
+- Область: файлы `src/**/*.{ts,tsx}`.
+- **Named export** — единственный допустимый способ экспорта компонентов, функций и констант.
+- **`export default` запрещён** — в том числе `export { Foo as default }`.
+- Конфигурационные файлы в корне (`eslint.config.js`, `vite.config.ts`) не входят в область правила.
+
+**Плохо:**
+
+```tsx
+function App() {
+	return <div />;
+}
+
+export default App;
+```
+
+**Хорошо:**
+
+```tsx
+export function App() {
+	return <div />;
+}
+```
+
+```tsx
+import { App } from './App';
+```
+
 ## Линтинг и форматирование
 
 - **ESLint** — линтер (typescript-eslint, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals)
+- **Запрет `export default` в `src/`** — правило `no-restricted-syntax` в `eslint.config.js` (см. раздел «Модули и экспорт»)
 - **Prettier** — форматирование (prettier-plugin-css-order, prettier-plugin-organize-attributes, prettier-plugin-organize-imports)
 - **Husky + lint-staged** — pre-commit форматирование staged-файлов
 
@@ -70,3 +101,4 @@ const unreadCount = notifications.reduce((count, n) => (n.readAt ? count : count
 - [ ] Для state выбран корректный подход (`useState` для локального; Context/store — только при реальной необходимости шаринга).
 - [ ] Для подсчётов использован `reduce`; для новых наборов данных применены `filter`/`map`/`slice` и `useMemo` при необходимости.
 - [ ] Избежаны лишние аллокации в рендере и лишние обновления состояния.
+- [ ] В `src/` использованы только named export; `export default` отсутствует (проверяется ESLint).
