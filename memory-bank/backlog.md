@@ -2,15 +2,14 @@
 
 ## Высокий
 
-- [ ] Базовая оболочка приложения (step-app-shell)
-  - **Создано:** 2026-07-24
-  - Базовая разметка: header, main, простая навигация. Заменить стартовый шаблон Vite на оболочку учебного PWA (название проекта, место под контент уроков). Стили — только SCSS.
-  - **Цель:** приложение имеет узнаваемую оболочку; контент уроков рендерится в main
-  - **Файлы:** `src/App.tsx`, `src/App.scss`, `src/index.scss`, `src/App.test.tsx`, при необходимости `e2e/`
-  - **Тесты:** unit/integration — оболочка; E2E — загрузка с оболочкой (TDD)
-  - **Источник:** docs/project/implementation-plan.md (step-app-shell, Order: 1.1.1)
-  - **Связано с:** step-test-environment, step-playwright-setup
-  - **Причина:** Следующий шаг после step-playwright-setup
+- [ ] Навигация по учебным разделам (step-lessons-navigation)
+  - **Создано:** 2026-08-01
+  - Навигация по учебным разделам (Manifest, Service Worker, Offline, Install). Достаточно переключения экранов через state или лёгкий роутер (React Router — уже в `package.json`).
+  - **Цель:** пользователь переключается между разделами; каждый раздел — заглушка с названием темы
+  - **Файлы:** `src/`, `src/components/` или `src/screens/`, соответствующие `*.test.*`, при необходимости `e2e/`
+  - **Тесты:** unit/integration — переключение разделов; E2E — переход между разделами в UI
+  - **Источник:** docs/project/implementation-plan.md (step-lessons-navigation, Order: 1.1.2)
+  - **Причина:** Следующий шаг после step-app-shell
 
 ## Средний
 
