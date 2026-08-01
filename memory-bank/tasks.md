@@ -6,8 +6,8 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-playwright-setup`
-- **Название:** Playwright E2E-окружение
-- **Дата завершения:** 2026-07-30
+- **Task ID:** `step-app-shell`
+- **Название:** Базовая оболочка приложения
+- **Дата завершения:** 2026-08-01
 - **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/07/step-playwright-setup_2026-07-30.md](memory-bank/completed-tasks/2026/07/step-playwright-setup_2026-07-30.md)
+- **Completed:** [memory-bank/completed-tasks/2026/07/step-app-shell_2026-08-01.md](completed-tasks/2026/07/step-app-shell_2026-08-01.md)

@@ -6,8 +6,14 @@ test.describe('Smoke E2E', () => {
 
 		await expect(page).toHaveTitle('edu.pwa-app');
 
-		const root = page.locator('#root');
-		await expect(root).toBeVisible();
-		await expect(root).not.toBeEmpty();
+		const header = page.getByRole('banner');
+		await expect(header).toBeVisible();
+		await expect(header.getByRole('heading', { level: 1 })).toHaveText('edu.pwa-app');
+
+		await expect(page.getByRole('navigation')).toBeVisible();
+
+		const main = page.getByRole('main');
+		await expect(main).toBeVisible();
+		await expect(main.getByText('Добро пожаловать')).toBeVisible();
 	});
 });

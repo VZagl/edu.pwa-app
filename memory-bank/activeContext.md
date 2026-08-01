@@ -10,8 +10,11 @@ IDLE — ожидание новой задачи
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи.
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
-Учебный PWA на React + Vite (frontend only). Менеджер пакетов — **pnpm**. Фаза 0 (Vitest + Playwright) завершена. Следующая задача в backlog: `step-app-shell`.
+- Учебный PWA на React + Vite (frontend only), **pnpm**
+- Фаза 0 завершена; фаза 1 в процессе (`step-app-shell` закрыт)
+- Следующая задача в backlog: `step-lessons-navigation`
+- План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
