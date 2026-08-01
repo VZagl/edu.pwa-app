@@ -42,7 +42,7 @@
 - [x] Initialization complete
 - [x] Planning complete
 - [ ] Technology validation complete
-- [ ] Creative phase complete
+- [x] Creative phase complete
 - [ ] Implementation complete
 - [ ] Reflection complete
 
@@ -50,7 +50,7 @@
 
 - [x] GIT: Работа в feature-ветке `feat/step-app-shell`
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] CREATIVE: UI/layout решения (`/creative`)
+- [x] CREATIVE: UI/layout решения (`/creative`)
 - [ ] VAN QA: Установка `react-router`, техническая валидация
 - [ ] BUILD: TDD — `App.test.tsx`, E2E smoke с оболочкой и навигацией
 - [ ] BUILD: `App.tsx` — оболочка + маршруты (`Routes`, `Route`, `NavLink`)
@@ -63,13 +63,15 @@
 
 ### Implementation Plan
 
-#### Фаза 0: `/creative` — UI/layout (до BUILD)
+#### Фаза 0: `/creative` — UI/layout (до BUILD) ✅
 
-- [ ] Структура оболочки: header / nav / main
-- [ ] Название проекта в header (русский UI)
-- [ ] Минимальный набор маршрутов: `/` — главная с placeholder «контент уроков здесь»
-- [ ] Mobile-first SCSS: отступы, focus, адаптив nav
-- [ ] Решение по nav: один активный пункт «Главная» (разделы уроков — `step-lessons-navigation`)
+- [x] Структура оболочки: **stacked** — header → nav → main (без hamburger/bottom nav)
+- [x] Название проекта в header: `<h1>edu.pwa-app</h1>` (русский UI в контенте)
+- [x] Маршруты: `/` (HomePage) + catch-all `*` (NotFoundPage); без заготовок разделов
+- [x] Mobile-first SCSS: `index.scss` (globals) + `App.scss` (layout), BEM `app-shell__*`, breakpoints 768/1024
+- [x] Nav: `NavLink`, один пункт «Главная», active через `.app-shell__nav-link--active`
+
+**Документ:** [memory-bank/creative/creative-app-shell.md](memory-bank/creative/creative-app-shell.md)
 
 #### Фаза 1: VAN QA — зависимости
 
@@ -108,10 +110,10 @@
 
 ### Creative Phases Required
 
-- [ ] **App Shell Layout** — расположение header/nav (горизонтальный nav vs hamburger на mobile)
-- [ ] **Навигация** — NavLink vs Link; active state; количество пунктов на этом шаге
-- [ ] **SCSS-структура** — классы, breakpoints, CSS-переменные
-- [ ] **Маршруты** — только `/` или заготовки nav под `step-lessons-navigation`
+- [x] **App Shell Layout** — stacked (header → nav → main); горизонтальный nav, без hamburger
+- [x] **Навигация** — `NavLink`, один пункт «Главная», active через BEM-модификатор
+- [x] **SCSS-структура** — `index.scss` + `App.scss`, BEM `app-shell__*`, breakpoints 768/1024, CSS-переменные
+- [x] **Маршруты** — `/` + catch-all 404; без заготовок nav под `step-lessons-navigation`
 
 ### Challenges & Mitigations
 
