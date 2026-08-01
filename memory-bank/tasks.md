@@ -24,24 +24,24 @@
 - **Framework:** React 19 + TypeScript
 - **Build Tool:** Vite 8
 - **Стили:** SCSS (`sass-embedded`)
-- **Роутинг:** `react-router` (library mode) — установка на VAN QA
+- **Роутинг:** `react-router@^8.3.0` (library mode) — установлен на VAN QA ✅
 - **Unit/Integration:** Vitest + Testing Library
 - **E2E:** Playwright (preview)
 
 ### Technology Validation Checkpoints
 
-- [ ] `pnpm add react-router`
-- [ ] Минимальный POC: `BrowserRouter` + один `Route` — dev/build без ошибок
-- [ ] Импорты из `'react-router'`: `BrowserRouter`, `Routes`, `Route`, `NavLink`/`Link`
-- [ ] `@react-router/dev` **не** использовать (framework mode)
-- [ ] Vitest: рендер с `MemoryRouter` или прямой `BrowserRouter` в jsdom
-- [ ] `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+- [x] `pnpm add react-router` → `react-router@^8.3.0`
+- [x] Минимальный POC: `BrowserRouter` + один `Route` — dev/build без ошибок
+- [x] Импорты из `'react-router'`: `BrowserRouter`, `Routes`, `Route`, `NavLink`, `Link`, `MemoryRouter`
+- [x] `@react-router/dev` **не** установлен (framework mode)
+- [x] Vitest: рендер с `MemoryRouter` — `src/router-poc.test.tsx`
+- [x] `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
 
 ### Status
 
 - [x] Initialization complete
 - [x] Planning complete
-- [ ] Technology validation complete
+- [x] Technology validation complete
 - [x] Creative phase complete
 - [ ] Implementation complete
 - [ ] Reflection complete
@@ -51,7 +51,7 @@
 - [x] GIT: Работа в feature-ветке `feat/step-app-shell`
 - [x] PLAN: Детальный план реализации (`/plan`)
 - [x] CREATIVE: UI/layout решения (`/creative`)
-- [ ] VAN QA: Установка `react-router`, техническая валидация
+- [x] VAN QA: Установка `react-router`, техническая валидация
 - [ ] BUILD: TDD — `App.test.tsx`, E2E smoke с оболочкой и навигацией
 - [ ] BUILD: `App.tsx` — оболочка + маршруты (`Routes`, `Route`, `NavLink`)
 - [ ] BUILD: `main.tsx` — `BrowserRouter`, импорт `index.scss`
@@ -73,11 +73,12 @@
 
 **Документ:** [memory-bank/creative/creative-app-shell.md](memory-bank/creative/creative-app-shell.md)
 
-#### Фаза 1: VAN QA — зависимости
+#### Фаза 1: VAN QA — зависимости ✅
 
-1. `pnpm add react-router`
-2. Проверить сборку и импорты
-3. Зафиксировать версию в `package.json`
+1. `pnpm add react-router` → `react-router@^8.3.0`
+2. POC: `BrowserRouter` в `main.tsx`, `Routes`/`Route` в `App.tsx`; тест `src/router-poc.test.tsx` (`MemoryRouter`, `NavLink`, `Link`)
+3. Verify: lint, build, test, e2e — OK
+4. `tsconfig.app.json`: типы `@testing-library/jest-dom` для matcher-ов в тестах
 
 #### Фаза 2: BUILD — TDD (red → green → refactor)
 
@@ -117,7 +118,7 @@
 
 ### Challenges & Mitigations
 
-- **React Router v7 — единый пакет `react-router`:** VAN QA — проверить импорты; не ставить `@react-router/dev`
+- **React Router v8 (не v7):** единый пакет `react-router@^8.3.0`; импорты из `'react-router'` — проверено на VAN QA
 - **Тестирование роутера:** `MemoryRouter` в unit; E2E через preview
 - **Миграция CSS → SCSS:** перенести нужное из `index.css`; стили шаблона Vite не переносить
 - **Scope creep (уроки в nav):** ограничить шаг оболочкой; разделы — `step-lessons-navigation`

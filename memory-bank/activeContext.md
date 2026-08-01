@@ -8,24 +8,23 @@
 
 ## Current Mode
 
-POST-CREATIVE — design decisions зафиксированы, следующий шаг: VAN QA → `/build`
+POST-VAN-QA — техническая валидация завершена, следующий шаг: `/build`
 
 ## Next Steps
 
-1. VAN QA — установка `react-router`, техническая валидация (POC сборки)
-2. `/build` — TDD-реализация по [creative-app-shell.md](creative/creative-app-shell.md)
-3. `/reflect` → `/close-task`
+1. `/build` — TDD-реализация оболочки по [creative-app-shell.md](creative/creative-app-shell.md)
+2. `/reflect` → `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 0 завершена; фаза 1, этап 1.1 (каркас UI)
-- **Creative complete:** [memory-bank/creative/creative-app-shell.md](creative/creative-app-shell.md)
-- **Layout:** stacked — header → nav (горизонтальная полоса) → main
-- **Nav:** `NavLink`, один пункт «Главная»; active — `.app-shell__nav-link--active`
-- **SCSS:** `index.scss` (globals/vars) + `App.scss` (BEM `app-shell__*`); breakpoints 768/1024
-- **Маршруты:** `/` (HomePage: «Добро пожаловать», «Контент уроков будет здесь») + `*` (NotFoundPage)
-- **Роутинг:** React Router library mode; `BrowserRouter` в `main.tsx`; установка на VAN QA
-- Разделы уроков — `step-lessons-navigation` (не на этом шаге)
-- Текущий код — шаблон Vite (`App.css`, `index.css`); `App.test.tsx` отсутствует
-- E2E smoke минимальный — расширить под оболочку
+- **VAN QA complete:** `react-router@^8.3.0` установлен; POC в `main.tsx`/`App.tsx`; тест `src/router-poc.test.tsx`
+- **Импорты:** `BrowserRouter`, `Routes`, `Route`, `NavLink`, `Link`, `MemoryRouter` — из `'react-router'` (не `react-router-dom`, не `@react-router/dev`)
+- **Creative:** [memory-bank/creative/creative-app-shell.md](creative/creative-app-shell.md)
+- **Layout (BUILD):** stacked — header → nav → main
+- **Nav (BUILD):** `NavLink`, один пункт «Главная»
+- **SCSS (BUILD):** `index.scss` + `App.scss`, BEM `app-shell__*`
+- **Маршруты (BUILD):** `/` + catch-all 404
+- POC временно оборачивает шаблон Vite в `Routes`/`Route` — BUILD заменит на оболочку
+- `router-poc.test.tsx` — валидационный тест VAN QA; `App.test.tsx` создаётся в BUILD
