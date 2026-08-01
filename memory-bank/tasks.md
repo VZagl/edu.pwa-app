@@ -44,7 +44,7 @@
 - [x] Technology validation complete
 - [x] Creative phase complete
 - [x] Implementation complete
-- [ ] Reflection complete
+- [x] Reflection complete
 
 ### Чеклист
 
@@ -58,7 +58,7 @@
 - [x] BUILD: Миграция `App.css` → `App.scss`, `index.css` → `index.scss`
 - [x] BUILD: `index.html` — `lang="ru"`
 - [x] BUILD: Verify — lint, build, `pnpm test --run`, `pnpm test:e2e`
-- [ ] REFLECT: Рефлексия (`/reflect`)
+- [x] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ### Implementation Plan
@@ -130,6 +130,15 @@
 **Создать:** `src/App.scss`, `src/index.scss`  
 **Удалить:** `src/App.css`, `src/index.css`  
 **Опционально:** неиспользуемые ассеты шаблона в `src/assets/`
+
+### Reflection Highlights
+
+- **What Went Well:** Creative → VAN QA → BUILD; TDD с role-селекторами; реализация без отклонений от creative-app-shell.md
+- **Challenges:** React Router v8 validation; MemoryRouter в unit-тестах; эволюция E2E smoke с `#root` на role-based
+- **Lessons Learned:** VAN QA для новых deps; NavLink + BEM active state; scope discipline без заготовок nav
+- **Next Steps:** `/close-task`; backlog — `step-lessons-navigation`
+
+**Документ:** [memory-bank/reflection/reflection-step-app-shell.md](reflection/reflection-step-app-shell.md)
 
 ## Last Completed Task
 

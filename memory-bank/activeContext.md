@@ -2,24 +2,28 @@
 
 ## Current Focus
 
-**step-app-shell** — BUILD завершён ✅
+**step-app-shell** — REFLECT завершён ✅
 
 **Git Branch:** `feat/step-app-shell`
 
 ## Current Mode
 
-BUILD complete — следующий шаг: `/reflect`
+REFLECT → ARCHIVE (следующий: `/close-task` или `/archive`)
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
-2. `/close-task` — финализация и архивация
+1. `/close-task` — финализация и архивация задачи
+
+2. Merge `feat/step-app-shell` → `develop` (после close-task)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 0 завершена; фаза 1, этап 1.1 (каркас UI) — BUILD done
-- **Реализовано:** stacked layout (header → nav → main), `NavLink` «Главная», SCSS `index.scss` + `App.scss` (BEM `app-shell__*`), маршруты `/` + catch-all 404
-- **Тесты:** `src/App.test.tsx` (3 теста), `e2e/smoke.spec.ts` (оболочка + приветствие), `src/router-poc.test.tsx` (VAN QA)
-- **Verify:** lint ✅, build ✅, `pnpm test --run` (6 тестов) ✅, `pnpm test:e2e` ✅
-- **Creative:** [memory-bank/creative/creative-app-shell.md](creative/creative-app-shell.md)
+
+- Фаза 0 завершена; фаза 1, этап 1.1 (каркас UI) — REFLECT done
+
+- **Реализовано:** stacked layout, NavLink «Главная», SCSS, маршруты `/` + 404
+
+- **Рефлексия:** [memory-bank/reflection/reflection-step-app-shell.md](reflection/reflection-step-app-shell.md)
+
+- **Verify:** lint ✅, build ✅, test (6) ✅, e2e ✅

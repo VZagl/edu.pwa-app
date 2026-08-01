@@ -2,15 +2,19 @@
 
 ## Статус проекта
 
-| Область                            | Состояние                                               |
-| ---------------------------------- | ------------------------------------------------------- |
-| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                                   |
-| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                         |
-| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                               |
-| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                               |
-| Каркас UI (step-app-shell)         | 🔄 BUILD done → `/reflect`, ветка `feat/step-app-shell` |
-| Навигация уроков                   | ⏳ Не начато                                            |
-| Manifest / SW / Offline / Install  | ⏳ Не начато                                            |
+| Область                            | Состояние                                                    |
+| ---------------------------------- | ------------------------------------------------------------ |
+| Репозиторий Vite + React + TS      | ✅ Готов (2026-07-23)                                        |
+| Memory Bank (ядро)                 | ✅ Инициализирован (2026-07-24)                              |
+| Vitest (step-test-environment)     | ✅ ЗАВЕРШЕНО (2026-07-30)                                    |
+| Playwright (step-playwright-setup) | ✅ ЗАВЕРШЕНО (2026-07-30)                                    |
+| Каркас UI (step-app-shell)         | 🔄 REFLECT done → `/close-task`, ветка `feat/step-app-shell` |
+| Навигация уроков                   | ⏳ Не начато                                                 |
+| Manifest / SW / Offline / Install  | ⏳ Не начато                                                 |
+
+## [2026-08-01]: step-app-shell — REFLECT
+
+Рефлексия Level 2: creative → VAN QA → BUILD сработали без отклонений от design decisions. Ключевые инсайты: VAN QA для react-router v8, MemoryRouter в unit-тестах, scope discipline. Документ: `memory-bank/reflection/reflection-step-app-shell.md`. Следующий шаг: `/close-task`.
 
 ## [2026-08-01]: step-app-shell — BUILD
 
@@ -47,6 +51,7 @@ Design decisions зафиксированы: stacked layout (header → nav → 
 | 2026-07-30 | Закрыт `step-test-environment` (Vitest)                                   | ✅     |
 | 2026-07-30 | Закрыт `step-playwright-setup` (Playwright); фаза 0 завершена             | ✅     |
 | 2026-08-01 | Старт `step-app-shell`; ветка `feat/step-app-shell`                       | 🔄     |
+| 2026-08-01 | REFLECT `step-app-shell` завершён; следующий — `/close-task`              | ✅     |
 | 2026-08-01 | BUILD `step-app-shell` завершён; следующий — `/reflect`                   | ✅     |
 | 2026-08-01 | VAN QA `step-app-shell` завершён (`react-router@8`); следующий — `/build` | ✅     |
 | 2026-08-01 | CREATIVE `step-app-shell` завершён; следующий — VAN QA → `/build`         | ✅     |
