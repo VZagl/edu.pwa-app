@@ -2,21 +2,21 @@
 
 ## Высокий
 
-- [ ] Web App Manifest (step-web-app-manifest)
+- [ ] Экран урока «Manifest» (step-manifest-lesson-ui)
 
   - **Создано:** 2026-08-03
 
-  - Добавить `manifest.webmanifest`: `name`, `short_name`, `start_url`, `display` (`standalone` или `minimal-ui`), `theme_color`, `background_color`, `icons`. Подключить в `index.html` (`<link rel="manifest">`). Иконки — `public/icons/` (минимум 192×192 и 512×512). Документировать поля в `config-schema.md`.
+  - Экран урока «Manifest»: краткое объяснение в UI + отображение текущих значений manifest (fetch `/manifest.webmanifest` или статический объект).
 
-  - **Цель:** DevTools → Application → Manifest без критичных ошибок; иконки отображаются
+  - **Цель:** Раздел Manifest в приложении объясняет и показывает живые данные.
 
-  - **Файлы:** `public/manifest.webmanifest`, `public/icons/`, `index.html`
+  - **Файлы:** `src/screens/` или `src/pages/`, тесты рядом с модулями
 
-  - **Тесты:** E2E или интеграция — manifest отдаётся по URL и содержит обязательные поля; ручная проверка Application panel
+  - **Тесты:** unit/integration — экран показывает данные manifest; E2E по смыслу сценария урока
 
-  - **Источник:** docs/project/implementation-plan.md (step-web-app-manifest, Order: 2.1.1)
+  - **Источник:** docs/project/implementation-plan.md (step-manifest-lesson-ui, Order: 2.1.2)
 
-  - **Причина:** Готов к реализации (зависимости выполнены)
+  - **Причина:** Следующий шаг после step-web-app-manifest
 
 ## Средний
 

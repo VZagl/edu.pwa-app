@@ -14,7 +14,7 @@
 - `docs/` — документация
 - `src/` — исходный код React-приложения
 - `e2e/` — E2E-тесты Playwright (после `step-playwright-setup`)
-- `public/` — статические файлы (favicon, иконки; позже — manifest, SW)
+- `public/` — статические файлы (favicon, manifest, иконки PWA; позже — SW)
 - `index.html` — точка входа HTML
 - `README.md`
 
@@ -54,9 +54,9 @@
 
 Файлы отдаются как есть по корневому URL:
 
-- `favicon.svg` — иконка вкладки браузера (до шага manifest — временная; позже PWA-иконки в `icons/` по [config-schema.md](config-schema.md))
-- (план) `manifest.webmanifest` — Web App Manifest
-- (план) `icons/` — иконки PWA разных размеров
+- `favicon.svg` — иконка вкладки браузера (книга + «edu»; единый стиль с PWA-иконками)
+- `manifest.webmanifest` — Web App Manifest ([config-schema.md](config-schema.md))
+- `icons/` — PNG-иконки PWA для manifest (192×192, 512×512; книга + «edu» / «PWA»)
 - (план) service worker — генерируется сборкой или лежит в `public/` на учебном этапе
 
 ## Структура модулей фронтенда

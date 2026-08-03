@@ -15,6 +15,7 @@ IDLE — ожидание новой задачи
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 0 завершена; фаза 1 завершена
-- План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
-- Следующая задача в backlog: `step-web-app-manifest`
+- Фаза 2: Web App Manifest — `step-web-app-manifest` завершён ✅
+- Следующий шаг в backlog: `step-manifest-lesson-ui`
+- План реализации: `docs/project/implementation-plan.md`
+- PWA-правила: `docs/project/tech-stack-pwa.md`

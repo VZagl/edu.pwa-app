@@ -56,10 +56,23 @@
 ## Подключение в HTML
 
 ```html
-<link rel="manifest" href="/manifest.webmanifest" /> <meta name="theme-color" content="#646cff" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#646cff" />
 ```
 
 ## Иконки
+
+### Favicon и manifest
+
+| Ресурс         | Файл                                        | Назначение                   |
+| -------------- | ------------------------------------------- | ---------------------------- |
+| Favicon        | `public/favicon.svg`                        | Иконка вкладки браузера      |
+| Manifest icons | `public/icons/icon-192.png`, `icon-512.png` | Установка PWA, splash screen |
+
+Единый визуальный стиль: книга на фиолетовом градиенте (`#646cff` → `#863bff`), белая страница, текст `#646cff`. На favicon (48×48) — только «edu»; на PNG 192+ — «edu» и «PWA».
+
+### Каталог manifest-иконок
 
 - Каталог: `public/icons/`
 - Для maskable-иконок добавить `"purpose": "maskable"` (отдельный ресурс или combined `any maskable` по доке платформы)
