@@ -166,7 +166,7 @@ export function ManifestScreen() {
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: TDD — экраны-заглушки, маршруты, навигация, тесты, удаление router-poc
 - [x] REFLECT: Рефлексия по задаче
-- [ ] ARCHIVE: Архивация задачи
+- [x] ARCHIVE: Архивация задачи
 
 ### Build Progress
 
@@ -181,14 +181,17 @@ export function ManifestScreen() {
 - **What Went Well:** трёхслойная архитектура (routes / screens / stub), TDD red→green с первого прогона, конфиг `lessonRoutes.ts` через `.map()` в App
 - **Challenges:** horizontal scroll nav на mobile, разделение контента и nav, `NavLink end` для `/`
 - **Lessons Learned:** PLAN без CREATIVE достаточен для стандартной навигации Level 2; наследование паттернов из step-app-shell ускоряет BUILD
-- **Next Steps:** `/archive`, затем `/close-task`; следующий шаг — `step-manifest-lesson-ui`
+- **Next Steps:** `/close-task`; следующий шаг — `step-manifest-lesson-ui`
 
 **Reflection:** [memory-bank/reflection/reflection-step-lessons-navigation.md](reflection/reflection-step-lessons-navigation.md)
 
+**Archive:** [memory-bank/archive/archive-step-lessons-navigation.md](archive/archive-step-lessons-navigation.md)
+
 ## Last Completed Task
 
-- **Task ID:** `step-app-shell`
-- **Название:** Базовая оболочка приложения
-- **Дата завершения:** 2026-08-01
-- **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/07/step-app-shell_2026-08-01.md](completed-tasks/2026/07/step-app-shell_2026-08-01.md)
+- **Task ID:** `step-lessons-navigation`
+- **Название:** Навигация по учебным разделам
+- **Дата завершения:** 2026-08-03
+- **Статус:** ARCHIVED (ожидает `/close-task`)
+- **Archive:** [memory-bank/archive/archive-step-lessons-navigation.md](archive/archive-step-lessons-navigation.md)
+- **Reflection:** [memory-bank/reflection/reflection-step-lessons-navigation.md](reflection/reflection-step-lessons-navigation.md)
