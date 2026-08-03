@@ -64,32 +64,32 @@ ManifestScreen/
 #### TDD-шаги (BUILD)
 
 1. **Типы и fetch-утилита**
-   - [ ] `types.ts`: `WebAppManifest`, `ManifestIcon` по `config-schema.md`
-   - [ ] `fetchManifest.ts`: GET → JSON, throw при `!response.ok`
-   - [ ] RED → GREEN: `fetchManifest.test.ts` (mock `global.fetch`, успех и ошибка)
+   - [x] `types.ts`: `WebAppManifest`, `ManifestIcon` по `config-schema.md`
+   - [x] `fetchManifest.ts`: GET → JSON, throw при `!response.ok`
+   - [x] RED → GREEN: `fetchManifest.test.ts` (mock `global.fetch`, успех и ошибка)
 
 2. **Экран (unit/integration)**
-   - [ ] RED: `ManifestScreen.test.tsx` — mock fetch, loading/success/error, объяснительный текст, значения полей
-   - [ ] GREEN: `ManifestScreen.tsx` с `useState` + `useEffect`
-   - [ ] REFACTOR при необходимости
+   - [x] RED: `ManifestScreen.test.tsx` — mock fetch, loading/success/error, объяснительный текст, значения полей
+   - [x] GREEN: `ManifestScreen.tsx` с `useState` + `useEffect`
+   - [x] REFACTOR при необходимости
 
 3. **Стили**
-   - [ ] `ManifestScreen.scss`: отступы, `<dl>` layout, color swatch для `theme_color` / `background_color`
-   - [ ] Импорт в `ManifestScreen.tsx`
+   - [x] `ManifestScreen.scss`: отступы, `<dl>` layout, color swatch для `theme_color` / `background_color`
+   - [x] Импорт в `ManifestScreen.tsx`
 
 4. **E2E**
-   - [ ] `e2e/manifest-lesson.spec.ts`: goto `/manifest`, heading, видимые значения из реального manifest
-   - [ ] Не дублировать HTTP-проверки из `web-app-manifest.spec.ts`
+   - [x] `e2e/manifest-lesson.spec.ts`: goto `/manifest`, heading, видимые значения из реального manifest
+   - [x] Не дублировать HTTP-проверки из `web-app-manifest.spec.ts`
 
 5. **Verify**
-   - [ ] `pnpm lint`
-   - [ ] `pnpm build`
-   - [ ] `pnpm test --run`
-   - [ ] `pnpm test:e2e`
+   - [x] `pnpm lint`
+   - [x] `pnpm build`
+   - [x] `pnpm test --run`
+   - [x] `pnpm test:e2e`
 
 6. **Регрессии**
-   - [ ] `App.test.tsx` — heading «Web App Manifest» на `/manifest`
-   - [ ] `e2e/lessons-navigation.spec.ts` — навигация без изменений
+   - [x] `App.test.tsx` — heading «Web App Manifest» на `/manifest`
+   - [x] `e2e/lessons-navigation.spec.ts` — навигация без изменений
 
 ### Файлы
 
@@ -133,7 +133,7 @@ ManifestScreen/
 
 - [x] GIT: Работа в feature-ветке `feat/step-manifest-lesson-ui`
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] BUILD: TDD red → green → refactor
+- [x] BUILD: TDD red → green → refactor
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
