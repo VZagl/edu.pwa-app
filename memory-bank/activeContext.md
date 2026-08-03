@@ -8,13 +8,12 @@
 
 ## Current Mode
 
-PLAN — ожидает `/plan`
+BUILD — ожидает `/build`
 
 ## Next Steps
 
-1. `/plan` — детальный план реализации с TDD-шагами
-2. `/build` — реализация manifest, иконок, подключение в index.html, тесты
-3. `/reflect` → `/archive` → `/close-task`
+1. `/build` — TDD: E2E red → manifest, иконки (книга + edu/PWA), index.html, green
+2. `/reflect` → `/archive` → `/close-task`
 
 ## Context for AI
 
@@ -22,6 +21,7 @@ PLAN — ожидает `/plan`
 - Фаза 2: Web App Manifest (Order: 2.1.1)
 - Схема manifest: `docs/project/config-schema.md`
 - PWA-правила: `docs/project/tech-stack-pwa.md`
-- `public/` — отсутствует, нужно создать
+- `public/` — есть `favicon.svg`; добавить `manifest.webmanifest` и `icons/`
 - `vite-plugin-pwa` — не установлен (на этом шаге не требуется)
-- Creative phase не требуется — решения заданы в config-schema.md
+- Creative phase не требуется
+- **Иконки:** книга, две строки `edu` / `PWA`; проверка читаемости на 48px и 192px
