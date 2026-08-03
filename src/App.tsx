@@ -1,18 +1,7 @@
 import { NavLink, Route, Routes } from 'react-router';
 import './App.scss';
-
-function HomePage() {
-	return (
-		<>
-			<h2>Добро пожаловать</h2>
-			<p>Контент уроков будет здесь</p>
-		</>
-	);
-}
-
-function NotFoundPage() {
-	return <p>Страница не найдена</p>;
-}
+import { lessonRoutes } from './routes/lessonRoutes';
+import { NotFoundScreen } from './screens/NotFoundScreen/NotFoundScreen';
 
 export function App() {
 	return (
@@ -22,23 +11,27 @@ export function App() {
 			</header>
 			<nav className='app-shell__nav'>
 				<ul className='app-shell__nav-list'>
-					<li>
-						<NavLink
-							to='/'
-							className={({ isActive }) =>
-								`app-shell__nav-link${isActive ? ' app-shell__nav-link--active' : ''}`
-							}
-							end
-						>
-							Главная
-						</NavLink>
-					</li>
+					{lessonRoutes.map((route) => (
+						<li key={route.path}>
+							<NavLink
+								to={route.path}
+								className={({ isActive }) =>
+									`app-shell__nav-link${isActive ? ' app-shell__nav-link--active' : ''}`
+								}
+								end={route.path === '/'}
+							>
+								{route.navLabel}
+							</NavLink>
+						</li>
+					))}
 				</ul>
 			</nav>
 			<main className='app-shell__main'>
 				<Routes>
-					<Route path='/' element={<HomePage />} />
-					<Route path='*' element={<NotFoundPage />} />
+					{lessonRoutes.map((route) => (
+						<Route key={route.path} path={route.path} element={<route.Screen />} />
+					))}
+					<Route path='*' element={<NotFoundScreen />} />
 				</Routes>
 			</main>
 		</div>

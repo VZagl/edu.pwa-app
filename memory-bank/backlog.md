@@ -2,14 +2,21 @@
 
 ## Высокий
 
-- [ ] Навигация по учебным разделам (step-lessons-navigation)
-  - **Создано:** 2026-08-01
-  - Навигация по учебным разделам (Manifest, Service Worker, Offline, Install). Достаточно переключения экранов через state или лёгкий роутер (React Router — уже в `package.json`).
-  - **Цель:** пользователь переключается между разделами; каждый раздел — заглушка с названием темы
-  - **Файлы:** `src/`, `src/components/` или `src/screens/`, соответствующие `*.test.*`, при необходимости `e2e/`
-  - **Тесты:** unit/integration — переключение разделов; E2E — переход между разделами в UI
-  - **Источник:** docs/project/implementation-plan.md (step-lessons-navigation, Order: 1.1.2)
-  - **Причина:** Следующий шаг после step-app-shell
+- [ ] Web App Manifest (step-web-app-manifest)
+
+  - **Создано:** 2026-08-03
+
+  - Добавить `manifest.webmanifest`: `name`, `short_name`, `start_url`, `display` (`standalone` или `minimal-ui`), `theme_color`, `background_color`, `icons`. Подключить в `index.html` (`<link rel="manifest">`). Иконки — `public/icons/` (минимум 192×192 и 512×512). Документировать поля в `config-schema.md`.
+
+  - **Цель:** DevTools → Application → Manifest без критичных ошибок; иконки отображаются
+
+  - **Файлы:** `public/manifest.webmanifest`, `public/icons/`, `index.html`
+
+  - **Тесты:** E2E или интеграция — manifest отдаётся по URL и содержит обязательные поля; ручная проверка Application panel
+
+  - **Источник:** docs/project/implementation-plan.md (step-web-app-manifest, Order: 2.1.1)
+
+  - **Причина:** Готов к реализации (зависимости выполнены)
 
 ## Средний
 
@@ -30,7 +37,11 @@
 **Как использовать:**
 
 1. Добавляйте новые идеи в соответствующий раздел по приоритету
+
 2. Перемещайте задачи между приоритетами по мере необходимости
+
 3. После завершения задачи — финализировать командой `/close-task` (задача удаляется из backlog, запись создаётся в `completed-tasks/`)
+
 4. Используйте ссылки на task ID для связи с конкретными задачами
+
 5. В **Высокий** — только задачи без незакрытых зависимостей; зависимые шаги — в **Средний**/ниже до разблокировки

@@ -30,9 +30,12 @@
 .app-shell__nav-list {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
 	margin: 0;
 	padding: 0;
+	overflow-x: auto;
 	list-style: none;
+	-webkit-overflow-scrolling: touch;
 }
 
 .app-shell__nav-link {
