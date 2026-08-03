@@ -132,6 +132,7 @@
 | 2026-07-30 | Фаза 0: тестовое окружение (Vitest + Playwright)                              | ✅ Готов |
 | 2026-08-03 | Фаза 1: каркас UI и навигация по учебным разделам (`step-lessons-navigation`) | ✅ Готов |
 | 2026-08-03 | Web App Manifest (`step-web-app-manifest`)                                    | ✅ Готов |
+| 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)            | ✅ Готов |
 
 ---
 
