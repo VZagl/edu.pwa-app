@@ -8,12 +8,11 @@
 
 ## Current Mode
 
-BUILD — завершён ✅
+REFLECT — завершён ✅
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
-2. `/archive` → `/close-task`
+1. `/close-task` — финализация задачи
 
 ## Context for AI
 

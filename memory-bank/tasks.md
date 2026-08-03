@@ -120,9 +120,15 @@ DevTools → Application → Manifest без критичных ошибок; и
 - [x] BUILD: `<link rel="manifest">` и `<meta name="theme-color">` в `index.html`
 - [x] BUILD: E2E — manifest отдаётся по URL с обязательными полями
 - [x] BUILD: Verify — lint, build, test, e2e
-- [ ] REFLECT: Рефлексия по задаче
-- [ ] ARCHIVE: Архив задачи
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well**: TDD через Playwright `request.get`; `config-schema.md` как единый источник правды; без новых зависимостей; дизайн иконок зафиксирован в PLAN
+- **Challenges**: читаемость «PWA» на 192px; синхронизация `theme_color`; бинарные PNG в git
+- **Lessons Learned**: Vite копирует `public/` автоматически; E2E для статических ресурсов стабильнее UI-тестов; документация до кода снижает расхождения
+- **Next Steps**: `/close-task` (архив не требуется)
 
 ### Оценка
 
