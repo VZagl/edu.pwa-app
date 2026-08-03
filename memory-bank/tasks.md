@@ -31,7 +31,7 @@ DevTools → Application → Manifest без критичных ошибок; и
 - [x] Зависимости проверены (`package.json` — без изменений)
 - [x] Конфигурация сборки валидна (Vite public dir по умолчанию)
 - [x] E2E инфраструктура готова (`playwright.config.ts`, `e2e/`)
-- [ ] Test build с manifest — на этапе BUILD
+- [x] Test build с manifest — на этапе BUILD
 
 ### Значения manifest (источник: `config-schema.md`)
 
@@ -62,9 +62,9 @@ DevTools → Application → Manifest без критичных ошибок; и
 - Контраст: фиолетовый фон `#646cff` (или градиент к `#863bff` как favicon) + белая книга и тёмный/фиолетовый текст; либо инверсия — светлая страница, текст `#646cff`
 - **Критерий приёмки иконки:** читаемость на 48×48 и 192×192; если «PWA» не читается на 192px — fallback: только крупная «edu» на книге
 - Maskable safe zone: композиция в центральных ~80%
-- `favicon.svg` не менять (вкладка браузера)
+- `favicon.svg` — компактная версия (книга + «edu») для вкладки браузера
 
-**Файлы:** `public/icons/icon-192.png`, `public/icons/icon-512.png`
+**Файлы:** `public/favicon.svg`, `public/icons/icon-192.png`, `public/icons/icon-512.png`
 
 ### Implementation Plan (TDD)
 
@@ -115,11 +115,11 @@ DevTools → Application → Manifest без критичных ошибок; и
 
 - [x] GIT: Работа в feature-ветке `feat/step-web-app-manifest`
 - [x] PLAN: План реализации с TDD-шагами
-- [ ] BUILD: `public/manifest.webmanifest` с обязательными полями MVP
-- [ ] BUILD: Иконки 192×192 и 512×512 в `public/icons/` (книга + edu/PWA)
-- [ ] BUILD: `<link rel="manifest">` и `<meta name="theme-color">` в `index.html`
-- [ ] BUILD: E2E — manifest отдаётся по URL с обязательными полями
-- [ ] BUILD: Verify — lint, build, test, e2e
+- [x] BUILD: `public/manifest.webmanifest` с обязательными полями MVP
+- [x] BUILD: Иконки 192×192 и 512×512 в `public/icons/` (книга + edu/PWA)
+- [x] BUILD: `<link rel="manifest">` и `<meta name="theme-color">` в `index.html`
+- [x] BUILD: E2E — manifest отдаётся по URL с обязательными полями
+- [x] BUILD: Verify — lint, build, test, e2e
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] ARCHIVE: Архив задачи
 - [ ] CLOSE: Финализировать задачу командой `/close-task`

@@ -10,7 +10,7 @@
 | Playwright (step-playwright-setup)       | ✅ ЗАВЕРШЕНО (2026-07-30)       |
 | Каркас UI (step-app-shell)               | ✅ ЗАВЕРШЕНО (2026-08-01)       |
 | Навигация уроков                         | ✅ ЗАВЕРШЕНО (2026-08-03)       |
-| Web App Manifest (step-web-app-manifest) | 🔄 В работе (2026-08-03)        |
+| Web App Manifest (step-web-app-manifest) | ✅ BUILD завершён (2026-08-03)  |
 | SW / Offline / Install                   | ⏳ Не начато                    |
 
 ## [2026-08-03]: step-lessons-navigation — ЗАВЕРШЕНО
@@ -20,3 +20,16 @@
 **Verify:** lint ✅, build ✅, test (8) ✅, e2e (2) ✅
 
 **Completed:** [memory-bank/completed-tasks/2026/08/step-lessons-navigation_2026-08-03.md](completed-tasks/2026/08/step-lessons-navigation_2026-08-03.md)
+
+## [2026-08-03]: step-web-app-manifest — BUILD
+
+Web App Manifest по `config-schema.md`. TDD: `e2e/web-app-manifest.spec.ts` (red → green). Реализация: `public/manifest.webmanifest`, иконки книга + edu/PWA (`icon-192.png`, `icon-512.png`), подключение в `index.html`.
+
+**Файлы:**
+
+- `public/manifest.webmanifest` — MVP-поля + `lang`, `scope`, `description`
+- `public/icons/icon-192.png`, `icon-512.png` — фиолетовый градиент, белая книга, текст edu/PWA
+- `index.html` — `<link rel="manifest">`, `<meta name="theme-color">`
+- `e2e/web-app-manifest.spec.ts` — проверка manifest JSON и иконок
+
+**Verify:** lint ✅, build ✅, test (8) ✅, e2e (4) ✅

@@ -8,20 +8,20 @@
 
 ## Current Mode
 
-BUILD — ожидает `/build`
+BUILD — завершён ✅
 
 ## Next Steps
 
-1. `/build` — TDD: E2E red → manifest, иконки (книга + edu/PWA), index.html, green
-2. `/reflect` → `/archive` → `/close-task`
+1. `/reflect` — рефлексия по задаче
+2. `/archive` → `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 2: Web App Manifest (Order: 2.1.1)
+- Фаза 2: Web App Manifest (Order: 2.1.1) — **BUILD завершён**
 - Схема manifest: `docs/project/config-schema.md`
 - PWA-правила: `docs/project/tech-stack-pwa.md`
-- `public/` — есть `favicon.svg`; добавить `manifest.webmanifest` и `icons/`
-- `vite-plugin-pwa` — не установлен (на этом шаге не требуется)
-- Creative phase не требуется
-- **Иконки:** книга, две строки `edu` / `PWA`; проверка читаемости на 48px и 192px
+- Добавлены: `public/manifest.webmanifest`, `public/icons/icon-192.png`, `icon-512.png`
+- `index.html`: `<link rel="manifest">`, `<meta name="theme-color" content="#646cff">`
+- E2E: `e2e/web-app-manifest.spec.ts` (2 теста)
+- **Verify:** lint ✅, build ✅, test (8) ✅, e2e (4) ✅
