@@ -2,21 +2,21 @@
 
 ## Высокий
 
-- [ ] Экран урока «Manifest» (step-manifest-lesson-ui)
+- [ ] Регистрация Service Worker (step-service-worker-register)
 
   - **Создано:** 2026-08-03
 
-  - Экран урока «Manifest»: краткое объяснение в UI + отображение текущих значений manifest (fetch `/manifest.webmanifest` или статический объект).
+  - Учебный этап: **ручной** минимальный SW в `public/sw.js` (или `src/sw.ts` с последующей сборкой) — install + activate, логирование в консоль. Регистрация из `main.tsx` или `src/pwa/registerSw.ts` с проверкой `'serviceWorker' in navigator`.
 
-  - **Цель:** Раздел Manifest в приложении объясняет и показывает живые данные.
+  - **Цель:** SW регистрируется; в DevTools видны install/activate; понятен scope.
 
-  - **Файлы:** `src/screens/` или `src/pages/`, тесты рядом с модулями
+  - **Файлы:** `public/sw.js` (или аналог), `src/pwa/`, `src/main.tsx`
 
-  - **Тесты:** unit/integration — экран показывает данные manifest; E2E по смыслу сценария урока
+  - **Тесты:** unit — регистрация вызывается при поддержке SW (мок `navigator.serviceWorker`); E2E/preview — по возможности регистрация в preview
 
-  - **Источник:** docs/project/implementation-plan.md (step-manifest-lesson-ui, Order: 2.1.2)
+  - **Источник:** docs/project/implementation-plan.md (step-service-worker-register)
 
-  - **Причина:** Следующий шаг после step-web-app-manifest
+  - **Причина:** Следующий шаг после step-manifest-lesson-ui
 
 ## Средний
 
