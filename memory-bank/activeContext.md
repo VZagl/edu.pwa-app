@@ -2,25 +2,20 @@
 
 ## Current Focus
 
-**Task ID:** `step-web-app-manifest`  
-**Git Branch:** `feat/step-web-app-manifest`  
-**Название:** Web App Manifest
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-REFLECT — завершён ✅
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/close-task` — финализация задачи
+Запустить `/van [описание задачи]` для начала новой задачи.
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 2: Web App Manifest (Order: 2.1.1) — **BUILD завершён**
-- Схема manifest: `docs/project/config-schema.md`
+- Фаза 2: Web App Manifest — `step-web-app-manifest` завершён ✅
+- Следующий шаг в backlog: `step-manifest-lesson-ui`
+- План реализации: `docs/project/implementation-plan.md`
 - PWA-правила: `docs/project/tech-stack-pwa.md`
-- Добавлены: `public/manifest.webmanifest`, `public/icons/icon-192.png`, `icon-512.png`
-- `index.html`: `<link rel="manifest">`, `<meta name="theme-color" content="#646cff">`
-- E2E: `e2e/web-app-manifest.spec.ts` (2 теста)
-- **Verify:** lint ✅, build ✅, test (8) ✅, e2e (4) ✅
