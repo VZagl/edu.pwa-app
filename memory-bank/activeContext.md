@@ -2,19 +2,24 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+**step-lessons-navigation** — навигация по учебным разделам (Manifest, Service Worker, Offline, Install)
+
+**Git Branch:** `feat/step-lessons-navigation` (база: `develop`)
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+PLAN — планирование реализации (Level 2)
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи
+1. Выполнить `/plan` — детальный план: маршруты, экраны-заглушки, навигация, тесты
+2. `/build` — TDD-реализация
+3. `/reflect` → `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 0 завершена; фаза 1 в процессе (`step-app-shell` закрыт)
-- Следующая задача в backlog: `step-lessons-navigation`
+- Фаза 0 завершена; фаза 1 в процессе
+- React Router v8 уже интегрирован в `App.tsx` (step-app-shell)
 - План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
+- Структура экранов: `src/screens/` по `docs/project/project-structure.md`
