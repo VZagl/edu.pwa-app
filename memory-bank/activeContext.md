@@ -2,17 +2,17 @@
 
 ## Current Focus
 
-**step-lessons-navigation** — BUILD завершён ✅
+**step-lessons-navigation** — REFLECT завершён ✅
 
 **Git Branch:** `feat/step-lessons-navigation` (база: `develop`)
 
 ## Current Mode
 
-BUILD complete → **REFLECT**
+REFLECT complete → **ARCHIVE**
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
+1. `/archive` — архивация задачи
 2. `/close-task` — финализация
 
 ## Context for AI
@@ -22,3 +22,4 @@ BUILD complete → **REFLECT**
 - Навигация: 5 разделов через `lessonRoutes.ts`, экраны-заглушки в `src/screens/`
 - План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
 - Детальный план: `memory-bank/tasks.md`
+- Рефлексия: `memory-bank/reflection/reflection-step-lessons-navigation.md`

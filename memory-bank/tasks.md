@@ -165,7 +165,8 @@ export function ManifestScreen() {
 - [x] GIT: Работа в feature-ветке feat/step-lessons-navigation
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: TDD — экраны-заглушки, маршруты, навигация, тесты, удаление router-poc
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
+- [ ] ARCHIVE: Архивация задачи
 
 ### Build Progress
 
@@ -174,6 +175,15 @@ export function ManifestScreen() {
 - **Cleanup:** удалён `src/router-poc.test.tsx`
 - **Verify:** lint ✅, build ✅, test (8) ✅, e2e (2) ✅
 - [ ] CLOSE: Финализировать задачу командой /close-task
+
+### Reflection Highlights
+
+- **What Went Well:** трёхслойная архитектура (routes / screens / stub), TDD red→green с первого прогона, конфиг `lessonRoutes.ts` через `.map()` в App
+- **Challenges:** horizontal scroll nav на mobile, разделение контента и nav, `NavLink end` для `/`
+- **Lessons Learned:** PLAN без CREATIVE достаточен для стандартной навигации Level 2; наследование паттернов из step-app-shell ускоряет BUILD
+- **Next Steps:** `/archive`, затем `/close-task`; следующий шаг — `step-manifest-lesson-ui`
+
+**Reflection:** [memory-bank/reflection/reflection-step-lessons-navigation.md](reflection/reflection-step-lessons-navigation.md)
 
 ## Last Completed Task
 
