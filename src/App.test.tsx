@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
 import { App } from './App';
 
@@ -18,11 +19,15 @@ describe('Оболочка приложения', () => {
 		expect(screen.getByRole('heading', { level: 1, name: 'edu.pwa-app' })).toBeInTheDocument();
 	});
 
-	it('должен отрендерить навигацию с пунктом «Главная»', () => {
+	it('должен отрендерить навигацию с пятью пунктами', () => {
 		renderApp();
 
 		expect(screen.getByRole('navigation')).toBeInTheDocument();
 		expect(screen.getByRole('link', { name: 'Главная' })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Manifest' })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Service Worker' })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Offline' })).toBeInTheDocument();
+		expect(screen.getByRole('link', { name: 'Install' })).toBeInTheDocument();
 	});
 
 	it('должен отрендерить main с контентом маршрута', () => {
@@ -32,5 +37,27 @@ describe('Оболочка приложения', () => {
 		expect(main).toBeInTheDocument();
 		expect(screen.getByText('Добро пожаловать')).toBeInTheDocument();
 		expect(screen.getByText('Контент уроков будет здесь')).toBeInTheDocument();
+	});
+
+	it('должен показать контент раздела при клике по ссылке навигации', async () => {
+		const user = userEvent.setup();
+		renderApp();
+
+		await user.click(screen.getByRole('link', { name: 'Manifest' }));
+
+		expect(screen.getByRole('heading', { level: 2, name: 'Web App Manifest' })).toBeInTheDocument();
+	});
+
+	it('должен помечать активный пункт навигации aria-current="page"', () => {
+		renderApp('/manifest');
+
+		expect(screen.getByRole('link', { name: 'Manifest' })).toHaveAttribute('aria-current', 'page');
+		expect(screen.getByRole('link', { name: 'Главная' })).not.toHaveAttribute('aria-current', 'page');
+	});
+
+	it('должен показать страницу 404 для неизвестного пути', () => {
+		renderApp('/unknown');
+
+		expect(screen.getByText('Страница не найдена')).toBeInTheDocument();
 	});
 });

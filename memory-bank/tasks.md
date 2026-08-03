@@ -164,8 +164,15 @@ export function ManifestScreen() {
 
 - [x] GIT: Работа в feature-ветке feat/step-lessons-navigation
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: TDD — экраны-заглушки, маршруты, навигация, тесты, удаление router-poc
+- [x] BUILD: TDD — экраны-заглушки, маршруты, навигация, тесты, удаление router-poc
 - [ ] REFLECT: Рефлексия по задаче
+
+### Build Progress
+
+- **Red:** `App.test.tsx` — 5 nav-пунктов, клик → h2, `aria-current="page"`, 404; `e2e/lessons-navigation.spec.ts`
+- **Green:** `LessonStubScreen`, 6 экранов (`HomeScreen` … `NotFoundScreen`), `lessonRoutes.ts`, рефакторинг `App.tsx`, horizontal scroll в `App.scss`
+- **Cleanup:** удалён `src/router-poc.test.tsx`
+- **Verify:** lint ✅, build ✅, test (8) ✅, e2e (2) ✅
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ## Last Completed Task

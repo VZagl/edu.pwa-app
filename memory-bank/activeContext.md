@@ -2,24 +2,23 @@
 
 ## Current Focus
 
-**step-lessons-navigation** — навигация по учебным разделам (Manifest, Service Worker, Offline, Install)
+**step-lessons-navigation** — BUILD завершён ✅
 
 **Git Branch:** `feat/step-lessons-navigation` (база: `develop`)
 
 ## Current Mode
 
-BUILD — TDD-реализация (Level 2)
+BUILD complete → **REFLECT**
 
 ## Next Steps
 
-1. `/build` — экраны-заглушки, маршруты, навигация, тесты; удалить `src/router-poc.test.tsx`
-2. `/reflect` → `/close-task`
+1. `/reflect` — рефлексия по задаче
+2. `/close-task` — финализация
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 0 завершена; фаза 1 в процессе
-- React Router v8 уже интегрирован в `App.tsx` (step-app-shell)
+- Навигация: 5 разделов через `lessonRoutes.ts`, экраны-заглушки в `src/screens/`
 - План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
-- Структура экранов: `src/screens/` по `docs/project/project-structure.md`
-- Детальный план: `memory-bank/tasks.md` → Implementation Plan
+- Детальный план: `memory-bank/tasks.md`
