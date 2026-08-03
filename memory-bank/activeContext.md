@@ -8,13 +8,11 @@
 
 ## Current Mode
 
-BUILD ✅ завершён — следующий шаг `/reflect`
+REFLECT ✅ завершён — следующий шаг `/close-task`
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
-
-2. `/close-task` — финализация задачи
+1. `/close-task` — финализация задачи (completed-запись, merge в develop)
 
 ## Context for AI
 
@@ -24,10 +22,12 @@ BUILD ✅ завершён — следующий шаг `/reflect`
 
 - BUILD завершён: `ManifestScreen` — объяснение + живые данные из `/manifest.webmanifest`
 
+- REFLECT завершён: [memory-bank/reflection/reflection-step-manifest-lesson-ui.md](reflection/reflection-step-manifest-lesson-ui.md)
+
 - Nav и `lessonRoutes.ts` не менялись — только `src/screens/ManifestScreen/`
 
 - Первый async fetch в проекте — изолирован в `fetchManifest.ts`
 
 - SCSS экрана: `ManifestScreen.scss`, BEM-префикс `manifest-screen__`
 
-- Цикл Level 2: VAN → PLAN ✅ → BUILD ✅ → REFLECT → CLOSE-TASK
+- Цикл Level 2: VAN → PLAN ✅ → BUILD ✅ → REFLECT ✅ → CLOSE-TASK

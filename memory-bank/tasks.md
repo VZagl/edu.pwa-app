@@ -134,8 +134,15 @@ ManifestScreen/
 - [x] GIT: Работа в feature-ветке `feat/step-manifest-lesson-ui`
 - [x] PLAN: Детальный план реализации (`/plan`)
 - [x] BUILD: TDD red → green → refactor
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well**: TDD по слоям (fetch → screen → E2E); изоляция async в `fetchManifest.ts`; разделение HTTP/UI E2E; совместимость с навигацией
+- **Challenges**: первый async fetch; разные mock-стратегии; async loading в тестах
+- **Lessons Learned**: `vi.mock` модуля vs `vi.stubGlobal('fetch')`; `within(section)` для scoped assertions; cleanup через `cancelled` flag
+- **Next Steps**: `/close-task` — финализация задачи
 
 ## Last Completed Task
 
