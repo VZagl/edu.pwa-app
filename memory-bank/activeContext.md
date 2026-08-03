@@ -2,23 +2,19 @@
 
 ## Current Focus
 
-**step-lessons-navigation** — ARCHIVE завершён ✅
-
-**Git Branch:** `feat/step-lessons-navigation` (база: `develop`)
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-ARCHIVE complete → **CLOSE**
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/close-task` — финализация (completed-tasks, backlog, implementation-plan)
+Запустить `/van [описание задачи]` для начала новой задачи.
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 0 завершена; фаза 1 в процессе
-- Навигация: 5 разделов через `lessonRoutes.ts`, экраны-заглушки в `src/screens/`
+- Фаза 0 завершена; фаза 1 завершена
 - План: `docs/project/implementation-plan.md`, roadmap: `docs/project/product-roadmap.md`
-- Архив: `memory-bank/archive/archive-step-lessons-navigation.md`
-- Рефлексия: `memory-bank/reflection/reflection-step-lessons-navigation.md`
+- Следующая задача в backlog: `step-web-app-manifest`
