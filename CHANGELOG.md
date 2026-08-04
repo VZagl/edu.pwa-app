@@ -12,3 +12,4 @@
 - Базовая оболочка приложения: header, навигация и основная область контента с маршрутизацией React Router
 - Навигация по учебным разделам (Главная, Manifest, Service Worker, Offline, Install) с переключением экранов
 - Экран урока «Manifest»: объяснение Web App Manifest и отображение живых данных из manifest
+- Production Service Worker через vite-plugin-pwa (Workbox precache статики); manifest генерируется из конфигурации сборки
