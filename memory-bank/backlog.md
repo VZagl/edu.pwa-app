@@ -2,21 +2,21 @@
 
 ## Высокий
 
-- [ ] Регистрация Service Worker (step-service-worker-register)
+- [ ] Подключить vite-plugin-pwa (step-vite-plugin-pwa)
 
-  - **Создано:** 2026-08-03
+  - **Создано:** 2026-08-04
 
-  - Учебный этап: **ручной** минимальный SW в `public/sw.js` (или `src/sw.ts` с последующей сборкой) — install + activate, логирование в консоль. Регистрация из `main.tsx` или `src/pwa/registerSw.ts` с проверкой `'serviceWorker' in navigator`.
+  - Подключить `vite-plugin-pwa` (Workbox): precache статики из сборки, dev/prod настройки (отключение SW в dev или `devOptions` по доке плагина). Заменить или интегрировать ручной SW из предыдущего шага.
 
-  - **Цель:** SW регистрируется; в DevTools видны install/activate; понятен scope.
+  - **Цель:** Production-сборка генерирует SW; `pnpm preview` — приложение cacheable.
 
-  - **Файлы:** `public/sw.js` (или аналог), `src/pwa/`, `src/main.tsx`
+  - **Файлы:** `vite.config.ts`, `package.json`
 
-  - **Тесты:** unit — регистрация вызывается при поддержке SW (мок `navigator.serviceWorker`); E2E/preview — по возможности регистрация в preview
+  - **Тесты:** E2E против `pnpm preview` — приложение загружается; ручная/автопроверка наличия SW в production-сборке
 
-  - **Источник:** docs/project/implementation-plan.md (step-service-worker-register)
+  - **Источник:** docs/project/implementation-plan.md (step-vite-plugin-pwa)
 
-  - **Причина:** Следующий шаг после step-manifest-lesson-ui
+  - **Причина:** Следующий шаг после step-service-worker-register
 
 ## Средний
 
