@@ -251,6 +251,40 @@ describe('Рендеринг', () => {
 
 **КРИТИЧЕСКИ ВАЖНО**: Правила из этого файла (`AGENTS.md`) имеют **приоритет** над инструкциями Memory Bank System. При использовании Memory Bank System необходимо следовать правилам, описанным в `docs/common/memory-bank-usage.md`, которые адаптируют систему под правила проекта.
 
+#### Обязательное чтение перед командами Memory Bank
+
+При вызове slash-команды Memory Bank **сначала прочитать с диска целиком** файлы из таблицы ниже. Не опираться на summary чата или «память» из предыдущих сообщений. Только после чтения — выполнять шаги команды.
+
+| Команда                 | Прочитать до любых действий                                                                                                                                                              |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/van`                  | `.cursor/commands/van.md`; `docs/common/memory-bank-usage.md` → «Интеграция с /van», «Git-ветка», «Чеклист задачи»; `docs/common/git-workflow.md` → «Задачи Memory Bank и feature-ветки» |
+| `/plan`                 | `.cursor/commands/plan.md`; `memory-bank/tasks.md` (ветка из **Git Branch** в Current Task)                                                                                              |
+| `/creative`             | `.cursor/commands/creative.md`; `memory-bank/tasks.md`                                                                                                                                   |
+| `/build`                | `.cursor/commands/build.md`; `memory-bank/tasks.md` — текущая git-ветка должна совпадать с **Git Branch**                                                                                |
+| `/reflect`              | `.cursor/commands/reflect.md`; `memory-bank/tasks.md`                                                                                                                                    |
+| `/archive`              | `.cursor/commands/archive.md`; `memory-bank/tasks.md`                                                                                                                                    |
+| `/close-task`           | `.cursor/commands/close-task.md`; `memory-bank/tasks.md`; `docs/common/memory-bank-usage.md` → «Git-ветка» (ветка в completed-tasks)                                                     |
+| `/git-commit`           | `.cursor/commands/git-commit.md`; `docs/common/git-commit-description.md`; при трекинге Memory Bank — `memory-bank/tasks.md`                                                             |
+| `/git-merge-to-develop` | `.cursor/commands/git-merge-to-develop.md`; `docs/common/git-workflow.md`                                                                                                                |
+| `/release-prepare`      | `.cursor/commands/release-prepare.md`                                                                                                                                                    |
+
+**При сжатии контекста чата** (Summarized conversation и т.п.) — перечитать этот раздел и файл активной команды из таблицы (см. также `.cursor/rules/context-preservation.mdc`).
+
+#### `/van` — Git-ветка (блокирующий шаг)
+
+При инициализации **новой** задачи Memory Bank (не VAN QA без новой задачи) выполнить **до** обновления `tasks.md` / `activeContext.md` и **до** `git checkout` / `git checkout -b`:
+
+1. Прочитать разделы из строки `/van` в таблице выше.
+2. Read-only: `git branch --show-current`, `git status --short` (рабочая директория чистая перед переключением).
+3. Определить имя feature-ветки по `docs/common/git-workflow.md` (например `feat/<task_id>`).
+4. Показать пользователю: базовая ветка (`develop` или `main`), предлагаемая feature-ветка; запросить подтверждение перед `git fetch` / `checkout` / `pull` / `checkout -b`.
+5. После переключения зафиксировать в Memory Bank:
+   - `memory-bank/tasks.md` → Current Task: **Git Branch:** `<branch-name>`
+   - `memory-bank/activeContext.md` → Current Focus: то же имя ветки
+   - Чеклист: `- [ ] GIT: Работа в feature-ветке <branch-name>`
+
+**Запрет:** не считать `/van` завершённым, если нет **Git Branch** в `tasks.md` и пункта `GIT:` в чеклисте. Не вносить продуктовые изменения в `develop`/`main`, пока задача активна.
+
 Файлы Memory Bank — только в `memory-bank/`. Продуктовые шаги (фаза 1+) — после закрытия фазы 0 плана: `step-test-environment`, `step-playwright-setup`.
 
 ### Приоритет правил
