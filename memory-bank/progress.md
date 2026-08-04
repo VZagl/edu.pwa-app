@@ -13,7 +13,7 @@
 | Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)       |
 | Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)       |
 | SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
-| SW precache / vite-plugin-pwa                  | ⏳ Следующий шаг (backlog)      |
+| SW precache / vite-plugin-pwa                  | 🔄 В работе (feat/step-vite-plugin-pwa) |
 
 ## [2026-08-04]: step-service-worker-register — ЗАВЕРШЕНО
 
