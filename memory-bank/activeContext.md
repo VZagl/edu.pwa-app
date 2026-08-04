@@ -2,25 +2,20 @@
 
 ## Current Focus
 
-`feat/step-sw-update-ux` — UX обновления SW: REFLECT ✅
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-REFLECT ✅ → ARCHIVE
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/archive` — архивация задачи
-2. `/close-task` — финализация (completed-запись, обновление implementation-plan)
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 3: `step-vite-plugin-pwa` завершён ✅ — Workbox precache, `registerSw.ts`, `registerType: 'autoUpdate'`
-- Текущая задача: `step-sw-update-ux` — REFLECT ✅; баннер «Доступно обновление» + `registerType: 'prompt'`
-- **Reflection:** [memory-bank/reflection/reflection-step-sw-update-ux.md](reflection/reflection-step-sw-update-ux.md)
-- **PLAN решения:** `registerType: 'prompt'` + `virtual:pwa-register`; controller + hook + banner; fixed bottom bar; E2E smoke only
-- Регистрация SW: `src/pwa/swUpdateController.ts` (`injectRegister: null`, `immediate: true`)
+- Фаза 3 завершена ✅ — SW в production, UX обновления (`step-sw-update-ux`)
+- Следующий шаг в backlog: `step-offline-fallback` (runtime caching, offline fallback)
 - SW в dev отключён; E2E через preview
-- E2E SW: `e2e/service-worker-pwa.spec.ts` (3 теста)
-- ui-conventions.md: «ненавязчивый баннер с действием „Обновить“»
+- ui-conventions.md: mobile-first SCSS, touch target ≥ 44px

@@ -134,6 +134,7 @@
 | 2026-08-03 | Web App Manifest (`step-web-app-manifest`)                                    | ✅ Готов |
 | 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)            | ✅ Готов |
 | 2026-08-04 | Service Worker с Workbox precache (`step-vite-plugin-pwa`)                    | ✅ Готов |
+| 2026-08-04 | Фаза 3: Service Worker в production и UX обновления (`step-sw-update-ux`)     | ✅ Готов |
 
 ---
 

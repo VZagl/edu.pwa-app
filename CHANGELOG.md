@@ -13,3 +13,4 @@
 - Навигация по учебным разделам (Главная, Manifest, Service Worker, Offline, Install) с переключением экранов
 - Экран урока «Manifest»: объяснение Web App Manifest и отображение живых данных из manifest
 - Production Service Worker через vite-plugin-pwa (Workbox precache статики); manifest генерируется из конфигурации сборки
+- Баннер «Доступно обновление» при новой версии Service Worker с кнопкой «Обновить» для перезагрузки приложения
