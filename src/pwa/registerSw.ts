@@ -1,6 +1,7 @@
 /**
- * Регистрирует учебный Service Worker из public/sw.js.
+ * Регистрирует Service Worker, сгенерированный vite-plugin-pwa (Workbox precache).
  * Вызывается при старте приложения; при отсутствии поддержки SW — no-op.
+ * В dev SW отключён — регистрация срабатывает после production-сборки (preview/deploy).
  */
 export async function registerSw(): Promise<void> {
 	if (!('serviceWorker' in navigator)) {

@@ -15,6 +15,6 @@ IDLE — ожидание новой задачи
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 2 (Web App Manifest) завершена ✅
-- Фаза 3: `step-service-worker-register` завершён ✅ — ручной SW + регистрация
-- Следующий шаг в backlog: `step-vite-plugin-pwa`
+- План шагов: `docs/project/implementation-plan.md`
+- Дорожная карта: `docs/project/product-roadmap.md`
+- Следующая задача в backlog: `step-sw-update-ux` (UX обновления Service Worker)

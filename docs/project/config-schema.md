@@ -1,6 +1,8 @@
 # Схема Web App Manifest
 
-Манифест PWA описывает, как браузер и ОС представляют приложение при установке. Файл: **`public/manifest.webmanifest`** (или путь, заданный в `vite-plugin-pwa`).
+Манифест PWA описывает, как браузер и ОС представляют приложение при установке.
+
+**Единый источник правды:** `vite.config.ts` → опция `manifest` плагина `VitePWA`. Файл `manifest.webmanifest` генерируется при сборке в `dist/`; статический файл в `public/` не используется.
 
 ## Минимально необходимые поля (MVP)
 
@@ -23,43 +25,37 @@
 | `orientation` | `portrait` / `landscape` / `any`   |
 | `scope`       | Область навигации PWA (обычно `/`) |
 
-## Пример
+## Конфигурация в vite.config.ts
 
-```json
-{
-	"name": "edu.pwa-app — учебное PWA",
-	"short_name": "PWA Lab",
-	"description": "Изучение Progressive Web Apps на React и Vite",
-	"start_url": "/",
-	"scope": "/",
-	"display": "standalone",
-	"background_color": "#ffffff",
-	"theme_color": "#646cff",
-	"lang": "ru",
-	"icons": [
-		{
-			"src": "/icons/icon-192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"purpose": "any"
-		},
-		{
-			"src": "/icons/icon-512.png",
-			"sizes": "512x512",
-			"type": "image/png",
-			"purpose": "any"
-		}
-	]
-}
+```typescript
+VitePWA({
+	registerType: 'autoUpdate',
+	injectRegister: null,
+	manifestFilename: 'manifest.webmanifest',
+	includeAssets: ['favicon.svg', 'icons/*.png'],
+	manifest: {
+		name: 'edu.pwa-app — учебное PWA',
+		short_name: 'PWA Lab',
+		description: 'Изучение Progressive Web Apps на React и Vite',
+		start_url: '/',
+		scope: '/',
+		display: 'standalone',
+		background_color: '#ffffff',
+		theme_color: '#646cff',
+		lang: 'ru',
+		icons: [
+			{ src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+			{ src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+		],
+	},
+});
 ```
 
-## Подключение в HTML
+Плагин при сборке инжектирует в HTML:
 
-```html
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="manifest" href="/manifest.webmanifest" />
-<meta name="theme-color" content="#646cff" />
-```
+- `<link rel="manifest" href="/manifest.webmanifest">`
+
+`theme_color` задаётся в manifest (браузер читает из `manifest.webmanifest`); отдельный `<meta name="theme-color">` в `index.html` не дублировать.
 
 ## Иконки
 
@@ -77,13 +73,17 @@
 - Каталог: `public/icons/`
 - Для maskable-иконок добавить `"purpose": "maskable"` (отдельный ресурс или combined `any maskable` по доке платформы)
 
-## Связь с vite-plugin-pwa
+## Service Worker
 
-После шага `step-vite-plugin-pwa` часть полей может задаваться в `vite.config.ts` (`manifest` option плагина). **Единый источник правды** — не дублировать противоречивые manifest в двух местах; при генерации плагином обновить этот документ и [config-schema.md](./config-schema.md) в той же задаче.
+- Стратегия: `generateSW` (Workbox precache статики из сборки)
+- Регистрация: вручную через `src/pwa/registerSw.ts` (`injectRegister: null`)
+- SW в dev: отключён (без `devOptions.enabled`)
+- Проверка: `pnpm build && pnpm preview`, E2E `e2e/service-worker-pwa.spec.ts`
 
 ## Чеклист для ИИ
 
-- [ ] Все обязательные поля MVP заполнены
+- [ ] Все обязательные поля MVP заполнены в `vite.config.ts` → `VitePWA.manifest`
 - [ ] `start_url` и `scope` согласованы с деплоем
-- [ ] Иконки существуют по указанным путям
-- [ ] `theme_color` совпадает с `<meta name="theme-color">`
+- [ ] Иконки существуют по указанным путям в `public/icons/`
+- [ ] Нет дублирования manifest/theme-color в `index.html`
+- [ ] Нет статического `public/manifest.webmanifest` — только генерация плагином

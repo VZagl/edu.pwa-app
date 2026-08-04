@@ -217,7 +217,7 @@
 
 **Зависит от:** step-service-worker-register
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-vite-plugin-pwa_2026-08-04.md](memory-bank/completed-tasks/2026/08/step-vite-plugin-pwa_2026-08-04.md)
 
 ---
 

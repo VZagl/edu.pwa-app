@@ -75,7 +75,7 @@
 - [x] Тестовое окружение: Vitest + Playwright (фаза 0)
 - [x] Базовое React-приложение с навигацией по учебным разделам
 - [x] Web App Manifest и набор иконок
-- [ ] Service Worker (ручной или через vite-plugin-pwa)
+- [x] Service Worker (ручной или через vite-plugin-pwa)
 - [ ] Офлайн-доступ к оболочке приложения / fallback
 - [ ] Проверка: Lighthouse PWA + установка на устройство
 
@@ -133,6 +133,7 @@
 | 2026-08-03 | Фаза 1: каркас UI и навигация по учебным разделам (`step-lessons-navigation`) | ✅ Готов |
 | 2026-08-03 | Web App Manifest (`step-web-app-manifest`)                                    | ✅ Готов |
 | 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)            | ✅ Готов |
+| 2026-08-04 | Service Worker с Workbox precache (`step-vite-plugin-pwa`)                    | ✅ Готов |
 
 ---
 
