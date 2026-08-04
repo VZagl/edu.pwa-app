@@ -2,19 +2,22 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+**step-service-worker-register** — регистрация Service Worker (фаза 3)  
+**Git Branch:** `feat/step-service-worker-register`
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+PLAN pending — после инициализации VAN
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи
+1. Запустить `/plan` для детального плана реализации
+2. TDD: unit-тест регистрации → `public/sw.js` → `src/pwa/registerSw.ts` → `main.tsx`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 2 (Web App Manifest) завершена ✅
-- Следующий шаг в backlog: `step-service-worker-register` — регистрация Service Worker (фаза 3)
+- Текущая задача: минимальный ручной SW в `public/sw.js` (install + activate, логи); регистрация из `src/pwa/registerSw.ts` с проверкой `'serviceWorker' in navigator`
 - Разработка по TDD: Vitest + Playwright
+- Продуктовые изменения только в feature-ветке `feat/step-service-worker-register`
