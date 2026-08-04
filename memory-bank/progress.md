@@ -13,7 +13,11 @@
 | Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)       |
 | Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)       |
 | SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
-| SW precache / vite-plugin-pwa                  | 🔄 В работе (feat/step-vite-plugin-pwa) |
+| SW precache / vite-plugin-pwa                  | ✅ BUILD завершён (2026-08-04)  |
+
+## [2026-08-04]: step-vite-plugin-pwa — BUILD завершён
+
+Подключён `vite-plugin-pwa@^1.3.0`: `generateSW`, Workbox precache (11 entries), manifest из `vite.config.ts`. Удалены `public/sw.js` и `public/manifest.webmanifest`; manifest/theme-color инжектируются плагином. Регистрация SW — `registerSw.ts` (`injectRegister: null`). E2E: `e2e/service-worker-pwa.spec.ts` (3 теста). Verify: lint ✅, build ✅, test (16) ✅, e2e (8) ✅.
 
 ## [2026-08-04]: step-service-worker-register — ЗАВЕРШЕНО
 

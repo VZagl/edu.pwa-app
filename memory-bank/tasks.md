@@ -28,10 +28,10 @@
 
 ### Technology Validation Checkpoints
 
-- [ ] `pnpm add -D vite-plugin-pwa`
-- [ ] `pnpm build` — в `dist/` есть `sw.js`, `manifest.webmanifest`, workbox-precache
-- [ ] `pnpm preview` — приложение загружается, SW регистрируется
-- [ ] `pnpm test --run` и `pnpm test:e2e` проходят
+- [x] `pnpm add -D vite-plugin-pwa`
+- [x] `pnpm build` — в `dist/` есть `sw.js`, `manifest.webmanifest`, workbox-precache
+- [x] `pnpm preview` — приложение загружается, SW регистрируется
+- [x] `pnpm test --run` и `pnpm test:e2e` проходят
 
 ### Решения по открытым вопросам (PLAN)
 
@@ -47,14 +47,14 @@
 
 - [x] GIT: Работа в feature-ветке feat/step-vite-plugin-pwa
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] BUILD: Подключить `vite-plugin-pwa`, настроить Workbox precache
-- [ ] BUILD: Dev/prod настройки SW (отключение в dev)
-- [ ] BUILD: Удалить `public/sw.js`; обновить JSDoc в `registerSw.ts`
-- [ ] BUILD: Manifest — единый источник в `vite.config.ts`; удалить `public/manifest.webmanifest`
-- [ ] BUILD: Убрать дубли manifest/theme-color из `index.html` (инжект плагина)
-- [ ] BUILD: TDD — `e2e/service-worker-pwa.spec.ts` (red → green)
-- [ ] BUILD: Обновить `docs/project/config-schema.md`
-- [ ] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
+- [x] BUILD: Подключить `vite-plugin-pwa`, настроить Workbox precache
+- [x] BUILD: Dev/prod настройки SW (отключение в dev)
+- [x] BUILD: Удалить `public/sw.js`; обновить JSDoc в `registerSw.ts`
+- [x] BUILD: Manifest — единый источник в `vite.config.ts`; удалить `public/manifest.webmanifest`
+- [x] BUILD: Убрать дубли manifest/theme-color из `index.html` (инжект плагина)
+- [x] BUILD: TDD — `e2e/service-worker-pwa.spec.ts` (red → green)
+- [x] BUILD: Обновить `docs/project/config-schema.md`
+- [x] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task
 

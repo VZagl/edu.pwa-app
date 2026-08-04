@@ -2,27 +2,34 @@
 
 ## Current Focus
 
-`feat/step-vite-plugin-pwa` — подключение vite-plugin-pwa (Workbox precache)
+`feat/step-vite-plugin-pwa` — BUILD завершён ✅
 
 ## Current Mode
 
-BUILD — реализация по плану (TDD)
+BUILD complete → `/reflect`
 
 ## Next Steps
 
-1. `/build` — реализация по плану в `memory-bank/tasks.md` (TDD)
-2. `/reflect` — рефлексия
-3. `/close-task` — финализация (completed-запись, обновление implementation-plan)
+1. `/reflect` — рефлексия по задаче
+
+2. `/close-task` — финализация (completed-запись, обновление implementation-plan)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 2 (Web App Manifest) завершена ✅
-- Фаза 3: `step-service-worker-register` завершён ✅ — ручной SW заменяется Workbox
-- **PLAN завершён ✅** — решения зафиксированы в `memory-bank/tasks.md`
-- Стратегия: `generateSW`, `injectRegister: null`, manifest в `vite.config.ts`
-- Удалить: `public/sw.js`, `public/manifest.webmanifest`
-- Сохранить: `registerSw.ts` (путь `/sw.js`), паттерн `src/pwa/`
-- SW в dev: отключён; E2E через `pnpm build && pnpm preview`
-- Новый E2E: `e2e/service-worker-pwa.spec.ts`
-- Creative phase не требуется → сразу `/build`
+
+- Фаза 3: `step-vite-plugin-pwa` — BUILD завершён ✅
+
+- `vite-plugin-pwa@^1.3.0`: `generateSW`, Workbox precache (11 entries)
+
+- Manifest — единый источник в `vite.config.ts`; плагин инжектирует link/meta в HTML
+
+- Удалены: `public/sw.js`, `public/manifest.webmanifest`
+
+- Сохранён: `registerSw.ts` (`injectRegister: null`), паттерн `src/pwa/`
+
+- SW в dev: отключён; E2E через preview
+
+- E2E: `e2e/service-worker-pwa.spec.ts` (3 теста) — все проходят
+
+- Verify: lint ✅, build ✅, test (16) ✅, e2e (8) ✅
