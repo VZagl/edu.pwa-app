@@ -7,20 +7,20 @@
 
 ## Current Mode
 
-PLAN complete — план и tech validation готовы  
-**Next recommended mode:** `/build`
+BUILD complete — реализация и verify пройдены  
+**Next recommended mode:** `/reflect`
 
 ## Next Steps
 
-1. Запустить `/build` (TDD)
-2. Red: `src/pwa/registerSw.test.ts`
-3. Green: `src/pwa/registerSw.ts` + `public/sw.js` + вызов в `main.tsx`
-4. Verify: lint, build, `pnpm test --run`; ручная проверка SW в DevTools
+1. Запустить `/reflect` — обзор реализации
+2. Закрыть задачу командой `/close-task`
+3. Ручная проверка: DevTools → Application → Service Workers (scope `/`, install/activate в консоли SW)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 2 (Web App Manifest) завершена ✅
-- План: ручной SW в `public/sw.js` (install + activate, логи); регистрация из `src/pwa/registerSw.ts` с проверкой `'serviceWorker' in navigator`; без новых deps / без vite-plugin-pwa
-- Creative phases: не требуются
-- Продуктовые изменения только в feature-ветке `feat/step-service-worker-register`
+- Реализовано: `public/sw.js` (install + activate), `src/pwa/registerSw.ts`, вызов из `main.tsx`
+- Unit-тесты: `registerSw.test.ts` (2 passed)
+- Verify: lint ✅, build ✅, test (16) ✅
+- Следующий шаг плана (не в scope): precache / vite-plugin-pwa

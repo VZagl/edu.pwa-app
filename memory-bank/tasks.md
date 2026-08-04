@@ -8,7 +8,7 @@
 - **Git Branch:** feat/step-service-worker-register
 - **Фаза:** Фаза 3 — Service Worker (Order 3.1.1)
 - **Источник:** docs/project/implementation-plan.md
-- **Status:** Planning complete → готово к BUILD
+- **Status:** BUILD complete → готово к /reflect
 
 ### Цель
 
@@ -44,7 +44,7 @@ Type: Enhancement
 - [x] Initialization complete (VAN)
 - [x] Planning complete (PLAN)
 - [x] Technology validation complete
-- [ ] Implementation (BUILD)
+- [x] Implementation (BUILD)
 - [ ] Reflection / close-task
 
 ## Implementation Plan
@@ -88,13 +88,22 @@ Type: Enhancement
 - SW в `dev` может мешать HMR → учебный шаг допускает регистрацию; основная проверка — DevTools / `preview`
 - E2E «по возможности» → не блокирует закрытие задачи
 
+## Build Progress
+
+- **registerSw (TDD):** Complete
+  - `src/pwa/registerSw.test.ts` — 2 теста (поддержка SW / без поддержки)
+  - `src/pwa/registerSw.ts` — проверка `'serviceWorker' in navigator`, register `/sw.js`, catch ошибок
+- **public/sw.js:** Complete — install/activate + console.log
+- **main.tsx:** Complete — вызов `registerSw()` при старте
+- **Verify:** lint ✅, build ✅, test (16) ✅; `dist/sw.js` присутствует
+
 ## Чеклист
 
 - [x] GIT: Работа в feature-ветке feat/step-service-worker-register
 - [x] PLAN: Составить план реализации
-- [ ] BUILD: public/sw.js + src/pwa/registerSw.ts + main.tsx (TDD)
-- [ ] TEST: unit-тест регистрации (мок navigator.serviceWorker)
-- [ ] VERIFY: lint, build, pnpm test --run
+- [x] BUILD: public/sw.js + src/pwa/registerSw.ts + main.tsx (TDD)
+- [x] TEST: unit-тест регистрации (мок navigator.serviceWorker)
+- [x] VERIFY: lint, build, pnpm test --run
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ## Last Completed Task
