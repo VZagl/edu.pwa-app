@@ -8,7 +8,7 @@
 - **Git Branch:** feat/step-service-worker-register
 - **Фаза:** Фаза 3 — Service Worker (Order 3.1.1)
 - **Источник:** docs/project/implementation-plan.md
-- **Status:** BUILD complete → готово к /reflect
+- **Status:** REFLECT complete → готово к /archive
 
 ### Цель
 
@@ -45,7 +45,8 @@ Type: Enhancement
 - [x] Planning complete (PLAN)
 - [x] Technology validation complete
 - [x] Implementation (BUILD)
-- [ ] Reflection / close-task
+- [x] Reflection (REFLECT)
+- [ ] Archiving / close-task
 
 ## Implementation Plan
 
@@ -96,6 +97,15 @@ Type: Enhancement
 - **public/sw.js:** Complete — install/activate + console.log
 - **main.tsx:** Complete — вызов `registerSw()` при старте
 - **Verify:** lint ✅, build ✅, test (16) ✅; `dist/sw.js` присутствует
+
+## Reflection Highlights
+
+- **What Went Well:** TDD red→green; чистое разделение `public/sw.js` / `src/pwa/registerSw.ts` / `main.tsx`; минимальный scope без vite-plugin-pwa
+- **Challenges:** jsdom без SW API; SW в dev vs HMR; E2E DevTools не автоматизируется
+- **Lessons Learned:** `'serviceWorker' in navigator` + мок через `vi.stubGlobal`; `src/pwa/` как дом для PWA-модулей; `void registerSw()` не блокирует React
+- **Next Steps:** `/archive`, `/close-task`, ручная проверка DevTools, следующий шаг — precache / vite-plugin-pwa
+
+**Reflection:** [memory-bank/reflection/reflection-step-service-worker-register.md](reflection/reflection-step-service-worker-register.md)
 
 ## Чеклист
 

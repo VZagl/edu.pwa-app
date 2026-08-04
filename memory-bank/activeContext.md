@@ -7,12 +7,12 @@
 
 ## Current Mode
 
-BUILD complete — реализация и verify пройдены  
-**Next recommended mode:** `/reflect`
+REFLECT complete — рефлексия задокументирована  
+**Next recommended mode:** `/archive`
 
 ## Next Steps
 
-1. Запустить `/reflect` — обзор реализации
+1. Запустить `/archive` — архивация задачи
 2. Закрыть задачу командой `/close-task`
 3. Ручная проверка: DevTools → Application → Service Workers (scope `/`, install/activate в консоли SW)
 

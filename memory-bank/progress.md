@@ -2,17 +2,17 @@
 
 ## Статус проекта
 
-| Область                                        | Состояние                                           |
-| ---------------------------------------------- | --------------------------------------------------- |
-| Репозиторий Vite + React + TS                  | ✅ Готов (2026-07-23)                               |
-| Memory Bank (ядро)                             | ✅ Инициализирован (2026-07-24)                     |
-| Vitest (step-test-environment)                 | ✅ ЗАВЕРШЕНО (2026-07-30)                           |
-| Playwright (step-playwright-setup)             | ✅ ЗАВЕРШЕНО (2026-07-30)                           |
-| Каркас UI (step-app-shell)                     | ✅ ЗАВЕРШЕНО (2026-08-01)                           |
-| Навигация уроков                               | ✅ ЗАВЕРШЕНО (2026-08-03)                           |
-| Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)                           |
-| Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)                           |
-| SW / Offline / Install                         | ⏳ В работе (step-service-worker-register BUILD ✅) |
+| Область                                        | Состояние                                             |
+| ---------------------------------------------- | ----------------------------------------------------- |
+| Репозиторий Vite + React + TS                  | ✅ Готов (2026-07-23)                                 |
+| Memory Bank (ядро)                             | ✅ Инициализирован (2026-07-24)                       |
+| Vitest (step-test-environment)                 | ✅ ЗАВЕРШЕНО (2026-07-30)                             |
+| Playwright (step-playwright-setup)             | ✅ ЗАВЕРШЕНО (2026-07-30)                             |
+| Каркас UI (step-app-shell)                     | ✅ ЗАВЕРШЕНО (2026-08-01)                             |
+| Навигация уроков                               | ✅ ЗАВЕРШЕНО (2026-08-03)                             |
+| Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)                             |
+| Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)                             |
+| SW / Offline / Install                         | ⏳ В работе (step-service-worker-register REFLECT ✅) |
 
 ## [2026-08-04]: step-service-worker-register — BUILD
 
@@ -25,7 +25,9 @@
 - `public/sw.js` — создан
 - `src/main.tsx` — вызов `registerSw()`
 
-**Next:** `/reflect`, ручная проверка SW в DevTools
+**Reflection:** [memory-bank/reflection/reflection-step-service-worker-register.md](reflection/reflection-step-service-worker-register.md)
+
+**Next:** `/archive`, `/close-task`, ручная проверка SW в DevTools
 
 ## [2026-08-03]: step-manifest-lesson-ui — ЗАВЕРШЕНО
 
