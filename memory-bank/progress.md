@@ -14,9 +14,11 @@
 | Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)       |
 | SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
+| UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
+| Offline fallback (step-offline-fallback)       | ⏳ В backlog                    |
 
-## [2026-08-04]: step-vite-plugin-pwa — ЗАВЕРШЕНО
+## [2026-08-04]: step-sw-update-ux — ЗАВЕРШЕНО
 
-Подключён `vite-plugin-pwa@^1.3.0`: `generateSW`, Workbox precache (11 entries), manifest из `vite.config.ts`. Удалены `public/sw.js` и `public/manifest.webmanifest`; manifest/theme-color инжектируются плагином. Регистрация SW — `registerSw.ts` (`injectRegister: null`). E2E: `e2e/service-worker-pwa.spec.ts` (3 теста). Verify: lint ✅, build ✅, test (16) ✅, e2e (8) ✅.
+`registerType: 'prompt'` + `virtual:pwa-register`; `swUpdateController.ts` (pub/sub) + `useSwUpdate` + `SwUpdateBanner` (fixed bottom). Удалён `registerSw.ts`. Unit: 27 тестов; E2E smoke: баннер скрыт при первой загрузке. Verify: lint ✅, build ✅, test ✅, e2e (9) ✅. Фаза 3 завершена.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-vite-plugin-pwa_2026-08-04.md](completed-tasks/2026/08/step-vite-plugin-pwa_2026-08-04.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md](completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md)

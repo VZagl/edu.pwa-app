@@ -235,7 +235,7 @@ UX при новой версии SW: обнаружение `waiting` worker, �
 
 **Зависит от:** step-vite-plugin-pwa
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md](memory-bank/completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md)
 
 ---
 
@@ -338,7 +338,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 | 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена |
 | 1    | Каркас и навигация по урокам (с тестами)                 | ✅ Завершена |
 | 2    | Manifest валиден                                         | ✅ Завершена |
-| 3    | SW в production, UX обновления                           | —            |
+| 3    | SW в production, UX обновления                           | ✅ Завершена |
 | 4    | Офлайн-fallback работает                                 | —            |
 | 5    | Install flow / инструкции                                | —            |
 | 6    | Lighthouse PWA checklist зафиксирован                    | —            |

@@ -29,7 +29,7 @@
 
 ```typescript
 VitePWA({
-	registerType: 'autoUpdate',
+	registerType: 'prompt',
 	injectRegister: null,
 	manifestFilename: 'manifest.webmanifest',
 	includeAssets: ['favicon.svg', 'icons/*.png'],
@@ -76,9 +76,11 @@ VitePWA({
 ## Service Worker
 
 - Стратегия: `generateSW` (Workbox precache статики из сборки)
-- Регистрация: вручную через `src/pwa/registerSw.ts` (`injectRegister: null`)
+- `registerType: 'prompt'` — при waiting worker показывается баннер «Доступно обновление»; активация через `updateSW(true)` (`skipWaiting` по сообщению клиента)
+- Регистрация: вручную через `src/pwa/swUpdateController.ts` + `virtual:pwa-register` (`injectRegister: null`)
+- UI обновления: `SwUpdateBanner` (fixed bottom) + `useSwUpdate`
 - SW в dev: отключён (без `devOptions.enabled`)
-- Проверка: `pnpm build && pnpm preview`, E2E `e2e/service-worker-pwa.spec.ts`
+- Проверка: `pnpm build && pnpm preview`, E2E `e2e/service-worker-pwa.spec.ts`; полный update-flow — ручная проверка (rebuild → refresh)
 
 ## Чеклист для ИИ
 

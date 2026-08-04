@@ -2,12 +2,12 @@
 
 ## Высокий
 
-- [ ] UX обновления Service Worker (step-sw-update-ux)
+- [ ] Runtime caching и offline fallback (step-offline-fallback)
   - **Создано:** 2026-08-04
-  - UX при новой версии SW: обнаружение `waiting` worker, баннер «Доступно обновление» + кнопка перезагрузки (`skipWaiting` + `clients.claim` по выбранной стратегии).
-  - **Цель:** Пользователь понимает, как обновляется установленное PWA.
-  - **Источник:** docs/project/implementation-plan.md (step-sw-update-ux)
-  - **Причина:** Следующий шаг после step-vite-plugin-pwa
+  - Runtime caching и/или offline fallback: при отсутствии сети показывать сохранённую оболочку или страницу «Вы offline». Хук `useOnlineStatus` для индикатора в UI.
+  - **Цель:** После первого визита приложение частично работает offline; есть явный offline UX.
+  - **Источник:** docs/project/implementation-plan.md (step-offline-fallback)
+  - **Причина:** Следующий шаг после step-sw-update-ux
 
 ## Средний
 
