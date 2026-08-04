@@ -6,20 +6,21 @@
 
 ## Current Mode
 
-PLAN — детальное планирование перед BUILD
+BUILD — реализация по плану (TDD)
 
 ## Next Steps
 
-1. `/plan` — детальный план: registerType, хук waiting worker, баннер, skipWaiting/clients.claim, тесты
-2. `/build` — реализация по плану (TDD)
-3. `/reflect` — рефлексия
-4. `/close-task` — финализация (completed-запись, обновление implementation-plan)
+1. `/build` — TDD: `swUpdateController` → `useSwUpdate` → `SwUpdateBanner` → интеграция → E2E smoke → verify
+2. `/reflect` — рефлексия
+3. `/close-task` — финализация (completed-запись, обновление implementation-plan)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 3: `step-vite-plugin-pwa` завершён ✅ — Workbox precache, `registerSw.ts`, `registerType: 'autoUpdate'`
 - Текущая задача: `step-sw-update-ux` — явный UX при обновлении SW
-- Регистрация SW: `src/pwa/registerSw.ts` (`injectRegister: null`); SW в dev отключён
+- **PLAN решения:** `registerType: 'prompt'` + `virtual:pwa-register`; controller + hook + banner; fixed bottom bar; E2E smoke only
+- Регистрация SW сейчас: `src/pwa/registerSw.ts` (`injectRegister: null`); будет заменена на `swUpdateController.ts`
+- SW в dev отключён; E2E через preview
 - E2E SW: `e2e/service-worker-pwa.spec.ts` (3 теста)
-- tech-stack-pwa.md: «обрабатывать обновления SW явно (UX «доступна новая версия»)»
+- ui-conventions.md: «ненавязчивый баннер с действием „Обновить“»
