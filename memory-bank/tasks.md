@@ -8,16 +8,91 @@
 - **Git Branch:** feat/step-service-worker-register
 - **Фаза:** Фаза 3 — Service Worker (Order 3.1.1)
 - **Источник:** docs/project/implementation-plan.md
+- **Status:** Planning complete → готово к BUILD
 
 ### Цель
 
-SW регистрируется; в DevTools видны install/activate; понятен scope.
+SW регистрируется; в DevTools видны install/activate; понятен scope (`/`).
 
-### Чеклист
+### Description
+
+Учебный этап: ручной минимальный SW в `public/sw.js` (install + activate, логи в консоль). Регистрация из `src/pwa/registerSw.ts` с проверкой `'serviceWorker' in navigator`, вызов из `main.tsx`. Без `vite-plugin-pwa` (следующий шаг плана).
+
+## Complexity
+
+Level: 2  
+Type: Enhancement
+
+## Technology Stack
+
+- Framework: React 19 + Vite 8 (уже в проекте)
+- SW: ручной `public/sw.js` (без сборки)
+- Регистрация: `src/pwa/registerSw.ts` → вызов из `main.tsx`
+- Тесты: Vitest + jsdom, мок `navigator.serviceWorker`
+- Новые зависимости: нет
+
+## Technology Validation Checkpoints
+
+- [x] Project initialization verified (существующий Vite + pnpm)
+- [x] Required dependencies identified — новых не требуется
+- [x] Build configuration validated (`vite.config.ts`, `public/` as-is → `/sw.js`)
+- [x] Hello world / текущий проект собирается
+- [x] Technology validation complete (отдельный PoC не нужен)
+
+## Status
+
+- [x] Initialization complete (VAN)
+- [x] Planning complete (PLAN)
+- [x] Technology validation complete
+- [ ] Implementation (BUILD)
+- [ ] Reflection / close-task
+
+## Implementation Plan
+
+1. **Red — unit-тест** `src/pwa/registerSw.test.ts`
+   - при поддержке SW → `register` вызывается с `/sw.js`
+   - без поддержки → `register` не вызывается
+   - мок через `vi.stubGlobal` / подмену `navigator.serviceWorker`
+2. **Green — `src/pwa/registerSw.ts`**
+   - проверка `'serviceWorker' in navigator`
+   - `navigator.serviceWorker.register('/sw.js')`
+   - минимальная обработка/логирование ошибки регистрации
+3. **Green — `public/sw.js`**
+   - обработчики `install` / `activate` + `console.log`
+   - без кэширования (следующий шаг фазы)
+4. **Интеграция** — вызов `registerSw()` в `src/main.tsx`
+5. **Verify** — `pnpm lint`, `pnpm build`, `pnpm test --run`
+   - ручная проверка: DevTools → Application → Service Workers (scope `/`)
+
+## Creative Phases Required
+
+- [x] Не требуются (Level 2; путь зафиксирован планом; UI не меняем)
+
+## Files to Create / Modify
+
+| Файл                         | Действие                     |
+| ---------------------------- | ---------------------------- |
+| `src/pwa/registerSw.test.ts` | создать                      |
+| `src/pwa/registerSw.ts`      | создать                      |
+| `public/sw.js`               | создать                      |
+| `src/main.tsx`               | изменить (вызов регистрации) |
+
+## Dependencies
+
+- Завершённый шаг: step-web-app-manifest / фаза 2 ✅
+- Следующий шаг плана (не в scope): step с `vite-plugin-pwa`
+
+## Challenges & Mitigations
+
+- jsdom без реального SW API → только мок в unit-тестах
+- SW в `dev` может мешать HMR → учебный шаг допускает регистрацию; основная проверка — DevTools / `preview`
+- E2E «по возможности» → не блокирует закрытие задачи
+
+## Чеклист
 
 - [x] GIT: Работа в feature-ветке feat/step-service-worker-register
-- [ ] PLAN: Составить план реализации
-- [ ] BUILD: public/sw.js + src/pwa/registerSw.ts + main.tsx
+- [x] PLAN: Составить план реализации
+- [ ] BUILD: public/sw.js + src/pwa/registerSw.ts + main.tsx (TDD)
 - [ ] TEST: unit-тест регистрации (мок navigator.serviceWorker)
 - [ ] VERIFY: lint, build, pnpm test --run
 - [ ] CLOSE: Финализировать задачу командой /close-task
