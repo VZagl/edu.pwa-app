@@ -2,17 +2,17 @@
 
 ## Current Focus
 
-`feat/step-vite-plugin-pwa` — BUILD завершён ✅
+`feat/step-vite-plugin-pwa` — REFLECT завершён ✅
 
 ## Current Mode
 
-BUILD complete → `/reflect`
+REFLECT → ARCHIVE
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
+1. `/archive` — архивация задачи (reflection + completed-запись)
 
-2. `/close-task` — финализация (completed-запись, обновление implementation-plan)
+2. `/close-task` — финализация (обновление implementation-plan)
 
 ## Context for AI
 

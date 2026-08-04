@@ -55,8 +55,15 @@
 - [x] BUILD: TDD — `e2e/service-worker-pwa.spec.ts` (red → green)
 - [x] BUILD: Обновить `docs/project/config-schema.md`
 - [x] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task
+
+### Reflection Highlights
+
+- **What Went Well**: PLAN без отклонений; миграция с ручного SW на Workbox без смены `registerSw.ts`; E2E-покрытие SW (3 теста); единый manifest в `vite.config.ts`
+- **Challenges**: конфликт `public/sw.js` vs generated SW; дубли manifest в HTML; async регистрация в E2E; SW off в dev
+- **Lessons Learned**: `injectRegister: null` + ручная регистрация — удобный учебный паттерн; preview обязателен для PWA-проверок; `globPatterns` определяют precache scope
+- **Next Steps**: `/archive`, `/close-task`; ручная проверка precache в DevTools; `step-sw-update-ux`
 
 ### Implementation Plan
 
