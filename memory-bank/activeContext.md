@@ -6,21 +6,23 @@
 
 ## Current Mode
 
-PLAN — детальное планирование перед BUILD
+BUILD — реализация по плану (TDD)
 
 ## Next Steps
 
-1. `/plan` — детальный план: конфиг плагина, судьба ручного SW, manifest, регистрация, dev/prod, тесты
-2. `/build` — реализация по плану (TDD)
-3. `/reflect` — рефлексия
-4. `/close-task` — финализация (completed-запись, обновление implementation-plan)
+1. `/build` — реализация по плану в `memory-bank/tasks.md` (TDD)
+2. `/reflect` — рефлексия
+3. `/close-task` — финализация (completed-запись, обновление implementation-plan)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 2 (Web App Manifest) завершена ✅
-- Фаза 3: `step-service-worker-register` завершён ✅ — ручной `public/sw.js` + `src/pwa/registerSw.ts`
-- Текущая задача: `step-vite-plugin-pwa` — Workbox precache через vite-plugin-pwa
-- Предыдущий SW: `public/sw.js` (install/activate, без кэша); регистрация `/sw.js`
-- Reflection step-web-app-manifest: не дублировать manifest в двух местах
-- `vite-plugin-pwa` в package.json пока отсутствует
+- Фаза 3: `step-service-worker-register` завершён ✅ — ручной SW заменяется Workbox
+- **PLAN завершён ✅** — решения зафиксированы в `memory-bank/tasks.md`
+- Стратегия: `generateSW`, `injectRegister: null`, manifest в `vite.config.ts`
+- Удалить: `public/sw.js`, `public/manifest.webmanifest`
+- Сохранить: `registerSw.ts` (путь `/sw.js`), паттерн `src/pwa/`
+- SW в dev: отключён; E2E через `pnpm build && pnpm preview`
+- Новый E2E: `e2e/service-worker-pwa.spec.ts`
+- Creative phase не требуется → сразу `/build`
