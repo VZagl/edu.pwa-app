@@ -6,9 +6,9 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-manifest-lesson-ui`
-- **Название:** Экран урока «Manifest»
-- **Дата завершения:** 2026-08-03
+- **Task ID:** `step-service-worker-register`
+- **Название:** Регистрация Service Worker
+- **Дата завершения:** 2026-08-04
 - **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/08/step-manifest-lesson-ui_2026-08-03.md](completed-tasks/2026/08/step-manifest-lesson-ui_2026-08-03.md)
-- **Reflection:** [memory-bank/reflection/reflection-step-manifest-lesson-ui.md](reflection/reflection-step-manifest-lesson-ui.md)
+- **Completed:** [memory-bank/completed-tasks/2026/08/step-service-worker-register_2026-08-04.md](completed-tasks/2026/08/step-service-worker-register_2026-08-04.md)
+- **Reflection:** [memory-bank/reflection/reflection-step-service-worker-register.md](reflection/reflection-step-service-worker-register.md)
