@@ -103,8 +103,16 @@ UX при новой версии SW: обнаружение `waiting` worker, �
 - [x] BUILD: TDD — unit-тесты controller/хук/баннер; E2E smoke
 - [x] BUILD: Обновить `config-schema.md`
 - [x] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
+- [ ] ARCHIVE: Архивировать задачу командой /archive
 - [ ] CLOSE: Финализировать задачу командой /close-task
+
+## Reflection Highlights
+
+- **What Went Well**: PLAN → BUILD без отклонений; трёхслойная архитектура (controller/hook/banner); TDD с моками virtual module; E2E smoke
+- **Challenges**: virtual module в Vitest; E2E не ловит waiting worker; синхронизация состояния при subscribe
+- **Lessons Learned**: `registerType: 'prompt'` + `virtual:pwa-register`; pub/sub вне React для SW-событий; `updateSW(true)` без workbox skipWaiting
+- **Next Steps**: `/archive`, `/close-task`; ручная проверка update flow (checklist в reflection)
 
 ## Last Completed Task
 
