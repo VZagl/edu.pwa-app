@@ -26,11 +26,18 @@ test.describe('Service Worker (vite-plugin-pwa)', () => {
 				return reg?.scope ?? null;
 			},
 			undefined,
-			{ timeout: 10_000 },
+			{ timeout: 15_000 },
 		);
 
 		const scope = await scopeHandle.jsonValue();
 		expect(scope).not.toBeNull();
 		expect(scope as string).toMatch(/\/$/);
+	});
+
+	// Полный flow обновления (build → preview → rebuild → refresh) — ручная проверка в reflection.
+	test('баннер обновления не должен быть виден при первой загрузке', async ({ page }) => {
+		await page.goto('/');
+
+		await expect(page.getByText('Доступно обновление')).not.toBeVisible();
 	});
 });

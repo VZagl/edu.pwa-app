@@ -33,7 +33,7 @@ UX при новой версии SW: обнаружение `waiting` worker, �
 - [x] `injectRegister: null` + ручная регистрация — паттерн уже используется
 - [x] SW в dev отключён — E2E через preview
 - [x] `registerType: 'prompt'` поддерживается; типы через `vite/client`
-- [ ] BUILD: сборка с import `virtual:pwa-register`
+- [x] BUILD: сборка с import `virtual:pwa-register`
 
 ### Решения PLAN (ответы на вопросы)
 
@@ -98,11 +98,11 @@ UX при новой версии SW: обнаружение `waiting` worker, �
 
 - [x] GIT: Работа в feature-ветке feat/step-sw-update-ux
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] BUILD: `registerType: 'prompt'` + `swUpdateController.ts`
-- [ ] BUILD: `useSwUpdate` + `SwUpdateBanner` + интеграция в App/main
-- [ ] BUILD: TDD — unit-тесты controller/хук/баннер; E2E smoke
-- [ ] BUILD: Обновить `config-schema.md`
-- [ ] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
+- [x] BUILD: `registerType: 'prompt'` + `swUpdateController.ts`
+- [x] BUILD: `useSwUpdate` + `SwUpdateBanner` + интеграция в App/main
+- [x] BUILD: TDD — unit-тесты controller/хук/баннер; E2E smoke
+- [x] BUILD: Обновить `config-schema.md`
+- [x] BUILD: Verify — lint, build, `pnpm test --run`, E2E против preview
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task
 

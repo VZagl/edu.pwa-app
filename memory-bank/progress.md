@@ -2,19 +2,23 @@
 
 ## Статус проекта
 
-| Область                                        | Состояние                                   |
-| ---------------------------------------------- | ------------------------------------------- |
-| Репозиторий Vite + React + TS                  | ✅ Готов (2026-07-23)                       |
-| Memory Bank (ядро)                             | ✅ Инициализирован (2026-07-24)             |
-| Vitest (step-test-environment)                 | ✅ ЗАВЕРШЕНО (2026-07-30)                   |
-| Playwright (step-playwright-setup)             | ✅ ЗАВЕРШЕНО (2026-07-30)                   |
-| Каркас UI (step-app-shell)                     | ✅ ЗАВЕРШЕНО (2026-08-01)                   |
-| Навигация уроков                               | ✅ ЗАВЕРШЕНО (2026-08-03)                   |
-| Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)                   |
-| Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)                   |
-| SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)                   |
-| SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)                   |
-| UX обновления SW (step-sw-update-ux)           | 🔄 PLAN ✅ → BUILD (feat/step-sw-update-ux) |
+| Область                                        | Состояние                                       |
+| ---------------------------------------------- | ----------------------------------------------- |
+| Репозиторий Vite + React + TS                  | ✅ Готов (2026-07-23)                           |
+| Memory Bank (ядро)                             | ✅ Инициализирован (2026-07-24)                 |
+| Vitest (step-test-environment)                 | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
+| Playwright (step-playwright-setup)             | ✅ ЗАВЕРШЕНО (2026-07-30)                       |
+| Каркас UI (step-app-shell)                     | ✅ ЗАВЕРШЕНО (2026-08-01)                       |
+| Навигация уроков                               | ✅ ЗАВЕРШЕНО (2026-08-03)                       |
+| Web App Manifest (step-web-app-manifest)       | ✅ ЗАВЕРШЕНО (2026-08-03)                       |
+| Экран урока Manifest (step-manifest-lesson-ui) | ✅ ЗАВЕРШЕНО (2026-08-03)                       |
+| SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)                       |
+| SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)                       |
+| UX обновления SW (step-sw-update-ux)           | 🔄 BUILD ✅ → /reflect (feat/step-sw-update-ux) |
+
+## [2026-08-04]: step-sw-update-ux — BUILD завершён
+
+`registerType: 'prompt'` + `virtual:pwa-register`; `swUpdateController.ts` (pub/sub, `immediate: true`) + `useSwUpdate` + `SwUpdateBanner` (fixed bottom). Удалён `registerSw.ts`. Зависимость `workbox-window@^7.4.1`. Unit: 27 тестов (controller 6, hook 4, banner 3 + остальные). E2E smoke: баннер скрыт при первой загрузке (4 теста в `service-worker-pwa.spec.ts`). Verify: lint ✅, build ✅, test ✅, e2e (9) ✅. Следующий шаг: `/reflect`.
 
 ## [2026-08-04]: step-sw-update-ux — PLAN завершён
 
