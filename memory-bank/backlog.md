@@ -4,7 +4,7 @@
 
 - [ ] Runtime caching и offline fallback (step-offline-fallback)
   - **Создано:** 2026-08-04
-  - Runtime caching и/или offline fallback: при отсутствии сети показывать сохранённую оболочку или страницу «Вы offline». Хук `useOnlineStatus` для индикатора в UI.
+  - Runtime caching и offline fallback на уровне SW: `navigateFallback` → SPA из precache. Отдельная React-страница «Вы offline» не нужна. Хук `useOnlineStatus` + компонент `OfflineIndicator` (правый верхний угол, только offline).
   - **Цель:** После первого визита приложение частично работает offline; есть явный offline UX.
   - **Источник:** docs/project/implementation-plan.md (step-offline-fallback)
   - **Причина:** Следующий шаг после step-sw-update-ux
