@@ -2,20 +2,22 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+`feat/step-offline-lesson-ui` — экран урока «Offline & Cache»
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+PLAN — ожидание детального планирования
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи.
+1. Запустить `/plan` для создания плана реализации
+2. После плана — `/build` (или `/creative`, если потребуются дизайн-решения)
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 3 завершена ✅ — SW в production, UX обновления (`step-sw-update-ux`)
-- Фаза 4 в процессе — offline fallback завершён (`step-offline-fallback`); следующий шаг в backlog: `step-offline-lesson-ui`
-- Offline fallback — SW-уровень (`navigateFallback: 'index.html'` → SPA из precache)
-- `OfflineIndicator`: chip `[●] offline`, fixed top-right; `/offline` — учебный экран, не SW fallback
+- Фаза 4 в процессе — offline fallback завершён (`step-offline-fallback`)
+- Маршрут `/offline` уже есть; `OfflineScreen` — заглушка (`LessonStubScreen`)
+- Доступны: `useOnlineStatus`, `OfflineIndicator` (глобальный chip)
+- Паттерн урока: `ManifestScreen` (текст + живые данные + тесты + E2E)
+- Nav и `lessonRoutes.ts` не менять (маршрут уже зарегистрирован)
