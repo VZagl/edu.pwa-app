@@ -6,12 +6,12 @@
 
 ## Current Mode
 
-BUILD — реализация по плану (TDD)
+BUILD — завершён ✅
 
 ## Next Steps
 
-1. `/build` — реализация по Implementation Plan в `tasks.md`
-2. `/reflect` → `/close-task`
+1. `/reflect` — рефлексия по задаче `step-offline-fallback`
+2. `/close-task` — финализация задачи
 
 ## Context for AI
 

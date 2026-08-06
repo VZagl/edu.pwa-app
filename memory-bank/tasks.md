@@ -19,14 +19,14 @@ Runtime caching и offline fallback на уровне SW: `navigateFallback` →
 
 ### Чеклист
 
-- [ ] GIT: Работа в feature-ветке feat/step-offline-fallback
+- [x] GIT: Работа в feature-ветке feat/step-offline-fallback
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] BUILD: Workbox `navigateFallback` + runtime caching rules в `vite.config.ts`
-- [ ] BUILD: Хук `useOnlineStatus`
-- [ ] BUILD: Компонент `OfflineIndicator` (правый верхний угол, только offline)
-- [ ] BUILD: Unit-тесты (хук, индикатор)
-- [ ] BUILD: E2E offline-сценарий
-- [ ] BUILD: lint, build, test, e2e
+- [x] BUILD: Workbox `navigateFallback` + runtime caching rules в `vite.config.ts`
+- [x] BUILD: Хук `useOnlineStatus`
+- [x] BUILD: Компонент `OfflineIndicator` (правый верхний угол, только offline)
+- [x] BUILD: Unit-тесты (хук, индикатор)
+- [x] BUILD: E2E offline-сценарий
+- [x] BUILD: lint, build, test, e2e
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
@@ -65,7 +65,7 @@ Runtime caching и offline fallback на уровне SW: `navigateFallback` →
 - [x] Planning complete (PLAN)
 - [x] Technology validation complete
 - [x] Creative phases — UI OfflineIndicator зафиксирован (см. ниже)
-- [ ] Implementation (BUILD)
+- [x] Implementation (BUILD)
 - [ ] Reflection
 - [ ] Close task
 
@@ -209,7 +209,16 @@ workbox: {
 - [x] ~~Стратегии runtime caching~~ — не требуется (зафиксированы в PLAN по `tech-stack-pwa.md`)
 - [x] ~~Архитектура~~ — не требуется
 
-→ **NEXT MODE: BUILD** (`/build`)
+→ **NEXT MODE: REFLECT** (`/reflect`)
+
+## Build Results (2026-08-06)
+
+- **Хук:** `src/hooks/useOnlineStatus/useOnlineStatus.ts` — `navigator.onLine` + события `online`/`offline`
+- **Компонент:** `src/components/OfflineIndicator/` — chip `[●] offline`, fixed top-right, `z-index: 110`
+- **Интеграция:** `App.tsx` — `<OfflineIndicator />` рядом с `SwUpdateBanner`
+- **Workbox:** `navigateFallback: 'index.html'`, `navigateFallbackDenylist`, runtime caching (json NetworkFirst, images StaleWhileRevalidate)
+- **E2E:** `e2e/offline-fallback.spec.ts` — offline-индикатор + клиентская навигация `/manifest`
+- **Verify:** lint ✅, build ✅, unit 36 ✅, e2e 10 ✅
 
 ## Dependencies
 
