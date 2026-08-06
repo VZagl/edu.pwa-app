@@ -28,6 +28,28 @@ export default defineConfig({
 			},
 			workbox: {
 				globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
+				navigateFallback: 'index.html',
+				navigateFallbackDenylist: [/^\/api\//],
+				runtimeCaching: [
+					{
+						urlPattern: /\.json$/i,
+						handler: 'NetworkFirst',
+						options: {
+							cacheName: 'runtime-json',
+							networkTimeoutSeconds: 5,
+							expiration: { maxEntries: 16, maxAgeSeconds: 24 * 60 * 60 },
+							cacheableResponse: { statuses: [0, 200] },
+						},
+					},
+					{
+						urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
+						handler: 'StaleWhileRevalidate',
+						options: {
+							cacheName: 'runtime-images',
+							expiration: { maxEntries: 64, maxAgeSeconds: 24 * 60 * 60 },
+						},
+					},
+				],
 			},
 		}),
 	],

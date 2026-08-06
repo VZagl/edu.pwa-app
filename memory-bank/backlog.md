@@ -2,12 +2,12 @@
 
 ## Высокий
 
-- [ ] Runtime caching и offline fallback (step-offline-fallback)
-  - **Создано:** 2026-08-04
-  - Runtime caching и/или offline fallback: при отсутствии сети показывать сохранённую оболочку или страницу «Вы offline». Хук `useOnlineStatus` для индикатора в UI.
-  - **Цель:** После первого визита приложение частично работает offline; есть явный offline UX.
-  - **Источник:** docs/project/implementation-plan.md (step-offline-fallback)
-  - **Причина:** Следующий шаг после step-sw-update-ux
+- [ ] Экран урока «Offline & Cache» (step-offline-lesson-ui)
+  - **Создано:** 2026-08-06
+  - Экран урока «Offline & Cache»: объяснение precache vs runtime, демо статуса сети.
+  - **Цель:** Тема кэширования закреплена в UI приложения.
+  - **Источник:** docs/project/implementation-plan.md (step-offline-lesson-ui)
+  - **Причина:** Следующий шаг после step-offline-fallback
 
 ## Средний
 

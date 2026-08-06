@@ -255,7 +255,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-vite-plugin-pwa
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-offline-fallback_2026-08-06.md](memory-bank/completed-tasks/2026/08/step-offline-fallback_2026-08-06.md)
 
 ---
 
@@ -333,15 +333,15 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 ## Критерии готовности по фазам
 
-| Фаза | Критерий                                                 | Статус       |
-| ---- | -------------------------------------------------------- | ------------ |
-| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена |
-| 1    | Каркас и навигация по урокам (с тестами)                 | ✅ Завершена |
-| 2    | Manifest валиден                                         | ✅ Завершена |
-| 3    | SW в production, UX обновления                           | ✅ Завершена |
-| 4    | Офлайн-fallback работает                                 | —            |
-| 5    | Install flow / инструкции                                | —            |
-| 6    | Lighthouse PWA checklist зафиксирован                    | —            |
+| Фаза | Критерий                                                 | Статус        |
+| ---- | -------------------------------------------------------- | ------------- |
+| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена  |
+| 1    | Каркас и навигация по урокам (с тестами)                 | ✅ Завершена  |
+| 2    | Manifest валиден                                         | ✅ Завершена  |
+| 3    | SW в production, UX обновления                           | ✅ Завершена  |
+| 4    | Офлайн-fallback работает                                 | 🔄 В процессе |
+| 5    | Install flow / инструкции                                | —             |
+| 6    | Lighthouse PWA checklist зафиксирован                    | —             |
 
 ---
 

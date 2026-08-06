@@ -76,7 +76,7 @@
 - [x] Базовое React-приложение с навигацией по учебным разделам
 - [x] Web App Manifest и набор иконок
 - [x] Service Worker (ручной или через vite-plugin-pwa)
-- [ ] Офлайн-доступ к оболочке приложения / fallback
+- [x] Офлайн-доступ к оболочке приложения / fallback
 - [ ] Проверка: Lighthouse PWA + установка на устройство
 
 **Синхронизация чекбоксов:** при `/close-task` отмечать `[x]`, когда **все** шаги из таблицы ниже имеют ссылку в поле **Completed** в [implementation-plan.md](implementation-plan.md).
@@ -135,6 +135,7 @@
 | 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)            | ✅ Готов |
 | 2026-08-04 | Service Worker с Workbox precache (`step-vite-plugin-pwa`)                    | ✅ Готов |
 | 2026-08-04 | Фаза 3: Service Worker в production и UX обновления (`step-sw-update-ux`)     | ✅ Готов |
+| 2026-08-06 | Offline fallback и индикатор сети (`step-offline-fallback`)                   | ✅ Готов |
 
 ---
 

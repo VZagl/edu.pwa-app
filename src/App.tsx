@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router';
 import './App.scss';
+import { OfflineIndicator } from './components/OfflineIndicator/OfflineIndicator';
 import { SwUpdateBanner } from './components/SwUpdateBanner/SwUpdateBanner';
 import { lessonRoutes } from './routes/lessonRoutes';
 import { NotFoundScreen } from './screens/NotFoundScreen/NotFoundScreen';
@@ -35,6 +36,7 @@ export function App() {
 					<Route path='*' element={<NotFoundScreen />} />
 				</Routes>
 			</main>
+			<OfflineIndicator />
 			<SwUpdateBanner />
 		</div>
 	);

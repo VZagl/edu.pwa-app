@@ -15,10 +15,10 @@
 | SW регистрация (step-service-worker-register)  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
-| Offline fallback (step-offline-fallback)       | ⏳ В backlog                    |
+| Offline fallback (step-offline-fallback)       | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 
-## [2026-08-04]: step-sw-update-ux — ЗАВЕРШЕНО
+## [2026-08-06]: step-offline-fallback — ЗАВЕРШЕНО
 
-`registerType: 'prompt'` + `virtual:pwa-register`; `swUpdateController.ts` (pub/sub) + `useSwUpdate` + `SwUpdateBanner` (fixed bottom). Удалён `registerSw.ts`. Unit: 27 тестов; E2E smoke: баннер скрыт при первой загрузке. Verify: lint ✅, build ✅, test ✅, e2e (9) ✅. Фаза 3 завершена.
+Workbox `navigateFallback` + runtime caching; хук `useOnlineStatus`; компонент `OfflineIndicator`; E2E `offline-fallback.spec.ts`. Verify: lint ✅, build ✅, unit 36 ✅, e2e 10 ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md](completed-tasks/2026/08/step-sw-update-ux_2026-08-04.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-offline-fallback_2026-08-06.md](completed-tasks/2026/08/step-offline-fallback_2026-08-06.md)
