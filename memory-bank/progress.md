@@ -17,7 +17,22 @@
 | UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | Offline fallback (step-offline-fallback)       | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Экран урока Offline (step-offline-lesson-ui)   | ✅ ЗАВЕРШЕНО (2026-08-06)       |
-| Install prompt (step-install-prompt)           | 🔄 В РАБОТЕ (2026-08-06)        |
+| Install prompt (step-install-prompt)           | 🔄 BUILD завершён (2026-08-06)  |
+
+## [2026-08-06]: step-install-prompt — BUILD ЗАВЕРШЁН
+
+Обработка `beforeinstallprompt`, кнопка «Установить», контекстный fallback для Safari/iOS/Firefox. Ветка: `feat/step-install-prompt`.
+
+**Реализовано:**
+
+- `installFallbackHints.ts` — выбор текста подсказки по UA (5 категорий + generic)
+- `useInstallPrompt.ts` — хук с grace period 1 с, BIP, appinstalled, standalone-детект
+- `InstallBanner` — баннер с кнопкой «Установить» или fallback-текстом
+- Интеграция в `App.tsx` + контейнер `app-shell__bottom-banners` для стекинга с `SwUpdateBanner`
+- E2E `e2e/install-prompt.spec.ts`
+- `vitest.setup.ts` — полифилл `matchMedia`
+
+**Verify:** lint ✅, build ✅, unit 59 ✅, e2e 12 ✅
 
 ## [2026-08-06]: step-install-prompt — В РАБОТЕ
 

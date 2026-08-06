@@ -7,7 +7,7 @@
 - **Уровень сложности:** Level 2 — Simple Enhancement
 - **Git Branch:** `feat/step-install-prompt`
 - **Фаза:** 5 — Установка PWA (Order: 5.1.1)
-- **Статус:** PLAN — завершён, готов к BUILD
+- **Статус:** BUILD — завершён, готов к REFLECT
 - **Дата создания:** 2026-08-06
 - **Источник:** [docs/project/implementation-plan.md](../docs/project/implementation-plan.md) (step-install-prompt)
 
@@ -33,7 +33,7 @@
 - [x] Зависимости проверены в `package.json` — доп. пакеты не нужны
 - [x] Паттерны хуков/баннеров есть: `useOnlineStatus`, `useSwUpdate`, `SwUpdateBanner`, `OfflineIndicator`
 - [x] Manifest и SW готовы (зависимости step-web-app-manifest, step-vite-plugin-pwa — ✅)
-- [ ] BUILD: `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+- [x] BUILD: `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
 
 ### Планируемые файлы
 
@@ -236,14 +236,14 @@ type InstallPromptState = {
 
 - [x] GIT: Работа в feature-ветке `feat/step-install-prompt`
 - [x] PLAN: Составить план реализации (`/plan`)
-- [ ] CREATIVE: Дизайн-решения (не требуется — пропустить)
-- [ ] BUILD: Реализация по TDD (`/build`)
-  - [ ] 1. `installFallbackHints` — тесты + реализация
-  - [ ] 2. `useInstallPrompt` — тесты + реализация (grace period)
-  - [ ] 3. `InstallBanner` — тесты + реализация + SCSS
-  - [ ] 4. Интеграция в `App.tsx`
-  - [ ] 5. E2E `install-prompt.spec.ts`
-  - [ ] 6. Verify: lint, build, unit, e2e
+- [x] CREATIVE: Дизайн-решения (не требуется — пропустить)
+- [x] BUILD: Реализация по TDD (`/build`)
+  - [x] 1. `installFallbackHints` — тесты + реализация
+  - [x] 2. `useInstallPrompt` — тесты + реализация (grace period)
+  - [x] 3. `InstallBanner` — тесты + реализация + SCSS
+  - [x] 4. Интеграция в `App.tsx`
+  - [x] 5. E2E `install-prompt.spec.ts`
+  - [x] 6. Verify: lint, build, unit, e2e
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 

@@ -2,20 +2,16 @@
 
 ## Current Focus
 
-`feat/step-install-prompt` — обработка `beforeinstallprompt` и кнопка «Установить»
+`feat/step-install-prompt` — BUILD завершён ✅
 
 ## Current Mode
 
-PLAN — завершён. Следующий шаг: **BUILD** (creative не требуется)
+BUILD — завершён. Следующий шаг: **REFLECT**
 
 ## Next Steps
 
-1. Запустить `/build` — TDD-реализация:
-   - `useInstallPrompt` (хук + unit-тесты)
-   - `InstallBanner` (компонент + SCSS + unit-тесты)
-   - интеграция в `App.tsx`
-   - E2E `e2e/install-prompt.spec.ts`
-2. `/reflect` → `/close-task`
+1. Запустить `/reflect` — рефлексия по задаче (включая ручную матрицу браузеров)
+2. `/close-task` — финализация задачи
 
 ## Context for AI
 

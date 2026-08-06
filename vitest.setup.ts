@@ -4,3 +4,18 @@ import { vi } from 'vitest';
 vi.mock('virtual:pwa-register', () => ({
 	registerSW: vi.fn(() => vi.fn().mockResolvedValue(undefined)),
 }));
+
+Object.defineProperty(window, 'matchMedia', {
+	writable: true,
+	configurable: true,
+	value: vi.fn().mockImplementation((query: string) => ({
+		matches: false,
+		media: query,
+		onchange: null,
+		addListener: vi.fn(),
+		removeListener: vi.fn(),
+		addEventListener: vi.fn(),
+		removeEventListener: vi.fn(),
+		dispatchEvent: vi.fn(),
+	})),
+});

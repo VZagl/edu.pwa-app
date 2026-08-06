@@ -58,6 +58,21 @@
 	}
 }
 
+.app-shell__bottom-banners {
+	display: flex;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	flex-direction: column-reverse;
+	z-index: 100;
+	pointer-events: none;
+
+	> * {
+		pointer-events: auto;
+	}
+}
+
 .app-shell__main {
 	flex-grow: 1;
 	padding: var(--space-sm);
