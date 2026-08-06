@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router';
 import './App.scss';
+import { InstallBanner } from './components/InstallBanner/InstallBanner';
 import { OfflineIndicator } from './components/OfflineIndicator/OfflineIndicator';
 import { SwUpdateBanner } from './components/SwUpdateBanner/SwUpdateBanner';
 import { lessonRoutes } from './routes/lessonRoutes';
@@ -37,7 +38,10 @@ export function App() {
 				</Routes>
 			</main>
 			<OfflineIndicator />
-			<SwUpdateBanner />
+			<div className='app-shell__bottom-banners'>
+				<InstallBanner />
+				<SwUpdateBanner />
+			</div>
 		</div>
 	);
 }

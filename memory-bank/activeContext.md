@@ -15,5 +15,5 @@ IDLE — ожидание новой задачи
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 4 завершена — офлайн fallback и экран урока «Офлайн и кэш»
-- Следующий шаг в backlog: `step-install-prompt` (установка PWA)
+- Фаза 5 (установка PWA) завершена; следующая задача в backlog: `step-lighthouse-pwa-checklist`
+- План шагов: `docs/project/implementation-plan.md`
