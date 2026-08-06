@@ -2,12 +2,12 @@
 
 ## Высокий
 
-- [ ] Экран урока «Offline & Cache» (step-offline-lesson-ui)
+- [ ] Обработка beforeinstallprompt и кнопка «Установить» (step-install-prompt)
   - **Создано:** 2026-08-06
-  - Экран урока «Offline & Cache»: объяснение precache vs runtime, демо статуса сети.
-  - **Цель:** Тема кэширования закреплена в UI приложения.
-  - **Источник:** docs/project/implementation-plan.md (step-offline-lesson-ui)
-  - **Причина:** Следующий шаг после step-offline-fallback
+  - Обработка `beforeinstallprompt` (Chromium): отложенный prompt, кнопка «Установить» в UI. Fallback-текст для Safari/iOS.
+  - **Цель:** На поддерживаемых браузерах пользователь может установить приложение из UI.
+  - **Источник:** docs/project/implementation-plan.md (step-install-prompt)
+  - **Причина:** Следующий шаг после step-offline-lesson-ui
 
 ## Средний
 
