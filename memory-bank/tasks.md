@@ -27,7 +27,7 @@ Runtime caching и offline fallback на уровне SW: `navigateFallback` →
 - [x] BUILD: Unit-тесты (хук, индикатор)
 - [x] BUILD: E2E offline-сценарий
 - [x] BUILD: lint, build, test, e2e
-- [ ] REFLECT: Рефлексия (`/reflect`)
+- [x] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ---
@@ -66,7 +66,8 @@ Runtime caching и offline fallback на уровне SW: `navigateFallback` →
 - [x] Technology validation complete
 - [x] Creative phases — UI OfflineIndicator зафиксирован (см. ниже)
 - [x] Implementation (BUILD)
-- [ ] Reflection
+- [x] Reflection
+- [ ] Archiving
 - [ ] Close task
 
 ## Components Affected
@@ -209,7 +210,14 @@ workbox: {
 - [x] ~~Стратегии runtime caching~~ — не требуется (зафиксированы в PLAN по `tech-stack-pwa.md`)
 - [x] ~~Архитектура~~ — не требуется
 
-→ **NEXT MODE: REFLECT** (`/reflect`)
+→ **NEXT MODE: ARCHIVE** (`/archive`)
+
+## Reflection Highlights
+
+- **What Went Well**: UI-спека в PLAN без creative phase; PLAN→BUILD без отклонений; E2E offline стабилен через `context.setOffline`; нулевые новые зависимости
+- **Challenges**: разделение SW fallback / React-индикатор / маршрут `/offline`; ограничения `navigator.onLine`; E2E зависит от activated SW
+- **Lessons Learned**: `navigateFallback` + precache достаточен для offline shell; runtime caching дополняет precache; preview-only для SW-тестов
+- **Next Steps**: `/archive`, `/close-task`, обновить `implementation-plan.md` (формулировка «Вы offline»)
 
 ## Build Results (2026-08-06)
 

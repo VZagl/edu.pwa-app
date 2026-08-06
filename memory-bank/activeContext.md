@@ -2,27 +2,26 @@
 
 ## Current Focus
 
-`feat/step-offline-fallback` — Runtime caching и offline fallback
+`feat/step-offline-fallback` — REFLECT завершён ✅
 
 ## Current Mode
 
-BUILD — завершён ✅
+REFLECT → ARCHIVE
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче `step-offline-fallback`
+1. `/archive` — архивация задачи `step-offline-fallback`
 2. `/close-task` — финализация задачи
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
 - Фаза 3 завершена ✅ — SW в production, UX обновления (`step-sw-update-ux`)
-- Текущая задача: `step-offline-fallback` (фаза 4 — офлайн и кэш)
-- PLAN завершён; UI OfflineIndicator зафиксирован в `tasks.md` → BUILD
+- Текущая задача: `step-offline-fallback` (фаза 4 — офлайн и кэш) — BUILD и REFLECT завершены
+- **Reflection:** [memory-bank/reflection/reflection-step-offline-fallback.md](reflection/reflection-step-offline-fallback.md)
 - Offline fallback — SW-уровень (`navigateFallback: 'index.html'` → SPA из precache)
 - Runtime caching: NetworkFirst для `.json`, StaleWhileRevalidate для изображений
 - Хук `useOnlineStatus` (папка `src/hooks/useOnlineStatus/`)
-- `OfflineIndicator`: chip `[●] offline`, radial red dot, light/dark токены, fixed top-right (`space-sm`/`space-md`), `z-index: 110`, `aria-label="Нет сети"`
+- `OfflineIndicator`: chip `[●] offline`, radial red dot, light/dark токены, fixed top-right, `z-index: 110`
 - `/offline` — учебный экран-заглушка, не offline fallback
-- SW в dev отключён; E2E через preview + `context.setOffline`
-- ui-conventions.md: mobile-first SCSS; видимый текст индикатора — `offline` (исключение для status badge)
+- Verify: lint ✅, build ✅, unit 36 ✅, e2e 10 ✅
