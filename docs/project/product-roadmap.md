@@ -137,6 +137,7 @@
 | 2026-08-04 | Фаза 3: Service Worker в production и UX обновления (`step-sw-update-ux`)     | ✅ Готов |
 | 2026-08-06 | Offline fallback и индикатор сети (`step-offline-fallback`)                   | ✅ Готов |
 | 2026-08-06 | Фаза 4: офлайн и кэш (`step-offline-lesson-ui`)                               | ✅ Готов |
+| 2026-08-06 | Фаза 5: установка PWA из UI (`step-install-prompt`)                           | ✅ Готов |
 
 ---
 

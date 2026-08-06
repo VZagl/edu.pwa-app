@@ -293,7 +293,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-web-app-manifest, step-vite-plugin-pwa
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-install-prompt_2026-08-06.md](memory-bank/completed-tasks/2026/08/step-install-prompt_2026-08-06.md)
 
 ---
 
@@ -340,7 +340,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 | 2    | Manifest валиден                                         | ✅ Завершена |
 | 3    | SW в production, UX обновления                           | ✅ Завершена |
 | 4    | Офлайн-fallback работает                                 | ✅ Завершена |
-| 5    | Install flow / инструкции                                | —            |
+| 5    | Install flow / инструкции                                | ✅ Завершена |
 | 6    | Lighthouse PWA checklist зафиксирован                    | —            |
 
 ---

@@ -2,12 +2,12 @@
 
 ## Высокий
 
-- [ ] Обработка beforeinstallprompt и кнопка «Установить» (step-install-prompt)
+- [ ] Чеклист Lighthouse PWA и документирование проверки (step-lighthouse-pwa-checklist)
   - **Создано:** 2026-08-06
-  - Обработка `beforeinstallprompt` (Chromium): отложенный prompt, кнопка «Установить» в UI. Fallback-текст для Safari/iOS.
-  - **Цель:** На поддерживаемых браузерах пользователь может установить приложение из UI.
-  - **Источник:** docs/project/implementation-plan.md (step-install-prompt)
-  - **Причина:** Следующий шаг после step-offline-lesson-ui
+  - Чеклист и документирование проверки: Lighthouse PWA, Application panel, установка на телефон. Краткая секция в README или отдельный `docs/project/pwa-checklist.md` (опционально).
+  - **Цель:** Зафиксирован reproducible способ проверить, что MVP PWA выполнен.
+  - **Источник:** docs/project/implementation-plan.md (step-lighthouse-pwa-checklist)
+  - **Причина:** Следующий шаг после step-install-prompt
 
 ## Средний
 
