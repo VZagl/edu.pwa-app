@@ -16,14 +16,10 @@
 | SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | Offline fallback (step-offline-fallback)       | ✅ ЗАВЕРШЕНО (2026-08-06)       |
-| Экран урока Offline (step-offline-lesson-ui)   | ✅ BUILD (2026-08-06)           |
+| Экран урока Offline (step-offline-lesson-ui)   | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 
-## [2026-08-06]: step-offline-lesson-ui — BUILD
+## [2026-08-06]: step-offline-lesson-ui — ЗАВЕРШЕНО
 
 Экран урока «Офлайн и кэш»: intro (precache vs runtime, navigateFallback), секция стратегий Workbox, демо статуса сети через `useOnlineStatus`. Файлы: `OfflineScreen.tsx`, `offlineLessonData.ts`, `OfflineScreen.scss`, unit + E2E тесты. Verify: lint ✅, build ✅, unit 40 ✅, e2e 11 ✅.
 
-## [2026-08-06]: step-offline-fallback — ЗАВЕРШЕНО
-
-Workbox `navigateFallback` + runtime caching; хук `useOnlineStatus`; компонент `OfflineIndicator`; E2E `offline-fallback.spec.ts`. Verify: lint ✅, build ✅, unit 36 ✅, e2e 10 ✅.
-
-**Completed:** [memory-bank/completed-tasks/2026/08/step-offline-fallback_2026-08-06.md](completed-tasks/2026/08/step-offline-fallback_2026-08-06.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-offline-lesson-ui_2026-08-06.md](completed-tasks/2026/08/step-offline-lesson-ui_2026-08-06.md)

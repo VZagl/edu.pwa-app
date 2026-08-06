@@ -15,3 +15,4 @@
 - Production Service Worker через vite-plugin-pwa (Workbox precache статики); manifest генерируется из конфигурации сборки
 - Баннер «Доступно обновление» при новой версии Service Worker с кнопкой «Обновить» для перезагрузки приложения
 - Индикатор offline в правом верхнем углу при отсутствии сети; offline fallback через Service Worker (navigateFallback) и runtime caching
+- Экран урока «Офлайн и кэш»: объяснение precache vs runtime, стратегии Workbox и демо статуса сети
