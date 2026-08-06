@@ -21,7 +21,7 @@
 
 - [x] GIT: Работа в feature-ветке `feat/step-offline-lesson-ui`
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация по TDD
+- [x] BUILD: Реализация по TDD
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -51,8 +51,8 @@
 
 - [x] Initialization complete
 - [x] Planning complete
-- [ ] Technology validation complete (на этапе BUILD verify)
-- [ ] Implementation complete
+- [x] Technology validation complete
+- [x] Implementation complete
 
 ---
 
@@ -84,9 +84,19 @@
 3. **Компонент (green)** — `OfflineScreen.tsx`: intro + `CachingStrategies` + `NetworkStatusDemo`; семантика `role="region"`, `aria-labelledby`, `role="status"` для badge
 4. **Стили** — `OfflineScreen.scss`: BEM `.offline-screen`, карточки как `manifest-screen__data`, badge online/offline
 5. **E2E** — `e2e/offline-lesson.spec.ts`: `/offline` → заголовок, текст, секции, статус «В сети»
-6. **Verify** — `pnpm lint` → `pnpm build` → `pnpm test --run` → `pnpm test:e2e`
+6. **Verify** — `pnpm lint` ✅ → `pnpm build` ✅ → `pnpm test --run` ✅ (40) → `pnpm test:e2e` ✅ (11)
 
 ---
+
+## Build Progress
+
+- **OfflineScreen**: Complete
+  - `src/screens/OfflineScreen/OfflineScreen.tsx` — полный экран урока (intro, CachingStrategies, NetworkStatusDemo)
+  - `src/screens/OfflineScreen/offlineLessonData.ts` — зеркало workbox-конфига из `vite.config.ts`
+  - `src/screens/OfflineScreen/OfflineScreen.scss` — стили по образцу ManifestScreen
+  - `src/screens/OfflineScreen/OfflineScreen.test.tsx` — 4 unit-теста (TDD)
+  - `e2e/offline-lesson.spec.ts` — E2E-сценарий урока
+- **Verify**: lint ✅, build ✅, unit 40 ✅, e2e 11 ✅
 
 ## Creative Phases Required
 

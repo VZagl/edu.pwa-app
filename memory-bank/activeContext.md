@@ -2,23 +2,21 @@
 
 ## Current Focus
 
-`feat/step-offline-lesson-ui` — экран урока «Offline & Cache»
+`feat/step-offline-lesson-ui` — BUILD завершён
 
 ## Current Mode
 
-BUILD — реализация по TDD
+REFLECT — рефлексия по задаче
 
 ## Next Steps
 
-1. Запустить `/build` для реализации экрана урока
-2. После BUILD — `/reflect`, затем `/close-task`
+1. Запустить `/reflect` для рефлексии по задаче
+2. После REFLECT — `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 4 в процессе — offline fallback завершён (`step-offline-fallback`)
-- Маршрут `/offline` уже есть; `OfflineScreen` — заглушка (`LessonStubScreen`) → заменить полным уроком
-- Доступны: `useOnlineStatus`, `OfflineIndicator` (глобальный chip)
-- Паттерн урока: `ManifestScreen` (текст + данные + тесты + E2E)
-- Nav и `lessonRoutes.ts` не менять (маршрут уже зарегистрирован)
-- Creative phase не требуется — UI по образцу `ManifestScreen`
+- Фаза 4 в процессе — экран урока «Offline & Cache» реализован
+- `OfflineScreen` заменён с заглушки на полный урок (intro + стратегии + демо статуса сети)
+- `offlineLessonData.ts` — статическое зеркало workbox-конфига
+- Verify: lint ✅, build ✅, unit 40 ✅, e2e 11 ✅

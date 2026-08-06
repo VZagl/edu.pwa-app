@@ -16,6 +16,11 @@
 | SW precache / vite-plugin-pwa                  | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | Offline fallback (step-offline-fallback)       | ✅ ЗАВЕРШЕНО (2026-08-06)       |
+| Экран урока Offline (step-offline-lesson-ui)   | ✅ BUILD (2026-08-06)           |
+
+## [2026-08-06]: step-offline-lesson-ui — BUILD
+
+Экран урока «Офлайн и кэш»: intro (precache vs runtime, navigateFallback), секция стратегий Workbox, демо статуса сети через `useOnlineStatus`. Файлы: `OfflineScreen.tsx`, `offlineLessonData.ts`, `OfflineScreen.scss`, unit + E2E тесты. Verify: lint ✅, build ✅, unit 40 ✅, e2e 11 ✅.
 
 ## [2026-08-06]: step-offline-fallback — ЗАВЕРШЕНО
 
