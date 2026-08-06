@@ -2,18 +2,23 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+`feat/step-install-prompt` — обработка `beforeinstallprompt` и кнопка «Установить»
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+VAN — завершён. Следующий шаг: **PLAN**
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи
+1. Запустить `/plan` для детального плана реализации
+2. При необходимости — `/creative` (UI баннера, размещение в layout)
+3. `/build` — TDD: хук `useInstallPrompt`, компонент `InstallBanner`, unit + E2E
+4. `/reflect` → `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 4 завершена — офлайн fallback и экран урока «Офлайн и кэш»
-- Следующий шаг в backlog: `step-install-prompt` (установка PWA)
+- Фаза 5 — установка PWA; предыдущие шаги (manifest, SW, offline) завершены
+- Паттерны для ориентира: `useOnlineStatus` (хук), `OfflineIndicator` (глобальный PWA-баннер)
+- UI-конвенции: кнопка «Установить» + подсказка для браузеров без `beforeinstallprompt` (`docs/project/ui-conventions.md`)
+- Safari/iOS: install prompt недоступен — показать fallback-текст (Add to Home Screen)

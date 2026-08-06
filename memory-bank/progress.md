@@ -17,6 +17,11 @@
 | UX обновления SW (step-sw-update-ux)           | ✅ ЗАВЕРШЕНО (2026-08-04)       |
 | Offline fallback (step-offline-fallback)       | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Экран урока Offline (step-offline-lesson-ui)   | ✅ ЗАВЕРШЕНО (2026-08-06)       |
+| Install prompt (step-install-prompt)           | 🔄 В РАБОТЕ (2026-08-06)        |
+
+## [2026-08-06]: step-install-prompt — В РАБОТЕ
+
+Обработка `beforeinstallprompt`, кнопка «Установить», fallback для Safari/iOS. Ветка: `feat/step-install-prompt`. Статус: VAN завершён, ожидает PLAN.
 
 ## [2026-08-06]: step-offline-lesson-ui — ЗАВЕРШЕНО
 
