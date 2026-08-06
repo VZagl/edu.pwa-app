@@ -22,7 +22,7 @@
 - [x] GIT: Работа в feature-ветке `feat/step-offline-lesson-ui`
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация по TDD
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ---
@@ -53,6 +53,17 @@
 - [x] Planning complete
 - [x] Technology validation complete
 - [x] Implementation complete
+- [x] Reflection complete
+- [x] Archiving — пропущено (не требуется)
+
+## Reflection Highlights
+
+- **What Went Well**: Паттерн ManifestScreen; `offlineLessonData.ts` как зеркало Workbox; TDD с `vi.hoisted`; разделение E2E урока и offline-fallback
+- **Challenges**: Статический дубликат конфига; риск рассинхронизации; путаница `/offline` vs navigateFallback; ограничения `navigator.onLine`
+- **Lessons Learned**: Зеркало build-time конфига в TS — допустимо для учебного UI; scoped `within(region)` в тестах; subcomponents в одном файле достаточны для Level 2
+- **Next Steps**: `/close-task`; синхронизация Workbox при изменении `vite.config.ts`
+
+**Reflection:** [memory-bank/reflection/reflection-step-offline-lesson-ui.md](reflection/reflection-step-offline-lesson-ui.md)
 
 ---
 

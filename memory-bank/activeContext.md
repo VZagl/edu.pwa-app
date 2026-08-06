@@ -2,16 +2,15 @@
 
 ## Current Focus
 
-`feat/step-offline-lesson-ui` — BUILD завершён
+`feat/step-offline-lesson-ui` — REFLECT завершён
 
 ## Current Mode
 
-REFLECT — рефлексия по задаче
+REFLECT → CLOSE (архив пропущен по решению пользователя)
 
 ## Next Steps
 
-1. Запустить `/reflect` для рефлексии по задаче
-2. После REFLECT — `/close-task`
+1. Запустить `/close-task` для финализации задачи
 
 ## Context for AI
 
