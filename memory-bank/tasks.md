@@ -7,7 +7,7 @@
 - **Уровень сложности:** Level 2 — Simple Enhancement
 - **Git Branch:** `feat/step-install-prompt`
 - **Фаза:** 5 — Установка PWA (Order: 5.1.1)
-- **Статус:** BUILD — завершён, готов к REFLECT
+- **Статус:** REFLECT — завершён, готов к `/close-task`
 - **Дата создания:** 2026-08-06
 - **Источник:** [docs/project/implementation-plan.md](../docs/project/implementation-plan.md) (step-install-prompt)
 
@@ -244,8 +244,15 @@ type InstallPromptState = {
   - [x] 4. Интеграция в `App.tsx`
   - [x] 5. E2E `install-prompt.spec.ts`
   - [x] 6. Verify: lint, build, unit, e2e
-- [ ] REFLECT: Рефлексия (`/reflect`)
+- [x] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well**: разделение install-логики и UA-sniffing; паттерн SwUpdateBanner; grace period + ref; стекинг через `app-shell__bottom-banners`; TDD по слоям; полный verify (59 unit, 12 e2e)
+- **Challenges**: BIP недоступен в CI; локальный TS interface; асинхронность BIP; iOS standalone; стекинг трёх fixed-bottom элементов
+- **Lessons Learned**: ref для deferred prompt; grace timer с проверкой ref в setter; `column-reverse` для bottom stack; ручная матрица браузеров — в reflection, не в E2E
+- **Next Steps**: `/close-task`; ручная проверка матрицы браузеров; опционально учебный экран Install
 
 ---
 
