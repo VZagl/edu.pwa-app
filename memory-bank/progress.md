@@ -21,7 +21,7 @@
 
 ## [2026-08-06]: step-install-prompt — В РАБОТЕ
 
-Обработка `beforeinstallprompt`, кнопка «Установить», fallback для Safari/iOS. Ветка: `feat/step-install-prompt`. Статус: VAN завершён, ожидает PLAN.
+Обработка `beforeinstallprompt`, кнопка «Установить», fallback для Safari/iOS. Ветка: `feat/step-install-prompt`. Статус: PLAN завершён, готов к BUILD.
 
 ## [2026-08-06]: step-offline-lesson-ui — ЗАВЕРШЕНО
 
