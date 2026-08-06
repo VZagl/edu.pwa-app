@@ -7,6 +7,9 @@
 		"preinstall": "npx only-allow pnpm",
 		"dev": "vite",
 		"build": "tsc -b && vite build",
+		"typecheck": "tsc -b --pretty false",
+		"verify:fast": "pnpm lint && pnpm typecheck && pnpm test --run && pnpm build",
+		"verify": "pnpm verify:fast && pnpm test:e2e",
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"test": "vitest",
@@ -48,7 +51,11 @@
 		"vitest": "^4.1.10"
 	},
 	"lint-staged": {
-		"*.{ts,tsx,js,jsx,json,css,scss,md}": [
+		"*.{ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.{js,jsx,json,css,scss,md}": [
 			"prettier --write"
 		]
 	},
