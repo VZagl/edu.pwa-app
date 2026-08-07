@@ -2,18 +2,24 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+`feat/step-lighthouse-pwa-checklist` — чеклист Lighthouse PWA и документирование проверки
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+PLAN завершён → следующий шаг: **BUILD**
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи
+1. `/build` — создать `docs/project/pwa-checklist.md` и перекрёстные ссылки
+2. Выполнить ручную проверку по чеклисту (`pnpm build` → `pnpm preview` → Lighthouse)
+3. Прогнать регрессию (lint, build, test --run, test:e2e)
+4. `/reflect` → `/close-task`
 
 ## Context for AI
 
 - Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 5 (установка PWA) завершена; следующая задача в backlog: `step-lighthouse-pwa-checklist`
-- План шагов: `docs/project/implementation-plan.md`
+- Фаза 6: Lighthouse PWA checklist — документация, без CREATIVE phase
+- Deliverable: `docs/project/pwa-checklist.md` + ссылки из README, tech-stack-pwa, run-and-build
+- Зависимости (`step-install-prompt`, `step-offline-fallback`) закрыты
+- Код менять только если ручной Lighthouse выявит реальный дефект PWA
+- План: `memory-bank/tasks.md`
