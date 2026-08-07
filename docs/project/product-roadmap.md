@@ -77,7 +77,7 @@
 - [x] Web App Manifest и набор иконок
 - [x] Service Worker (ручной или через vite-plugin-pwa)
 - [x] Офлайн-доступ к оболочке приложения / fallback
-- [ ] Проверка: Lighthouse PWA + установка на устройство
+- [x] Проверка: Lighthouse PWA + установка на устройство
 
 **Синхронизация чекбоксов:** при `/close-task` отмечать `[x]`, когда **все** шаги из таблицы ниже имеют ссылку в поле **Completed** в [implementation-plan.md](implementation-plan.md).
 
@@ -126,18 +126,19 @@
 
 Журнал вех. Строка добавляется при `/close-task`, когда закрытый шаг закрывает цель из §6–§7.
 
-| Дата       | Событие                                                                       | Статус   |
-| ---------- | ----------------------------------------------------------------------------- | -------- |
-| 2026-07-23 | Инициализация репозитория (Vite + React), адаптация docs под учебное PWA      | ✅ Готов |
-| 2026-07-30 | Фаза 0: тестовое окружение (Vitest + Playwright)                              | ✅ Готов |
-| 2026-08-03 | Фаза 1: каркас UI и навигация по учебным разделам (`step-lessons-navigation`) | ✅ Готов |
-| 2026-08-03 | Web App Manifest (`step-web-app-manifest`)                                    | ✅ Готов |
-| 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)            | ✅ Готов |
-| 2026-08-04 | Service Worker с Workbox precache (`step-vite-plugin-pwa`)                    | ✅ Готов |
-| 2026-08-04 | Фаза 3: Service Worker в production и UX обновления (`step-sw-update-ux`)     | ✅ Готов |
-| 2026-08-06 | Offline fallback и индикатор сети (`step-offline-fallback`)                   | ✅ Готов |
-| 2026-08-06 | Фаза 4: офлайн и кэш (`step-offline-lesson-ui`)                               | ✅ Готов |
-| 2026-08-06 | Фаза 5: установка PWA из UI (`step-install-prompt`)                           | ✅ Готов |
+| Дата       | Событие                                                                         | Статус   |
+| ---------- | ------------------------------------------------------------------------------- | -------- |
+| 2026-07-23 | Инициализация репозитория (Vite + React), адаптация docs под учебное PWA        | ✅ Готов |
+| 2026-07-30 | Фаза 0: тестовое окружение (Vitest + Playwright)                                | ✅ Готов |
+| 2026-08-03 | Фаза 1: каркас UI и навигация по учебным разделам (`step-lessons-navigation`)   | ✅ Готов |
+| 2026-08-03 | Web App Manifest (`step-web-app-manifest`)                                      | ✅ Готов |
+| 2026-08-03 | Фаза 2: Web App Manifest и экран урока (`step-manifest-lesson-ui`)              | ✅ Готов |
+| 2026-08-04 | Service Worker с Workbox precache (`step-vite-plugin-pwa`)                      | ✅ Готов |
+| 2026-08-04 | Фаза 3: Service Worker в production и UX обновления (`step-sw-update-ux`)       | ✅ Готов |
+| 2026-08-06 | Offline fallback и индикатор сети (`step-offline-fallback`)                     | ✅ Готов |
+| 2026-08-06 | Фаза 4: офлайн и кэш (`step-offline-lesson-ui`)                                 | ✅ Готов |
+| 2026-08-06 | Фаза 5: установка PWA из UI (`step-install-prompt`)                             | ✅ Готов |
+| 2026-08-07 | Фаза 6 / MVP PWA: чеклист проверки Lighthouse (`step-lighthouse-pwa-checklist`) | ✅ Готов |
 
 ---
 

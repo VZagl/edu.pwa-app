@@ -311,7 +311,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-install-prompt, step-offline-fallback
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md](../../memory-bank/completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md)
 
 ---
 
@@ -341,7 +341,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 | 3    | SW в production, UX обновления                           | ✅ Завершена |
 | 4    | Офлайн-fallback работает                                 | ✅ Завершена |
 | 5    | Install flow / инструкции                                | ✅ Завершена |
-| 6    | Lighthouse PWA checklist зафиксирован                    | —            |
+| 6    | Lighthouse PWA checklist зафиксирован                    | ✅ Завершена |
 
 ---
 

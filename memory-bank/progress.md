@@ -18,14 +18,10 @@
 | Offline fallback (step-offline-fallback)                 | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Экран урока Offline (step-offline-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Install prompt (step-install-prompt)                     | ✅ ЗАВЕРШЕНО (2026-08-06)       |
-| Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ BUILD (2026-08-07)           |
+| Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
 
-## [2026-08-07]: step-lighthouse-pwa-checklist — BUILD
+## [2026-08-07]: step-lighthouse-pwa-checklist — ЗАВЕРШЕНО
 
 Чеклист `docs/project/pwa-checklist.md`: Lighthouse PWA audit, Application panel, установка, offline, troubleshooting, регрессия. Перекрёстные ссылки в README, tech-stack-pwa, run-and-build. Код не менялся. Verify: lint ✅, build ✅, unit 59 ✅, e2e 12 ✅.
 
-## [2026-08-06]: step-install-prompt — ЗАВЕРШЕНО
-
-Обработка `beforeinstallprompt`, кнопка «Установить», контекстный fallback для Safari/iOS/Firefox. Хук `useInstallPrompt`, `InstallBanner`, контейнер `app-shell__bottom-banners`, E2E `install-prompt.spec.ts`. Verify: lint ✅, build ✅, unit 59 ✅, e2e 12 ✅.
-
-**Completed:** [memory-bank/completed-tasks/2026/08/step-install-prompt_2026-08-06.md](completed-tasks/2026/08/step-install-prompt_2026-08-06.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md](completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md)

@@ -2,12 +2,11 @@
 
 ## Высокий
 
-- [ ] Чеклист Lighthouse PWA и документирование проверки (step-lighthouse-pwa-checklist)
-  - **Создано:** 2026-08-06
-  - Чеклист и документирование проверки: Lighthouse PWA, Application panel, установка на телефон. Краткая секция в README или отдельный `docs/project/pwa-checklist.md` (опционально).
-  - **Цель:** Зафиксирован reproducible способ проверить, что MVP PWA выполнен.
-  - **Источник:** docs/project/implementation-plan.md (step-lighthouse-pwa-checklist)
-  - **Причина:** Следующий шаг после step-install-prompt
+- [ ] Web Push — опциональный урок (step-push-notifications)
+  - **Создано:** 2026-08-07
+  - Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS.
+  - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
+  - **Причина:** Следующий шаг после step-lighthouse-pwa-checklist
 
 ## Средний
 

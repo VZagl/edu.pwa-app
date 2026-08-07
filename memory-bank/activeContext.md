@@ -2,21 +2,20 @@
 
 ## Current Focus
 
-`feat/step-lighthouse-pwa-checklist` — REFLECT завершён ✅
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-REFLECT — завершён. Следующий шаг: **CLOSE**
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/close-task` — финализация задачи (completed-запись, backlog, merge)
-2. (Опционально) Lighthouse PWA audit в Chrome DevTools по [pwa-checklist.md](../docs/project/pwa-checklist.md)
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
-- Deliverable: `docs/project/pwa-checklist.md` + ссылки в README, tech-stack-pwa, run-and-build
-- Код не менялся — дефекты PWA не выявлены
-- Verify: lint ✅, build ✅, unit 59 ✅, e2e 12 ✅
-- Reflection: [memory-bank/reflection/reflection-step-lighthouse-pwa-checklist.md](reflection/reflection-step-lighthouse-pwa-checklist.md)
-- План: `memory-bank/tasks.md`
+- Учебное PWA на React + Vite; менеджер пакетов — pnpm
+- План шагов: `docs/project/implementation-plan.md`
+- Дорожная карта: `docs/project/product-roadmap.md`
+- Последняя завершённая задача: `step-lighthouse-pwa-checklist` — чеклист проверки PWA в `docs/project/pwa-checklist.md`
+- Следующая задача в backlog: `step-push-notifications` (опционально, фаза 7)
