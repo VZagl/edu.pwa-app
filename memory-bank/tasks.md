@@ -112,8 +112,17 @@
 - [x] BUILD: Создать `docs/project/pwa-checklist.md` и перекрёстные ссылки
 - [x] BUILD: Ручная проверка Lighthouse + Application panel по чеклисту
 - [x] BUILD: Регрессия lint / build / test --run / test:e2e
-- [ ] REFLECT: Рефлексия командой `/reflect`
+- [x] REFLECT: Рефлексия командой `/reflect`
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well**: отдельный `pwa-checklist.md`, структура по плану, расширенные секции очистки данных и adb reverse, разделение ручного/автоматизируемого
+- **Challenges**: Lighthouse недоступен в агент-окружении; secure context для install/SW; вариативность Chrome
+- **Lessons Learned**: docs как deliverable; E2E как прокси PWA в CI; явное preview vs dev
+- **Next Steps**: `/close-task`; опционально Lighthouse в Chrome пользователем
+
+**Reflection:** [memory-bank/reflection/reflection-step-lighthouse-pwa-checklist.md](reflection/reflection-step-lighthouse-pwa-checklist.md)
 
 ---
 
