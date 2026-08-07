@@ -42,7 +42,7 @@
 
 ## 3. Видение
 
-Приложение с навигацией по **учебным модулям** (Manifest, SW, Offline, Install, …), каждый модуль — живой пример + краткие пояснения в UI. Lighthouse PWA audit проходит на production-сборке.
+Приложение с навигацией по **учебным модулям** (Manifest, SW, Offline, Install, Cache Storage, Storage, …), каждый модуль — живой пример + краткие пояснения в UI. Lighthouse PWA audit проходит на production-сборке; целевой хостинг после MVP — **GitHub Pages** (HTTPS).
 
 ---
 
@@ -53,7 +53,9 @@
 3. **Precache** статики и разумный runtime-кэш
 4. **Офлайн-fallback** (страница или режим «вы offline»)
 5. **Install prompt** / подсказка установки (где поддерживает браузер)
-6. (Опционально, поздние этапы) Push, Background Sync, Share Target
+6. Учебные экраны по темам (Главная, Manifest, SW, Offline, Install, Cache Storage, Storage)
+7. Деплой на **GitHub Pages** (HTTPS)
+8. (Опционально) Push, Background Sync, Share Target
 
 ---
 
@@ -64,7 +66,7 @@
 | P0        | Manifest + базовая installability (иконки, meta, HTTPS preview) |
 | P1        | Service Worker: регистрация, precache, обновление версии        |
 | P2        | Офлайн UX, runtime caching, учебные экраны по темам             |
-| P3        | Продвинутые API браузера (по желанию)                           |
+| P3        | Cache Storage / Storage UI, Push (опц.), деплой на GitHub Pages |
 
 ---
 
@@ -96,11 +98,14 @@
 
 ## 7. Долгосрочные цели
 
-- [ ] Полный набор учебных экранов с интерактивными демо (кэш, update flow)
-- [ ] Расширенные E2E-сценарии PWA (offline/install в CI, где стабильно)
+- [ ] Заполнить экраны-заглушки: Главная, Service Worker, Install — `step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`
+- [ ] Разделы Cache Storage и Storage quota — `step-cache-storage-lesson-ui`, `step-storage-quota-lesson-ui`
 - [ ] (Опционально) Push-уведомления — `step-push-notifications`
+- [ ] Деплой на GitHub Pages (HTTPS) — `step-github-pages-deploy` (после Push)
+- [ ] README «с нуля» для ученика — `step-readme-learner-guide`
+- [ ] Расширенные E2E-сценарии PWA (offline/install в CI, где стабильно)
 
-> Базовая инфра Playwright и smoke E2E — в MVP (фаза 0). Здесь — углубление покрытия критичных PWA-сценариев.
+> Базовая инфра Playwright и smoke E2E — в MVP (фаза 0). Здесь — доделка лаборатории, деплой и углубление покрытия.
 
 ---
 

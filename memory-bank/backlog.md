@@ -2,15 +2,58 @@
 
 ## Высокий
 
+- [ ] Главная — учебный экран (step-home-lesson-ui)
+  - **Создано:** 2026-08-07
+  - Карта лаборатории, порядок модулей, чеклист PWA, блок «почему HTTPS».
+  - **Источник:** docs/project/implementation-plan.md (step-home-lesson-ui)
+  - **Причина:** Экран-заглушка; точка входа для ученика после MVP
+
+- [ ] Service Worker — учебный экран (step-sw-lesson-ui)
+  - **Создано:** 2026-08-07
+  - Lifecycle, живой статус SW, версия сборки, учебная кнопка сброса SW/кэша.
+  - **Источник:** docs/project/implementation-plan.md (step-sw-lesson-ui)
+  - **Причина:** Экран-заглушка; инфраструктура SW уже есть
+
+- [ ] Install — учебный экран (step-install-lesson-ui)
+  - **Создано:** 2026-08-07
+  - Installability, демо `useInstallPrompt`, display-mode, инструкции по платформам.
+  - **Источник:** docs/project/implementation-plan.md (step-install-lesson-ui)
+  - **Причина:** Экран-заглушка; баннер установки уже есть
+
+## Средний
+
+- [ ] Cache Storage — отдельный раздел (step-cache-storage-lesson-ui)
+  - **Создано:** 2026-08-07
+  - Описание API + живой список кэшей и ключей.
+  - **Источник:** docs/project/implementation-plan.md (step-cache-storage-lesson-ui)
+  - **Причина:** Новый учебный модуль после доделки заглушек
+
+- [ ] Storage quota / Persistent storage — отдельный раздел (step-storage-quota-lesson-ui)
+  - **Создано:** 2026-08-07
+  - `estimate` / `persist` / `persisted`; продвинутый урок.
+  - **Источник:** docs/project/implementation-plan.md (step-storage-quota-lesson-ui)
+  - **Зависит от:** step-cache-storage-lesson-ui
+  - **Причина:** Продвинутая тема хранения
+
 - [ ] Web Push — опциональный урок (step-push-notifications)
   - **Создано:** 2026-08-07
   - Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS.
   - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
-  - **Причина:** Следующий шаг после step-lighthouse-pwa-checklist
+  - **Причина:** Опциональный шаг фазы 7; после доделки основных экранов
 
-## Средний
+- [ ] Деплой на GitHub Pages (step-github-pages-deploy)
+  - **Создано:** 2026-08-07
+  - Vite `base`, Actions → Pages, проверка PWA по HTTPS.
+  - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
+  - **Зависит от:** step-push-notifications
+  - **Причина:** Следующий шаг после Push; закрывает «деплой» из фазы 6
 
-(Нет активных задач)
+- [ ] README «с нуля» для ученика (step-readme-learner-guide)
+  - **Создано:** 2026-08-07
+  - Порядок экранов, DevTools, preview, ссылка на pwa-checklist.
+  - **Источник:** docs/project/implementation-plan.md (step-readme-learner-guide)
+  - **Зависит от:** step-home-lesson-ui, step-sw-lesson-ui, step-install-lesson-ui
+  - **Причина:** Онбординг без истории Memory Bank
 
 ## Низкий
 
@@ -18,7 +61,11 @@
 
 ## Идеи
 
-(Нет активных задач)
+- [ ] Убрать `LessonStubScreen`, когда все разделы заполнены
+  - **Создано:** 2026-08-07
+  - Удалить `src/components/LessonStubScreen/` и импорты, когда Главная, Service Worker и Install больше не заглушки (как Manifest/Offline).
+  - **Зависит от:** заполненные экраны Home / SW / Install (`step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`)
+  - **Причина:** Временный layout из `step-lessons-navigation`; после полных уроков — мёртвый код
 
 ---
 

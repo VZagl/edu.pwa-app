@@ -315,17 +315,155 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 ---
 
-## Фаза 7: Опционально (после MVP)
+## Фаза 7: После MVP — учебные экраны, API, деплой
+
+> MVP (фазы 0–6) закрыт. Дальше — доделка заглушек уроков, отдельные разделы Cache Storage / Storage, опциональный Push, деплой на GitHub Pages.
+
+### Этап 7.0: Доделка учебных экранов
+
+#### step-home-lesson-ui (Order: 7.0.1)
+
+**Описание**
+
+Заполнить экран «Главная» (сейчас `LessonStubScreen`): карта лаборатории — intro учебного PWA, порядок модулей со ссылками (Manifest → SW → Offline → Install и далее новые разделы), краткий чеклист критериев PWA, блок «как пользоваться» (preview, DevTools). Короткий блок **почему нужен HTTPS** (secure context; исключение `localhost`; на GitHub Pages HTTPS из коробки).
+
+**Цель:** Главная — точка входа для ученика, а не заглушка.
+
+**Файлы:** `src/screens/HomeScreen/`, тесты рядом; при необходимости `src/routes/lessonRoutes.ts`
+
+**Тесты:** unit/integration — ключевые блоки и ссылки на разделы; E2E по смыслу
+
+**Зависит от:** step-lessons-navigation, step-lighthouse-pwa-checklist
+
+**Completed:** —
+
+---
+
+#### step-sw-lesson-ui (Order: 7.0.2)
+
+**Описание**
+
+Заполнить экран «Service Worker»: intro (scope, отличие от обычного скрипта), lifecycle (install → activate → controlling / waiting), живое демо (`controller`, state регистрации, scope), связь с баннером обновления (`swUpdateController`). Показать **версию сборки / revision** в UI (связь с update flow). Учебная кнопка **«Сбросить SW и кэш»** (`unregister` + очистка `caches` + опционально reload) с явной пометкой «только для лаборатории» и пояснением, что на проде делают через update flow и cleanup в `activate`, а не публичный hard-reset. Не дублировать таблицы runtime rules с Offline — перекрёстная ссылка.
+
+**Цель:** Раздел SW объясняет lifecycle и даёт интерактив для экспериментов.
+
+**Файлы:** `src/screens/ServiceWorkerScreen/`, при необходимости `src/pwa/`, тесты рядом
+
+**Тесты:** unit — отображение статуса / версия / предупреждение у кнопки сброса (моки SW и caches); E2E по смыслу
+
+**Зависит от:** step-sw-update-ux, step-lessons-navigation
+
+**Completed:** —
+
+---
+
+#### step-install-lesson-ui (Order: 7.0.3)
+
+**Описание**
+
+Заполнить экран «Install»: условия installability, демо на базе `useInstallPrompt` (canInstall / fallback / installed), определение `display-mode` (standalone vs вкладка), инструкции по платформам (Chromium prompt vs iOS/Safari), куда смотреть в DevTools.
+
+**Цель:** Раздел Install закрепляет установку PWA в UI, а не только глобальный баннер.
+
+**Файлы:** `src/screens/InstallScreen/`, переиспользование `useInstallPrompt` / hints, тесты рядом
+
+**Тесты:** unit/integration — состояния установки и display-mode (моки); E2E по смыслу
+
+**Зависит от:** step-install-prompt, step-lessons-navigation
+
+**Completed:** —
+
+---
+
+### Этап 7.1: Новые учебные разделы (Cache Storage, Storage)
+
+#### step-cache-storage-lesson-ui (Order: 7.0.4)
+
+**Описание**
+
+**Отдельный раздел** навигации «Cache Storage»: описание Cache Storage API + блок живых значений — список `caches.keys()`, для выбранного кэша — URL из `cache.keys()`. Кнопка обновления списка. Без вывода тел ответов.
+
+**Цель:** Ученик видит реальные кэши Workbox/runtime в UI приложения.
+
+**Файлы:** `src/screens/CacheStorageScreen/` (или аналог), `src/routes/lessonRoutes.ts`, тесты рядом
+
+**Тесты:** unit — рендер списка кэшей/ключей (мок `caches`); E2E по смыслу
+
+**Зависит от:** step-offline-fallback, step-lessons-navigation
+
+**Completed:** —
+
+---
+
+#### step-storage-quota-lesson-ui (Order: 7.0.5)
+
+**Описание**
+
+**Отдельный раздел** навигации (продвинутый урок): Storage quota / Persistent storage — `navigator.storage.estimate()` (usage/quota), опционально `persist()` / `persisted()`, краткое объяснение лимитов и вытеснения данных браузером.
+
+**Цель:** Понять квоты хранилища и Persistent Storage на практике.
+
+**Файлы:** `src/screens/StorageScreen/` (или аналог), `src/routes/lessonRoutes.ts`, тесты рядом
+
+**Тесты:** unit — отображение estimate/persisted (моки `navigator.storage`); E2E по смыслу
+
+**Зависит от:** step-cache-storage-lesson-ui
+
+**Completed:** —
+
+---
+
+### Этап 7.2: Опционально — Push
 
 #### step-push-notifications (Order: 7.1.1)
 
 **Описание**
 
-Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS.
+Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS. Отдельный раздел или экран по итогам PLAN/CREATIVE.
 
 **Тесты:** unit моков подписки; E2E — по учебной необходимости
 
 **Зависит от:** step-lighthouse-pwa-checklist
+
+**Completed:** —
+
+---
+
+### Этап 7.3: Деплой
+
+#### step-github-pages-deploy (Order: 7.2.1)
+
+**Описание**
+
+Деплой учебного PWA на **GitHub Pages** (HTTPS): настроить `base` в Vite под путь репозитория (если project site), GitHub Actions (`pnpm build` → publish `dist`), проверить manifest/SW/offline/install уже на `https://…`. Обновить [run-and-build.md](run-and-build.md) и при необходимости [pwa-checklist.md](pwa-checklist.md) секцией про проверку на Pages. Закрывает пробел фазы 6 («качество и деплой») — сам шаг деплоя.
+
+**Цель:** Приложение доступно по HTTPS; PWA-сценарии воспроизводимы вне localhost.
+
+**Файлы:** `vite.config.ts`, `.github/workflows/`, `docs/project/run-and-build.md`, при необходимости `docs/project/pwa-checklist.md`
+
+**Тесты:** документация и ручная проверка на Pages; регрессия существующих unit/E2E на preview; E2E против Pages — опционально
+
+**Зависит от:** step-push-notifications
+
+**Completed:** —
+
+---
+
+### Этап 7.4: Документация для ученика
+
+#### step-readme-learner-guide (Order: 7.3.1)
+
+**Описание**
+
+Расширить README «с нуля»: порядок экранов/разделов, что смотреть в DevTools (Manifest, Service Workers, Cache Storage, Network → Offline), зачем `pnpm build` + `pnpm preview`, ссылка на [pwa-checklist.md](pwa-checklist.md).
+
+**Цель:** Репозиторий понятен без истории Memory Bank.
+
+**Файлы:** `README.md`
+
+**Тесты:** ревью документации (автотесты не обязательны)
+
+**Зависит от:** step-home-lesson-ui, step-sw-lesson-ui, step-install-lesson-ui
 
 **Completed:** —
 
@@ -342,6 +480,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 | 4    | Офлайн-fallback работает                                 | ✅ Завершена |
 | 5    | Install flow / инструкции                                | ✅ Завершена |
 | 6    | Lighthouse PWA checklist зафиксирован                    | ✅ Завершена |
+| 7    | Экраны-уроки, Cache/Storage, Push (опц.), Pages, README  | ⏳ В плане   |
 
 ---
 
