@@ -24,6 +24,7 @@ pnpm dev
 - [Структура проекта](docs/project/project-structure.md)
 - [Технологии](docs/project/tech-stack.md)
 - [PWA и Service Worker](docs/project/tech-stack-pwa.md)
+- [Чеклист проверки PWA](docs/project/pwa-checklist.md)
 - [Запуск и сборка](docs/project/run-and-build.md)
 - [Дорожная карта](docs/project/product-roadmap.md)
 - [План реализации](docs/project/implementation-plan.md)

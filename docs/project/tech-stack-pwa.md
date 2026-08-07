@@ -17,12 +17,12 @@
 
 ## Стек (целевой, по мере прохождения плана)
 
-| Область        | Технология                                                          |
-| -------------- | ------------------------------------------------------------------- |
-| Manifest       | `public/manifest.webmanifest` или генерация через `vite-plugin-pwa` |
-| Service Worker | Workbox (через `vite-plugin-pwa`) или ручной SW для учебных шагов   |
-| Иконки         | PNG/SVG в `public/icons/`                                           |
-| Проверка PWA   | Chrome DevTools → Application; Lighthouse PWA audit                 |
+| Область        | Технология                                                                                  |
+| -------------- | ------------------------------------------------------------------------------------------- |
+| Manifest       | `public/manifest.webmanifest` или генерация через `vite-plugin-pwa`                         |
+| Service Worker | Workbox (через `vite-plugin-pwa`) или ручной SW для учебных шагов                           |
+| Иконки         | PNG/SVG в `public/icons/`                                                                   |
+| Проверка PWA   | [pwa-checklist.md](./pwa-checklist.md); Chrome DevTools → Application; Lighthouse PWA audit |
 
 ## Типичные учебные темы (roadmap)
 

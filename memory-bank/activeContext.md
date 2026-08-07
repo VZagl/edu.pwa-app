@@ -14,6 +14,8 @@ IDLE — ожидание новой задачи
 
 ## Context for AI
 
-- Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 5 (установка PWA) завершена; следующая задача в backlog: `step-lighthouse-pwa-checklist`
+- Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - План шагов: `docs/project/implementation-plan.md`
+- Дорожная карта: `docs/project/product-roadmap.md`
+- Последняя завершённая задача: `step-lighthouse-pwa-checklist` — чеклист проверки PWA в `docs/project/pwa-checklist.md`
+- Следующая задача в backlog: `step-push-notifications` (опционально, фаза 7)
