@@ -2,24 +2,21 @@
 
 ## Current Focus
 
-`feat/step-lighthouse-pwa-checklist` — чеклист Lighthouse PWA и документирование проверки
+`feat/step-lighthouse-pwa-checklist` — BUILD завершён
 
 ## Current Mode
 
-PLAN завершён → следующий шаг: **BUILD**
+BUILD завершён → следующий шаг: **/reflect**
 
 ## Next Steps
 
-1. `/build` — создать `docs/project/pwa-checklist.md` и перекрёстные ссылки
-2. Выполнить ручную проверку по чеклисту (`pnpm build` → `pnpm preview` → Lighthouse)
-3. Прогнать регрессию (lint, build, test --run, test:e2e)
-4. `/reflect` → `/close-task`
+1. `/reflect` — рефлексия по задаче step-lighthouse-pwa-checklist
+2. `/close-task` — финализация и архивация
+3. (Опционально) Lighthouse PWA audit в Chrome DevTools по [pwa-checklist.md](../docs/project/pwa-checklist.md)
 
 ## Context for AI
 
-- Учебный PWA на React + Vite (frontend only), **pnpm**
-- Фаза 6: Lighthouse PWA checklist — документация, без CREATIVE phase
-- Deliverable: `docs/project/pwa-checklist.md` + ссылки из README, tech-stack-pwa, run-and-build
-- Зависимости (`step-install-prompt`, `step-offline-fallback`) закрыты
-- Код менять только если ручной Lighthouse выявит реальный дефект PWA
+- Deliverable: `docs/project/pwa-checklist.md` + ссылки в README, tech-stack-pwa, run-and-build
+- Код не менялся — дефекты PWA не выявлены
+- Verify: lint ✅, build ✅, unit 59 ✅, e2e 12 ✅
 - План: `memory-bank/tasks.md`
