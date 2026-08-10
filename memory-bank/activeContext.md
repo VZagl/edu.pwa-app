@@ -6,13 +6,13 @@
 
 ## Current Mode
 
-PLAN — планирование реализации
+BUILD — реализация по плану (TDD)
 
 ## Next Steps
 
-1. Запустить `/plan` для детального плана
-2. `- [ ] GIT: Работа в feature-ветке feat/step-sw-lesson-ui`
-3. `- [ ] CLOSE: Финализировать задачу командой /close-task`
+1. Запустить `/build` — шаг 1: `swLessonData.ts`, `useServiceWorkerInfo`, `resetServiceWorkerLab` + unit-тесты
+2. Шаг 2: `ServiceWorkerScreen.tsx` + SCSS + unit-тесты экрана
+3. Шаг 3: `e2e/sw-lesson.spec.ts` + verify (lint, build, unit, e2e)
 
 ## Context for AI
 
@@ -22,3 +22,5 @@ PLAN — планирование реализации
 - Референс по стилю: `HomeScreen`, `OfflineScreen` (BEM + `*LessonData.ts`)
 - Инфраструктура SW: `src/pwa/swUpdateController.ts`, `src/hooks/useSwUpdate.ts`, `SwUpdateBanner`
 - Текущий экран — заглушка: `src/screens/ServiceWorkerScreen/ServiceWorkerScreen.tsx`
+- Revision в UI: `active.scriptURL` (меняется при каждой сборке SW)
+- SW в dev отключён — демо работает после `pnpm build && pnpm preview`
