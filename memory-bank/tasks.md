@@ -7,7 +7,7 @@
 - **Git Branch:** `feat/step-install-lesson-ui`
 - **Уровень сложности:** Level 2
 - **Тип:** Enhancement
-- **Статус:** PLAN → BUILD
+- **Статус:** BUILD завершён → /reflect
 - **Источник:** `docs/project/implementation-plan.md` (step-install-lesson-ui)
 
 ### Описание
@@ -30,7 +30,7 @@
 - [x] `useInstallPrompt` и `installFallbackHints` уже реализованы и покрыты тестами
 - [x] Референс-паттерн: `ServiceWorkerScreen`, `OfflineScreen` (`*LessonData.ts` + секции)
 - [x] POC не требуется — инфраструктура Install готова (`step-install-prompt`)
-- [ ] BUILD: verify после реализации (`pnpm verify:fast`, при необходимости `pnpm test:e2e`)
+- [x] BUILD: verify после реализации (`pnpm verify:fast`, при необходимости `pnpm test:e2e`)
 
 ### Creative Phases Required
 
@@ -112,11 +112,16 @@
 | Создать    | `e2e/install-lesson.spec.ts`                                       |
 | Не трогать | `useInstallPrompt`, `installFallbackHints`, `InstallBanner`, роуты |
 
-### Чеклист
+### Результаты BUILD (2026-08-10)
+
+- **Файлы:** `installLessonData.ts`, `InstallScreen.tsx`, `InstallScreen.scss`, `InstallScreen.test.tsx`, `e2e/install-lesson.spec.ts`
+- **Unit-тесты:** 9 тестов InstallScreen — ✅
+- **Verify:** `pnpm verify:fast` — lint ✅, typecheck ✅, unit 88 ✅, build ✅
+- **E2E:** `pnpm test:e2e e2e/install-lesson.spec.ts` — 1 ✅
 
 - [x] GIT: Работа в feature-ветке feat/step-install-lesson-ui
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация (TDD)
+- [x] BUILD: Реализация (TDD)
 - [ ] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой /close-task
 

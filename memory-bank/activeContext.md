@@ -2,18 +2,17 @@
 
 ## Current Focus
 
-`feat/step-install-lesson-ui` — Install — учебный экран
+`feat/step-install-lesson-ui` — BUILD завершён, готов к /reflect
 
 ## Current Mode
 
-PLAN → BUILD — планирование завершено, готово к реализации
+BUILD complete → /reflect
 
 ## Next Steps
 
-1. Запустить `/build` для реализации по плану в `tasks.md`
-2. `- [ ] BUILD: Реализация (TDD)`
-3. `- [ ] REFLECT: Рефлексия`
-4. `- [ ] CLOSE: Финализировать задачу командой /close-task`
+1. Запустить `/reflect` для рефлексии по задаче
+2. `- [ ] REFLECT: Рефлексия`
+3. `- [ ] CLOSE: Финализировать задачу командой /close-task`
 
 ## Context for AI
 
@@ -22,6 +21,5 @@ PLAN → BUILD — планирование завершено, готово к 
 - Дорожная карта: `docs/project/product-roadmap.md`
 - Референс по стилю: `ServiceWorkerScreen`, `HomeScreen`, `OfflineScreen` (BEM + `*LessonData.ts`)
 - Инфраструктура Install: `useInstallPrompt`, `installFallbackHints`, `InstallBanner` (`step-install-prompt`)
-- Текущий экран — заглушка: `src/screens/InstallScreen/InstallScreen.tsx`
-- Creative phase не требуется — UI следует паттерну учебных экранов
-- Детальный план: `memory-bank/tasks.md` → Implementation Plan
+- Экран Install реализован: секции installability, демо `useInstallPrompt`, display-mode, платформы, DevTools, связь с баннером
+- Детальный план и результаты BUILD: `memory-bank/tasks.md`

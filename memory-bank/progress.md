@@ -21,6 +21,11 @@
 | Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
 | Экран урока Главная (step-home-lesson-ui)                | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 | Экран урока Service Worker (step-sw-lesson-ui)           | ✅ ЗАВЕРШЕНО (2026-08-10)       |
+| Экран урока Install (step-install-lesson-ui)             | 🔄 BUILD завершён (2026-08-10)  |
+
+## [2026-08-10]: step-install-lesson-ui — BUILD
+
+Экран «Установка PWA» заменён с `LessonStubScreen` на полноценный учебный раздел: intro, условия installability, живое демо (`useInstallPrompt`: canInstall / fallback / installed), display-mode (`matchMedia`, `navigator.standalone`), инструкции по платформам, DevTools, связь с `InstallBanner`. TDD: 9 unit-тестов экрана, E2E `install-lesson.spec.ts`. Verify: lint ✅, build ✅, unit 88 ✅, e2e install-lesson ✅.
 
 ## [2026-08-10]: step-sw-lesson-ui — ЗАВЕРШЕНО
 
