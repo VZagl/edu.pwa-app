@@ -19,6 +19,11 @@
 | Экран урока Offline (step-offline-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Install prompt (step-install-prompt)                     | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
+| Экран урока Главная (step-home-lesson-ui)                | 🔄 В РАБОТЕ (2026-08-10)        |
+
+## [2026-08-10]: step-home-lesson-ui — В РАБОТЕ
+
+Инициализация задачи `/van`. Ветка `feat/step-home-lesson-ui` создана из `develop`. Следующий шаг: `/plan` — план реализации учебного экрана «Главная» (замена `LessonStubScreen`).
 
 ## [2026-08-07]: step-lighthouse-pwa-checklist — ЗАВЕРШЕНО
 
