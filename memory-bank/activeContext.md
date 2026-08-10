@@ -2,16 +2,16 @@
 
 ## Current Focus
 
-`feat/step-sw-lesson-ui` — Service Worker — учебный экран — BUILD завершён
+`feat/step-sw-lesson-ui` — Service Worker — учебный экран — REFLECT завершён
 
 ## Current Mode
 
-REFLECT — рефлексия по задаче
+REFLECT → ARCHIVE / CLOSE
 
 ## Next Steps
 
-1. Запустить `/reflect` — рефлексия по step-sw-lesson-ui
-2. После рефлексии — `/close-task`
+1. Опционально: `/archive` — архивная документация задачи
+2. `/close-task` — финализация: completed-запись, backlog, progress, roadmap
 
 ## Context for AI
 
@@ -22,3 +22,4 @@ REFLECT — рефлексия по задаче
 - Revision в UI: `active.scriptURL` из регистрации SW
 - SW в dev отключён — демо работает после `pnpm build && pnpm preview`
 - Verify: lint ✅, build ✅, unit 79 ✅, e2e 14 ✅
+- Рефлексия: `memory-bank/reflection/reflection-step-sw-lesson-ui.md`

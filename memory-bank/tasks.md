@@ -6,7 +6,7 @@
 - **Название:** Service Worker — учебный экран
 - **Git Branch:** `feat/step-sw-lesson-ui`
 - **Уровень сложности:** Level 2
-- **Статус:** BUILD → REFLECT
+- **Статус:** REFLECT завершён → CLOSE
 - **Источник:** `docs/project/implementation-plan.md` (step-sw-lesson-ui)
 
 ### Описание
@@ -18,7 +18,7 @@
 - [x] GIT: Работа в feature-ветке feat/step-sw-lesson-ui
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация (TDD)
-- [ ] REFLECT: Рефлексия
+- [x] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ### Technology Stack
@@ -104,6 +104,14 @@ e2e/sw-lesson.spec.ts            # smoke E2E экрана
 | Сложность моков SW API      | Вынести логику в хук/утилиту; тестировать изолированно    |
 | Деструктивная кнопка сброса | E2E только проверяет наличие и предупреждение, не кликает |
 | Revision без нового env     | `active.scriptURL` как идентификатор сборки SW            |
+
+### Reflection Highlights
+
+- **What Went Well**: разделение hook/util/data; TDD по слоям; интеграция с `swUpdateController`; dev-подсказка; 79 unit / 14 e2e
+- **Challenges**: SW отключён в dev; моки SW API; деструктивная кнопка в E2E; revision через scriptURL
+- **Lessons Learned**: `readServiceWorkerInfo` как testable async; `controllerchange` для живого демо; E2E не кликает lab-reset
+- **Next Steps**: `/close-task` (опционально `/archive`)
+- **Reflection:** [memory-bank/reflection/reflection-step-sw-lesson-ui.md](reflection/reflection-step-sw-lesson-ui.md)
 
 ---
 
