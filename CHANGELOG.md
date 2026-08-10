@@ -17,3 +17,4 @@
 - Индикатор offline в правом верхнем углу при отсутствии сети; offline fallback через Service Worker (navigateFallback) и runtime caching
 - Экран урока «Офлайн и кэш»: объяснение precache vs runtime, стратегии Workbox и демо статуса сети
 - Баннер установки PWA: кнопка «Установить» в Chromium и контекстные подсказки для Safari/iOS/Firefox
+- Экран «Главная» — карта лаборатории: intro, модули, краткий чеклист PWA, инструкции по использованию и блок о HTTPS
