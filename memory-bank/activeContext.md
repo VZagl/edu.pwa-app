@@ -6,13 +6,14 @@
 
 ## Current Mode
 
-VAN → PLAN — инициализация завершена, ожидается планирование
+PLAN → BUILD — планирование завершено, готово к реализации
 
 ## Next Steps
 
-1. Запустить `/plan` для детального плана
-2. `- [ ] PLAN: Детальный план реализации`
-3. `- [ ] CLOSE: Финализировать задачу командой /close-task`
+1. Запустить `/build` для реализации по плану в `tasks.md`
+2. `- [ ] BUILD: Реализация (TDD)`
+3. `- [ ] REFLECT: Рефлексия`
+4. `- [ ] CLOSE: Финализировать задачу командой /close-task`
 
 ## Context for AI
 
@@ -22,3 +23,5 @@ VAN → PLAN — инициализация завершена, ожидаетс
 - Референс по стилю: `ServiceWorkerScreen`, `HomeScreen`, `OfflineScreen` (BEM + `*LessonData.ts`)
 - Инфраструктура Install: `useInstallPrompt`, `installFallbackHints`, `InstallBanner` (`step-install-prompt`)
 - Текущий экран — заглушка: `src/screens/InstallScreen/InstallScreen.tsx`
+- Creative phase не требуется — UI следует паттерну учебных экранов
+- Детальный план: `memory-bank/tasks.md` → Implementation Plan
