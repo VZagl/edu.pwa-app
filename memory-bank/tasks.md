@@ -25,7 +25,7 @@
 
 - [x] GIT: Работа в feature-ветке feat/step-home-lesson-ui
 - [x] PLAN: Составить план реализации (`/plan`)
-- [ ] BUILD: Реализовать экран по TDD (`/build`)
+- [x] BUILD: Реализовать экран по TDD (`/build`)
 - [ ] REFLECT: Рефлексия по задаче (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -90,13 +90,25 @@ HomeScreen
 
 ### BUILD Subtasks
 
-- [ ] Data-файл + разметка экрана (5 блоков)
-- [ ] Ссылки на модули из `lessonRoutes`
-- [ ] SCSS (mobile-first, токены проекта)
-- [ ] Unit-тесты (`HomeScreen.test.tsx`)
-- [ ] E2E (`e2e/home-lesson.spec.ts`)
-- [ ] Главная больше не рендерит `LessonStubScreen`
-- [ ] Verify-команды зелёные
+- [x] Data-файл + разметка экрана (5 блоков)
+- [x] Ссылки на модули из `lessonRoutes`
+- [x] SCSS (mobile-first, токены проекта)
+- [x] Unit-тесты (`HomeScreen.test.tsx`)
+- [x] E2E (`e2e/home-lesson.spec.ts`)
+- [x] Главная больше не рендерит `LessonStubScreen`
+- [x] Verify-команды зелёные
+
+### Build Progress
+
+- **Статус:** COMPLETED (2026-08-10)
+- **Файлы:**
+  - `src/screens/HomeScreen/homeLessonData.ts` — intro, чеклист, how-to, HTTPS
+  - `src/screens/HomeScreen/HomeScreen.tsx` — 5 блоков; модули из `lessonRoutes` (filter `path !== '/'` внутри компонента из‑за циклического импорта)
+  - `src/screens/HomeScreen/HomeScreen.scss` — BEM как у OfflineScreen
+  - `src/screens/HomeScreen/HomeScreen.test.tsx` — 5 unit-тестов
+  - `e2e/home-lesson.spec.ts` — блоки + переход в Manifest
+- **Связанные правки тестов:** `App.test.tsx`, `e2e/smoke.spec.ts`, `e2e/lessons-navigation.spec.ts`, `e2e/offline-fallback.spec.ts` (новый h2; клики по nav из‑за дублирующих ссылок модулей)
+- **Verify:** lint ✅, build ✅, `pnpm test --run` 64 ✅, `pnpm test:e2e` 13 ✅
 
 ### Challenges & Mitigations
 
@@ -114,7 +126,7 @@ HomeScreen
 
 ### Next Mode
 
-`/build` (creative не требуется)
+`/reflect`
 
 ---
 

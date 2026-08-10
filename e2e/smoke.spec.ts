@@ -14,6 +14,6 @@ test.describe('Smoke E2E', () => {
 
 		const main = page.getByRole('main');
 		await expect(main).toBeVisible();
-		await expect(main.getByText('Добро пожаловать')).toBeVisible();
+		await expect(main.getByRole('heading', { level: 2 })).toHaveText('Карта лаборатории');
 	});
 });
