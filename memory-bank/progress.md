@@ -23,7 +23,7 @@
 
 ## [2026-08-10]: step-home-lesson-ui — В РАБОТЕ
 
-Инициализация задачи `/van`. Ветка `feat/step-home-lesson-ui` создана из `develop`. Следующий шаг: `/plan` — план реализации учебного экрана «Главная» (замена `LessonStubScreen`).
+`/van` + `/plan` завершены. Ветка `feat/step-home-lesson-ui`. План: заменить `LessonStubScreen` на экран с intro, картой модулей (`lessonRoutes`), кратким чеклистом PWA, «как пользоваться», блоком HTTPS; TDD + E2E. Creative не нужен. Следующий шаг: `/build`.
 
 ## [2026-08-07]: step-lighthouse-pwa-checklist — ЗАВЕРШЕНО
 

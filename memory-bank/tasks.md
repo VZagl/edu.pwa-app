@@ -9,6 +9,7 @@
 - **Git Branch:** `feat/step-home-lesson-ui`
 - **Источник:** `docs/project/implementation-plan.md` (Order: 7.0.1)
 - **Зависит от:** `step-lessons-navigation` ✅, `step-lighthouse-pwa-checklist` ✅
+- **Статус планирования:** COMPLETED (2026-08-10)
 
 ### Описание
 
@@ -23,10 +24,97 @@
 ### Чеклист
 
 - [x] GIT: Работа в feature-ветке feat/step-home-lesson-ui
-- [ ] PLAN: Составить план реализации (`/plan`)
+- [x] PLAN: Составить план реализации (`/plan`)
 - [ ] BUILD: Реализовать экран по TDD (`/build`)
 - [ ] REFLECT: Рефлексия по задаче (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+---
+
+## Technology Stack
+
+- Framework: React 19 + TypeScript
+- Build: Vite 8 + `vite-plugin-pwa`
+- Styles: SCSS (sass-embedded), BEM по образцу `OfflineScreen`
+- Routing: react-router (`Link` + существующий `lessonRoutes`)
+- Tests: Vitest + Testing Library; Playwright E2E
+- Package manager: pnpm
+
+## Technology Validation Checkpoints
+
+- [x] Project initialization verified (существующий Vite + React)
+- [x] Required dependencies identified — новых пакетов не нужно
+- [x] Build configuration validated (`pnpm build` уже работает)
+- [x] Hello world / stack ready — эталоны `ManifestScreen`, `OfflineScreen`
+- [x] Test tooling ready (`pnpm test --run`, `pnpm test:e2e`)
+
+## Creative Phases Required
+
+- Нет (Level 2; UI и структура контента следуют эталону Offline/manifest)
+
+## Implementation Plan
+
+### Структура экрана
+
+```
+HomeScreen
+├── h2: заголовок («Карта лаборатории» / аналог)
+├── intro — что такое учебное PWA
+├── region «Модули» — Link из lessonRoutes (без path `/`)
+├── region «Чеклист PWA» — 4–6 кратких критериев
+├── region «Как пользоваться» — build/preview + DevTools
+└── region «Почему HTTPS» — secure context / localhost / GitHub Pages
+```
+
+**Модули:** фильтровать `lessonRoutes` (`path !== '/'`), чтобы новые разделы (Cache Storage и т.д.) появлялись автоматически.
+
+### Файлы
+
+| Файл                                         | Действие                                         |
+| -------------------------------------------- | ------------------------------------------------ |
+| `src/screens/HomeScreen/HomeScreen.tsx`      | заменить `LessonStubScreen` на полноценный экран |
+| `src/screens/HomeScreen/homeLessonData.ts`   | создать — intro, чеклист, how-to, HTTPS          |
+| `src/screens/HomeScreen/HomeScreen.scss`     | создать — BEM как у `OfflineScreen`              |
+| `src/screens/HomeScreen/HomeScreen.test.tsx` | создать — unit/integration                       |
+| `e2e/home-lesson.spec.ts`                    | создать — E2E по смыслу                          |
+| `src/routes/lessonRoutes.ts`                 | менять только при необходимости (ожидаемо нет)   |
+
+`LessonStubScreen` не удалять — ещё используется SW/Install.
+
+### Шаги BUILD (TDD)
+
+1. **Red:** unit-тесты — блоки, заголовки, ссылки на `/manifest`, `/service-worker`, `/offline`, `/install`
+2. **Green:** `homeLessonData.ts` + `HomeScreen.tsx` + `HomeScreen.scss`
+3. **E2E:** `e2e/home-lesson.spec.ts` — ключевые блоки и переход по ссылке модуля
+4. **Verify:** `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+
+### BUILD Subtasks
+
+- [ ] Data-файл + разметка экрана (5 блоков)
+- [ ] Ссылки на модули из `lessonRoutes`
+- [ ] SCSS (mobile-first, токены проекта)
+- [ ] Unit-тесты (`HomeScreen.test.tsx`)
+- [ ] E2E (`e2e/home-lesson.spec.ts`)
+- [ ] Главная больше не рендерит `LessonStubScreen`
+- [ ] Verify-команды зелёные
+
+### Challenges & Mitigations
+
+| Риск                                    | Mitigation                                  |
+| --------------------------------------- | ------------------------------------------- |
+| Дублирование полного `pwa-checklist.md` | 4–6 пунктов; полный чеклист остаётся в docs |
+| Дублирование path/navLabel              | единый источник — `lessonRoutes`            |
+| Перегруз UI                             | короткие абзацы, секции `role="region"`     |
+
+### Dependencies
+
+- `step-lessons-navigation` ✅ — маршруты и навигация
+- `step-lighthouse-pwa-checklist` ✅ — содержание краткого чеклиста / HTTPS
+- Эталоны UI: `OfflineScreen`, `ManifestScreen`
+
+### Next Mode
+
+`/build` (creative не требуется)
 
 ---
 
