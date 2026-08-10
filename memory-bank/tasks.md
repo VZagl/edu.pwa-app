@@ -26,7 +26,7 @@
 - [x] GIT: Работа в feature-ветке feat/step-home-lesson-ui
 - [x] PLAN: Составить план реализации (`/plan`)
 - [x] BUILD: Реализовать экран по TDD (`/build`)
-- [ ] REFLECT: Рефлексия по задаче (`/reflect`)
+- [x] REFLECT: Рефлексия по задаче (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ---
@@ -124,9 +124,18 @@ HomeScreen
 - `step-lighthouse-pwa-checklist` ✅ — содержание краткого чеклиста / HTTPS
 - Эталоны UI: `OfflineScreen`, `ManifestScreen`
 
+### Reflection Highlights
+
+- **What Went Well**: 5 блоков по плану; модули из `lessonRoutes`; data + screen паттерн; TDD + E2E; a11y regions
+- **Challenges**: циклический импорт routes↔HomeScreen; дубли ссылок nav+главная в E2E; обновление stub-ожиданий в 4 спеках
+- **Lessons Learned**: фильтр модулей в компоненте как workaround; E2E scope по region; `lessonRoutes` — single source для navLabel/path
+- **Next Steps**: `/close-task`; опционально рефакторинг метаданных routes
+
+**Reflection:** [memory-bank/reflection/reflection-step-home-lesson-ui.md](reflection/reflection-step-home-lesson-ui.md)
+
 ### Next Mode
 
-`/reflect`
+`/close-task`
 
 ---
 
