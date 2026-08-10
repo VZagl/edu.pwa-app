@@ -20,6 +20,11 @@
 | Install prompt (step-install-prompt)                     | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
 | Экран урока Главная (step-home-lesson-ui)                | ✅ ЗАВЕРШЕНО (2026-08-10)       |
+| Экран урока Service Worker (step-sw-lesson-ui)           | ✅ BUILD (2026-08-10)           |
+
+## [2026-08-10]: step-sw-lesson-ui — BUILD завершён
+
+Экран «Service Worker» заменён с `LessonStubScreen` на полноценный учебный раздел: intro (scope, отличие от script), lifecycle (install → activate → controlling/waiting), живое демо (`useServiceWorkerInfo`: scope, states, controller, revision/scriptURL), update flow (`useSwUpdate` + `swUpdateController`/`SwUpdateBanner`), кнопка «Сбросить SW и кэш» (`resetServiceWorkerLab`), ссылка на Offline. TDD: 6 unit-тестов хука, 2 unit-теста утилиты, 7 unit-тестов экрана, E2E `sw-lesson.spec.ts`. Verify: lint ✅, build ✅, unit 79 ✅, e2e 14 ✅.
 
 ## [2026-08-10]: step-home-lesson-ui — ЗАВЕРШЕНО
 

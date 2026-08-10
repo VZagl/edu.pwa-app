@@ -6,7 +6,7 @@
 - **Название:** Service Worker — учебный экран
 - **Git Branch:** `feat/step-sw-lesson-ui`
 - **Уровень сложности:** Level 2
-- **Статус:** PLAN → BUILD
+- **Статус:** BUILD → REFLECT
 - **Источник:** `docs/project/implementation-plan.md` (step-sw-lesson-ui)
 
 ### Описание
@@ -17,7 +17,7 @@
 
 - [x] GIT: Работа в feature-ветке feat/step-sw-lesson-ui
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация (TDD)
+- [x] BUILD: Реализация (TDD)
 - [ ] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
@@ -34,7 +34,7 @@
 - [x] SW-инфраструктура работает (`e2e/service-worker-pwa.spec.ts`)
 - [x] Паттерн учебных экранов отработан (`step-home-lesson-ui`, `OfflineScreen`)
 - [x] `registerType: 'prompt'` + `swUpdateController` готовы
-- [ ] BUILD: финальный verify (lint, build, unit, e2e)
+- [x] BUILD: финальный verify (lint, build, unit, e2e)
 
 ### Архитектура файлов
 
@@ -70,22 +70,22 @@ e2e/sw-lesson.spec.ts            # smoke E2E экрана
 
 **Шаг 1 — Данные и утилиты (red → green)**
 
-- [ ] `swLessonData.ts` — intro, lifecycle, предупреждения, тексты ссылок
-- [ ] `useServiceWorkerInfo` — подписка на `controllerchange`, чтение `getRegistration()`
-- [ ] `resetServiceWorkerLab` — `getRegistrations()` → `unregister()`, `caches.keys()` → `delete()`, `location.reload()`
-- [ ] Unit-тесты хука и утилиты (моки `navigator.serviceWorker`, `caches`)
+- [x] `swLessonData.ts` — intro, lifecycle, предупреждения, тексты ссылок
+- [x] `useServiceWorkerInfo` — подписка на `controllerchange`, чтение `getRegistration()`
+- [x] `resetServiceWorkerLab` — `getRegistrations()` → `unregister()`, `caches.keys()` → `delete()`, `location.reload()`
+- [x] Unit-тесты хука и утилиты (моки `navigator.serviceWorker`, `caches`)
 
 **Шаг 2 — UI экрана**
 
-- [ ] `ServiceWorkerScreen.tsx` — секции по структуре выше
-- [ ] `ServiceWorkerScreen.scss` — BEM, badge для статусов (как `offline-screen__badge`)
-- [ ] Unit-тесты экрана: intro, lifecycle, демо (мок хука), revision, предупреждение кнопки, ссылка на Offline, update flow
+- [x] `ServiceWorkerScreen.tsx` — секции по структуре выше
+- [x] `ServiceWorkerScreen.scss` — BEM, badge для статусов (как `offline-screen__badge`)
+- [x] Unit-тесты экрана: intro, lifecycle, демо (мок хука), revision, предупреждение кнопки, ссылка на Offline, update flow
 
 **Шаг 3 — E2E и интеграция**
 
-- [ ] `e2e/sw-lesson.spec.ts` — ключевые секции на `/service-worker`
-- [ ] Проверить `lessons-navigation.spec.ts` (заголовок «Service Worker» сохраняется)
-- [ ] Verify: `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
+- [x] `e2e/sw-lesson.spec.ts` — ключевые секции на `/service-worker`
+- [x] Проверить `lessons-navigation.spec.ts` (заголовок «Service Worker» сохраняется)
+- [x] Verify: `pnpm lint`, `pnpm build`, `pnpm test --run`, `pnpm test:e2e`
 
 ### Creative Phases Required
 
