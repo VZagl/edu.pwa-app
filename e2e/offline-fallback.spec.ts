@@ -17,7 +17,7 @@ test.describe('Offline fallback', () => {
 
 		await expect(page.getByRole('status', { name: 'Нет сети' })).toBeVisible();
 
-		await page.getByRole('link', { name: 'Manifest' }).click();
+		await page.getByRole('navigation').getByRole('link', { name: 'Manifest' }).click();
 
 		await expect(page.getByRole('main')).toBeVisible();
 		await expect(page).toHaveURL(/\/manifest$/);

@@ -8,9 +8,9 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-lighthouse-pwa-checklist`
-- **Название:** Чеклист Lighthouse PWA и документирование проверки
-- **Дата завершения:** 2026-08-07
+- **Task ID:** `step-home-lesson-ui`
+- **Название:** Главная — учебный экран
+- **Дата завершения:** 2026-08-10
 - **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md](completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md)
-- **Reflection:** [memory-bank/reflection/reflection-step-lighthouse-pwa-checklist.md](reflection/reflection-step-lighthouse-pwa-checklist.md)
+- **Completed:** [memory-bank/completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md](completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md)
+- **Reflection:** [memory-bank/reflection/reflection-step-home-lesson-ui.md](reflection/reflection-step-home-lesson-ui.md)

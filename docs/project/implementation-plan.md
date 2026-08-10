@@ -335,7 +335,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-lessons-navigation, step-lighthouse-pwa-checklist
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md](../../memory-bank/completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md)
 
 ---
 

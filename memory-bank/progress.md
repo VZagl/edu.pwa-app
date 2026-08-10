@@ -19,9 +19,10 @@
 | Экран урока Offline (step-offline-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Install prompt (step-install-prompt)                     | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
+| Экран урока Главная (step-home-lesson-ui)                | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 
-## [2026-08-07]: step-lighthouse-pwa-checklist — ЗАВЕРШЕНО
+## [2026-08-10]: step-home-lesson-ui — ЗАВЕРШЕНО
 
-Чеклист `docs/project/pwa-checklist.md`: Lighthouse PWA audit, Application panel, установка, offline, troubleshooting, регрессия. Перекрёстные ссылки в README, tech-stack-pwa, run-and-build. Код не менялся. Verify: lint ✅, build ✅, unit 59 ✅, e2e 12 ✅.
+Экран «Главная» заменён с `LessonStubScreen` на «Карту лаборатории»: intro, модули из `lessonRoutes`, краткий чеклист PWA, «Как пользоваться», «Почему HTTPS». TDD: 5 unit-тестов, E2E `home-lesson.spec.ts`. Verify: lint ✅, build ✅, unit 64 ✅, e2e 13 ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md](completed-tasks/2026/08/step-lighthouse-pwa-checklist_2026-08-07.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md](completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md)
