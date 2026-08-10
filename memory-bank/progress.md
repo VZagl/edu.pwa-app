@@ -20,9 +20,10 @@
 | Install prompt (step-install-prompt)                     | ✅ ЗАВЕРШЕНО (2026-08-06)       |
 | Lighthouse PWA checklist (step-lighthouse-pwa-checklist) | ✅ ЗАВЕРШЕНО (2026-08-07)       |
 | Экран урока Главная (step-home-lesson-ui)                | ✅ ЗАВЕРШЕНО (2026-08-10)       |
+| Экран урока Service Worker (step-sw-lesson-ui)           | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 
-## [2026-08-10]: step-home-lesson-ui — ЗАВЕРШЕНО
+## [2026-08-10]: step-sw-lesson-ui — ЗАВЕРШЕНО
 
-Экран «Главная» заменён с `LessonStubScreen` на «Карту лаборатории»: intro, модули из `lessonRoutes`, краткий чеклист PWA, «Как пользоваться», «Почему HTTPS». TDD: 5 unit-тестов, E2E `home-lesson.spec.ts`. Verify: lint ✅, build ✅, unit 64 ✅, e2e 13 ✅.
+Экран «Service Worker» заменён с `LessonStubScreen` на полноценный учебный раздел: intro, lifecycle, живое демо (`useServiceWorkerInfo`: scope, states, controller, revision/scriptURL), update flow (`useSwUpdate` + `swUpdateController`/`SwUpdateBanner`), кнопка «Сбросить SW и кэш» (`resetServiceWorkerLab`), ссылка на Offline. TDD: 6 unit-тестов хука, 2 unit-теста утилиты, 7 unit-тестов экрана, E2E `sw-lesson.spec.ts`. Verify: lint ✅, build ✅, unit 79 ✅, e2e 14 ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md](completed-tasks/2026/08/step-home-lesson-ui_2026-08-10.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-lesson-ui_2026-08-10.md](completed-tasks/2026/08/step-sw-lesson-ui_2026-08-10.md)

@@ -2,12 +2,6 @@
 
 ## Высокий
 
-- [ ] Service Worker — учебный экран (step-sw-lesson-ui)
-  - **Создано:** 2026-08-07
-  - Lifecycle, живой статус SW, версия сборки, учебная кнопка сброса SW/кэша.
-  - **Источник:** docs/project/implementation-plan.md (step-sw-lesson-ui)
-  - **Причина:** Экран-заглушка; инфраструктура SW уже есть
-
 - [ ] Install — учебный экран (step-install-lesson-ui)
   - **Создано:** 2026-08-07
   - Installability, демо `useInstallPrompt`, display-mode, инструкции по платформам.

@@ -353,7 +353,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-sw-update-ux, step-lessons-navigation
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-lesson-ui_2026-08-10.md](../../memory-bank/completed-tasks/2026/08/step-sw-lesson-ui_2026-08-10.md)
 
 ---
 
