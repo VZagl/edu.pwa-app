@@ -20,3 +20,4 @@
 - Экран «Главная» — карта лаборатории: intro, модули, краткий чеклист PWA, инструкции по использованию и блок о HTTPS
 - Экран урока «Service Worker»: lifecycle, живое демо статуса SW, update flow и учебная кнопка сброса для лаборатории
 - Экран урока «Установка PWA»: условия installability, демо `useInstallPrompt`, display-mode, инструкции по платформам и DevTools
+- Экран урока «Cache Storage»: описание API и живой список кэшей/URL через Cache Storage
