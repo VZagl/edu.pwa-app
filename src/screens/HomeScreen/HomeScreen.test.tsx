@@ -31,6 +31,10 @@ describe('HomeScreen', () => {
 		);
 		expect(within(section).getByRole('link', { name: 'Offline' })).toHaveAttribute('href', '/offline');
 		expect(within(section).getByRole('link', { name: 'Install' })).toHaveAttribute('href', '/install');
+		expect(within(section).getByRole('link', { name: 'Cache Storage' })).toHaveAttribute(
+			'href',
+			'/cache-storage',
+		);
 		expect(within(section).queryByRole('link', { name: 'Главная' })).not.toBeInTheDocument();
 	});
 

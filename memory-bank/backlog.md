@@ -6,12 +6,6 @@
 
 ## Средний
 
-- [ ] Cache Storage — отдельный раздел (step-cache-storage-lesson-ui)
-  - **Создано:** 2026-08-07
-  - Описание API + живой список кэшей и ключей.
-  - **Источник:** docs/project/implementation-plan.md (step-cache-storage-lesson-ui)
-  - **Причина:** Новый учебный модуль после доделки заглушек
-
 - [ ] Storage quota / Persistent storage — отдельный раздел (step-storage-quota-lesson-ui)
   - **Создано:** 2026-08-07
   - `estimate` / `persist` / `persisted`; продвинутый урок.

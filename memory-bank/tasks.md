@@ -6,9 +6,9 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-install-lesson-ui`
-- **Название:** Install — учебный экран
+- **Task ID:** `step-cache-storage-lesson-ui`
+- **Название:** Cache Storage — отдельный раздел
 - **Дата завершения:** 2026-08-11
 - **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/08/step-install-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-install-lesson-ui_2026-08-11.md)
-- **Reflection:** [memory-bank/reflection/reflection-step-install-lesson-ui.md](reflection/reflection-step-install-lesson-ui.md)
+- **Completed:** [memory-bank/completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md)
+- **Reflection:** [memory-bank/reflection/reflection-step-cache-storage-lesson-ui.md](reflection/reflection-step-cache-storage-lesson-ui.md)

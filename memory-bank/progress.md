@@ -22,9 +22,10 @@
 | Экран урока Главная (step-home-lesson-ui)                | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 | Экран урока Service Worker (step-sw-lesson-ui)           | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 
-## [2026-08-11]: step-install-lesson-ui — ЗАВЕРШЕНО
+## [2026-08-11]: step-cache-storage-lesson-ui — ЗАВЕРШЕНО
 
-Экран «Установка PWA» заменён с `LessonStubScreen` на полноценный учебный раздел: intro, условия installability, живое демо (`useInstallPrompt`: canInstall / fallback / installed), display-mode, инструкции по платформам, DevTools, связь с `InstallBanner`. TDD: 9 unit + E2E. Verify: lint ✅, unit 88 ✅, build ✅, e2e install-lesson ✅.
+Добавлен учебный раздел `/cache-storage`: описание Cache Storage API и живой блок (`caches.keys()`, выбор кэша, URL, «Обновить»). Хук `useCacheStorage`, экран с регионами intro / API / демо / Workbox / DevTools. TDD: unit + E2E. Verify: lint ✅, typecheck ✅, unit 106 ✅, build ✅, e2e ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-install-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-install-lesson-ui_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md)

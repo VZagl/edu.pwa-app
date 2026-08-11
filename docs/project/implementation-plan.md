@@ -391,7 +391,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-offline-fallback, step-lessons-navigation
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md](../../memory-bank/completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md)
 
 ---
 
