@@ -25,6 +25,11 @@
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Версия в header (step-app-version-header)                | 🔄 BUILD COMPLETE (2026-08-11)  |
+
+## [2026-08-11]: step-app-version-header — BUILD COMPLETE
+
+Версия из `package.json` проброшена через Vite `define` (`__APP_VERSION__`) и `src/appVersion.ts`; в `app-shell__header` справа от названия. TDD: unit header + версия. Verify: lint ✅, typecheck ✅, unit 145 ✅, build ✅. Далее: `/reflect`.
 
 ## [2026-08-11]: step-push-notifications — ЗАВЕРШЕНО
 

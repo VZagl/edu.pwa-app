@@ -10,7 +10,7 @@
 - **Git Branch:** `feat/step-app-version-header`
 - **Источник:** `docs/project/implementation-plan.md` (step-app-version-header)
 - **Зависит от:** `step-app-shell` ✅
-- **Статус:** PLAN COMPLETE → переход к BUILD
+- **Статус:** BUILD COMPLETE → переход к REFLECT
 
 ### Описание
 
@@ -25,9 +25,25 @@
 - [x] VAN: Инициализация задачи, сложность L2, feature-ветка
 - [x] GIT: Работа в feature-ветке `feat/step-app-version-header`
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация (TDD) + verify
+- [x] BUILD: Реализация (TDD) + verify
 - [ ] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+## Build Progress
+
+- [x] Red: `App.test.tsx` — header с названием и `APP_VERSION`
+- [x] Green: `vite.config.ts` `define` + `src/vite-env.d.ts` + `src/appVersion.ts`
+- [x] Green: UI в `App.tsx` / `App.scss` (flex, версия справа)
+- [x] Verify: lint ✅, typecheck ✅, unit 145 ✅, build ✅
+
+### Test Results
+
+| Команда           | Результат               |
+| ----------------- | ----------------------- |
+| `pnpm lint`       | ✅                      |
+| `pnpm typecheck`  | ✅                      |
+| `pnpm test --run` | ✅ 24 files / 145 tests |
+| `pnpm build`      | ✅                      |
 
 ## Technology Stack
 
@@ -44,7 +60,7 @@
 - [x] Механизм Vite `define` подтверждён документацией
 - [x] `vite/client` уже подключён в `tsconfig.app.json`
 - [x] Отдельный Hello World / POC не нужен (инфраструктура готова)
-- [ ] Проверка в BUILD: `pnpm lint`, `pnpm typecheck`, `pnpm test --run`, `pnpm build`
+- [x] Проверка в BUILD: `pnpm lint`, `pnpm typecheck`, `pnpm test --run`, `pnpm build`
 
 ## Implementation Plan
 
