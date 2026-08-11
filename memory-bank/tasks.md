@@ -9,7 +9,8 @@
 - **Тип:** Feature / Infrastructure
 - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
 - **Создано:** 2026-08-07
-- **Статус:** PLAN complete → ожидание `/creative`
+- **Статус:** CREATIVE complete → ожидание `/build`
+- **Creative doc:** [memory-bank/creative/creative-github-pages-deploy.md](creative/creative-github-pages-deploy.md)
 - **Зависит от:** step-push-notifications (закрыта)
 
 ### Описание
@@ -26,7 +27,7 @@
 
 - [x] GIT: Работа в feature-ветке `feat/step-github-pages-deploy`
 - [x] PLAN: Детальный план реализации
-- [ ] CREATIVE: Дизайн-решения (base / workflow / PWA paths) → `memory-bank/creative/creative-github-pages-deploy.md`
+- [x] CREATIVE: Дизайн-решения (base / workflow / PWA paths) → `memory-bank/creative/creative-github-pages-deploy.md`
 - [ ] BUILD: Реализация + verify (lint / build / test; e2e при необходимости)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] ARCHIVE: Архивация документации
@@ -130,11 +131,13 @@
 
 Документ: `memory-bank/creative/creative-github-pages-deploy.md`
 
-| ID  | Тема                   | Варианты (кратко)                                                          | Статус |
-| --- | ---------------------- | -------------------------------------------------------------------------- | ------ |
-| C1  | Стратегия `base`       | A) `/edu.pwa-app/` · B) `./` (relative) · C) env / `GITHUB_REPOSITORY`     | [ ]    |
-| C2  | Workflow trigger       | A) только `main` · B) `develop` · C) `workflow_dispatch` + выбранная ветка | [ ]    |
-| C3  | Выравнивание PWA-путей | A) relative без `/` + basename · B) везде `BASE_URL` · C) гибрид           | [ ]    |
+| ID  | Тема                   | Решение                                                             | Статус |
+| --- | ---------------------- | ------------------------------------------------------------------- | ------ |
+| C1  | Стратегия `base`       | **A** — `base: '/edu.pwa-app/'`                                     | [x]    |
+| C2  | Workflow trigger       | **B + dispatch** — `develop` + `workflow_dispatch`; pnpm (не npm)   | [x]    |
+| C3  | Выравнивание PWA-путей | **C** — гибрид: relative manifest · `BASE_URL` в app · `scope` в SW | [x]    |
+
+Подробности: [creative-github-pages-deploy.md](creative/creative-github-pages-deploy.md)
 
 ---
 
@@ -172,7 +175,7 @@
 
 - [x] Initialization complete (VAN)
 - [x] Planning complete (PLAN)
-- [ ] Creative phases complete
+- [x] Creative phases complete
 - [ ] Technology validation complete (полное — после BUILD с `base` + workflow)
 - [ ] Implementation complete
 - [ ] Reflection complete
