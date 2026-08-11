@@ -23,6 +23,9 @@ test.describe('Навигация по учебным разделам', () => {
 		await nav.getByRole('link', { name: 'Cache Storage' }).click();
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Cache Storage');
 
+		await nav.getByRole('link', { name: 'Storage', exact: true }).click();
+		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Storage');
+
 		await nav.getByRole('link', { name: 'Главная' }).click();
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Карта лаборатории');
 	});

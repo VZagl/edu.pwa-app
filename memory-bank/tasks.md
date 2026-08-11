@@ -9,7 +9,7 @@
 - **Тип:** Feature
 - **Источник:** docs/project/implementation-plan.md (step-storage-quota-lesson-ui)
 - **Создано:** 2026-08-07
-- **Статус:** PLAN complete → ожидание `/build`
+- **Статус:** BUILD complete → ожидание `/reflect`
 - **Зависит от:** step-cache-storage-lesson-ui (закрыта)
 
 ### Описание
@@ -24,7 +24,7 @@
 
 - [x] GIT: Работа в feature-ветке `feat/step-storage-quota-lesson-ui`
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
+- [x] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -85,14 +85,26 @@
 
 ### BUILD Checklist
 
-- [ ] Unit: `useStorageQuota` (моки `navigator.storage`) — red → green
-- [ ] Unit: `StorageScreen` (мок хука) — red → green
-- [ ] `storageLessonData.ts` + `StorageScreen.tsx` + `StorageScreen.scss`
-- [ ] Маршрут `/storage` в `lessonRoutes.ts`
-- [ ] Обновить `App.test.tsx` и `HomeScreen.test.tsx` под 7 пунктов навигации
-- [ ] E2E: `e2e/storage-lesson.spec.ts`
-- [ ] E2E: шаг Storage в `e2e/lessons-navigation.spec.ts`
-- [ ] Verify: lint / typecheck / unit / build / e2e
+- [x] Unit: `useStorageQuota` (моки `navigator.storage`) — red → green
+- [x] Unit: `StorageScreen` (мок хука) — red → green
+- [x] `storageLessonData.ts` + `StorageScreen.tsx` + `StorageScreen.scss`
+- [x] Маршрут `/storage` в `lessonRoutes.ts`
+- [x] Обновить `App.test.tsx` и `HomeScreen.test.tsx` под 7 пунктов навигации
+- [x] E2E: `e2e/storage-lesson.spec.ts`
+- [x] E2E: шаг Storage в `e2e/lessons-navigation.spec.ts`
+- [x] Verify: lint / typecheck / unit / build / e2e
+
+### Build Results
+
+| Проверка                               | Результат |
+| -------------------------------------- | --------- |
+| `pnpm lint`                            | ✅        |
+| `pnpm typecheck`                       | ✅        |
+| `pnpm test --run`                      | ✅        |
+| `pnpm build`                           | ✅        |
+| `pnpm test:e2e` (storage + navigation) | ✅        |
+
+**Замечание:** в E2E/unit для пункта «Storage» нужен exact-матч (`exact: true` / `/^Storage$/`), иначе пересекается с «Cache Storage».
 
 ### Creative Phases Required
 
@@ -111,6 +123,7 @@
 | `persist()` часто возвращает `false` | Показать ответ API; E2E не требует grant               |
 | usage/quota approximate / optional   | `usage ?? null`, `quota ?? null`; текст про неточность |
 | Навигационные unit-тесты хрупки      | Сразу обновить App/Home под 7 пунктов                  |
+| «Storage» vs «Cache Storage» в a11y  | exact-матч в unit/E2E                                  |
 
 ### Оценка
 
@@ -118,7 +131,7 @@
 
 ### Next Mode
 
-`/build` — реализация по TDD
+`/reflect` — рефлексия по задаче
 
 ## Last Completed Task
 

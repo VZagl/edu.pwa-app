@@ -19,7 +19,7 @@ describe('Оболочка приложения', () => {
 		expect(screen.getByRole('heading', { level: 1, name: 'edu.pwa-app' })).toBeInTheDocument();
 	});
 
-	it('должен отрендерить навигацию с шестью пунктами', () => {
+	it('должен отрендерить навигацию с семью пунктами', () => {
 		renderApp();
 
 		const nav = screen.getByRole('navigation');
@@ -30,6 +30,7 @@ describe('Оболочка приложения', () => {
 		expect(within(nav).getByRole('link', { name: 'Offline' })).toBeInTheDocument();
 		expect(within(nav).getByRole('link', { name: 'Install' })).toBeInTheDocument();
 		expect(within(nav).getByRole('link', { name: 'Cache Storage' })).toBeInTheDocument();
+		expect(within(nav).getByRole('link', { name: /^Storage$/ })).toBeInTheDocument();
 	});
 
 	it('должен отрендерить main с контентом маршрута', () => {

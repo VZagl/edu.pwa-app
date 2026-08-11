@@ -23,6 +23,13 @@
 | Экран урока Service Worker (step-sw-lesson-ui)           | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Storage quota урок (step-storage-quota-lesson-ui)        | 🔄 BUILD complete (2026-08-11)  |
+
+## [2026-08-11]: step-storage-quota-lesson-ui — BUILD complete
+
+Добавлен учебный раздел `/storage`: квоты (`estimate` usage/quota), Persistent Storage (`persisted` / `persist`), лимиты/вытеснение, DevTools, ссылка на Cache Storage. Хук `useStorageQuota`, экран `StorageScreen` (BEM). TDD: unit (моки `navigator.storage` + мок хука) + E2E. Verify: lint ✅, typecheck ✅, unit ✅, build ✅, e2e ✅.
+
+**Next:** `/reflect`
 
 ## [2026-08-11]: step-cache-storage-lesson-ui — ЗАВЕРШЕНО
 
