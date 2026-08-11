@@ -21,3 +21,4 @@
 - Экран урока «Service Worker»: lifecycle, живое демо статуса SW, update flow и учебная кнопка сброса для лаборатории
 - Экран урока «Установка PWA»: условия installability, демо `useInstallPrompt`, display-mode, инструкции по платформам и DevTools
 - Экран урока «Cache Storage»: описание API и живой список кэшей/URL через Cache Storage
+- Экран урока «Storage»: квоты хранилища (`estimate` usage/quota), Persistent Storage (`persisted` / `persist`), лимиты и вытеснение

@@ -99,7 +99,7 @@
 ## 7. Долгосрочные цели
 
 - [x] Заполнить экраны-заглушки: Главная, Service Worker, Install — `step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`
-- [ ] Разделы Cache Storage и Storage quota — `step-cache-storage-lesson-ui`, `step-storage-quota-lesson-ui`
+- [x] Разделы Cache Storage и Storage quota — `step-cache-storage-lesson-ui`, `step-storage-quota-lesson-ui`
 - [ ] (Опционально) Push-уведомления — `step-push-notifications`
 - [ ] Деплой на GitHub Pages (HTTPS) — `step-github-pages-deploy` (после Push)
 - [ ] README «с нуля» для ученика — `step-readme-learner-guide`
@@ -145,6 +145,7 @@
 | 2026-08-06 | Фаза 5: установка PWA из UI (`step-install-prompt`)                             | ✅ Готов |
 | 2026-08-07 | Фаза 6 / MVP PWA: чеклист проверки Lighthouse (`step-lighthouse-pwa-checklist`) | ✅ Готов |
 | 2026-08-11 | Экраны-заглушки заполнены: Главная, SW, Install (`step-install-lesson-ui`)      | ✅ Готов |
+| 2026-08-11 | Разделы Cache Storage и Storage quota (`step-storage-quota-lesson-ui`)          | ✅ Готов |
 
 ---
 
