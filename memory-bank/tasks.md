@@ -9,8 +9,9 @@
 - **Тип:** Feature / Infrastructure
 - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
 - **Создано:** 2026-08-07
-- **Статус:** REFLECT complete → ожидание `/archive`
+- **Статус:** ARCHIVE complete → ожидание `/close-task`
 - **Reflection:** [memory-bank/reflection/reflection-step-github-pages-deploy.md](reflection/reflection-step-github-pages-deploy.md)
+- **Archive:** [memory-bank/archive/archive-step-github-pages-deploy.md](archive/archive-step-github-pages-deploy.md)
 - **Creative doc:** [memory-bank/creative/creative-github-pages-deploy.md](creative/creative-github-pages-deploy.md)
 - **Зависит от:** step-push-notifications (закрыта)
 
@@ -31,7 +32,7 @@
 - [x] CREATIVE: Дизайн-решения (base / workflow / PWA paths) → `memory-bank/creative/creative-github-pages-deploy.md`
 - [x] BUILD: Реализация + verify (lint / build / test; e2e при необходимости)
 - [x] REFLECT: Рефлексия по задаче → `memory-bank/reflection/reflection-step-github-pages-deploy.md`
-- [ ] ARCHIVE: Архивация документации
+- [x] ARCHIVE: Архивация документации → `memory-bank/archive/archive-step-github-pages-deploy.md`
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ---
@@ -192,14 +193,20 @@
 - [x] Technology validation complete (полное — после BUILD с `base` + workflow)
 - [x] Implementation complete
 - [x] Reflection complete
-- [ ] Archive complete
+- [x] Archive complete
+
+## Archive
+
+- **Date:** 2026-08-11
+- **Archive Document:** [memory-bank/archive/archive-step-github-pages-deploy.md](archive/archive-step-github-pages-deploy.md)
+- **Status:** COMPLETED & ARCHIVED → ожидание `/close-task`
 
 ## Reflection Highlights
 
 - **What Went Well**: CREATIVE C1–C3 до BUILD; гибрид путей без хардкода репо в runtime; workflow `develop`+pnpm; verify на nested path; docs Pages
 - **Challenges**: absolute paths ripple; Playwright baseURL/href; ручной enable Pages
 - **Lessons Learned**: `BASE_URL` + `registration.scope` как канон project site; при смене Vite `base` сразу планировать E2E paths
-- **Next Steps**: `/archive` → `/close-task`; merge/dispatch + ручная проверка HTTPS Pages
+- **Next Steps**: `/close-task`; merge/dispatch + ручная проверка HTTPS Pages
 
 ---
 

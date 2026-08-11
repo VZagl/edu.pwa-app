@@ -2,38 +2,33 @@
 
 ## Current Focus
 
-REFLECT завершён — `step-github-pages-deploy`
+ARCHIVE завершён — `step-github-pages-deploy`
 
 ## Current Mode
 
-REFLECT → ARCHIVE
+ARCHIVE → CLOSE
 
 ## Next Steps
 
-1. `/archive` → `/close-task`
+1. `/close-task`
 
 2. После merge в `develop` / `workflow_dispatch`: ручная проверка на `https://vzagl.github.io/edu.pwa-app/` (manifest, SW, offline, install)
 
-3. Чеклист: ARCHIVE, CLOSE; GIT (`feat/step-github-pages-deploy`)
+3. Чеклист: CLOSE; GIT (`feat/step-github-pages-deploy`)
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 
-- Task ID: `step-github-pages-deploy` (Level 3)
+- Task ID: `step-github-pages-deploy` (Level 3) — ARCHIVED
 
-- **Реализовано (C1–C3):**
+- **Архив:** `memory-bank/archive/archive-step-github-pages-deploy.md`
 
-  - `base: '/edu.pwa-app/'` в `vite.config.ts`
-  - relative manifest (`./`, `icons/…`); `BrowserRouter` basename; `fetchManifest` / push icons через `BASE_URL`; `sw-push.js` через `registration.scope`
-  - `.github/workflows/deploy.yml` — `develop` + `workflow_dispatch`, pnpm
-  - docs: `run-and-build.md`, `pwa-checklist.md` (+ уточнение Pages репо vs аккаунт)
+- **Reflection:** `memory-bank/reflection/reflection-step-github-pages-deploy.md`
+
+- **Creative:** `memory-bank/creative/creative-github-pages-deploy.md`
 
 - Verify: `pnpm verify:fast` ✅; `pnpm test:e2e` 18 ✅
-
-- Creative doc: `memory-bank/creative/creative-github-pages-deploy.md`
-
-- Reflection: `memory-bank/reflection/reflection-step-github-pages-deploy.md`
 
 - План шагов: `docs/project/implementation-plan.md`
 
