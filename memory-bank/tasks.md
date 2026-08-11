@@ -9,7 +9,8 @@
 - **Тип:** Feature / Infrastructure
 - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
 - **Создано:** 2026-08-07
-- **Статус:** BUILD complete → ожидание `/reflect`
+- **Статус:** REFLECT complete → ожидание `/archive`
+- **Reflection:** [memory-bank/reflection/reflection-step-github-pages-deploy.md](reflection/reflection-step-github-pages-deploy.md)
 - **Creative doc:** [memory-bank/creative/creative-github-pages-deploy.md](creative/creative-github-pages-deploy.md)
 - **Зависит от:** step-push-notifications (закрыта)
 
@@ -29,7 +30,7 @@
 - [x] PLAN: Детальный план реализации
 - [x] CREATIVE: Дизайн-решения (base / workflow / PWA paths) → `memory-bank/creative/creative-github-pages-deploy.md`
 - [x] BUILD: Реализация + verify (lint / build / test; e2e при необходимости)
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче → `memory-bank/reflection/reflection-step-github-pages-deploy.md`
 - [ ] ARCHIVE: Архивация документации
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -190,8 +191,15 @@
 - [x] Creative phases complete
 - [x] Technology validation complete (полное — после BUILD с `base` + workflow)
 - [x] Implementation complete
-- [ ] Reflection complete
+- [x] Reflection complete
 - [ ] Archive complete
+
+## Reflection Highlights
+
+- **What Went Well**: CREATIVE C1–C3 до BUILD; гибрид путей без хардкода репо в runtime; workflow `develop`+pnpm; verify на nested path; docs Pages
+- **Challenges**: absolute paths ripple; Playwright baseURL/href; ручной enable Pages
+- **Lessons Learned**: `BASE_URL` + `registration.scope` как канон project site; при смене Vite `base` сразу планировать E2E paths
+- **Next Steps**: `/archive` → `/close-task`; merge/dispatch + ручная проверка HTTPS Pages
 
 ---
 

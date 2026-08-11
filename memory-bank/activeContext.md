@@ -2,19 +2,19 @@
 
 ## Current Focus
 
-`feat/step-github-pages-deploy` — BUILD complete
+REFLECT завершён — `step-github-pages-deploy`
 
 ## Current Mode
 
-BUILD complete → ожидание `/reflect`
+REFLECT → ARCHIVE
 
 ## Next Steps
 
-1. `/reflect` → `/archive` → `/close-task`
+1. `/archive` → `/close-task`
 
 2. После merge в `develop` / `workflow_dispatch`: ручная проверка на `https://vzagl.github.io/edu.pwa-app/` (manifest, SW, offline, install)
 
-3. Чеклист: REFLECT, ARCHIVE, CLOSE; GIT (`feat/step-github-pages-deploy`)
+3. Чеклист: ARCHIVE, CLOSE; GIT (`feat/step-github-pages-deploy`)
 
 ## Context for AI
 
@@ -32,6 +32,8 @@ BUILD complete → ожидание `/reflect`
 - Verify: `pnpm verify:fast` ✅; `pnpm test:e2e` 18 ✅
 
 - Creative doc: `memory-bank/creative/creative-github-pages-deploy.md`
+
+- Reflection: `memory-bank/reflection/reflection-step-github-pages-deploy.md`
 
 - План шагов: `docs/project/implementation-plan.md`
 
