@@ -9,8 +9,9 @@
 - **Тип:** Feature
 - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
 - **Создано:** 2026-08-07
-- **Статус:** PLAN complete → ожидание `/creative`
+- **Статус:** CREATIVE complete → готов к `/build`
 - **Зависит от:** step-lighthouse-pwa-checklist (закрыта)
+- **Creative:** [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
 
 ### Описание
 
@@ -18,13 +19,13 @@
 
 **Цель:** Понять подписку на push, разрешения уведомлений и роль Service Worker в доставке (учебный сценарий без обязательного продакшен-backend).
 
-**Ожидаемые артефакты:** экран/раздел Push (по итогам PLAN/CREATIVE), хук/хелперы подписки (моки), маршрут в `lessonRoutes`, unit (моки PushManager / Notification); E2E — по учебной необходимости.
+**Ожидаемые артефакты:** экран `/push`, хук `usePushNotifications`, `pushLessonData`, `public/sw-push.js` + `importScripts`, unit (моки PushManager / Notification), E2E структуры UI.
 
 ### Чеклист
 
 - [x] GIT: Работа в feature-ветке `feat/step-push-notifications`
 - [x] PLAN: Детальный план реализации
-- [ ] CREATIVE: Дизайн-решения (mock vs backend, UX подписки, SW)
+- [x] CREATIVE: Дизайн-решения (гибрид + SW importScripts + UX) — см. creative-push-notifications.md
 - [ ] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
@@ -36,8 +37,8 @@
 ### Функциональные
 
 - [ ] Отдельный экран `/push` (navLabel: `Push`) в `lessonRoutes`
-- [ ] Учебный контент: Permission API, `PushManager`, роль SW (`push` / `notificationclick`), VAPID/HTTPS
-- [ ] Демо: статус permission, поддержка Push, подписка/отписка (через моки или учебный сценарий — решение в CREATIVE)
+- [ ] Учебный контент: что такое Web Push; Notification vs Push; цепочка Permission → subscribe → push-сервис → SW; роль backend; VAPID/HTTPS; Pages ≠ отправитель; Safari/iOS
+- [ ] Демо (гибрид): permission, поддержка, subscribe/unsubscribe, локальное `showNotification`; без серверной отправки
 - [ ] Ссылка на связанный раздел (Service Worker)
 - [ ] Ограничения Safari/iOS — в UI (как в roadmap)
 
@@ -46,67 +47,79 @@
 - [ ] Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + unit + E2E
 - [ ] Без продакшен-backend в репозитории (AGENTS.md / systemPatterns)
 - [ ] TDD; verify: lint / typecheck / test / build / e2e
-- [ ] Новые npm-зависимости — только если CREATIVE явно потребует
+- [ ] Новые npm-зависимости для push-отправки — не добавлять
 
 ## Component Analysis
 
-| Компонент                                        | Тип        | Изменения                                                    |
-| ------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| `usePushNotifications`                           | новый      | Permission, поддержка, subscribe/unsubscribe, состояние      |
-| `PushScreen` + SCSS + `pushLessonData`           | новый      | Intro, API, демо, DevTools, лимиты платформ                  |
-| `lessonRoutes`                                   | правка     | `/push`                                                      |
-| App / HomeScreen tests, `lessons-navigation` E2E | правка     | 8-й пункт навигации                                          |
-| Service Worker (vite-plugin-pwa)                 | возможно   | handlers `push` / `notificationclick` — после CREATIVE       |
-| Backend                                          | нет в repo | mock / локальный Notification / опц. внешний mock — CREATIVE |
+| Компонент                                        | Тип    | Изменения                                                                |
+| ------------------------------------------------ | ------ | ------------------------------------------------------------------------ |
+| `usePushNotifications`                           | новый  | Permission, support, subscribe/unsubscribe, showLocalNotification, error |
+| `PushScreen` + SCSS + `pushLessonData`           | новый  | Intro, цепочка, демо, backend-пояснение, DevTools, лимиты                |
+| `lessonRoutes`                                   | правка | `/push`                                                                  |
+| App / HomeScreen tests, `lessons-navigation` E2E | правка | 8-й пункт навигации                                                      |
+| `public/sw-push.js` + `vite.config.ts`           | новый  | `importScripts`; handlers `push` / `notificationclick`                   |
+| Backend                                          | нет    | Не в scope; описан в учебном контенте                                    |
 
 ## Technology Stack
 
-| Область  | Выбор                                                                             | Статус                     |
-| -------- | --------------------------------------------------------------------------------- | -------------------------- |
-| UI       | React 19 + SCSS (BEM), как Storage/Install                                        | ✅ уже в проекте           |
-| Сборка   | Vite 8 + `vite-plugin-pwa` (generateSW)                                           | ✅ `pnpm build`            |
-| Push API | `Notification` + `PushManager` (браузер)                                          | ✅ без новых deps при mock |
-| SW       | Workbox; кастомные push-handlers — CREATIVE (`injectManifest` vs `importScripts`) | ⏳ CREATIVE                |
-| Тесты    | Vitest (моки PushManager/Notification) + Playwright                               | ✅                         |
+| Область     | Выбор                                        | Статус            |
+| ----------- | -------------------------------------------- | ----------------- |
+| UI          | React 19 + SCSS (BEM), как Storage/Install   | ✅                |
+| Сборка      | Vite 8 + `vite-plugin-pwa` (generateSW)      | ✅                |
+| Push API    | `Notification` + `PushManager` (браузер)     | ✅ без новых deps |
+| SW          | generateSW + `importScripts(['sw-push.js'])` | ✅ CREATIVE       |
+| Архитектура | Гибрид (без backend-отправки)                | ✅ CREATIVE       |
+| Тесты       | Vitest (моки) + Playwright (структура UI)    | ✅                |
 
 ### Technology Validation Checkpoints
 
 - [x] Стек проекта проверен (`package.json`, `vite.config.ts`)
-- [x] Новые deps не обязательны для mock-урока
+- [x] Новые deps не обязательны
 - [x] Build/test-инфра уже работает
-- [ ] POC реальной подписки Push — только после решения CREATIVE (mock vs backend)
-- [ ] Конфиг SW под push — после CREATIVE
+- [x] CREATIVE: гибрид вместо backend / pure mock
+- [x] CREATIVE: SW через importScripts, не injectManifest
+
+## Creative Decisions (зафиксировано)
+
+| Фаза         | Решение                                                                                                             |
+| ------------ | ------------------------------------------------------------------------------------------------------------------- |
+| Architecture | Гибрид: живые Permission/Notification + local notify; subscribe без серверной отправки; честный контент про backend |
+| SW           | `generateSW` + `public/sw-push.js` через `workbox.importScripts`                                                    |
+| UX           | Паттерн Install: бейдж/кнопки/секции; E2E без grant; секция «роль backend»                                          |
+
+Подробно (включая «что / как / зачем / backend»): [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
 
 ## Implementation Plan (фазы BUILD)
 
-1. **Хук (TDD)** — `usePushNotifications`: supported, permission, subscription snapshot, requestPermission, subscribe/unsubscribe; моки в unit
-2. **Контент** — `pushLessonData.ts` (intro, API, DevTools, лимиты iOS/Safari, HTTPS)
+1. **Хук (TDD)** — `usePushNotifications`: supported, permission, subscription, requestPermission, subscribe/unsubscribe, showLocalNotification; моки в unit
+2. **Контент** — `pushLessonData.ts` (смыслы из §0 creative-документа)
 3. **Экран** — `PushScreen` (регионы + демо); unit на моке хука
 4. **Маршрут** — `lessonRoutes` + правки nav-тестов
-5. **SW (по CREATIVE)** — handlers / mock-доставка; без лишнего scope
-6. **E2E** — `push-lesson.spec.ts` + шаг в `lessons-navigation`; без обязательного grant permission
+5. **SW** — `public/sw-push.js` + `importScripts` в `vite.config.ts`
+6. **E2E** — `push-lesson.spec.ts` + шаг в `lessons-navigation`; без обязательного grant
 7. **Verify** — `pnpm verify` (или verify:fast + e2e)
 
 ## Creative Phases Required
 
-- [ ] **Architecture:** mock-подписка vs минимальный backend vs гибрид (local `Notification` + mock `PushSubscription`)
-- [ ] **SW integration:** остаться на generateSW + доп. код vs `injectManifest`
-- [ ] **UX:** состояния default/granted/denied/unsupported, кнопки, тексты про HTTPS/VAPID/iOS
+- [x] **Architecture:** гибрид (см. creative-push-notifications.md)
+- [x] **SW integration:** generateSW + importScripts
+- [x] **UX:** состояния + секции учебного контента
 
 ## Challenges & Mitigations
 
-| Риск                        | Митигация                                                 |
-| --------------------------- | --------------------------------------------------------- |
-| Нет backend в repo          | CREATIVE → mock/гибрид; не тащить сервер без учебной цели |
-| jsdom без Push/Notification | моки в unit хука; экран — мок хука                        |
-| Permission/E2E хрупкие      | E2E на структуру UI, не на grant                          |
-| Safari/iOS ограничения      | секция в UI + roadmap                                     |
-| SW: generateSW без push     | CREATIVE до BUILD SW-части                                |
-| Nav-тесты (8-й пункт)       | сразу обновить App/Home/E2E                               |
+| Риск                        | Митигация                                        |
+| --------------------------- | ------------------------------------------------ |
+| Нет backend в repo          | Гибрид + секция «роль backend»; не тащить сервер |
+| jsdom без Push/Notification | моки в unit хука; экран — мок хука               |
+| Permission/E2E хрупкие      | E2E на структуру UI, не на grant                 |
+| Safari/iOS ограничения      | секция в UI + roadmap                            |
+| Путаница Notification/Push  | явные тексты в intro/API                         |
+| Ожидание push с Pages       | текст: Pages = HTTPS, не отправитель             |
+| Nav-тесты (8-й пункт)       | сразу обновить App/Home/E2E                      |
 
 ## Testing Strategy
 
-- **Unit хука:** supported/unsupported, permission, subscribe/unsubscribe, ошибки
+- **Unit хука:** supported/unsupported, permission, subscribe/unsubscribe, local notify, ошибки
 - **Unit экрана:** регионы, статусы, кнопки на моке хука
 - **E2E:** заголовок/регионы/nav; без обязательного реального push
 - **Регрессия:** `lessons-navigation`, Home/App nav counts
@@ -114,9 +127,9 @@
 ## Dependencies
 
 - Закрыт: `step-lighthouse-pwa-checklist`
-- Разблокирует: `step-github-pages-deploy` (HTTPS для реального Push)
+- Разблокирует: `step-github-pages-deploy` (HTTPS для проверки secure context; **не** backend push)
 - Паттерн: Storage / Cache Storage / Install
-- Документы: `tech-stack-pwa.md`, `implementation-plan.md` §7.2
+- Документы: `tech-stack-pwa.md`, `implementation-plan.md` §7.2, `creative/creative-push-notifications.md`
 
 ---
 

@@ -8,21 +8,26 @@
 
 ## Current Mode
 
-PLAN — планирование завершено; следующий шаг — `/creative`
+CREATIVE — завершён; следующий шаг — `/build`
 
 ## Next Steps
 
-1. `/creative` — дизайн-решения (Architecture: mock vs backend; SW integration; UX подписки)
-2. `/build` — реализация по TDD
-3. `/reflect` — рефлексия
-4. `/close-task` — финализация
+1. `/build` — реализация по TDD (хук → контент → экран → routes → SW importScripts → E2E → verify)
+2. `/reflect` — рефлексия
+3. `/close-task` — финализация
+
+## Creative Summary
+
+- **Документ:** [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
+- **Architecture:** гибрид (живые Permission/Notification + local notify; subscribe без серверной отправки)
+- **SW:** `generateSW` + `importScripts('sw-push.js')`
+- **UX:** паттерн Install; учебные секции «что / как / зачем / роль backend / Pages / iOS»
+- **Не в scope:** backend отправки push; это не входит в `step-github-pages-deploy`
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
-- Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + `lessonRoutes` + unit/E2E (как Storage / Cache Storage / Install)
-- Тема: Web Push — Permission / PushManager / SW `push` / `notificationclick`; backend или mock
-- В репозитории нет backend; CREATIVE решит mock vs минимальный сервер / гибрид
-- PLAN зафиксирован в `memory-bank/tasks.md` (Requirements, Components, Tech, Implementation, Creative, Challenges, Testing)
+- Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + `lessonRoutes` + unit/E2E
+- Смыслы урока брать из §0 creative-документа (Notification vs Push, цепочка, VAPID, обязанности backend)
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`
