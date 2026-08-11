@@ -1,4 +1,4 @@
-# Logs
+# Логи
 logs
 *.log
 npm-debug.log*
@@ -7,13 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Каталоги зависимостей `Node.js`
 node_modules
+
+# Каталоги результата сборки
 dist
 dist-ssr
-*.local
 
-# Editor directories and files
-.vscode/*
+# Кэш и артефакты сборки
+.cache
+# Vite pre-bundle (см. vite.config.ts `cacheDir`)
+.vite
+
+# Покрытие тестов
+coverage
+
+# Playwright E2E
+playwright-report/
+test-results/
+
+# WebDriver (Windows: `msedgedriver-tool` кладёт драйвер в cwd репозитория)
+msedgedriver.exe
+
+# Каталоги и файлы редакторов
+# .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -22,3 +39,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Временные файлы
+*.~
+.git-commit-msg.txt
+
+# Конфиденциальные файлы и переменные окружения
+/.env
+*.local
