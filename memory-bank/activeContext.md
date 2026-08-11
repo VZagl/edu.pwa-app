@@ -5,29 +5,27 @@
 - **Task ID:** `step-push-notifications`
 - **Git Branch:** `feat/step-push-notifications`
 - **Название:** Web Push — опциональный урок
+- **Mode:** BUILD complete
 
 ## Current Mode
 
-CREATIVE — завершён; следующий шаг — `/build`
+BUILD — завершён; следующий шаг — `/reflect`
 
 ## Next Steps
 
-1. `/build` — реализация по TDD (хук → контент → экран → routes → SW importScripts → E2E → verify)
-2. `/reflect` — рефлексия
-3. `/close-task` — финализация
+1. `/reflect` — рефлексия по задаче
+2. `/close-task` — финализация
 
-## Creative Summary
+## Build Summary
 
-- **Документ:** [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
-- **Architecture:** гибрид (живые Permission/Notification + local notify; subscribe без серверной отправки)
-- **SW:** `generateSW` + `importScripts('sw-push.js')`
-- **UX:** паттерн Install; учебные секции «что / как / зачем / роль backend / Pages / iOS»
-- **Не в scope:** backend отправки push; это не входит в `step-github-pages-deploy`
+- Экран `/push`, хук `usePushNotifications`, `pushLessonData`, `public/sw-push.js` + `importScripts`
+- Гибрид: Permission / local notify / subscribe без backend-отправки
+- Verify: lint, typecheck, unit (145), build, e2e (18) — OK
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + `lessonRoutes` + unit/E2E
-- Смыслы урока брать из §0 creative-документа (Notification vs Push, цепочка, VAPID, обязанности backend)
+- Creative: [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`

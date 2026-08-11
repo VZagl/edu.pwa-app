@@ -24,6 +24,20 @@
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Web Push урок (step-push-notifications)                  | 🔨 BUILD complete (2026-08-11)  |
+
+## [2026-08-11]: step-push-notifications — BUILD complete
+
+Добавлен учебный раздел `/push`: гибрид Web Push (Permission, subscribe/unsubscribe, локальный `showNotification`), секции про цепочку, роль backend, DevTools, Safari/iOS, Pages ≠ отправитель. Хук `usePushNotifications`, `public/sw-push.js` через `workbox.importScripts`. TDD: unit + E2E структуры UI (без grant). Verify: lint ✅, typecheck ✅, unit 145 ✅, build ✅, e2e 18 ✅.
+
+**Файлы:**
+
+- `src/hooks/usePushNotifications/`
+- `src/screens/PushScreen/`
+- `public/sw-push.js`, `vite.config.ts` (`importScripts`)
+- `src/routes/lessonRoutes.ts`, nav-тесты, `e2e/push-lesson.spec.ts`
+
+**Next:** `/reflect`
 
 ## [2026-08-11]: step-storage-quota-lesson-ui — ЗАВЕРШЕНО
 

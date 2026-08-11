@@ -9,7 +9,7 @@
 - **Тип:** Feature
 - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
 - **Создано:** 2026-08-07
-- **Статус:** CREATIVE complete → готов к `/build`
+- **Статус:** BUILD complete → готов к `/reflect`
 - **Зависит от:** step-lighthouse-pwa-checklist (закрыта)
 - **Creative:** [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
 
@@ -26,7 +26,7 @@
 - [x] GIT: Работа в feature-ветке `feat/step-push-notifications`
 - [x] PLAN: Детальный план реализации
 - [x] CREATIVE: Дизайн-решения (гибрид + SW importScripts + UX) — см. creative-push-notifications.md
-- [ ] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
+- [x] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -36,18 +36,18 @@
 
 ### Функциональные
 
-- [ ] Отдельный экран `/push` (navLabel: `Push`) в `lessonRoutes`
-- [ ] Учебный контент: что такое Web Push; Notification vs Push; цепочка Permission → subscribe → push-сервис → SW; роль backend; VAPID/HTTPS; Pages ≠ отправитель; Safari/iOS
-- [ ] Демо (гибрид): permission, поддержка, subscribe/unsubscribe, локальное `showNotification`; без серверной отправки
-- [ ] Ссылка на связанный раздел (Service Worker)
-- [ ] Ограничения Safari/iOS — в UI (как в roadmap)
+- [x] Отдельный экран `/push` (navLabel: `Push`) в `lessonRoutes`
+- [x] Учебный контент: что такое Web Push; Notification vs Push; цепочка Permission → subscribe → push-сервис → SW; роль backend; VAPID/HTTPS; Pages ≠ отправитель; Safari/iOS
+- [x] Демо (гибрид): permission, поддержка, subscribe/unsubscribe, локальное `showNotification`; без серверной отправки
+- [x] Ссылка на связанный раздел (Service Worker)
+- [x] Ограничения Safari/iOS — в UI (как в roadmap)
 
 ### Нефункциональные
 
-- [ ] Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + unit + E2E
-- [ ] Без продакшен-backend в репозитории (AGENTS.md / systemPatterns)
-- [ ] TDD; verify: lint / typecheck / test / build / e2e
-- [ ] Новые npm-зависимости для push-отправки — не добавлять
+- [x] Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + unit + E2E
+- [x] Без продакшен-backend в репозитории (AGENTS.md / systemPatterns)
+- [x] TDD; verify: lint / typecheck / test / build / e2e
+- [x] Новые npm-зависимости для push-отправки — не добавлять
 
 ## Component Analysis
 
@@ -67,7 +67,7 @@
 | UI          | React 19 + SCSS (BEM), как Storage/Install   | ✅                |
 | Сборка      | Vite 8 + `vite-plugin-pwa` (generateSW)      | ✅                |
 | Push API    | `Notification` + `PushManager` (браузер)     | ✅ без новых deps |
-| SW          | generateSW + `importScripts(['sw-push.js'])` | ✅ CREATIVE       |
+| SW          | generateSW + `importScripts(['sw-push.js']`) | ✅ CREATIVE       |
 | Архитектура | Гибрид (без backend-отправки)                | ✅ CREATIVE       |
 | Тесты       | Vitest (моки) + Playwright (структура UI)    | ✅                |
 
@@ -91,13 +91,22 @@
 
 ## Implementation Plan (фазы BUILD)
 
-1. **Хук (TDD)** — `usePushNotifications`: supported, permission, subscription, requestPermission, subscribe/unsubscribe, showLocalNotification; моки в unit
-2. **Контент** — `pushLessonData.ts` (смыслы из §0 creative-документа)
-3. **Экран** — `PushScreen` (регионы + демо); unit на моке хука
-4. **Маршрут** — `lessonRoutes` + правки nav-тестов
-5. **SW** — `public/sw-push.js` + `importScripts` в `vite.config.ts`
-6. **E2E** — `push-lesson.spec.ts` + шаг в `lessons-navigation`; без обязательного grant
-7. **Verify** — `pnpm verify` (или verify:fast + e2e)
+1. [x] **Хук (TDD)** — `usePushNotifications`: supported, permission, subscription, requestPermission, subscribe/unsubscribe, showLocalNotification; моки в unit
+2. [x] **Контент** — `pushLessonData.ts` (смыслы из §0 creative-документа)
+3. [x] **Экран** — `PushScreen` (регионы + демо); unit на моке хука
+4. [x] **Маршрут** — `lessonRoutes` + правки nav-тестов
+5. [x] **SW** — `public/sw-push.js` + `importScripts` в `vite.config.ts`
+6. [x] **E2E** — `push-lesson.spec.ts` + шаг в `lessons-navigation`; без обязательного grant
+7. [x] **Verify** — `pnpm verify:fast` ✅ + `pnpm test:e2e` ✅
+
+## Build Progress
+
+- **Хук:** Complete — `src/hooks/usePushNotifications/` (11 unit)
+- **Экран:** Complete — `src/screens/PushScreen/` (6 unit)
+- **Routes/nav:** Complete — 8-й пункт Push
+- **SW:** Complete — `public/sw-push.js` + `importScripts`
+- **E2E:** Complete — `e2e/push-lesson.spec.ts` + navigation
+- **Verify:** lint ✅, typecheck ✅, unit 145 ✅, build ✅, e2e 18 ✅ (после фикса strict Permission)
 
 ## Creative Phases Required
 
