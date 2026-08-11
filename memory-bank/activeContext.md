@@ -8,19 +8,20 @@
 
 ## Current Mode
 
-VAN — инициализация завершена; следующий шаг — `/plan`
+PLAN — планирование завершено; следующий шаг — `/build`
 
 ## Next Steps
 
-1. `/plan` — детальный план реализации (Level 2)
-2. `/build` — реализация по TDD
-3. `/reflect` — рефлексия
-4. `/close-task` — финализация
+1. `/build` — реализация по TDD (хук → data → Screen → маршрут → E2E → verify)
+2. `/reflect` — рефлексия
+3. `/close-task` — финализация
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - Паттерн lesson-ui: hook + `*LessonData` + Screen (BEM) + `lessonRoutes` + unit/E2E (как Cache Storage / Install)
-- API урока: `navigator.storage.estimate()`, опционально `persist()` / `persisted()`
+- Именование: `StorageScreen`, `useStorageQuota`, путь `/storage`, navLabel `Storage`
+- API урока: `navigator.storage.estimate()`, `persist()` / `persisted()`
+- Creative не нужен (Level 2)
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`
