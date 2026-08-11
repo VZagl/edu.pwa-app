@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Manifest', () => {
 	test('должен показать объяснение и значения из manifest', async ({ page }) => {
-		await page.goto('/manifest');
+		await page.goto('./manifest');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Web App Manifest');
 		await expect(page.getByText(/Web App Manifest — это JSON-файл/i)).toBeVisible();
@@ -15,6 +15,6 @@ test.describe('Урок Manifest', () => {
 		await expect(section.getByText('standalone')).toBeVisible();
 		await expect(section.getByText('#646cff')).toBeVisible();
 		await expect(section.getByText('#ffffff')).toBeVisible();
-		await expect(section.getByText('/icons/icon-192.png')).toBeVisible();
+		await expect(section.getByText('icons/icon-192.png')).toBeVisible();
 	});
 });

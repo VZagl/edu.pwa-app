@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Install prompt', () => {
 	test('должен показать баннер установки после grace period', async ({ page }) => {
-		await page.goto('/');
+		await page.goto('./');
 
 		await page.waitForFunction(
 			async () => {

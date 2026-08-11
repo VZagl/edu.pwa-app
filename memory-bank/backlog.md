@@ -6,13 +6,6 @@
 
 ## Средний
 
-- [ ] Деплой на GitHub Pages (step-github-pages-deploy)
-  - **Создано:** 2026-08-07
-  - Vite `base`, Actions → Pages, проверка PWA по HTTPS.
-  - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
-  - **Зависит от:** step-push-notifications
-  - **Причина:** Следующий шаг после Push; закрывает «деплой» из фазы 6
-
 - [ ] README «с нуля» для ученика (step-readme-learner-guide)
   - **Создано:** 2026-08-07
   - Порядок экранов, DevTools, preview, ссылка на pwa-checklist.

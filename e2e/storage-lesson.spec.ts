@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Storage', () => {
 	test('должен показать ключевые секции на /storage', async ({ page }) => {
-		await page.goto('/storage');
+		await page.goto('./storage');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Storage');
 		await expect(page.getByText(/Storage quota показывает/i)).toBeVisible();

@@ -26,7 +26,8 @@ self.addEventListener('push', (event) => {
 	event.waitUntil(
 		self.registration.showNotification(title, {
 			body,
-			icon: '/icons/icon-192.png',
+			// scope уже включает subdirectory (Vite base), import.meta в SW недоступен
+			icon: new URL('icons/icon-192.png', self.registration.scope).href,
 		}),
 	);
 });
@@ -43,7 +44,7 @@ self.addEventListener('notificationclick', (event) => {
 			}
 
 			if (self.clients.openWindow) {
-				return self.clients.openWindow('/');
+				return self.clients.openWindow(self.registration.scope);
 			}
 
 			return undefined;

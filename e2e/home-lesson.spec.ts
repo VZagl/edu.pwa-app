@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Главная — карта лаборатории', () => {
 	test('должен показать ключевые блоки и перейти в модуль Manifest', async ({ page }) => {
-		await page.goto('/');
+		await page.goto('./');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Карта лаборатории');
 		await expect(page.getByText(/учебн(ое|ого) PWA/i)).toBeVisible();

@@ -14,17 +14,17 @@
 
 | Условие | Детали                                                                                                                                                          |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Сборка  | `pnpm build` — без ошибок                                                                                                                                       |
-| Preview | `pnpm preview` — по умолчанию `http://localhost:4173`                                                                                                           |
+| Сборка  | `pnpm build` — без ошибок; в конфиге `base: '/edu.pwa-app/'`                                                                                                    |
+| Preview | `pnpm preview` — приложение по **`http://localhost:4173/edu.pwa-app/`** (не корень `:4173/`)                                                                    |
 | Браузер | **Chrome** (рекомендуется для Lighthouse PWA audit и Application panel). Минимум: актуальный stable Chrome; при расхождениях фиксировать версию и дату проверки |
-| HTTPS   | Для `localhost` исключение — PWA audit на preview допустим без HTTPS                                                                                            |
+| HTTPS   | Для `localhost` исключение — PWA audit на preview допустим без HTTPS; production — GitHub Pages                                                                 |
 
 ```bash
 pnpm build
 pnpm preview
 ```
 
-Открыть в Chrome: `http://localhost:4173`
+Открыть в Chrome: `http://localhost:4173/edu.pwa-app/`
 
 ---
 
@@ -36,7 +36,7 @@ pnpm preview
 2. **Mode:** Navigation
 3. **Categories:** PWA (Performance — опционально)
 4. **Device:** Mobile или Desktop (для MVP достаточно одного; mobile ближе к целевому сценарию)
-5. URL: `http://localhost:4173`
+5. URL: `http://localhost:4173/edu.pwa-app/`
 6. **Analyze page load**
 
 ### Ожидаемый результат
@@ -65,24 +65,25 @@ pnpm preview
 
 ### Manifest
 
-| Поле        | Ожидаемое значение (текущий MVP)            |
-| ----------- | ------------------------------------------- |
-| Name        | `edu.pwa-app — учебное PWA`                 |
-| Short name  | `PWA Lab`                                   |
-| Start URL   | `/`                                         |
-| Display     | `standalone`                                |
-| Theme color | `#646cff`                                   |
-| Icons       | `icon-192.png`, `icon-512.png` из `/icons/` |
+| Поле        | Ожидаемое значение (текущий MVP)                              |
+| ----------- | ------------------------------------------------------------- |
+| Name        | `edu.pwa-app — учебное PWA`                                   |
+| Short name  | `PWA Lab`                                                     |
+| Start URL   | `./` (резолвится относительно URL манифеста / base)           |
+| Scope       | `./`                                                          |
+| Display     | `standalone`                                                  |
+| Theme color | `#646cff`                                                     |
+| Icons       | `icons/icon-192.png`, `icons/icon-512.png` (без ведущего `/`) |
 
-Ссылка на manifest в HTML: `/manifest.webmanifest` (генерируется `vite-plugin-pwa` при сборке).
+Ссылка на manifest в HTML: `/edu.pwa-app/manifest.webmanifest` (генерируется `vite-plugin-pwa` при сборке).
 
 ### Service Workers
 
-| Проверка | Ожидаемое                             |
-| -------- | ------------------------------------- |
-| Статус   | **activated** (после первой загрузки) |
-| Source   | `/sw.js`                              |
-| Scope    | origin + `/`                          |
+| Проверка | Ожидаемое                                             |
+| -------- | ----------------------------------------------------- |
+| Статус   | **activated** (после первой загрузки)                 |
+| Source   | `/edu.pwa-app/sw.js`                                  |
+| Scope    | `…/edu.pwa-app/` (scope регистрации, не корень сайта) |
 
 Если статус **waiting** — обновить страницу или проверить баннер «Доступно обновление» (`SwUpdateBanner` в `src/components/SwUpdateBanner/`).
 
@@ -104,7 +105,7 @@ pnpm preview
 
 ### Android (Chrome)
 
-1. Открыть `http://localhost:4173` на устройстве **или** эмулировать installable в Chrome desktop (Application → Manifest → «Add to home screen» / симуляция)
+1. Открыть `http://localhost:4173/edu.pwa-app/` на устройстве **или** эмулировать installable в Chrome desktop (Application → Manifest → «Add to home screen» / симуляция)
 2. В UI: баннер **«Установить»** (`InstallBanner`) при срабатывании `beforeinstallprompt`
 3. Альтернатива: меню Chrome → «Установить приложение» / «Добавить на главный экран»
 4. После установки: запуск в **standalone** (`display-mode: standalone` — без адресной строки браузера)
@@ -123,11 +124,30 @@ pnpm preview
 
 ### Тест на Android с десктопа (`pnpm preview`)
 
-| Способ                                | Команда / URL                                                        | PWA (SW, install)                          |
-| ------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------ |
-| **USB + adb reverse** (рекомендуется) | `adb reverse tcp:4173 tcp:4173`, на телефоне `http://localhost:4173` | ✅ secure context                          |
-| Wi‑Fi по IP                           | `pnpm preview --host`, на телефоне `http://<IP-десктопа>:4173`       | ❌ обычный HTTP — SW и install не работают |
-| HTTPS (деплой / туннель)              | Netlify, ngrok и т.п.                                                | ✅                                         |
+| Способ                                | Команда / URL                                                                     | PWA (SW, install)                          |
+| ------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------ |
+| **USB + adb reverse** (рекомендуется) | `adb reverse tcp:4173 tcp:4173`, на телефоне `http://localhost:4173/edu.pwa-app/` | ✅ secure context                          |
+| Wi‑Fi по IP                           | `pnpm preview --host`, на телефоне `http://<IP-десктопа>:4173/edu.pwa-app/`       | ❌ обычный HTTP — SW и install не работают |
+| HTTPS (деплой / туннель)              | **GitHub Pages** (`https://vzagl.github.io/edu.pwa-app/`), ngrok и т.п.           | ✅                                         |
+
+---
+
+## Проверка на GitHub Pages
+
+После включения Pages (Settings → Pages → GitHub Actions) и успешного workflow (`develop` или `workflow_dispatch`) проверить на HTTPS:
+
+**URL:** `https://vzagl.github.io/edu.pwa-app/`
+
+| Шаг | Проверка                      | Ожидание                                                        |
+| --- | ----------------------------- | --------------------------------------------------------------- |
+| 1   | Открыть URL                   | SPA грузится; ассеты с `/edu.pwa-app/assets/…`                  |
+| 2   | Application → Manifest        | поля MVP; `start_url` / `scope` `./`; icons `icons/…`           |
+| 3   | Application → Service Workers | activated; scope `…/edu.pwa-app/`; source `…/edu.pwa-app/sw.js` |
+| 4   | Offline                       | Application → Offline → reload: UI + навигация по precache      |
+| 5   | Install                       | баннер / меню Chrome → установить; standalone с иконки          |
+| 6   | Lighthouse PWA                | **Uses HTTPS** — pass (в отличие от localhost)                  |
+
+Локальный preview остаётся основным для быстрой регрессии; Pages — стенд для HTTPS / installability «как у ученика». Команды деплоя: [run-and-build.md](./run-and-build.md) → «Деплой на GitHub Pages».
 
 ---
 
@@ -145,7 +165,7 @@ pnpm preview
 | Cookies                                   | Application → Cookies                            |
 | Состояние «установлено»                   | Внутреннее состояние браузера + иконка на экране |
 
-**Полная очистка** = удалить иконку приложения **и** сбросить данные origin (`http://localhost:4173` или ваш production URL).
+**Полная очистка** = удалить иконку приложения **и** сбросить данные origin (`http://localhost:4173` / `https://vzagl.github.io` или ваш production URL).
 
 ### Google Chrome
 
@@ -234,12 +254,12 @@ pnpm test --run
 pnpm test:e2e
 ```
 
-| Команда           | Что проверяет                                                               |
-| ----------------- | --------------------------------------------------------------------------- |
-| `pnpm lint`       | ESLint                                                                      |
-| `pnpm build`      | TypeScript + production bundle + генерация SW/manifest                      |
-| `pnpm test --run` | Unit/integration (Vitest)                                                   |
-| `pnpm test:e2e`   | Playwright на preview (`localhost:4173`): manifest, SW, offline, install UI |
+| Команда           | Что проверяет                                                                            |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| `pnpm lint`       | ESLint                                                                                   |
+| `pnpm build`      | TypeScript + production bundle + генерация SW/manifest                                   |
+| `pnpm test --run` | Unit/integration (Vitest)                                                                |
+| `pnpm test:e2e`   | Playwright на preview (`localhost:4173/edu.pwa-app/`): manifest, SW, offline, install UI |
 
 Полный verify одной командой: `pnpm verify` (lint + typecheck + unit + build + e2e).
 
@@ -255,7 +275,8 @@ pnpm test:e2e
 | SW не activated                       | Preview не запущен, dev-режим (`pnpm dev`) | `pnpm build && pnpm preview`; SW в dev отключён                                                                  |
 | Manifest пустой / 404                 | Сборка не выполнена                        | `pnpm build`; проверить `dist/manifest.webmanifest`                                                              |
 | Старая версия после изменений         | Кэш SW                                     | См. [Удаление и полная очистка данных](#удаление-приложения-и-полная-очистка-данных); DevTools → Clear site data |
-| Offline не работает                   | SW не зарегистрирован                      | Проверить `/sw.js`, вкладку Service Workers                                                                      |
+| Offline не работает                   | SW не зарегистрирован                      | Проверить `/edu.pwa-app/sw.js`, вкладку Service Workers                                                          |
+| 404 ассетов / белый экран на Pages    | Неверный `base` или не включён Pages       | `base: '/edu.pwa-app/'`; Settings → Pages → GitHub Actions; URL с trailing path `/edu.pwa-app/`                  |
 | Баннер / кнопка «Установить» не видны | См. ниже                                   | См. [Удаление и полная очистка данных](#удаление-приложения-и-полная-очистка-данных)                             |
 | Lighthouse результаты различаются     | Версия Chrome, расширения, throttling      | Закрыть лишние вкладки; указать версию Chrome в заметках проверки                                                |
 | `beforeinstallprompt` в headless/CI   | Ожидаемо                                   | Install — только ручная проверка; E2E мокает событие (`e2e/install-prompt.spec.ts`)                              |

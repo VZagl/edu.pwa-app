@@ -26,9 +26,10 @@
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 
-## [2026-08-11]: step-app-version-header — ЗАВЕРШЕНО
+## [2026-08-11]: step-github-pages-deploy — ЗАВЕРШЕНО
 
-Версия из `package.json` в `app-shell__header` (Vite `define` → `appVersion.ts`). TDD + verify OK.
+Деплой project site на GitHub Pages: `base: '/edu.pwa-app/'`, гибрид PWA-путей, workflow pnpm на `develop`, docs. Verify OK; ручная проверка HTTPS — после merge/dispatch.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md](completed-tasks/2026/08/step-app-version-header_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md](completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md)

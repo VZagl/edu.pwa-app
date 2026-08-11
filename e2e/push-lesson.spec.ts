@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Web Push', () => {
 	test('должен показать ключевые секции на /push', async ({ page }) => {
-		await page.goto('/push');
+		await page.goto('./push');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Web Push');
 		await expect(page.getByText(/даже при закрытой вкладке/i)).toBeVisible();
@@ -30,7 +30,7 @@ test.describe('Урок Web Push', () => {
 		const swLink = page.getByRole('region', { name: 'Связь с Service Worker' });
 		await expect(swLink.getByRole('link', { name: 'Service Worker' })).toHaveAttribute(
 			'href',
-			'/service-worker',
+			/\/service-worker$/,
 		);
 	});
 });
