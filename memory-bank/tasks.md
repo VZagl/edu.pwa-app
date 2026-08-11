@@ -8,7 +8,8 @@
 - **Complexity:** Level 2 — Simple Enhancement
 - **Источник:** docs/project/implementation-plan.md (step-cache-storage-lesson-ui, Order 7.0.4)
 - **Создано:** 2026-08-07
-- **Статус:** BUILD complete → ожидает `/reflect`
+- **Статус:** REFLECT complete → ожидает `/close-task`
+- **Reflection:** [memory-bank/reflection/reflection-step-cache-storage-lesson-ui.md](reflection/reflection-step-cache-storage-lesson-ui.md)
 
 ### Описание
 
@@ -21,8 +22,15 @@
 - [x] GIT: Работа в feature-ветке `feat/step-cache-storage-lesson-ui`
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация (TDD)
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well:** шаблон hook + data + screen; TDD (мок `caches` / мок хука); previewHint; сохранение `selectedCache` после refresh
+- **Challenges:** jsdom без `caches`; пустые кэши в dev; хрупкие Home/App-тесты на число пунктов навигации
+- **Lessons Learned:** для урока достаточно keys/URL без тел; при смене `lessonRoutes` сразу править Home/App unit
+- **Next Steps:** `/close-task` (без `/archive`)
 
 ---
 
