@@ -2,12 +2,7 @@
 
 ## Высокий
 
-- [ ] Версия приложения в header (step-app-version-header)
-  - **Создано:** 2026-08-11
-  - Версия из `package.json` в `app-shell__header` справа от названия; flex-выравнивание.
-  - **Источник:** docs/project/implementation-plan.md (step-app-version-header)
-  - **Зависит от:** step-app-shell
-  - **Причина:** Нужна видимая версия приложения в UI (отдельно от SW scriptURL)
+(Нет активных задач)
 
 ## Средний
 
