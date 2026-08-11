@@ -5,22 +5,22 @@
 - **Task ID:** `step-push-notifications`
 - **Git Branch:** `feat/step-push-notifications`
 - **Название:** Web Push — опциональный урок
-- **Mode:** BUILD complete
+- **Mode:** REFLECT завершён → ARCHIVE
 
 ## Current Mode
 
-BUILD — завершён; следующий шаг — `/reflect`
+REFLECT — завершён; следующий шаг — `/archive`
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
-2. `/close-task` — финализация
+1. `/archive` — архивация задачи
+2. `/close-task` — финализация (completed-tasks, backlog, merge)
 
-## Build Summary
+## Reflection Summary
 
-- Экран `/push`, хук `usePushNotifications`, `pushLessonData`, `public/sw-push.js` + `importScripts`
-- Гибрид: Permission / local notify / subscribe без backend-отправки
-- Verify: lint, typecheck, unit (145), build, e2e (18) — OK
+- Документ: [reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md)
+- Гибрид Web Push без backend; SW через `importScripts`; lesson-ui + TDD
+- Verify: lint, typecheck, unit 145, build, e2e 18 — OK
 
 ## Context for AI
 

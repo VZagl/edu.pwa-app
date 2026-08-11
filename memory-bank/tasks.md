@@ -9,7 +9,8 @@
 - **Тип:** Feature
 - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
 - **Создано:** 2026-08-07
-- **Статус:** BUILD complete → готов к `/reflect`
+- **Статус:** REFLECT complete → готов к `/archive`
+- **Reflection:** [reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md)
 - **Зависит от:** step-lighthouse-pwa-checklist (закрыта)
 - **Creative:** [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
 
@@ -27,8 +28,16 @@
 - [x] PLAN: Детальный план реализации
 - [x] CREATIVE: Дизайн-решения (гибрид + SW importScripts + UX) — см. creative-push-notifications.md
 - [x] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
+- [ ] ARCHIVE: Архивация документации
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well:** CREATIVE (гибрид + importScripts) → BUILD без отклонений; lesson-ui шаблон; E2E без grant; verify полный
+- **Challenges:** jsdom Push/Notification; Permission в Playwright; граница «subscribe ≠ серверная доставка»
+- **Lessons Learned:** гибрид — максимум для frontend-only; `importScripts` вместо injectManifest; PLAN стоит явно фиксировать E2E-стратегию Permission
+- **Next Steps:** `/archive` → `/close-task`; далее `step-github-pages-deploy`
 
 ---
 
