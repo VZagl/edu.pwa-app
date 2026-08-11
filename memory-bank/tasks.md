@@ -7,7 +7,8 @@
 - **Git Branch:** `feat/step-install-lesson-ui`
 - **Уровень сложности:** Level 2
 - **Тип:** Enhancement
-- **Статус:** BUILD завершён → /reflect
+- **Статус:** REFLECT завершён → /close-task
+- **Reflection:** [memory-bank/reflection/reflection-step-install-lesson-ui.md](reflection/reflection-step-install-lesson-ui.md)
 - **Источник:** `docs/project/implementation-plan.md` (step-install-lesson-ui)
 
 ### Описание
@@ -119,10 +120,17 @@
 - **Verify:** `pnpm verify:fast` — lint ✅, typecheck ✅, unit 88 ✅, build ✅
 - **E2E:** `pnpm test:e2e e2e/install-lesson.spec.ts` — 1 ✅
 
+### Reflection Highlights
+
+- **What Went Well:** 7 секций по плану; переиспользование `useInstallPrompt` без дублирования баннера; TDD (9 unit + E2E); `previewHint` для DEV
+- **Challenges:** beforeinstallprompt в CI; display-mode в тестах; installability в `pnpm dev`
+- **Lessons Learned:** учебный экран = UI поверх готовой инфраструктуры; Challenges & Mitigations в PLAN закрывают риски заранее
+- **Next Steps:** `/close-task`
+
 - [x] GIT: Работа в feature-ветке feat/step-install-lesson-ui
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация (TDD)
-- [ ] REFLECT: Рефлексия
+- [x] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ---
