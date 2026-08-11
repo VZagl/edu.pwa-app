@@ -24,13 +24,17 @@
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)        |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)        |
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)        |
-| Web Push урок (step-push-notifications)                  | 🔍 REFLECT complete (2026-08-11) |
+| Web Push урок (step-push-notifications)                  | ✅ ARCHIVE complete (2026-08-11) |
+
+## [2026-08-11]: step-push-notifications — ARCHIVE complete
+
+Архив Level 3: гибрид Web Push без backend; SW через `importScripts`; lesson-ui + TDD; E2E без grant. Документ: [archive/archive-step-push-notifications.md](archive/archive-step-push-notifications.md). Reflection: [reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md). Creative: [creative/creative-push-notifications.md](creative/creative-push-notifications.md).
+
+**Next:** `/close-task`
 
 ## [2026-08-11]: step-push-notifications — REFLECT complete
 
 Рефлексия Level 3: гибрид без backend оправдан; `importScripts` вместо injectManifest; lesson-ui + TDD сработали; E2E без grant — правильная стратегия. Документ: [reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md).
-
-**Next:** `/archive`
 
 ## [2026-08-11]: step-push-notifications — BUILD complete
 
