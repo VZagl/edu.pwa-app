@@ -25,9 +25,10 @@
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 
-## [2026-08-11]: step-push-notifications — ЗАВЕРШЕНО
+## [2026-08-11]: step-app-version-header — ЗАВЕРШЕНО
 
-Учебный раздел `/push`: гибрид Web Push без backend; SW через `importScripts`; lesson-ui + TDD; E2E без grant. Verify: lint ✅, typecheck ✅, unit 145 ✅, build ✅, e2e 18 ✅.
+Версия из `package.json` в `app-shell__header` (Vite `define` → `appVersion.ts`). TDD + verify OK.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-push-notifications_2026-08-11.md](completed-tasks/2026/08/step-push-notifications_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md](completed-tasks/2026/08/step-app-version-header_2026-08-11.md)

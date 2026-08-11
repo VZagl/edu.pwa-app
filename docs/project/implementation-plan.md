@@ -413,6 +413,24 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 ---
 
+#### step-app-version-header (Order: 7.0.6)
+
+**Описание**
+
+Вывести **версию приложения** в `app-shell__header` справа от названия (`edu.pwa-app`), прижать к правому краю окна. Layout: `display: flex` на `.app-shell__header`; название слева, версия справа (`justify-content: space-between` или `margin-left: auto` у версии). Источник истины — поле `version` в `package.json`; проброс в клиент через Vite `define` (или тонкий модуль вроде `src/appVersion.ts`). Это **версия приложения**, не SW revision / `scriptURL` (тот остаётся на экране Service Worker).
+
+**Цель:** В шапке всегда видна текущая версия приложения (удобно для лаборатории и update flow).
+
+**Файлы:** `package.json` (`version`), `vite.config.ts`, `src/App.tsx`, `src/App.scss`, при необходимости `src/appVersion.ts` / типы Vite; тесты `src/App.test.tsx`
+
+**Тесты:** unit — header показывает название и версию; при необходимости smoke E2E
+
+**Зависит от:** step-app-shell
+
+**Completed:** [memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md](../../memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md)
+
+---
+
 ### Этап 7.2: Опционально — Push
 
 #### step-push-notifications (Order: 7.1.1)

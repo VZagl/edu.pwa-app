@@ -185,10 +185,9 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-push-notifications`
-- **Название:** Web Push — опциональный урок
+- **Task ID:** `step-app-version-header`
+- **Название:** Версия приложения в header
 - **Дата завершения:** 2026-08-11
-- **Статус:** COMPLETED & ARCHIVED
-- **Completed:** [memory-bank/completed-tasks/2026/08/step-push-notifications_2026-08-11.md](completed-tasks/2026/08/step-push-notifications_2026-08-11.md)
-- **Archive:** [memory-bank/archive/archive-step-push-notifications.md](archive/archive-step-push-notifications.md)
-- **Reflection:** [memory-bank/reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md)
+- **Статус:** COMPLETED
+- **Completed:** [memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md](completed-tasks/2026/08/step-app-version-header_2026-08-11.md)
+- **Reflection:** [memory-bank/reflection/reflection-step-app-version-header.md](reflection/reflection-step-app-version-header.md)

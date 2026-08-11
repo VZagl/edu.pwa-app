@@ -6,6 +6,9 @@
 }
 
 .app-shell__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	border-bottom: 1px solid var(--color-border);
 	padding: var(--space-sm);
 
@@ -21,6 +24,12 @@
 	@media (min-width: 1024px) {
 		font-size: 1.75rem;
 	}
+}
+
+.app-shell__version {
+	margin-left: auto;
+	color: var(--color-text);
+	font-size: 0.875rem;
 }
 
 .app-shell__nav {
