@@ -2,11 +2,7 @@
 
 ## Высокий
 
-- [ ] Install — учебный экран (step-install-lesson-ui)
-  - **Создано:** 2026-08-07
-  - Installability, демо `useInstallPrompt`, display-mode, инструкции по платформам.
-  - **Источник:** docs/project/implementation-plan.md (step-install-lesson-ui)
-  - **Причина:** Экран-заглушка; баннер установки уже есть
+(Нет активных задач)
 
 ## Средний
 
