@@ -2,6 +2,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
 import { App } from './App';
+import { APP_VERSION } from './appVersion.ts';
 
 function renderApp(initialRoute = '/') {
 	return render(
@@ -12,11 +13,13 @@ function renderApp(initialRoute = '/') {
 }
 
 describe('Оболочка приложения', () => {
-	it('должен отрендерить header с названием проекта', () => {
+	it('должен отрендерить header с названием проекта и версией', () => {
 		renderApp();
 
-		expect(screen.getByRole('banner')).toBeInTheDocument();
+		const header = screen.getByRole('banner');
+		expect(header).toBeInTheDocument();
 		expect(screen.getByRole('heading', { level: 1, name: 'edu.pwa-app' })).toBeInTheDocument();
+		expect(within(header).getByText(APP_VERSION)).toBeInTheDocument();
 	});
 
 	it('должен отрендерить навигацию с восемью пунктами', () => {

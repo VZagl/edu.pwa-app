@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router';
 import './App.scss';
+import { APP_VERSION } from './appVersion';
 import { InstallBanner } from './components/InstallBanner/InstallBanner';
 import { OfflineIndicator } from './components/OfflineIndicator/OfflineIndicator';
 import { SwUpdateBanner } from './components/SwUpdateBanner/SwUpdateBanner';
@@ -11,6 +12,7 @@ export function App() {
 		<div className='app-shell'>
 			<header className='app-shell__header'>
 				<h1 className='app-shell__title'>edu.pwa-app</h1>
+				<span className='app-shell__version'>{APP_VERSION}</span>
 			</header>
 			<nav className='app-shell__nav'>
 				<ul className='app-shell__nav-list'>

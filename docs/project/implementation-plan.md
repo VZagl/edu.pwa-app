@@ -427,7 +427,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-app-shell
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md](../../memory-bank/completed-tasks/2026/08/step-app-version-header_2026-08-11.md)
 
 ---
 
