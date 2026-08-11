@@ -6,22 +6,24 @@
 
 ## Current Mode
 
-VAN complete → ожидание `/plan`
+PLAN complete → ожидание `/creative`
 
 ## Next Steps
 
-1. `/plan` — детальный план (Vite `base`, Actions → Pages, docs, verify)
-2. `/creative` — решения по base / workflow / путям PWA
-3. `/build` — реализация и проверки
-4. `/reflect` → `/archive` → `/close-task`
-5. Чеклист: GIT (`feat/step-github-pages-deploy`), CLOSE
+1. `/creative` — решения C1 (`base`), C2 (workflow trigger), C3 (PWA paths) → `creative-github-pages-deploy.md`
+2. `/build` — реализация и проверки
+3. `/reflect` → `/archive` → `/close-task`
+4. Чеклист: GIT (`feat/step-github-pages-deploy`), CLOSE
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - Task ID: `step-github-pages-deploy` (Level 3)
 - Зависимость `step-push-notifications` закрыта
-- Сейчас: `base` в Vite не задан; `.github/workflows/` отсутствует; в manifest/icons абсолютные `/…`
-- Файлы по плану: `vite.config.ts`, `.github/workflows/`, `docs/project/run-and-build.md`, при необходимости `docs/project/pwa-checklist.md`
+- Remote: `VZagl/edu.pwa-app`; ожидаемый URL: `https://vzagl.github.io/edu.pwa-app/`
+- Default branch: `develop` (не `main`) — учесть в C2
+- Сейчас: `base` в Vite не задан; `.github/workflows/` отсутствует; в manifest/icons/`fetchManifest`/push — абсолютные `/…`; `BrowserRouter` без `basename`
+- Файлы по плану: `vite.config.ts`, `src/main.tsx`, `fetchManifest.ts`, push icons, `.github/workflows/`, `docs/project/run-and-build.md`, `docs/project/pwa-checklist.md`
+- Новых npm-зависимостей нет
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`
