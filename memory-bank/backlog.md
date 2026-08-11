@@ -6,13 +6,6 @@
 
 ## Средний
 
-- [ ] Storage quota / Persistent storage — отдельный раздел (step-storage-quota-lesson-ui)
-  - **Создано:** 2026-08-07
-  - `estimate` / `persist` / `persisted`; продвинутый урок.
-  - **Источник:** docs/project/implementation-plan.md (step-storage-quota-lesson-ui)
-  - **Зависит от:** step-cache-storage-lesson-ui
-  - **Причина:** Продвинутая тема хранения
-
 - [ ] Web Push — опциональный урок (step-push-notifications)
   - **Создано:** 2026-08-07
   - Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS.

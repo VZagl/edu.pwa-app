@@ -23,9 +23,10 @@
 | Экран урока Service Worker (step-sw-lesson-ui)           | ✅ ЗАВЕРШЕНО (2026-08-10)       |
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 
-## [2026-08-11]: step-cache-storage-lesson-ui — ЗАВЕРШЕНО
+## [2026-08-11]: step-storage-quota-lesson-ui — ЗАВЕРШЕНО
 
-Добавлен учебный раздел `/cache-storage`: описание Cache Storage API и живой блок (`caches.keys()`, выбор кэша, URL, «Обновить»). Хук `useCacheStorage`, экран с регионами intro / API / демо / Workbox / DevTools. TDD: unit + E2E. Verify: lint ✅, typecheck ✅, unit 106 ✅, build ✅, e2e ✅.
+Добавлен учебный раздел `/storage`: квоты (`estimate` usage/quota), Persistent Storage (`persisted` / `persist`), лимиты/вытеснение, DevTools, ссылка на Cache Storage. Хук `useStorageQuota`, экран `StorageScreen` (BEM). TDD: unit + E2E. Verify: lint ✅, typecheck ✅, unit ✅, build ✅, e2e ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-cache-storage-lesson-ui_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-storage-quota-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-storage-quota-lesson-ui_2026-08-11.md)
