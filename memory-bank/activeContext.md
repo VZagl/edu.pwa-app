@@ -8,18 +8,18 @@
 
 ## Current Mode
 
-BUILD — реализация завершена; следующий шаг — `/reflect`
+REFLECT complete — следующий шаг `/close-task` (без `/archive`)
 
 ## Next Steps
 
-1. `/reflect` — рефлексия
-2. `/close-task` — финализация
+1. `/close-task` — completed-запись, backlog/progress/roadmap, merge в `develop`
 
 ## Context for AI
 
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - Реализовано: `useStorageQuota`, `StorageScreen` (`/storage`, navLabel `Storage`), lesson data, unit + E2E
 - Verify: lint ✅, typecheck ✅, unit ✅, build ✅, e2e (storage + navigation) ✅
+- Reflection: [memory-bank/reflection/reflection-step-storage-quota-lesson-ui.md](reflection/reflection-step-storage-quota-lesson-ui.md)
 - Для пункта навигации «Storage» использовать exact-матч (иначе пересечение с «Cache Storage»)
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`

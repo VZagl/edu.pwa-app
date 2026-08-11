@@ -9,8 +9,9 @@
 - **Тип:** Feature
 - **Источник:** docs/project/implementation-plan.md (step-storage-quota-lesson-ui)
 - **Создано:** 2026-08-07
-- **Статус:** BUILD complete → ожидание `/reflect`
+- **Статус:** REFLECT complete → ожидание `/close-task`
 - **Зависит от:** step-cache-storage-lesson-ui (закрыта)
+- **Reflection:** [memory-bank/reflection/reflection-step-storage-quota-lesson-ui.md](reflection/reflection-step-storage-quota-lesson-ui.md)
 
 ### Описание
 
@@ -25,8 +26,15 @@
 - [x] GIT: Работа в feature-ветке `feat/step-storage-quota-lesson-ui`
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация по TDD + verify (lint / build / test / e2e)
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+### Reflection Highlights
+
+- **What Went Well**: шаблон lesson-ui; TDD (мок StorageManager / мок хука); Challenges & Mitigations из PLAN закрыты в BUILD
+- **Challenges**: jsdom без storage; `persist()` часто false; approximate quota; exact-матч «Storage» vs «Cache Storage»
+- **Lessons Learned**: exact-матч для похожих navLabel; `/archive` для Level 2 lesson-ui не обязателен
+- **Next Steps**: `/close-task`
 
 ### Requirements
 
@@ -131,7 +139,7 @@
 
 ### Next Mode
 
-`/reflect` — рефлексия по задаче
+`/close-task` — финализация задачи
 
 ## Last Completed Task
 
