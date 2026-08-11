@@ -6,14 +6,13 @@
 
 ## Current Mode
 
-VAN COMPLETE → следующий шаг: `/plan`
+PLAN COMPLETE → следующий шаг: `/build`
 
 ## Next Steps
 
-1. `/plan` — детальный план (источник версии: Vite `define` vs `src/appVersion.ts`, layout header, тесты)
-2. `/build` — реализация по TDD
-3. `/reflect` → при необходимости `/archive`
-4. `/close-task` — финализация
+1. `/build` — TDD: тест → `define` + `appVersion.ts` → UI header → verify
+2. `/reflect` → при необходимости `/archive`
+3. `/close-task` — финализация
 
 ## Context for AI
 
@@ -21,7 +20,9 @@ VAN COMPLETE → следующий шаг: `/plan`
 - Complexity: Level 2 — Simple Enhancement
 - Git Branch: `feat/step-app-version-header`
 - Зависимость `step-app-shell` закрыта
-- Версия из `package.json` (`version`), не путать с SW `scriptURL`
+- Проброс версии: Vite `define` (`__APP_VERSION__`) + `src/appVersion.ts` (`APP_VERSION`)
+- Источник: `package.json` → `version` (не SW `scriptURL`)
+- Creative-фаза не требуется
 - Учебное PWA на React + Vite; менеджер пакетов — pnpm
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`
