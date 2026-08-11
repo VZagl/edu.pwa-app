@@ -2,25 +2,15 @@
 
 ## Current Focus
 
-- **Последняя задача:** `step-push-notifications` — ARCHIVED
-- **Git Branch:** `feat/step-push-notifications` (ожидает `/close-task` / merge)
-- **Mode:** ARCHIVE завершён → CLOSE
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-ARCHIVE — завершён; следующий шаг — `/close-task`
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/close-task` — completed-tasks, backlog, roadmap/implementation-plan, merge в `develop`
-2. `/van` — старт следующей задачи (`step-github-pages-deploy`)
-
-## Archive Summary
-
-- Документ: [archive/archive-step-push-notifications.md](archive/archive-step-push-notifications.md)
-- Reflection: [reflection/reflection-step-push-notifications.md](reflection/reflection-step-push-notifications.md)
-- Creative: [creative/creative-push-notifications.md](creative/creative-push-notifications.md)
-- Урок `/push`: гибрид Web Push без backend; SW через `importScripts`; lesson-ui + TDD
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
