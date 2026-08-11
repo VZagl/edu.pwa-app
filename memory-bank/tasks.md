@@ -10,7 +10,8 @@
 - **Git Branch:** `feat/step-app-version-header`
 - **Источник:** `docs/project/implementation-plan.md` (step-app-version-header)
 - **Зависит от:** `step-app-shell` ✅
-- **Статус:** BUILD COMPLETE → переход к REFLECT
+- **Статус:** REFLECT COMPLETE → переход к `/close-task`
+- **Reflection:** [memory-bank/reflection/reflection-step-app-version-header.md](reflection/reflection-step-app-version-header.md)
 
 ### Описание
 
@@ -26,8 +27,15 @@
 - [x] GIT: Работа в feature-ветке `feat/step-app-version-header`
 - [x] PLAN: Детальный план реализации
 - [x] BUILD: Реализация (TDD) + verify
-- [ ] REFLECT: Рефлексия
+- [x] REFLECT: Рефлексия
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
+
+## Reflection Highlights
+
+- **What Went Well:** PLAN→BUILD без отклонений; TDD; `define` + тонкий `APP_VERSION`; Vitest подхватил `define`; строгий scope
+- **Challenges:** граница app version vs SW; типы `__APP_VERSION__`; flex layout header
+- **Lessons Learned:** `define` + named export — удобный паттерн; unit через `APP_VERSION` устойчивее хардкода версии
+- **Next Steps:** `/close-task`
 
 ## Build Progress
 
