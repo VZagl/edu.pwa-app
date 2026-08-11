@@ -2,7 +2,29 @@
 
 ## Current Task
 
-Нет активной задачи. Запустить `/van [описание задачи]` для начала новой задачи.
+- **Task ID:** `step-cache-storage-lesson-ui`
+- **Название:** Cache Storage — отдельный раздел
+- **Git Branch:** `feat/step-cache-storage-lesson-ui`
+- **Complexity:** Level 2 — Simple Enhancement
+- **Источник:** docs/project/implementation-plan.md (step-cache-storage-lesson-ui, Order 7.0.4)
+- **Создано:** 2026-08-07
+- **Статус:** VAN complete → ожидает `/plan`
+
+### Описание
+
+Отдельный раздел навигации «Cache Storage»: описание Cache Storage API + блок живых значений — список `caches.keys()`, для выбранного кэша — URL из `cache.keys()`. Кнопка обновления списка. Без вывода тел ответов.
+
+**Цель:** Ученик видит реальные кэши Workbox/runtime в UI приложения.
+
+**Файлы (ориентир):** `src/screens/CacheStorageScreen/`, `src/routes/lessonRoutes.ts`, тесты рядом.
+
+### Чеклист
+
+- [x] GIT: Работа в feature-ветке `feat/step-cache-storage-lesson-ui`
+- [ ] PLAN: Детальный план реализации
+- [ ] BUILD: Реализация (TDD)
+- [ ] REFLECT: Рефлексия по задаче
+- [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ## Last Completed Task
 
