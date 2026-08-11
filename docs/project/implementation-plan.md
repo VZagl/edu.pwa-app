@@ -463,7 +463,7 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-push-notifications
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md](../../memory-bank/completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md)
 
 ---
 

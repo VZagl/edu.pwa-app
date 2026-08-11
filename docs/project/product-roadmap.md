@@ -101,7 +101,7 @@
 - [x] Заполнить экраны-заглушки: Главная, Service Worker, Install — `step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`
 - [x] Разделы Cache Storage и Storage quota — `step-cache-storage-lesson-ui`, `step-storage-quota-lesson-ui`
 - [x] (Опционально) Push-уведомления — `step-push-notifications`
-- [ ] Деплой на GitHub Pages (HTTPS) — `step-github-pages-deploy` (после Push)
+- [x] Деплой на GitHub Pages (HTTPS) — `step-github-pages-deploy` (после Push)
 - [ ] README «с нуля» для ученика — `step-readme-learner-guide`
 - [ ] Расширенные E2E-сценарии PWA (offline/install в CI, где стабильно)
 
@@ -147,6 +147,7 @@
 | 2026-08-11 | Экраны-заглушки заполнены: Главная, SW, Install (`step-install-lesson-ui`)      | ✅ Готов |
 | 2026-08-11 | Разделы Cache Storage и Storage quota (`step-storage-quota-lesson-ui`)          | ✅ Готов |
 | 2026-08-11 | (Опционально) Push-уведомления (`step-push-notifications`)                      | ✅ Готов |
+| 2026-08-11 | Деплой на GitHub Pages (`step-github-pages-deploy`)                             | ✅ Готов |
 
 ---
 
