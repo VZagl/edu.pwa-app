@@ -26,6 +26,17 @@
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| GitHub Pages deploy (step-github-pages-deploy)           | 🔄 BUILD complete → `/reflect`  |
+
+## [2026-08-11]: step-github-pages-deploy — BUILD complete
+
+Деплой project site на GitHub Pages: `base: '/edu.pwa-app/'`, гибрид PWA-путей (C3), workflow pnpm на `develop`, docs.
+
+**Verify:** `pnpm verify:fast` ✅ (145 unit); `pnpm test:e2e` ✅ (18). Ручная проверка HTTPS Pages — после merge/dispatch.
+
+**Ключевые файлы:** `vite.config.ts`, `src/main.tsx`, `fetchManifest.ts`, `public/sw-push.js`, `.github/workflows/deploy.yml`, `playwright.config.ts`, `docs/project/run-and-build.md`, `docs/project/pwa-checklist.md`
+
+**Next:** `/reflect`
 
 ## [2026-08-11]: step-app-version-header — ЗАВЕРШЕНО
 

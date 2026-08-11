@@ -182,7 +182,7 @@ export function usePushNotifications(): UsePushNotificationsResult {
 			const registration = await getRegistration();
 			await registration.showNotification('Учебное уведомление', {
 				body: 'Локальный вызов showNotification — это не Web Push с сервера.',
-				icon: '/icons/icon-192.png',
+				icon: `${import.meta.env.BASE_URL}icons/icon-192.png`,
 			});
 			setMessage('Локальное уведомление показано через Service Worker.');
 		} catch (err) {

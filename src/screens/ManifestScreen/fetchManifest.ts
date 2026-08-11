@@ -1,6 +1,7 @@
 import type { WebAppManifest } from './types';
 
-const MANIFEST_URL = '/manifest.webmanifest';
+/** BASE_URL учитывает Vite `base` (например `/edu.pwa-app/` на GitHub Pages). */
+const MANIFEST_URL = `${import.meta.env.BASE_URL}manifest.webmanifest`;
 
 export async function fetchManifest(): Promise<WebAppManifest> {
 	const response = await fetch(MANIFEST_URL);

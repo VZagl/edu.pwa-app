@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// Vite `base: '/edu.pwa-app/'` — preview отдаёт приложение под subdirectory
+const PREVIEW_ORIGIN = 'http://localhost:4173';
+const APP_BASE = '/edu.pwa-app/';
+
 export default defineConfig({
 	testDir: './e2e',
 	fullyParallel: true,
@@ -7,13 +11,13 @@ export default defineConfig({
 	retries: process.env.CI ? 2 : 0,
 	reporter: 'list',
 	use: {
-		baseURL: 'http://localhost:4173',
+		baseURL: `${PREVIEW_ORIGIN}${APP_BASE}`,
 		trace: 'on-first-retry',
 	},
 	projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
 	webServer: {
 		command: 'pnpm build && pnpm preview',
-		url: 'http://localhost:4173',
+		url: `${PREVIEW_ORIGIN}${APP_BASE}`,
 		reuseExistingServer: !process.env.CI,
 		timeout: 120_000,
 	},

@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Навигация по учебным разделам', () => {
 	test('должен переключаться между разделами уроков', async ({ page }) => {
-		await page.goto('/');
+		await page.goto('./');
 
 		const nav = page.getByRole('navigation');
 

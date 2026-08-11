@@ -9,7 +9,7 @@
 - **Тип:** Feature / Infrastructure
 - **Источник:** docs/project/implementation-plan.md (step-github-pages-deploy)
 - **Создано:** 2026-08-07
-- **Статус:** CREATIVE complete → ожидание `/build`
+- **Статус:** BUILD complete → ожидание `/reflect`
 - **Creative doc:** [memory-bank/creative/creative-github-pages-deploy.md](creative/creative-github-pages-deploy.md)
 - **Зависит от:** step-push-notifications (закрыта)
 
@@ -28,7 +28,7 @@
 - [x] GIT: Работа в feature-ветке `feat/step-github-pages-deploy`
 - [x] PLAN: Детальный план реализации
 - [x] CREATIVE: Дизайн-решения (base / workflow / PWA paths) → `memory-bank/creative/creative-github-pages-deploy.md`
-- [ ] BUILD: Реализация + verify (lint / build / test; e2e при необходимости)
+- [x] BUILD: Реализация + verify (lint / build / test; e2e при необходимости)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] ARCHIVE: Архивация документации
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
@@ -39,17 +39,17 @@
 
 ### Функциональные
 
-- [ ] Production-сборка деплоится на GitHub Pages по HTTPS
-- [ ] Vite `base` корректен для project site (`/<repo>/`)
-- [ ] Manifest, SW, иконки и роутер работают под этим `base`
-- [ ] CI: `pnpm build` → publish `dist/` через GitHub Actions
-- [ ] Docs: секция деплоя в `run-and-build.md`; при необходимости — проверка на Pages в `pwa-checklist.md`
+- [x] Production-сборка деплоится на GitHub Pages по HTTPS _(workflow готов; первый деплой — после enable Pages + merge/dispatch)_
+- [x] Vite `base` корректен для project site (`/<repo>/`)
+- [x] Manifest, SW, иконки и роутер работают под этим `base`
+- [x] CI: `pnpm build` → publish `dist/` через GitHub Actions
+- [x] Docs: секция деплоя в `run-and-build.md`; при необходимости — проверка на Pages в `pwa-checklist.md`
 
 ### Нефункциональные
 
-- [ ] Регрессия: lint / typecheck / unit / build; E2E на preview
-- [ ] Без новых npm-зависимостей (только Actions + конфиг)
-- [ ] Учебный характер: пути и деплой понятны из docs
+- [x] Регрессия: lint / typecheck / unit / build; E2E на preview
+- [x] Без новых npm-зависимостей (только Actions + конфиг)
+- [x] Учебный характер: пути и деплой понятны из docs
 
 ### Технические ограничения
 
@@ -92,8 +92,8 @@
 - [x] Стек определён (существующий + официальный Vite Pages flow)
 - [x] Новых npm-зависимостей нет
 - [x] Конфиг сборки уже валиден локально (`pnpm build`)
-- [ ] Hello-world деплоя = адаптация Vite static-deploy под pnpm + `base` — в BUILD
-- [ ] Test build с `base` — в BUILD после CREATIVE
+- [x] Hello-world деплоя = адаптация Vite static-deploy под pnpm + `base` — в BUILD
+- [x] Test build с `base` — в BUILD после CREATIVE
 
 ---
 
@@ -101,29 +101,41 @@
 
 ### Phase 1 — Base + PWA paths (после CREATIVE)
 
-1. [ ] Применить решение C1 (`base` в `vite.config.ts`)
-2. [ ] Выровнять manifest: `start_url`, `scope`, icons (C3)
-3. [ ] `BrowserRouter` + `basename={import.meta.env.BASE_URL}`
-4. [ ] `fetchManifest` через `BASE_URL`
-5. [ ] Иконки в push (`sw-push.js`, `usePushNotifications`)
-6. [ ] Обновить lesson copy / unit-тесты, завязанные на `/` и абсолютные пути
+1. [x] Применить решение C1 (`base` в `vite.config.ts`)
+2. [x] Выровнять manifest: `start_url`, `scope`, icons (C3)
+3. [x] `BrowserRouter` + `basename={import.meta.env.BASE_URL}`
+4. [x] `fetchManifest` через `BASE_URL`
+5. [x] Иконки в push (`sw-push.js`, `usePushNotifications`)
+6. [x] Обновить lesson copy / unit-тесты, завязанные на `/` и абсолютные пути
 
 ### Phase 2 — GitHub Actions
 
-1. [ ] Создать `.github/workflows/deploy.yml` по решению C2
-2. [ ] pnpm setup + install + `pnpm build`
-3. [ ] Upload `dist/` + deploy-pages; permissions + concurrency
+1. [x] Создать `.github/workflows/deploy.yml` по решению C2
+2. [x] pnpm setup + install + `pnpm build`
+3. [x] Upload `dist/` + deploy-pages; permissions + concurrency
 
 ### Phase 3 — Docs
 
-1. [ ] `run-and-build.md`: URL, Settings → Pages → GitHub Actions, локальная проверка с `base`
-2. [ ] `pwa-checklist.md`: чеклист на `https://…/edu.pwa-app/`
-3. [ ] README learner guide — **не** в scope (отдельный `step-readme-learner-guide`)
+1. [x] `run-and-build.md`: URL, Settings → Pages → GitHub Actions, локальная проверка с `base`
+2. [x] `pwa-checklist.md`: чеклист на `https://…/edu.pwa-app/`
+3. [x] README learner guide — **не** в scope (отдельный `step-readme-learner-guide`)
 
 ### Phase 4 — Verify
 
-1. [ ] `pnpm verify:fast` (+ e2e при необходимости)
+1. [x] `pnpm verify:fast` (+ e2e при необходимости)
 2. [ ] После merge / `workflow_dispatch`: ручная проверка Pages (manifest, SW, offline, install)
+
+---
+
+## Build Results (2026-08-11)
+
+| Проверка              | Результат                              |
+| --------------------- | -------------------------------------- |
+| `pnpm verify:fast`    | ✅ lint + typecheck + 145 unit + build |
+| `pnpm test:e2e`       | ✅ 18 passed (baseURL `/edu.pwa-app/`) |
+| Новые npm-зависимости | нет                                    |
+
+**Замечания BUILD:** Playwright `baseURL` обновлён под nested path; E2E `href` учитывает basename; в docs уточнено отличие Pages репозитория от `github.com/settings/pages`.
 
 ---
 
@@ -176,8 +188,8 @@
 - [x] Initialization complete (VAN)
 - [x] Planning complete (PLAN)
 - [x] Creative phases complete
-- [ ] Technology validation complete (полное — после BUILD с `base` + workflow)
-- [ ] Implementation complete
+- [x] Technology validation complete (полное — после BUILD с `base` + workflow)
+- [x] Implementation complete
 - [ ] Reflection complete
 - [ ] Archive complete
 

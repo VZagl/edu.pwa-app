@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Service Worker', () => {
 	test('должен показать ключевые секции на /service-worker', async ({ page }) => {
-		await page.goto('/service-worker');
+		await page.goto('./service-worker');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Service Worker');
 		await expect(page.getByText(/отдельный скрипт, который браузер запускает в фоне/i)).toBeVisible();

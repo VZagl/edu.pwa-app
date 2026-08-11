@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Install', () => {
 	test('должен показать ключевые секции на /install', async ({ page }) => {
-		await page.goto('/install');
+		await page.goto('./install');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Установка PWA');
 		await expect(page.getByText(/иконки на домашнем экране/i)).toBeVisible();

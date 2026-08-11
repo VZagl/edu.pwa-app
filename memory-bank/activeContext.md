@@ -2,19 +2,19 @@
 
 ## Current Focus
 
-`feat/step-github-pages-deploy` — деплой учебного PWA на GitHub Pages (HTTPS)
+`feat/step-github-pages-deploy` — BUILD complete
 
 ## Current Mode
 
-CREATIVE complete → ожидание `/build`
+BUILD complete → ожидание `/reflect`
 
 ## Next Steps
 
-1. `/build` — Phase 1–4 по плану + решения C1–C3 из `creative-github-pages-deploy.md`
+1. `/reflect` → `/archive` → `/close-task`
 
-2. `/reflect` → `/archive` → `/close-task`
+2. После merge в `develop` / `workflow_dispatch`: ручная проверка на `https://vzagl.github.io/edu.pwa-app/` (manifest, SW, offline, install)
 
-3. Чеклист: GIT (`feat/step-github-pages-deploy`), CLOSE
+3. Чеклист: REFLECT, ARCHIVE, CLOSE; GIT (`feat/step-github-pages-deploy`)
 
 ## Context for AI
 
@@ -22,25 +22,16 @@ CREATIVE complete → ожидание `/build`
 
 - Task ID: `step-github-pages-deploy` (Level 3)
 
-- Зависимость `step-push-notifications` закрыта
+- **Реализовано (C1–C3):**
 
-- Remote: `VZagl/edu.pwa-app`; ожидаемый URL: `https://vzagl.github.io/edu.pwa-app/`
+  - `base: '/edu.pwa-app/'` в `vite.config.ts`
+  - relative manifest (`./`, `icons/…`); `BrowserRouter` basename; `fetchManifest` / push icons через `BASE_URL`; `sw-push.js` через `registration.scope`
+  - `.github/workflows/deploy.yml` — `develop` + `workflow_dispatch`, pnpm
+  - docs: `run-and-build.md`, `pwa-checklist.md` (+ уточнение Pages репо vs аккаунт)
 
-- Default branch: `develop` (не `main`)
-
-- **Creative decisions (зафиксированы):**
-
-  - **C1:** `base: '/edu.pwa-app/'`
-
-  - **C2:** trigger `develop` + `workflow_dispatch`; pnpm в Actions
-
-  - **C3:** гибрид путей — relative в manifest · `BASE_URL` + basename в app · `registration.scope` в SW
+- Verify: `pnpm verify:fast` ✅; `pnpm test:e2e` 18 ✅
 
 - Creative doc: `memory-bank/creative/creative-github-pages-deploy.md`
-
-- Файлы по плану: `vite.config.ts`, `src/main.tsx`, `fetchManifest.ts`, push icons, `.github/workflows/`, `docs/project/run-and-build.md`, `docs/project/pwa-checklist.md`
-
-- Новых npm-зависимостей нет
 
 - План шагов: `docs/project/implementation-plan.md`
 

@@ -163,7 +163,8 @@ export function ServiceWorkerScreen() {
 				<h3 id='sw-intro-heading'>Введение</h3>
 				<p>
 					Service Worker работает в отдельном потоке и не имеет доступа к DOM. Scope определяет, какие URL он
-					может перехватывать — у этой лаборатории scope равен <code>/</code>.
+					может перехватывать — фактический scope регистрации смотрите в живом демо ниже (учитывает base
+					path приложения).
 				</p>
 			</section>
 

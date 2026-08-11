@@ -8,6 +8,8 @@ const { version } = require('./package.json') as { version: string };
 
 // https://vite.dev/config/
 export default defineConfig({
+	// Project site GitHub Pages: https://vzagl.github.io/edu.pwa-app/
+	base: '/edu.pwa-app/',
 	define: {
 		__APP_VERSION__: JSON.stringify(version),
 	},
@@ -22,15 +24,16 @@ export default defineConfig({
 				name: 'edu.pwa-app — учебное PWA',
 				short_name: 'PWA Lab',
 				description: 'Изучение Progressive Web Apps на React и Vite',
-				start_url: '/',
-				scope: '/',
+				// Relative: plugin + base соберут корректные URL под subdirectory
+				start_url: './',
+				scope: './',
 				display: 'standalone',
 				background_color: '#ffffff',
 				theme_color: '#646cff',
 				lang: 'ru',
 				icons: [
-					{ src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-					{ src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+					{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+					{ src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
 				],
 			},
 			workbox: {

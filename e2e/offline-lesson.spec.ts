@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Offline & Cache', () => {
 	test('должен показать объяснение, стратегии кэширования и статус сети', async ({ page }) => {
-		await page.goto('/offline');
+		await page.goto('./offline');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Офлайн и кэш');
 		await expect(page.getByText(/кэширование позволяет PWA/i)).toBeVisible();

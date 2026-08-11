@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Урок Cache Storage', () => {
 	test('должен показать ключевые секции на /cache-storage', async ({ page }) => {
-		await page.goto('/cache-storage');
+		await page.goto('./cache-storage');
 
 		await expect(page.getByRole('heading', { level: 2 })).toHaveText('Cache Storage');
 		await expect(page.getByText(/браузерное хранилище HTTP-ответов/i)).toBeVisible();

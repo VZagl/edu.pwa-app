@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.describe('Offline fallback', () => {
 	test('должен показать индикатор offline и сохранить навигацию по SPA', async ({ page, context }) => {
-		await page.goto('/');
+		await page.goto('./');
 
 		await page.waitForFunction(
 			async () => {
