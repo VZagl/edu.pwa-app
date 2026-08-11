@@ -1,0 +1,136 @@
+.push-screen {
+	max-width: var(--content-max-width);
+
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-sm);
+		margin-block: var(--space-md);
+	}
+
+	&__section {
+		margin-block-start: var(--space-md);
+		border: 1px solid var(--color-border);
+		border-radius: 0.5rem;
+		background: var(--color-accent-bg);
+		padding: var(--space-md);
+
+		h3 {
+			margin: 0 0 var(--space-sm);
+			color: var(--color-text-heading);
+			font-weight: 500;
+			font-size: 1rem;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding-inline-start: 1.25rem;
+
+		li + li {
+			margin-block-start: var(--space-sm);
+		}
+	}
+
+	&__step-label,
+	&__duty-title {
+		display: block;
+		margin-block-end: var(--space-xs);
+		color: var(--color-text-heading);
+		font-weight: 500;
+		font-size: 0.875rem;
+	}
+
+	&__fields {
+		display: grid;
+		grid-template-columns: minmax(7rem, auto) 1fr;
+		gap: var(--space-xs) var(--space-sm);
+		margin: var(--space-sm) 0 0;
+
+		dt {
+			margin: 0;
+			color: var(--color-text-heading);
+			font-weight: 500;
+			font-size: 0.875rem;
+			font-family: ui-monospace, 'Cascadia Code', monospace;
+		}
+
+		dd {
+			margin: 0;
+			word-break: break-word;
+		}
+	}
+
+	&__badge {
+		display: inline-block;
+		margin-block: var(--space-sm);
+		border-radius: 9999px;
+		padding: var(--space-xs) var(--space-sm);
+		font-weight: 500;
+		font-size: 0.875rem;
+
+		&--unsupported {
+			background: #f3f4f6;
+			color: #374151;
+		}
+
+		&--default {
+			background: #fef9c3;
+			color: #854d0e;
+		}
+
+		&--denied {
+			background: #fee2e2;
+			color: #991b1b;
+		}
+
+		&--granted {
+			background: #dbeafe;
+			color: #1e40af;
+		}
+
+		&--subscribed {
+			background: #dcfce7;
+			color: #166534;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-sm);
+		margin-block-start: var(--space-sm);
+	}
+
+	&__button {
+		cursor: pointer;
+		border: 1px solid var(--color-border);
+		border-radius: 0.375rem;
+		background: var(--color-bg);
+		padding: var(--space-xs) var(--space-sm);
+		color: var(--color-text);
+		font-size: 0.875rem;
+
+		&:hover {
+			background: var(--color-accent-bg);
+		}
+	}
+
+	&__hint {
+		margin-block-start: var(--space-sm);
+		border-inline-start: 3px solid var(--color-accent);
+		padding-inline-start: var(--space-sm);
+		font-size: 0.875rem;
+	}
+
+	&__message {
+		margin-block-start: var(--space-sm);
+		font-size: 0.875rem;
+	}
+
+	&__error {
+		margin-block-start: var(--space-sm);
+		color: #991b1b;
+		font-size: 0.875rem;
+	}
+}

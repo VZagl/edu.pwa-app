@@ -4,6 +4,7 @@ import { HomeScreen } from '../screens/HomeScreen/HomeScreen';
 import { InstallScreen } from '../screens/InstallScreen/InstallScreen';
 import { ManifestScreen } from '../screens/ManifestScreen/ManifestScreen';
 import { OfflineScreen } from '../screens/OfflineScreen/OfflineScreen';
+import { PushScreen } from '../screens/PushScreen/PushScreen';
 import { ServiceWorkerScreen } from '../screens/ServiceWorkerScreen/ServiceWorkerScreen';
 import { StorageScreen } from '../screens/StorageScreen/StorageScreen';
 
@@ -21,4 +22,5 @@ export const lessonRoutes: LessonRoute[] = [
 	{ path: '/install', navLabel: 'Install', Screen: InstallScreen },
 	{ path: '/cache-storage', navLabel: 'Cache Storage', Screen: CacheStorageScreen },
 	{ path: '/storage', navLabel: 'Storage', Screen: StorageScreen },
+	{ path: '/push', navLabel: 'Push', Screen: PushScreen },
 ];

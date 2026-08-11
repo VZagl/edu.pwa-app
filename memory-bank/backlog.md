@@ -6,12 +6,6 @@
 
 ## Средний
 
-- [ ] Web Push — опциональный урок (step-push-notifications)
-  - **Создано:** 2026-08-07
-  - Опциональный урок: Web Push (требует backend или mock); только если есть учебная цель и HTTPS.
-  - **Источник:** docs/project/implementation-plan.md (step-push-notifications)
-  - **Причина:** Опциональный шаг фазы 7; после доделки основных экранов
-
 - [ ] Деплой на GitHub Pages (step-github-pages-deploy)
   - **Создано:** 2026-08-07
   - Vite `base`, Actions → Pages, проверка PWA по HTTPS.

@@ -24,9 +24,10 @@
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Storage quota урок (step-storage-quota-lesson-ui)        | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 
-## [2026-08-11]: step-storage-quota-lesson-ui — ЗАВЕРШЕНО
+## [2026-08-11]: step-push-notifications — ЗАВЕРШЕНО
 
-Добавлен учебный раздел `/storage`: квоты (`estimate` usage/quota), Persistent Storage (`persisted` / `persist`), лимиты/вытеснение, DevTools, ссылка на Cache Storage. Хук `useStorageQuota`, экран `StorageScreen` (BEM). TDD: unit + E2E. Verify: lint ✅, typecheck ✅, unit ✅, build ✅, e2e ✅.
+Учебный раздел `/push`: гибрид Web Push без backend; SW через `importScripts`; lesson-ui + TDD; E2E без grant. Verify: lint ✅, typecheck ✅, unit 145 ✅, build ✅, e2e 18 ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-storage-quota-lesson-ui_2026-08-11.md](completed-tasks/2026/08/step-storage-quota-lesson-ui_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-push-notifications_2026-08-11.md](completed-tasks/2026/08/step-push-notifications_2026-08-11.md)

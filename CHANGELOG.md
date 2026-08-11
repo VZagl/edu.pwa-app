@@ -22,3 +22,4 @@
 - Экран урока «Установка PWA»: условия installability, демо `useInstallPrompt`, display-mode, инструкции по платформам и DevTools
 - Экран урока «Cache Storage»: описание API и живой список кэшей/URL через Cache Storage
 - Экран урока «Storage»: квоты хранилища (`estimate` usage/quota), Persistent Storage (`persisted` / `persist`), лимиты и вытеснение
+- Экран урока «Push»: гибридное демо Web Push (Permission, subscribe/unsubscribe, локальные уведомления), учебные секции про цепочку, роль backend, VAPID/HTTPS и Safari/iOS
