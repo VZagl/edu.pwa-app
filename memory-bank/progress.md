@@ -24,6 +24,10 @@
 | Экран урока Install (step-install-lesson-ui)             | ✅ ЗАВЕРШЕНО (2026-08-11)                               |
 | Cache Storage урок (step-cache-storage-lesson-ui)        | 🔄 В работе (ветка `feat/step-cache-storage-lesson-ui`) |
 
+## [2026-08-11]: step-cache-storage-lesson-ui — PLAN complete
+
+Детальный план Level 2: хук `useCacheStorage`, экран `CacheStorageScreen` (intro / API / демо / Workbox / DevTools), маршрут `/cache-storage`, unit + E2E. CREATIVE не требуется. Следующий шаг — `/build` (TDD).
+
 ## [2026-08-11]: step-cache-storage-lesson-ui — СТАРТ (VAN)
 
 Инициализация Level 2: feature-ветка `feat/step-cache-storage-lesson-ui`, Memory Bank обновлён. Следующий шаг — `/plan`.
