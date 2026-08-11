@@ -8,7 +8,7 @@
 - **Complexity:** Level 2 — Simple Enhancement
 - **Источник:** docs/project/implementation-plan.md (step-cache-storage-lesson-ui, Order 7.0.4)
 - **Создано:** 2026-08-07
-- **Статус:** PLAN complete → ожидает `/build`
+- **Статус:** BUILD complete → ожидает `/reflect`
 
 ### Описание
 
@@ -20,7 +20,7 @@
 
 - [x] GIT: Работа в feature-ветке `feat/step-cache-storage-lesson-ui`
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: Реализация (TDD)
+- [x] BUILD: Реализация (TDD)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -51,7 +51,7 @@
 - [x] Новых зависимостей не требуется
 - [x] Паттерн data + screen + hook уже в кодовой базе (Install / SW / Offline)
 - [x] Hello World / PoC не нужен — API `caches` стандартный; в unit — мок
-- [ ] Test build после BUILD: `pnpm lint`, `typecheck`, `test --run`, `build`
+- [x] Test build после BUILD: `pnpm lint`, `typecheck`, `test --run`, `build` (+ e2e cache-storage / navigation)
 
 ## Creative Phases Required
 
@@ -137,13 +137,22 @@
 
 ## BUILD Subtasks
 
-- [ ] 1. Хук `useCacheStorage` + unit-тесты (TDD)
-- [ ] 2. `cacheStorageLessonData.ts`
-- [ ] 3. `CacheStorageScreen` + SCSS
-- [ ] 4. Unit-тесты экрана
-- [ ] 5. Маршрут в `lessonRoutes.ts`
-- [ ] 6. E2E cache-storage-lesson + обновление lessons-navigation
-- [ ] 7. Verify: lint, typecheck, unit, build (+ e2e по необходимости)
+- [x] 1. Хук `useCacheStorage` + unit-тесты (TDD)
+- [x] 2. `cacheStorageLessonData.ts`
+- [x] 3. `CacheStorageScreen` + SCSS
+- [x] 4. Unit-тесты экрана
+- [x] 5. Маршрут в `lessonRoutes.ts`
+- [x] 6. E2E cache-storage-lesson + обновление lessons-navigation
+- [x] 7. Verify: lint, typecheck, unit, build (+ e2e по необходимости)
+
+## Build Results
+
+- **lint:** ✅ `pnpm lint`
+- **typecheck:** ✅ `pnpm typecheck`
+- **unit:** ✅ 106 passed (20 files), в т.ч. `useCacheStorage` (10) + `CacheStorageScreen` (8)
+- **build:** ✅ `pnpm build` (PWA precache ok)
+- **e2e:** ✅ `cache-storage-lesson.spec.ts` + `lessons-navigation.spec.ts`
+- **Дополнительно:** обновлены `App.test.tsx` и `HomeScreen.test.tsx` под 6 пунктов навигации
 
 ## Last Completed Task
 
