@@ -6,15 +6,14 @@
 
 ## Current Mode
 
-VAN — инициализация завершена; следующий шаг — `/plan`
+PLAN complete — следующий шаг `/build`
 
 ## Next Steps
 
-1. `/plan` — структура разделов README (экраны, DevTools, preview, pwa-checklist)
-2. `/build` — обновить `README.md`
-3. `/reflect` → `/close-task`
-4. GIT: работать только в `feat/step-readme-learner-guide`
-5. CLOSE: финализировать командой `/close-task`
+1. `/build` — обновить `README.md` по плану в `tasks.md`
+2. `/reflect` → `/close-task`
+3. GIT: работать только в `feat/step-readme-learner-guide`
+4. CLOSE: финализировать командой `/close-task`
 
 ## Context for AI
 
@@ -22,4 +21,7 @@ VAN — инициализация завершена; следующий шаг
 - Менеджер пакетов: pnpm
 - Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)
 - Задача docs-only: автотесты не обязательны; ревью документации
-- Текущий README короткий (стек, быстрый старт, список docs) — нужно расширить под ученика
+- **Рекомендуемый старт в README:** `pnpm build` + `pnpm preview` (не `dev` как главный путь)
+- `pnpm dev` — только для UI/HMR; SW в dev по умолчанию выключен (`vite-plugin-pwa` без `devOptions.enabled`)
+- Источник списка экранов: `src/routes/lessonRoutes.ts`
+- Creative не нужен → сразу `/build`

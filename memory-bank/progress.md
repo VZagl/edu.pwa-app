@@ -32,9 +32,13 @@
 | Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | README для ученика (step-readme-learner-guide)           | 🔄 В работе (2026-08-12)        |
 
+## [2026-08-12]: step-readme-learner-guide — PLAN complete
+
+План README зафиксирован (Level 2, docs-only). Рекомендуемый старт ученика: `build` + `preview`, не `dev`. Creative не нужен. Следующий шаг: `/build`.
+
 ## [2026-08-12]: step-readme-learner-guide — В РАБОТЕ
 
-VAN: ветка `feat/step-readme-learner-guide`, Level 2. Ожидание `/plan`.
+VAN: ветка `feat/step-readme-learner-guide`, Level 2.
 
 ## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
 
