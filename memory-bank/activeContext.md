@@ -6,20 +6,20 @@
 
 ## Current Mode
 
-VAN COMPLETE — ожидание `/plan`
+PLAN COMPLETE — ожидание `/build`
 
 ## Next Steps
 
-1. `/plan` — детальный план (блокировка кнопки, проактивный `registration.update()`, аудит apply/reload, docs GitHub Pages)
-2. `/build` — реализация по TDD
-3. `/reflect` → `/close-task`
+1. `/build` — TDD: in-flight apply, проактивный `registration.update()`, banner «Обновляется…», docs Pages/CDN
+2. `/reflect` → `/close-task`
 
 ## Context for AI
 
 - Task ID: `step-sw-update-apply-fast`
-- Level 2 — Simple Enhancement; маршрут: VAN → PLAN → BUILD → REFLECT
-- База: существующий `step-sw-update-ux` (`swUpdateController`, `useSwUpdate`, `SwUpdateBanner`); `skipWaiting` уже через `updateSW(true)`
+- Level 2 — Simple Enhancement; маршрут: VAN → PLAN → BUILD → REFLECT (creative не нужен)
+- База: `swUpdateController`, `useSwUpdate`, `SwUpdateBanner`; `skipWaiting` уже через `updateSW(true)`
 - Must-have: после первого клика «Обновить» кнопка disabled + «Обновляется…», без повторного `applySwUpdate`
+- План: расширить state `{ updateAvailable, isApplying }`; `onRegisteredSW` + throttle на visibility/focus/online + интервал; docs про CDN `sw.js`
 - Не входит: progress % precache (`step-sw-update-download-progress`)
 - Git Branch: `feat/step-sw-update-apply-fast`
 - Пакетный менеджер: pnpm
