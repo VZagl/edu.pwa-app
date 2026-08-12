@@ -29,43 +29,10 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
-| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 REFLECT ✅ → `/close-task`   |
+| Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-12]: step-sw-update-download-progress — REFLECT COMPLETE
+## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
 
-Level 3: рефлексия записана. CREATIVE A + UI Option 1 воплощены без отклонений по стратегии SW; E2E пропущен осознанно; Pages/mobile — после деплоя.
+Индикатор фонового install/precache (indeterminate) → «Обновить» → «Обновляется…». Lifecycle клиента в `swUpdateController`; UI в `SwUpdateBanner`. Verify: lint ✅, typecheck ✅, unit 164 ✅, build ✅.
 
-**Reflection:** [reflection/reflection-step-sw-update-download-progress.md](reflection/reflection-step-sw-update-download-progress.md)
-
-### Next Steps
-
-→ `/close-task`
-
-## [2026-08-12]: step-sw-update-download-progress — BUILD COMPLETE
-
-Level 3: индикатор фонового install/precache (indeterminate) → кнопка «Обновить» → «Обновляется…». Ветка: `feat/step-sw-update-download-progress`.
-
-### Approach
-
-Lifecycle клиента (`updatefound` / `installing` + `statechange`) в `swUpdateController`; UI — три фазы в `SwUpdateBanner`. `generateSW` / push без изменений.
-
-### Code Changes
-
-- `src/pwa/swUpdateController.ts` (+ test): `isDownloading`, `downloadProgress`, lifecycle
-- `src/hooks/useSwUpdate.ts` (+ test): проброс state
-- `src/components/SwUpdateBanner/*`: фаза download + SCSS indeterminate bar
-- `src/screens/ServiceWorkerScreen/swLessonData.ts`: `updateFlowDescription`
-- `docs/project/pwa-checklist.md`: ручной сценарий download → apply
-
-### Verification
-
-- [x] `pnpm lint`
-- [x] `pnpm typecheck`
-- [x] `pnpm test --run` — 164 passed
-- [x] `pnpm build` — `generateSW`, `sw.js`, precache 13 entries
-
-## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
-
-Cleanup: удалён мёртвый `src/components/LessonStubScreen/`. Verify: lint ✅, build ✅, unit 155 ✅. Reflect/archive пропущены (Level 1 cleanup).
-
-**Completed:** [memory-bank/completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md](completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md](completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md)
