@@ -483,22 +483,22 @@ Runtime caching и/или offline fallback: при отсутствии сети
 
 **Зависит от:** step-home-lesson-ui, step-sw-lesson-ui, step-install-lesson-ui
 
-**Completed:** —
+**Completed:** [memory-bank/completed-tasks/2026/08/step-readme-learner-guide_2026-08-12.md](../../memory-bank/completed-tasks/2026/08/step-readme-learner-guide_2026-08-12.md)
 
 ---
 
 ## Критерии готовности по фазам
 
-| Фаза | Критерий                                                 | Статус        |
-| ---- | -------------------------------------------------------- | ------------- |
-| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена  |
-| 1    | Каркас и навигация по урокам (с тестами)                 | ✅ Завершена  |
-| 2    | Manifest валиден                                         | ✅ Завершена  |
-| 3    | SW в production, UX обновления                           | ✅ Завершена  |
-| 4    | Офлайн-fallback работает                                 | ✅ Завершена  |
-| 5    | Install flow / инструкции                                | ✅ Завершена  |
-| 6    | Lighthouse PWA checklist зафиксирован                    | ✅ Завершена  |
-| 7    | Экраны-уроки, Cache/Storage, Push (опц.), Pages, README  | 🔄 В процессе |
+| Фаза | Критерий                                                 | Статус       |
+| ---- | -------------------------------------------------------- | ------------ |
+| 0    | Vitest и Playwright настроены; smoke unit и E2E проходят | ✅ Завершена |
+| 1    | Каркас и навигация по урокам (с тестами)                 | ✅ Завершена |
+| 2    | Manifest валиден                                         | ✅ Завершена |
+| 3    | SW в production, UX обновления                           | ✅ Завершена |
+| 4    | Офлайн-fallback работает                                 | ✅ Завершена |
+| 5    | Install flow / инструкции                                | ✅ Завершена |
+| 6    | Lighthouse PWA checklist зафиксирован                    | ✅ Завершена |
+| 7    | Экраны-уроки, Cache/Storage, Push (опц.), Pages, README  | ✅ Завершена |
 
 ---
 

@@ -30,9 +30,10 @@
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| README для ученика (step-readme-learner-guide)           | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
+## [2026-08-12]: step-readme-learner-guide — ЗАВЕРШЕНО
 
-Индикатор фонового install/precache (indeterminate) → «Обновить» → «Обновляется…». Lifecycle клиента в `swUpdateController`; UI в `SwUpdateBanner`. Verify: lint ✅, typecheck ✅, unit 164 ✅, build ✅.
+`README.md` переписан «с нуля»: стек (SCSS), рекомендуемый старт `build`+`preview`, экраны из `lessonRoutes.ts`, DevTools, checklist. Docs-only. Фаза 7 плана завершена.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md](completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-readme-learner-guide_2026-08-12.md](completed-tasks/2026/08/step-readme-learner-guide_2026-08-12.md)
