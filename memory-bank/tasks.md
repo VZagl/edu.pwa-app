@@ -6,9 +6,8 @@
 
 ## Last Completed Task
 
-- **Task ID:** `step-sw-update-apply-fast`
-- **Название:** Быстрое применение обновления PWA по кнопке «Обновить»
+- **Task ID:** `step-remove-lesson-stub`
+- **Название:** Убрать `LessonStubScreen`, когда все разделы заполнены
 - **Дата завершения:** 2026-08-12
 - **Статус:** COMPLETED
-- **Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md](completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md)
-- **Reflection:** [memory-bank/reflection/reflection-step-sw-update-apply-fast.md](reflection/reflection-step-sw-update-apply-fast.md)
+- **Completed:** [memory-bank/completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md](completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md)

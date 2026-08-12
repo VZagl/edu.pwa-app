@@ -28,9 +28,10 @@
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-12]: step-sw-update-apply-fast — ЗАВЕРШЕНО
+## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
 
-Ускорение UX применения обновления PWA: in-flight `isApplying`, одноразовый `applySwUpdate`, проактивный `registration.update()` (visibility/focus/online + интервал 60м), баннер «Обновляется…», docs про CDN `sw.js` на GitHub Pages. Verify: lint / test / build ✅. Ручная проверка mobile — после деплоя.
+Cleanup: удалён мёртвый `src/components/LessonStubScreen/`. Verify: lint ✅, build ✅, unit 155 ✅. Reflect/archive пропущены (Level 1 cleanup).
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md](completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md](completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md)

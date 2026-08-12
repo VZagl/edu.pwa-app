@@ -16,6 +16,4 @@ IDLE — ожидание новой задачи
 
 - Учебное Progressive Web App на React + Vite (только frontend)
 - Менеджер пакетов: pnpm
-- План шагов: `docs/project/implementation-plan.md`
-- Дорожная карта: `docs/project/product-roadmap.md`
-- Последняя завершённая задача: `step-sw-update-apply-fast` (2026-08-12)
+- Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)
