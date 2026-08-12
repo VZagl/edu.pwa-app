@@ -29,15 +29,34 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
-| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 В работе (CREATIVE → BUILD)  |
+| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 BUILD ✅ → `/reflect`        |
 
-## [2026-08-12]: step-sw-update-download-progress — В РАБОТЕ
+## [2026-08-12]: step-sw-update-download-progress — BUILD COMPLETE
 
-Level 3: прогресс фонового install/precache → затем кнопка «Обновить» без % после клика. Ветка: `feat/step-sw-update-download-progress`.
+Level 3: индикатор фонового install/precache (indeterminate) → кнопка «Обновить» → «Обновляется…». Ветка: `feat/step-sw-update-download-progress`.
 
-- PLAN ✅ → CREATIVE ✅ → следующий `/build`
-- Решения: lifecycle indeterminate (A); расширить `SwUpdateBanner` (UI Option 1)
-- Creative: [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
+### Approach
+
+Lifecycle клиента (`updatefound` / `installing` + `statechange`) в `swUpdateController`; UI — три фазы в `SwUpdateBanner`. `generateSW` / push без изменений.
+
+### Code Changes
+
+- `src/pwa/swUpdateController.ts` (+ test): `isDownloading`, `downloadProgress`, lifecycle
+- `src/hooks/useSwUpdate.ts` (+ test): проброс state
+- `src/components/SwUpdateBanner/*`: фаза download + SCSS indeterminate bar
+- `src/screens/ServiceWorkerScreen/swLessonData.ts`: `updateFlowDescription`
+- `docs/project/pwa-checklist.md`: ручной сценарий download → apply
+
+### Verification
+
+- [x] `pnpm lint`
+- [x] `pnpm typecheck`
+- [x] `pnpm test --run` — 164 passed
+- [x] `pnpm build` — `generateSW`, `sw.js`, precache 13 entries
+
+### Next Steps
+
+→ `/reflect`
 
 ## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
 

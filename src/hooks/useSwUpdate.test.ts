@@ -13,12 +13,24 @@ vi.mock('../pwa/swUpdateController.ts', () => ({
 
 import { useSwUpdate } from './useSwUpdate.ts';
 
-type SwUpdateState = { updateAvailable: boolean; isApplying: boolean };
+type SwUpdateState = {
+	updateAvailable: boolean;
+	isApplying: boolean;
+	isDownloading: boolean;
+	downloadProgress: number | null;
+};
+
+const idleState: SwUpdateState = {
+	updateAvailable: false,
+	isApplying: false,
+	isDownloading: false,
+	downloadProgress: null,
+};
 
 describe('useSwUpdate', () => {
 	beforeEach(() => {
 		controllerMocks.subscribeSwUpdate.mockImplementation((listener: (state: SwUpdateState) => void) => {
-			listener({ updateAvailable: false, isApplying: false });
+			listener(idleState);
 			return vi.fn();
 		});
 	});
@@ -27,25 +39,27 @@ describe('useSwUpdate', () => {
 		vi.restoreAllMocks();
 	});
 
-	it('должен вернуть updateAvailable: false и isApplying: false по умолчанию', () => {
+	it('должен вернуть idle-состояние по умолчанию', () => {
 		const { result } = renderHook(() => useSwUpdate());
 
 		expect(result.current.updateAvailable).toBe(false);
 		expect(result.current.isApplying).toBe(false);
+		expect(result.current.isDownloading).toBe(false);
+		expect(result.current.downloadProgress).toBeNull();
 	});
 
 	it('должен обновить updateAvailable при уведомлении от controller', () => {
 		let notify: ((state: SwUpdateState) => void) | undefined;
 		controllerMocks.subscribeSwUpdate.mockImplementation((listener) => {
 			notify = listener;
-			listener({ updateAvailable: false, isApplying: false });
+			listener(idleState);
 			return vi.fn();
 		});
 
 		const { result } = renderHook(() => useSwUpdate());
 
 		act(() => {
-			notify?.({ updateAvailable: true, isApplying: false });
+			notify?.({ updateAvailable: true, isApplying: false, isDownloading: false, downloadProgress: null });
 		});
 
 		expect(result.current.updateAvailable).toBe(true);
@@ -56,17 +70,40 @@ describe('useSwUpdate', () => {
 		let notify: ((state: SwUpdateState) => void) | undefined;
 		controllerMocks.subscribeSwUpdate.mockImplementation((listener) => {
 			notify = listener;
-			listener({ updateAvailable: true, isApplying: false });
+			listener({ updateAvailable: true, isApplying: false, isDownloading: false, downloadProgress: null });
 			return vi.fn();
 		});
 
 		const { result } = renderHook(() => useSwUpdate());
 
 		act(() => {
-			notify?.({ updateAvailable: true, isApplying: true });
+			notify?.({ updateAvailable: true, isApplying: true, isDownloading: false, downloadProgress: null });
 		});
 
 		expect(result.current.isApplying).toBe(true);
+	});
+
+	it('должен обновить isDownloading и downloadProgress при уведомлении от controller', () => {
+		let notify: ((state: SwUpdateState) => void) | undefined;
+		controllerMocks.subscribeSwUpdate.mockImplementation((listener) => {
+			notify = listener;
+			listener(idleState);
+			return vi.fn();
+		});
+
+		const { result } = renderHook(() => useSwUpdate());
+
+		act(() => {
+			notify?.({
+				updateAvailable: false,
+				isApplying: false,
+				isDownloading: true,
+				downloadProgress: null,
+			});
+		});
+
+		expect(result.current.isDownloading).toBe(true);
+		expect(result.current.downloadProgress).toBeNull();
 	});
 
 	it('должен вызвать applySwUpdate при applyUpdate', () => {

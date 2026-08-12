@@ -10,7 +10,7 @@
 - **Зависит от:** `step-sw-update-apply-fast` ✅
 - **Complexity:** Level 3 — Intermediate Feature
 - **Тип:** Enhancement (PWA update UX / precache progress)
-- **Статус:** CREATIVE COMPLETE → следующий шаг `/build`
+- **Статус:** BUILD COMPLETE → следующий шаг `/reflect`
 - **Creative doc:** [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
 
 ### Описание
@@ -30,7 +30,7 @@
 - [x] GIT: Работа в feature-ветке `feat/step-sw-update-download-progress`
 - [x] PLAN: Детальный план реализации (`/plan`)
 - [x] CREATIVE: Выбор подхода к прогрессу precache и UX (`/creative`)
-- [ ] BUILD: Реализация по TDD (`/build`)
+- [x] BUILD: Реализация по TDD (`/build`)
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
@@ -40,16 +40,16 @@
 
 ### Functional
 
-- [ ] Во время фонового install/precache показывать индикатор прогресса скачивания
-- [ ] По завершении скачивания скрыть прогресс и показать кнопку «Обновить» (текущий apply-flow)
-- [ ] После клика «Обновить» — «Обновляется…» без процента; сохранить in-flight защиту `applySwUpdate`
-- [ ] Опционально отразить поведение в учебном разделе Service Worker (`swLessonData` / экран)
+- [x] Во время фонового install/precache показывать индикатор прогресса скачивания
+- [x] По завершении скачивания скрыть прогресс и показать кнопку «Обновить» (текущий apply-flow)
+- [x] После клика «Обновить» — «Обновляется…» без процента; сохранить in-flight защиту `applySwUpdate`
+- [x] Опционально отразить поведение в учебном разделе Service Worker (`swLessonData` / экран)
 
 ### Non-Functional
 
-- [ ] Не ломать push (`sw-push.js` + `importScripts`), offline/precache, GitHub Pages `base`
-- [ ] TDD; проверка SW через `pnpm build` + `pnpm preview` (в dev SW отключён)
-- [ ] Учебная ясность важнее «продакшен-полировки»
+- [x] Не ломать push (`sw-push.js` + `importScripts`), offline/precache, GitHub Pages `base`
+- [x] TDD; проверка SW через `pnpm build` + `pnpm preview` (в dev SW отключён)
+- [x] Учебная ясность важнее «продакшен-полировки»
 
 ### Constraints
 
@@ -95,33 +95,57 @@
 
 ## Implementation Plan (по CREATIVE)
 
-### Phase 1 — Контракт состояния
+### Phase 1 — Контракт состояния ✅
 
 1. Расширить `SwUpdateState`: `isDownloading`, `downloadProgress: number | null` (`null` = indeterminate)
 2. Unit-тесты controller (red → green)
 
-### Phase 2 — Источник событий (Option A)
+### Phase 2 — Источник событий (Option A) ✅
 
 1. Lifecycle: `registration` → `updatefound` / `installing` + `statechange`
 2. `onNeedRefresh` → конец download, `updateAvailable`
 3. Не мигрировать на `injectManifest`
 
-### Phase 3 — UI (Option 1)
+### Phase 3 — UI (Option 1) ✅
 
 1. Индикатор indeterminate на фазе download в `SwUpdateBanner`
 2. После waiting — убрать прогресс, кнопка «Обновить»
 3. После клика — «Обновляется…» без %
 
-### Phase 4 — Урок + docs
+### Phase 4 — Урок + docs ✅
 
 1. Обновить `updateFlowDescription` / связанные тексты
 2. Обновить `pwa-checklist.md` (ручной сценарий download → banner)
 
-### Phase 5 — Verify
+### Phase 5 — Verify ✅
 
 1. `pnpm lint`, `typecheck`, `test --run`, `build`
-2. E2E по необходимости (smoke)
-3. Ручной preview: две сборки / update SW → прогресс → «Обновить» → reload
+2. E2E: не добавляли (unit покрывает state-машину; smoke UI — через unit banner)
+3. Ручной preview: две сборки / update SW → прогресс → «Обновить» → reload (чеклист обновлён)
+
+---
+
+## Build Progress
+
+- **Phase 1–2 (controller):** Complete
+  - Files: `src/pwa/swUpdateController.ts`, `src/pwa/swUpdateController.test.ts`
+  - Lifecycle `updatefound` / `installing` + `statechange`; контракт `isDownloading` / `downloadProgress`
+- **Phase 3 (UI):** Complete
+  - Files: `src/hooks/useSwUpdate.ts`, `SwUpdateBanner.tsx/.scss/.test.tsx`, `useSwUpdate.test.ts`
+  - Три фазы баннера: download / waiting / applying
+- **Phase 4 (урок + docs):** Complete
+  - Files: `swLessonData.ts`, `docs/project/pwa-checklist.md`
+- **Phase 5 (verify):** Complete
+  - lint ✅, typecheck ✅, unit 164 ✅, build ✅ (`generateSW`, precache 13 entries)
+
+### Test Results
+
+| Команда           | Результат     |
+| ----------------- | ------------- |
+| `pnpm lint`       | ✅            |
+| `pnpm typecheck`  | ✅            |
+| `pnpm test --run` | ✅ 164 passed |
+| `pnpm build`      | ✅ + `sw.js`  |
 
 ---
 
@@ -171,7 +195,7 @@
 - [x] Planning complete (PLAN)
 - [x] Creative phases complete
 - [x] Technology validation complete (финальный checkpoint после CREATIVE)
-- [ ] Implementation complete
+- [x] Implementation complete (BUILD)
 - [ ] Reflection complete
 - [ ] Task closed (`/close-task`)
 

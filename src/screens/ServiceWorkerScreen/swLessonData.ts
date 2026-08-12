@@ -34,7 +34,7 @@ export const devModeHint =
 
 /** Описание связи update flow с swUpdateController и SwUpdateBanner. */
 export const updateFlowDescription =
-	'При registerType: prompt vite-plugin-pwa регистрирует SW через virtual:pwa-register. Когда появляется waiting worker, swUpdateController уведомляет UI — глобальный SwUpdateBanner предлагает обновить приложение (skipWaiting + reload).';
+	'При registerType: prompt vite-plugin-pwa регистрирует SW через virtual:pwa-register. Пока новый worker в состоянии installing (фоновый precache), swUpdateController выставляет isDownloading — SwUpdateBanner показывает «Загружается обновление…» без процента. Когда worker переходит в waiting, onNeedRefresh снимает прогресс и предлагает кнопку «Обновить» (skipWaiting + reload). После клика — «Обновляется…» без индикатора загрузки.';
 
 /** Предупреждение к учебной кнопке сброса. */
 export const resetLabWarning =
