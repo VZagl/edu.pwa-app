@@ -2,18 +2,17 @@
 
 ## Current Focus
 
-`feat/step-readme-learner-guide` — README «с нуля» для ученика (Level 2)
+`feat/step-readme-learner-guide` — BUILD complete (README «с нуля» для ученика)
 
 ## Current Mode
 
-PLAN complete — следующий шаг `/build`
+BUILD complete — следующий шаг `/reflect`
 
 ## Next Steps
 
-1. `/build` — обновить `README.md` по плану в `tasks.md`
-2. `/reflect` → `/close-task`
+1. `/reflect` — рефлексия по задаче
+2. `/close-task` — финализация
 3. GIT: работать только в `feat/step-readme-learner-guide`
-4. CLOSE: финализировать командой `/close-task`
 
 ## Context for AI
 
@@ -21,7 +20,5 @@ PLAN complete — следующий шаг `/build`
 - Менеджер пакетов: pnpm
 - Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)
 - Задача docs-only: автотесты не обязательны; ревью документации
-- **Рекомендуемый старт в README:** `pnpm build` + `pnpm preview` (не `dev` как главный путь)
-- `pnpm dev` — только для UI/HMR; SW в dev по умолчанию выключен (`vite-plugin-pwa` без `devOptions.enabled`)
+- README обновлён: рекомендуемый старт = `pnpm build` + `pnpm preview`; `dev` — только UI/HMR
 - Источник списка экранов: `src/routes/lessonRoutes.ts`
-- Creative не нужен → сразу `/build`

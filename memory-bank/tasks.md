@@ -8,7 +8,7 @@
 - **Git Branch:** `feat/step-readme-learner-guide`
 - **Источник:** docs/project/implementation-plan.md (step-readme-learner-guide)
 - **Создано:** 2026-08-07
-- **Статус:** PLAN complete → следующий `/build`
+- **Статус:** BUILD complete → следующий `/reflect`
 
 ### Описание
 
@@ -26,7 +26,7 @@
 
 - [x] GIT: Работа в feature-ветке feat/step-readme-learner-guide
 - [x] PLAN: Детальный план структуры README
-- [ ] BUILD: Обновить README.md
+- [x] BUILD: Обновить README.md
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
@@ -69,9 +69,14 @@ Level 2 — Simple Enhancement (docs-only). Creative-фаза не требуе�
 
 ### BUILD steps
 
-1. Переписать/расширить `README.md` по таблице выше.
-2. Ревью: ученик без MB понимает путь «install → build → preview → уроки → DevTools → checklist».
-3. Проверить относительные ссылки (`docs/project/...`).
+1. [x] Переписать/расширить `README.md` по таблице выше.
+2. [x] Ревью: ученик без MB понимает путь «install → build → preview → уроки → DevTools → checklist».
+3. [x] Проверить относительные ссылки (`docs/project/...`).
+
+### Build Progress
+
+- **README.md:** Complete — 10 разделов по плану; старт = preview; экраны из `lessonRoutes.ts`; ссылки на checklist и run-and-build.
+- **Verification:** docs-only ревью (автотесты N/A); ссылки `docs/project/...` сохранены.
 
 ### Creative Phases Required
 

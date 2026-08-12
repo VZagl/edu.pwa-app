@@ -30,11 +30,15 @@
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
-| README для ученика (step-readme-learner-guide)           | 🔄 В работе (2026-08-12)        |
+| README для ученика (step-readme-learner-guide)           | 🔄 BUILD complete (2026-08-12)  |
+
+## [2026-08-12]: step-readme-learner-guide — BUILD complete
+
+`README.md` переписан «с нуля»: стек (SCSS), рекомендуемый старт `build`+`preview`, отдельный `dev`, экраны из `lessonRoutes.ts`, DevTools, checklist. Автотесты N/A (docs-only). Следующий шаг: `/reflect`.
 
 ## [2026-08-12]: step-readme-learner-guide — PLAN complete
 
-План README зафиксирован (Level 2, docs-only). Рекомендуемый старт ученика: `build` + `preview`, не `dev`. Creative не нужен. Следующий шаг: `/build`.
+План README зафиксирован (Level 2, docs-only). Рекомендуемый старт ученика: `build` + `preview`, не `dev`. Creative не нужен.
 
 ## [2026-08-12]: step-readme-learner-guide — В РАБОТЕ
 
