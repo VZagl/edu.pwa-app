@@ -266,6 +266,7 @@ describe('Рендеринг', () => {
 | `/close-task`           | `.cursor/commands/close-task.md`; `memory-bank/tasks.md`; `docs/common/memory-bank-usage.md` → «Git-ветка» (ветка в completed-tasks)                                                     |
 | `/git-commit`           | `.cursor/commands/git-commit.md`; `docs/common/git-commit-description.md`; при трекинге Memory Bank — `memory-bank/tasks.md`                                                             |
 | `/git-merge-to-develop` | `.cursor/commands/git-merge-to-develop.md`; `docs/common/git-workflow.md`                                                                                                                |
+| `/git-merge-to-build`   | `.cursor/commands/git-merge-to-build.md`; `docs/common/git-workflow.md`                                                                                                                  |
 | `/release-prepare`      | `.cursor/commands/release-prepare.md`                                                                                                                                                    |
 
 **При сжатии контекста чата** (Summarized conversation и т.п.) — перечитать этот раздел и файл активной команды из таблицы (см. также `.cursor/rules/context-preservation.mdc`).

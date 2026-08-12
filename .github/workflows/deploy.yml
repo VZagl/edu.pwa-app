@@ -1,11 +1,11 @@
 # Деплой статики Vite на GitHub Pages (project site).
-# Адаптация официального примера Vite: ветки develop и main, pnpm (не npm).
+# Триггер: push в build (стенд) или main (релиз); develop не деплоит; + workflow_dispatch; pnpm (не npm).
 # URL: https://vzagl.github.io/edu.pwa-app/
 name: Deploy static content to Pages
 
 on:
   push:
-    branches: ['develop', 'main']
+    branches: ['build', 'main']
   workflow_dispatch:
 
 permissions:
