@@ -10,7 +10,8 @@
 - **Зависит от:** `step-sw-update-apply-fast` ✅
 - **Complexity:** Level 3 — Intermediate Feature
 - **Тип:** Enhancement (PWA update UX / precache progress)
-- **Статус:** PLAN COMPLETE → следующий шаг `/creative`
+- **Статус:** CREATIVE COMPLETE → следующий шаг `/build`
+- **Creative doc:** [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
 
 ### Описание
 
@@ -22,13 +23,13 @@
 2. После завершения скачивания (SW в `waiting`) — убрать прогресс и показать кнопку **«Обновить»**
 3. После клика «Обновить» — только «Обновляется…» без % (activate + reload; загрузка уже завершена)
 
-Технически — события Workbox / `workbox-window` / сообщения из SW / lifecycle `registration.installing`; с текущим `generateSW` + `virtual:pwa-register` нужен CREATIVE (источник прогресса + форма индикатора).
+**Решения CREATIVE:** источник — lifecycle клиента (indeterminate); UI — расширить `SwUpdateBanner`. `generateSW` / push без изменений.
 
 ### Чеклист
 
 - [x] GIT: Работа в feature-ветке `feat/step-sw-update-download-progress`
 - [x] PLAN: Детальный план реализации (`/plan`)
-- [ ] CREATIVE: Выбор подхода к прогрессу precache и UX (`/creative`)
+- [x] CREATIVE: Выбор подхода к прогрессу precache и UX (`/creative`)
 - [ ] BUILD: Реализация по TDD (`/build`)
 - [ ] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
@@ -70,44 +71,44 @@
 ### Technology Validation Checkpoints
 
 - [x] Project initialization / стек уже готов (фаза 0+ закрыта)
-- [x] Required dependencies identified (`workbox-window` есть; новые — только если CREATIVE выберет `injectManifest`)
+- [x] Required dependencies identified (новых нет; `injectManifest` не выбран)
 - [x] Build configuration validated (текущий `VitePWA` + `generateSW`)
 - [x] Hello-world verification = существующий `pnpm build` → `sw.js` + prompt UX
-- [ ] После CREATIVE: подтвердить паритет push / runtimeCaching / navigateFallback при смене стратегии SW
+- [x] Паритет push / runtimeCaching / navigateFallback: стратегия SW **не** меняется (CREATIVE → Option A)
 
 ---
 
 ## Affected Components
 
-| Компонент                                                                | Изменения                                                      |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| `src/pwa/swUpdateController.ts`                                          | Состояние download/progress; подписка на installing / messages |
-| `src/hooks/useSwUpdate.ts`                                               | Проброс нового state                                           |
-| `src/components/SwUpdateBanner/*`                                        | UI: фаза прогресса → фаза «Обновить»                           |
-| Возможно `vite.config.ts` + кастомный SW                                 | Только при выборе `injectManifest`                             |
-| `public/sw-push.js` / importScripts                                      | Миграция при смене стратегии SW                                |
-| `swLessonData` / `ServiceWorkerScreen`                                   | Учебный текст update flow                                      |
-| `docs/project/pwa-checklist.md` (+ при необходимости `config-schema.md`) | Ручная проверка                                                |
-| Тесты controller / hook / banner (+ E2E smoke)                           | TDD                                                            |
+| Компонент                                                                | Изменения                                                           |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `src/pwa/swUpdateController.ts`                                          | `isDownloading` / `downloadProgress`; `updatefound` + `statechange` |
+| `src/hooks/useSwUpdate.ts`                                               | Проброс нового state                                                |
+| `src/components/SwUpdateBanner/*`                                        | UI: фаза download → «Обновить» → «Обновляется…»                     |
+| `vite.config.ts` / кастомный SW                                          | **Без изменений** (injectManifest не выбран)                        |
+| `public/sw-push.js` / importScripts                                      | **Без изменений**                                                   |
+| `swLessonData` / `ServiceWorkerScreen`                                   | Учебный текст update flow                                           |
+| `docs/project/pwa-checklist.md` (+ при необходимости `config-schema.md`) | Ручная проверка                                                     |
+| Тесты controller / hook / banner (+ E2E smoke)                           | TDD                                                                 |
 
 ---
 
-## Implementation Plan (после CREATIVE)
+## Implementation Plan (по CREATIVE)
 
 ### Phase 1 — Контракт состояния
 
-1. Расширить `SwUpdateState`: например `isDownloading`, `downloadProgress: number | null` (`null` = indeterminate)
+1. Расширить `SwUpdateState`: `isDownloading`, `downloadProgress: number | null` (`null` = indeterminate)
 2. Unit-тесты controller (red → green)
 
-### Phase 2 — Источник событий (по решению CREATIVE)
+### Phase 2 — Источник событий (Option A)
 
-1. Lifecycle: `registration.installing` + `statechange`, **или**
-2. Messages из кастомного SW (`injectManifest`), **или**
-3. Hybrid
+1. Lifecycle: `registration` → `updatefound` / `installing` + `statechange`
+2. `onNeedRefresh` → конец download, `updateAvailable`
+3. Не мигрировать на `injectManifest`
 
-### Phase 3 — UI
+### Phase 3 — UI (Option 1)
 
-1. Индикатор на фазе download
+1. Индикатор indeterminate на фазе download в `SwUpdateBanner`
 2. После waiting — убрать прогресс, кнопка «Обновить»
 3. После клика — «Обновляется…» без %
 
@@ -126,15 +127,13 @@
 
 ## Creative Phases Required
 
-- [ ] 🏗️ **Architecture** — источник прогресса:
-  - **A.** Только lifecycle клиента (фазы без точного %) — минимальный риск
-  - **B.** `injectManifest` + `postMessage` (точный %) — контроль, миграция SW
-  - **C.** Hybrid / события `workbox-window` — без % без кастомного SW
-  - _(чистый `generateSW` + `importScripts` для перехвата precache Workbox — ненадёжен)_
-- [ ] 🎨 **UI/UX** — форма индикатора:
-  - расширить `SwUpdateBanner` (две фазы: прогресс → «Обновить»)
-  - отдельный strip + баннер apply как сейчас
-  - - учебный блок на SW-экране
+- [x] 🏗️ **Architecture** — **решение: Option A** (lifecycle клиента, indeterminate)
+  - Документ: [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
+  - A ✅ lifecycle; B injectManifest — отложено; C workbox-window — отклонён
+- [x] 🎨 **UI/UX** — **решение: Option 1** (расширить `SwUpdateBanner`)
+  - Download: «Загружается обновление…» + indeterminate progressbar
+  - Waiting / Applying — как сейчас
+  - Отдельный strip и «только урок» — отклонены; текст урока — в Phase 4 BUILD
 
 ---
 
@@ -142,7 +141,7 @@
 
 - База: `step-sw-update-apply-fast` ✅ (`swUpdateController`, in-flight apply, proactive `update()`)
 - `vite-plugin-pwa` `registerType: 'prompt'`, `injectRegister: null`
-- Push через `workbox.importScripts: ['sw-push.js']` — сохранить при любой стратегии SW
+- Push через `workbox.importScripts: ['sw-push.js']` — без изменений
 
 ---
 
@@ -151,8 +150,8 @@
 | Риск                                             | Митигация                                            |
 | ------------------------------------------------ | ---------------------------------------------------- |
 | `onNeedRefresh` слишком поздно для прогресса     | Слушать `installing` до waiting                      |
-| Миграция на `injectManifest` ломает push/offline | CREATIVE: чеклист паритета                           |
-| Точный % на маленьком precache почти незаметен   | Допустить indeterminate; % — nice-to-have            |
+| Миграция на `injectManifest` ломает push/offline | Не мигрируем (CREATIVE A)                            |
+| Точный % на маленьком precache почти незаметен   | Indeterminate; `%` — nice-to-have later              |
 | E2E нестабилен для реального download            | Unit на state-машину; E2E — smoke UI; ручной preview |
 | Dev без SW                                       | Документировать preview-only                         |
 
@@ -170,8 +169,8 @@
 
 - [x] Initialization complete (VAN)
 - [x] Planning complete (PLAN)
-- [ ] Creative phases complete
-- [ ] Technology validation complete (финальный checkpoint после CREATIVE)
+- [x] Creative phases complete
+- [x] Technology validation complete (финальный checkpoint после CREATIVE)
 - [ ] Implementation complete
 - [ ] Reflection complete
 - [ ] Task closed (`/close-task`)

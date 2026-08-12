@@ -29,11 +29,15 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
-| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 В работе (PLAN → CREATIVE)   |
+| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 В работе (CREATIVE → BUILD)  |
 
 ## [2026-08-12]: step-sw-update-download-progress — В РАБОТЕ
 
-Level 3: прогресс фонового install/precache → затем кнопка «Обновить» без % после клика. Ветка: `feat/step-sw-update-download-progress`. PLAN завершён → `/creative` (architecture + UX).
+Level 3: прогресс фонового install/precache → затем кнопка «Обновить» без % после клика. Ветка: `feat/step-sw-update-download-progress`.
+
+- PLAN ✅ → CREATIVE ✅ → следующий `/build`
+- Решения: lifecycle indeterminate (A); расширить `SwUpdateBanner` (UI Option 1)
+- Creative: [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
 
 ## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
 
