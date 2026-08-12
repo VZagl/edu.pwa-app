@@ -28,6 +28,11 @@
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Удаление LessonStubScreen (step-remove-lesson-stub)      | 🔨 BUILD COMPLETE (2026-08-12)  |
+
+## [2026-08-12]: step-remove-lesson-stub — BUILD COMPLETE
+
+Cleanup: удалён мёртвый `src/components/LessonStubScreen/` (временный layout из `step-lessons-navigation`). Импортов в `src/`/`e2e` не было. Verify: lint ✅, build ✅, unit 155 ✅. Далее: `/reflect` → `/close-task`.
 
 ## [2026-08-12]: step-sw-update-apply-fast — ЗАВЕРШЕНО
 

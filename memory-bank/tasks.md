@@ -8,7 +8,7 @@
 - **Git Branch:** `chore/step-remove-lesson-stub`
 - **Complexity:** Level 1 — Quick Fix / Cleanup
 - **Тип:** Cleanup (удаление мёртвого кода)
-- **Статус:** VAN COMPLETE → готов к BUILD
+- **Статус:** BUILD COMPLETE → готов к `/reflect`
 - **Источник:** memory-bank/backlog.md (Идеи)
 - **Зависит от:** step-home-lesson-ui, step-sw-lesson-ui, step-install-lesson-ui (все ✅)
 
@@ -19,10 +19,16 @@
 ### Чеклист
 
 - [x] GIT: Работа в feature-ветке `chore/step-remove-lesson-stub`
-- [ ] Удалить `src/components/LessonStubScreen/`
-- [ ] Убедиться, что импортов/тестов на stub нет
-- [ ] Verify: `pnpm lint`, `pnpm build`, `pnpm test --run`
+- [x] Удалить `src/components/LessonStubScreen/`
+- [x] Убедиться, что импортов/тестов на stub нет
+- [x] Verify: `pnpm lint`, `pnpm build`, `pnpm test --run`
 - [ ] CLOSE: Финализировать задачу командой /close-task
+
+### Build Results
+
+- Удалён `src/components/LessonStubScreen/LessonStubScreen.tsx` (папка удалена)
+- Импортов/тестов на stub в `src/` и `e2e/` нет
+- Verify: lint ✅ · build ✅ · unit 155 ✅ (24 files)
 
 ## Last Completed Task
 
