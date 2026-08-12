@@ -87,6 +87,18 @@ pnpm preview
 
 Если статус **waiting** — обновить страницу или проверить баннер «Доступно обновление» (`SwUpdateBanner` в `src/components/SwUpdateBanner/`).
 
+#### Обновление приложения (прогресс загрузки → «Обновить»)
+
+1. После деплоя новой версии (или `pnpm build` + `pnpm preview` со сменой сборки) вернуть вкладку в фокус / сеть online — `swUpdateController` вызывает `registration.update()`.
+2. Пока новый SW в **installing** (precache): баннер `SwUpdateBanner` — **«Загружается обновление…»** + indeterminate progressbar (без %). В DevTools → Application → Service Workers статус installing.
+3. Когда worker в **waiting**: прогресс скрывается, текст **«Доступно обновление»**, кнопка **«Обновить»**.
+4. Нажать **«Обновить»**: кнопка `disabled`, подпись → **«Обновляется…»** (без progressbar); повторные клики не запускают повторный `updateSW`.
+5. Ожидание: страница перезагружается с новой версией SW (activated).
+
+**Ограничение GitHub Pages / CDN:** у project site на Pages нет кастомного `Cache-Control` для `sw.js`. CDN или HTTP-кэш браузера могут отдавать устаревший скрипт SW некоторое время после деплоя. Проактивный `update()` и `fetch(swUrl, { cache: 'no-store' })` смягчают задержку обнаружения, но **не отменяют** кэш CDN. Если баннер не появился сразу после деплоя — подождать, обновить вкладку или проверить Network для `/edu.pwa-app/sw.js`.
+
+**Dev:** в `pnpm dev` SW отключён — сценарий только через production-сборку (`preview` / deploy).
+
 ### Cache Storage
 
 - Precache Workbox: записи с префиксом workbox-precache (или аналог от `vite-plugin-pwa`)
@@ -148,6 +160,8 @@ pnpm preview
 | 6   | Lighthouse PWA                | **Uses HTTPS** — pass (в отличие от localhost)                  |
 
 Локальный preview остаётся основным для быстрой регрессии; Pages — стенд для HTTPS / installability «как у ученика». Команды деплоя: [run-and-build.md](./run-and-build.md) → «Деплой на GitHub Pages».
+
+**Кэш `sw.js` на Pages:** после нового деплоя обновление SW на телефоне (особенно установленное PWA) может появиться с задержкой из‑за CDN/кэша — см. секцию «Обновление приложения» выше.
 
 ---
 

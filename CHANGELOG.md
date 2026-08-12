@@ -7,6 +7,16 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-08-12
+
+### Добавлено
+
+- Индикатор прогресса фонового скачивания обновления PWA (precache) в баннере до кнопки «Обновить»
+
+### Изменено
+
+- Быстрее обнаруживается обновление PWA; после «Обновить» кнопка блокируется и показывает «Обновляется…» до перезагрузки
+
 ## [1.0.0] - 2026-08-11
 
 Первый релиз учебного Progressive Web App на React + Vite.
@@ -30,5 +40,6 @@
 - Версия приложения в шапке (из package.json, справа от названия)
 - Публикация приложения на GitHub Pages (HTTPS): https://vzagl.github.io/edu.pwa-app/
 
-[Unreleased]: https://github.com/VZagl/edu.pwa-app/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/VZagl/edu.pwa-app/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/VZagl/edu.pwa-app/releases/tag/v1.1.0
 [1.0.0]: https://github.com/VZagl/edu.pwa-app/releases/tag/v1.0.0

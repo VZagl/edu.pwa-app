@@ -27,9 +27,12 @@
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-11]: step-github-pages-deploy — ЗАВЕРШЕНО
+## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
 
-Деплой project site на GitHub Pages: `base: '/edu.pwa-app/'`, гибрид PWA-путей, workflow pnpm на `develop`, docs. Verify OK; ручная проверка HTTPS — после merge/dispatch.
+Индикатор фонового install/precache (indeterminate) → «Обновить» → «Обновляется…». Lifecycle клиента в `swUpdateController`; UI в `SwUpdateBanner`. Verify: lint ✅, typecheck ✅, unit 164 ✅, build ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md](completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md](completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md)

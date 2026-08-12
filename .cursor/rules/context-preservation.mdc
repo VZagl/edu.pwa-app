@@ -41,6 +41,7 @@ alwaysApply: true
 | `/close-task`           | `.cursor/commands/close-task.md`           |
 | `/git-commit`           | `.cursor/commands/git-commit.md`           |
 | `/git-merge-to-develop` | `.cursor/commands/git-merge-to-develop.md` |
+| `/git-merge-to-build`   | `.cursor/commands/git-merge-to-build.md`   |
 | `/release-prepare`      | `.cursor/commands/release-prepare.md`      |
 | `/sequential-thinking`  | `.cursor/commands/sequential-thinking.md`  |
 

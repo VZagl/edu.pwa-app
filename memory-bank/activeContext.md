@@ -14,6 +14,6 @@ IDLE — ожидание новой задачи
 
 ## Context for AI
 
-- Учебное PWA на React + Vite; менеджер пакетов — pnpm
-- План шагов: `docs/project/implementation-plan.md`
-- Дорожная карта: `docs/project/product-roadmap.md`
+- Учебное Progressive Web App на React + Vite (только frontend)
+- Менеджер пакетов: pnpm
+- Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)

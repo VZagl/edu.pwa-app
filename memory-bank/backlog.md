@@ -19,11 +19,7 @@
 
 ## Идеи
 
-- [ ] Убрать `LessonStubScreen`, когда все разделы заполнены
-  - **Создано:** 2026-08-07
-  - Удалить `src/components/LessonStubScreen/` и импорты, когда Главная, Service Worker и Install больше не заглушки (как Manifest/Offline).
-  - **Зависит от:** заполненные экраны Home / SW / Install (`step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`)
-  - **Причина:** Временный layout из `step-lessons-navigation`; после полных уроков — мёртвый код
+(Нет активных задач)
 
 ---
 

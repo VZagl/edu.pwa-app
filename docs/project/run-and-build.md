@@ -74,15 +74,21 @@ E2E поднимает production-preview через `webServer` в `playwright.
 
 ## Деплой на GitHub Pages
 
-Production URL (project site): **`https://vzagl.github.io/edu.pwa-app/`**
+URL (project site): **`https://vzagl.github.io/edu.pwa-app/`**  
+Пока один URL Pages: и стенд (`build`), и релиз (`main`) публикуют туда же (последний успешный деплой перекрывает предыдущий).
 
 Workflow: [`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml) — `pnpm build` → publish `dist/` через GitHub Actions.
 
 | Параметр          | Значение                                                           |
 | ----------------- | ------------------------------------------------------------------ |
-| Trigger           | push в **`develop`** + ручной **`workflow_dispatch`**              |
+| Trigger           | push в **`build`** или **`main`** + ручной **`workflow_dispatch`** |
 | Пакетный менеджер | **pnpm** (`pnpm/action-setup`; не npm — `preinstall` / only-allow) |
 | Artifact          | `./dist`                                                           |
+
+**Как выложить:**
+
+- **Стенд (проверка):** feature → `develop`; когда нужна пересборка — merge `develop` → `build` и push (или Actions → Run workflow, ветка `build`). Merge в `develop` деплой не запускает.
+- **Релиз:** push / merge в `main` — тоже деплой на тот же Pages URL.
 
 ### Первый запуск (владелец репозитория)
 
@@ -91,10 +97,12 @@ Workflow: [`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml) �
    - Прямая ссылка: https://github.com/VZagl/edu.pwa-app/settings/pages
    - **Build and deployment → Source:** GitHub Actions
    - Не путать с `https://github.com/settings/pages` — это настройки **аккаунта** (Verified domains), источник деплоя там не выбирается.
-2. Merge feature-ветки в `develop` **или** Actions → **Deploy static content to Pages** → Run workflow (ветка `develop`).
+2. Убедиться, что ветка `build` существует на remote; при необходимости: merge актуального `develop` в `build` и `git push origin build` **или** Actions → **Deploy static content to Pages** → Run workflow (ветка `build`).
 3. Дождаться зелёного workflow; открыть `https://vzagl.github.io/edu.pwa-app/`.
 
 Для PWA в production **обязателен HTTPS** — Pages его обеспечивает. Ручная проверка на стенде: [pwa-checklist.md](./pwa-checklist.md) → секция «Проверка на GitHub Pages».
+
+**Ограничение кэша `sw.js`:** GitHub Pages не даёт настроить `Cache-Control` для service worker. CDN может отдавать старый `/edu.pwa-app/sw.js` после деплоя. Клиент смягчает это проактивным `registration.update()` и `fetch(..., { cache: 'no-store' })` (`swUpdateController`), но задержка обнаружения обновления на mobile всё же возможна. Подробнее: [pwa-checklist.md](./pwa-checklist.md) → «Обновление приложения».
 
 ## Полезные ссылки
 
