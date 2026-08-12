@@ -102,7 +102,7 @@
 - [x] Разделы Cache Storage и Storage quota — `step-cache-storage-lesson-ui`, `step-storage-quota-lesson-ui`
 - [x] (Опционально) Push-уведомления — `step-push-notifications`
 - [x] Деплой на GitHub Pages (HTTPS) — `step-github-pages-deploy` (после Push)
-- [ ] README «с нуля» для ученика — `step-readme-learner-guide`
+- [x] README «с нуля» для ученика — `step-readme-learner-guide`
 - [ ] Расширенные E2E-сценарии PWA (offline/install в CI, где стабильно)
 
 > Базовая инфра Playwright и smoke E2E — в MVP (фаза 0). Здесь — доделка лаборатории, деплой и углубление покрытия.
@@ -148,6 +148,7 @@
 | 2026-08-11 | Разделы Cache Storage и Storage quota (`step-storage-quota-lesson-ui`)          | ✅ Готов |
 | 2026-08-11 | (Опционально) Push-уведомления (`step-push-notifications`)                      | ✅ Готов |
 | 2026-08-11 | Деплой на GitHub Pages (`step-github-pages-deploy`)                             | ✅ Готов |
+| 2026-08-12 | Фаза 7 / README «с нуля» для ученика (`step-readme-learner-guide`)              | ✅ Готов |
 
 ---
 
