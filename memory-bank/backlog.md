@@ -26,13 +26,6 @@
   - **Зависит от:** `step-sw-update-apply-fast`
   - **Причина:** UX прозрачности «что качается», отдельно от фикса скорости применения обновления
 
-- [ ] Убрать `LessonStubScreen`, когда все разделы заполнены (step-remove-lesson-stub)
-  - **Создано:** 2026-08-07
-  - Удалить `src/components/LessonStubScreen/` и импорты, когда Главная, Service Worker и Install больше не заглушки (как Manifest/Offline).
-  - **Зависит от:** заполненные экраны Home / SW / Install (`step-home-lesson-ui`, `step-sw-lesson-ui`, `step-install-lesson-ui`)
-  - **Причина:** Временный layout из `step-lessons-navigation`; после полных уроков — мёртвый код
-  - **В работе:** ветка `chore/step-remove-lesson-stub`
-
 ---
 
 **Примечание**: Этот файл — планировщик задач. Содержит только активные задачи и идеи. История завершённых задач хранится в `memory-bank/completed-tasks/`.

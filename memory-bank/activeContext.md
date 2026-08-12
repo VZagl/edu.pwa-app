@@ -2,21 +2,18 @@
 
 ## Current Focus
 
-`chore/step-remove-lesson-stub` — BUILD COMPLETE (удалён мёртвый `LessonStubScreen`)
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-BUILD COMPLETE — Level 1, следующий шаг: `/reflect`
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/reflect`
-2. `/close-task`
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
 - Учебное Progressive Web App на React + Vite (только frontend)
 - Менеджер пакетов: pnpm
-- Удалена папка `src/components/LessonStubScreen/`
-- Verify: lint ✅, build ✅, unit 155 ✅
 - Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)
