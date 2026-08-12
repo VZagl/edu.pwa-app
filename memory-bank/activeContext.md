@@ -2,23 +2,20 @@
 
 ## Current Focus
 
-REFLECT завершён — `step-sw-update-apply-fast`
+Нет активной задачи. Запустить `/van` для инициализации.
 
 ## Current Mode
 
-REFLECT → CLOSE
+IDLE — ожидание новой задачи
 
 ## Next Steps
 
-1. `/close-task` — закрыть задачу (архив + completed-tasks по workflow)
-2. После merge/deploy: ручная проверка Android Chrome / iOS Safari на Pages
+Запустить `/van [описание задачи]` для начала новой задачи
 
 ## Context for AI
 
-- Task ID: `step-sw-update-apply-fast`
-- Level 2 — Simple Enhancement
-- Reflection: [memory-bank/reflection/reflection-step-sw-update-apply-fast.md](reflection/reflection-step-sw-update-apply-fast.md)
-- Реализовано: `isApplying` + one-shot `applySwUpdate`; проактивный `registration.update()`; banner «Обновляется…»; docs Pages/CDN
-- Verify: lint ✅, test --run ✅, build ✅; ручная mobile — открыта
-- Git Branch: `feat/step-sw-update-apply-fast`
-- Пакетный менеджер: pnpm
+- Учебное Progressive Web App на React + Vite (только frontend)
+- Менеджер пакетов: pnpm
+- План шагов: `docs/project/implementation-plan.md`
+- Дорожная карта: `docs/project/product-roadmap.md`
+- Последняя завершённая задача: `step-sw-update-apply-fast` (2026-08-12)
