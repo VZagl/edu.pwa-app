@@ -2,18 +2,24 @@
 
 ## Current Focus
 
-Нет активной задачи. Запустить `/van` для инициализации.
+`feat/step-sw-update-apply-fast` — быстрое применение обновления PWA по кнопке «Обновить»
 
 ## Current Mode
 
-IDLE — ожидание новой задачи
+VAN COMPLETE — ожидание `/plan`
 
 ## Next Steps
 
-Запустить `/van [описание задачи]` для начала новой задачи
+1. `/plan` — детальный план (блокировка кнопки, проактивный `registration.update()`, аудит apply/reload, docs GitHub Pages)
+2. `/build` — реализация по TDD
+3. `/reflect` → `/close-task`
 
 ## Context for AI
 
-- Учебное PWA на React + Vite; менеджер пакетов — pnpm
-- План шагов: `docs/project/implementation-plan.md`
-- Дорожная карта: `docs/project/product-roadmap.md`
+- Task ID: `step-sw-update-apply-fast`
+- Level 2 — Simple Enhancement; маршрут: VAN → PLAN → BUILD → REFLECT
+- База: существующий `step-sw-update-ux` (`swUpdateController`, `useSwUpdate`, `SwUpdateBanner`); `skipWaiting` уже через `updateSW(true)`
+- Must-have: после первого клика «Обновить» кнопка disabled + «Обновляется…», без повторного `applySwUpdate`
+- Не входит: progress % precache (`step-sw-update-download-progress`)
+- Git Branch: `feat/step-sw-update-apply-fast`
+- Пакетный менеджер: pnpm
