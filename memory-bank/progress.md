@@ -29,9 +29,10 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
+## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
 
-Cleanup: удалён мёртвый `src/components/LessonStubScreen/`. Verify: lint ✅, build ✅, unit 155 ✅. Reflect/archive пропущены (Level 1 cleanup).
+Индикатор фонового install/precache (indeterminate) → «Обновить» → «Обновляется…». Lifecycle клиента в `swUpdateController`; UI в `SwUpdateBanner`. Verify: lint ✅, typecheck ✅, unit 164 ✅, build ✅.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md](completed-tasks/2026/08/step-remove-lesson-stub_2026-08-12.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md](completed-tasks/2026/08/step-sw-update-download-progress_2026-08-12.md)

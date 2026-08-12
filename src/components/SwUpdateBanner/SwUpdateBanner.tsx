@@ -2,7 +2,23 @@ import { useSwUpdate } from '../../hooks/useSwUpdate.ts';
 import './SwUpdateBanner.scss';
 
 export function SwUpdateBanner() {
-	const { updateAvailable, isApplying, applyUpdate } = useSwUpdate();
+	const { updateAvailable, isApplying, isDownloading, applyUpdate } = useSwUpdate();
+
+	if (isDownloading) {
+		return (
+			<div className='sw-update-banner' role='status'>
+				<p className='sw-update-banner__text'>Загружается обновление…</p>
+				<div
+					className='sw-update-banner__progress'
+					role='progressbar'
+					aria-label='Загрузка обновления'
+					aria-valuetext='Загрузка'
+				>
+					<div className='sw-update-banner__progress-bar' />
+				</div>
+			</div>
+		);
+	}
 
 	if (!updateAvailable) {
 		return null;

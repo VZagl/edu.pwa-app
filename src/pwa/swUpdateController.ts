@@ -3,6 +3,9 @@ import { registerSW } from 'virtual:pwa-register';
 type SwUpdateState = {
 	updateAvailable: boolean;
 	isApplying: boolean;
+	isDownloading: boolean;
+	/** null = indeterminate; число 0..1 — запас на будущее (injectManifest) */
+	downloadProgress: number | null;
 };
 
 type SwUpdateListener = (state: SwUpdateState) => void;
@@ -14,16 +17,25 @@ const PERIODIC_INTERVAL_MS = 60 * 60 * 1000;
 
 let needRefresh = false;
 let isApplying = false;
+let isDownloading = false;
+let downloadProgress: number | null = null;
 let updateSW: ((reloadPage?: boolean) => Promise<void>) | null = null;
 let registration: ServiceWorkerRegistration | null = null;
 let swUrl: string | null = null;
 let lastCheckAt = 0;
 let checkIntervalId: ReturnType<typeof setInterval> | null = null;
 let proactiveCleanup: (() => void) | null = null;
+let trackedInstalling: ServiceWorker | null = null;
+let installingStateHandler: (() => void) | null = null;
 const listeners = new Set<SwUpdateListener>();
 
 function getState(): SwUpdateState {
-	return { updateAvailable: needRefresh, isApplying };
+	return {
+		updateAvailable: needRefresh,
+		isApplying,
+		isDownloading,
+		downloadProgress,
+	};
 }
 
 function notifyListeners(): void {
@@ -31,6 +43,52 @@ function notifyListeners(): void {
 	for (const listener of listeners) {
 		listener(state);
 	}
+}
+
+function setDownloading(active: boolean): void {
+	isDownloading = active;
+	downloadProgress = null;
+	notifyListeners();
+}
+
+function clearInstallingTracking(): void {
+	if (trackedInstalling && installingStateHandler) {
+		trackedInstalling.removeEventListener('statechange', installingStateHandler);
+	}
+	trackedInstalling = null;
+	installingStateHandler = null;
+}
+
+function trackInstallingWorker(worker: ServiceWorker | null): void {
+	if (!worker || worker === trackedInstalling) {
+		return;
+	}
+
+	clearInstallingTracking();
+	trackedInstalling = worker;
+
+	if (worker.state === 'installing') {
+		setDownloading(true);
+	}
+
+	installingStateHandler = () => {
+		if (worker.state === 'installed' || worker.state === 'redundant') {
+			setDownloading(false);
+			clearInstallingTracking();
+		}
+	};
+
+	worker.addEventListener('statechange', installingStateHandler);
+}
+
+function setupRegistrationLifecycle(reg: ServiceWorkerRegistration): void {
+	if (reg.installing) {
+		trackInstallingWorker(reg.installing);
+	}
+
+	reg.addEventListener('updatefound', () => {
+		trackInstallingWorker(reg.installing);
+	});
 }
 
 function cleanupProactiveChecks(): void {
@@ -110,6 +168,7 @@ function setupProactiveChecks(): void {
 
 /**
  * Инициализирует регистрацию SW через vite-plugin-pwa (registerType: 'prompt').
+ * Слушает updatefound/installing для индикатора фонового precache.
  * При waiting worker вызывает onNeedRefresh — UI показывает баннер обновления.
  * В dev SW отключён — срабатывает после production-сборки (preview/deploy).
  */
@@ -122,12 +181,15 @@ export function initSwUpdate(): void {
 		immediate: true,
 		onNeedRefresh() {
 			needRefresh = true;
+			isDownloading = false;
+			downloadProgress = null;
 			notifyListeners();
 		},
 		onRegisteredSW(url, reg) {
 			swUrl = url;
 			registration = reg ?? null;
 			if (registration) {
+				setupRegistrationLifecycle(registration);
 				setupProactiveChecks();
 			}
 		},
@@ -160,8 +222,11 @@ export function subscribeSwUpdate(listener: SwUpdateListener): () => void {
 /** Сброс состояния — только для unit-тестов. */
 export function resetSwUpdateControllerForTests(): void {
 	cleanupProactiveChecks();
+	clearInstallingTracking();
 	needRefresh = false;
 	isApplying = false;
+	isDownloading = false;
+	downloadProgress = null;
 	updateSW = null;
 	registration = null;
 	swUrl = null;

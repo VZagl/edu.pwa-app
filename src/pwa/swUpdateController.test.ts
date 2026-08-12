@@ -24,12 +24,80 @@ import {
 	subscribeSwUpdate,
 } from './swUpdateController.ts';
 
-function createMockRegistration(): ServiceWorkerRegistration {
-	return {
-		installing: null,
-		update: vi.fn().mockResolvedValue(undefined),
-	} as unknown as ServiceWorkerRegistration;
+type MockWorker = {
+	state: string;
+	addEventListener: ReturnType<typeof vi.fn>;
+	removeEventListener: ReturnType<typeof vi.fn>;
+	dispatchStateChange: (newState: string) => void;
+};
+
+function createMockInstallingWorker(initialState = 'installing'): MockWorker {
+	const listeners = new Map<string, Set<() => void>>();
+
+	const worker: MockWorker = {
+		state: initialState,
+		addEventListener: vi.fn((event: string, handler: () => void) => {
+			if (!listeners.has(event)) {
+				listeners.set(event, new Set());
+			}
+			listeners.get(event)!.add(handler);
+		}),
+		removeEventListener: vi.fn((event: string, handler: () => void) => {
+			listeners.get(event)?.delete(handler);
+		}),
+		dispatchStateChange(newState: string) {
+			worker.state = newState;
+			listeners.get('statechange')?.forEach((handler) => {
+				handler();
+			});
+		},
+	};
+
+	return worker;
 }
+
+type MockRegistration = ServiceWorkerRegistration & {
+	dispatchUpdateFound: () => void;
+	setInstalling: (worker: MockWorker | null) => void;
+};
+
+function createMockRegistration(installing: MockWorker | null = null): MockRegistration {
+	const listeners = new Map<string, Set<() => void>>();
+	let currentInstalling = installing;
+
+	const registration = {
+		get installing() {
+			return currentInstalling as unknown as ServiceWorker | null;
+		},
+		update: vi.fn().mockResolvedValue(undefined),
+		addEventListener: vi.fn((event: string, handler: () => void) => {
+			if (!listeners.has(event)) {
+				listeners.set(event, new Set());
+			}
+			listeners.get(event)!.add(handler);
+		}),
+		removeEventListener: vi.fn((event: string, handler: () => void) => {
+			listeners.get(event)?.delete(handler);
+		}),
+		dispatchUpdateFound() {
+			listeners.get('updatefound')?.forEach((handler) => {
+				handler();
+			});
+		},
+		setInstalling(worker: MockWorker | null) {
+			currentInstalling = worker;
+		},
+	};
+
+	return registration as unknown as MockRegistration;
+}
+
+const idleState = {
+	updateAvailable: false,
+	isApplying: false,
+	isDownloading: false,
+	downloadProgress: null,
+};
 
 describe('swUpdateController', () => {
 	beforeEach(() => {
@@ -72,7 +140,12 @@ describe('swUpdateController', () => {
 
 		mocks.getOptions()?.onNeedRefresh?.();
 
-		expect(listener).toHaveBeenCalledWith({ updateAvailable: true, isApplying: false });
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: true,
+			isApplying: false,
+			isDownloading: false,
+			downloadProgress: null,
+		});
 	});
 
 	it('должен сразу сообщить текущее состояние новому подписчику', () => {
@@ -83,7 +156,122 @@ describe('swUpdateController', () => {
 
 		subscribeSwUpdate(listener);
 
-		expect(listener).toHaveBeenCalledWith({ updateAvailable: true, isApplying: false });
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: true,
+			isApplying: false,
+			isDownloading: false,
+			downloadProgress: null,
+		});
+	});
+
+	it('должен вернуть isDownloading: false и downloadProgress: null по умолчанию', () => {
+		const listener = vi.fn();
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+
+		expect(listener).toHaveBeenCalledWith(idleState);
+	});
+
+	it('должен выставить isDownloading при updatefound / installing', async () => {
+		const listener = vi.fn();
+		const worker = createMockInstallingWorker('installing');
+		const registration = createMockRegistration(null);
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+		listener.mockClear();
+
+		await mocks.getOptions()?.onRegisteredSW?.('/edu.pwa-app/sw.js', registration);
+
+		registration.setInstalling(worker);
+		registration.dispatchUpdateFound();
+
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: false,
+			isApplying: false,
+			isDownloading: true,
+			downloadProgress: null,
+		});
+	});
+
+	it('должен отслеживать уже installing worker при onRegisteredSW', async () => {
+		const listener = vi.fn();
+		const worker = createMockInstallingWorker('installing');
+		const registration = createMockRegistration(worker);
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+		listener.mockClear();
+
+		await mocks.getOptions()?.onRegisteredSW?.('/edu.pwa-app/sw.js', registration);
+
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: false,
+			isApplying: false,
+			isDownloading: true,
+			downloadProgress: null,
+		});
+	});
+
+	it('должен сбросить isDownloading при statechange → installed', async () => {
+		const listener = vi.fn();
+		const worker = createMockInstallingWorker('installing');
+		const registration = createMockRegistration(worker);
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+		await mocks.getOptions()?.onRegisteredSW?.('/edu.pwa-app/sw.js', registration);
+		listener.mockClear();
+
+		worker.dispatchStateChange('installed');
+
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: false,
+			isApplying: false,
+			isDownloading: false,
+			downloadProgress: null,
+		});
+	});
+
+	it('должен сбросить isDownloading и выставить updateAvailable при onNeedRefresh', async () => {
+		const listener = vi.fn();
+		const worker = createMockInstallingWorker('installing');
+		const registration = createMockRegistration(worker);
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+		await mocks.getOptions()?.onRegisteredSW?.('/edu.pwa-app/sw.js', registration);
+		listener.mockClear();
+
+		mocks.getOptions()?.onNeedRefresh?.();
+
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: true,
+			isApplying: false,
+			isDownloading: false,
+			downloadProgress: null,
+		});
+	});
+
+	it('должен сбросить isDownloading при statechange → redundant', async () => {
+		const listener = vi.fn();
+		const worker = createMockInstallingWorker('installing');
+		const registration = createMockRegistration(worker);
+
+		initSwUpdate();
+		subscribeSwUpdate(listener);
+		await mocks.getOptions()?.onRegisteredSW?.('/edu.pwa-app/sw.js', registration);
+		listener.mockClear();
+
+		worker.dispatchStateChange('redundant');
+
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: false,
+			isApplying: false,
+			isDownloading: false,
+			downloadProgress: null,
+		});
 	});
 
 	it('должен вызвать updateSW(true) при applySwUpdate', () => {
@@ -105,7 +293,12 @@ describe('swUpdateController', () => {
 
 		expect(mocks.updateSWFn).toHaveBeenCalledOnce();
 		expect(mocks.updateSWFn).toHaveBeenCalledWith(true);
-		expect(listener).toHaveBeenCalledWith({ updateAvailable: false, isApplying: true });
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: false,
+			isApplying: true,
+			isDownloading: false,
+			downloadProgress: null,
+		});
 	});
 
 	it('должен уведомить подписчиков isApplying: true при первом applySwUpdate', () => {
@@ -118,7 +311,12 @@ describe('swUpdateController', () => {
 
 		applySwUpdate();
 
-		expect(listener).toHaveBeenCalledWith({ updateAvailable: true, isApplying: true });
+		expect(listener).toHaveBeenCalledWith({
+			updateAvailable: true,
+			isApplying: true,
+			isDownloading: false,
+			downloadProgress: null,
+		});
 	});
 
 	it('должен отписать слушателя при возврате функции unsubscribe', () => {
