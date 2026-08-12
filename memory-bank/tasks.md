@@ -10,7 +10,7 @@
 - **Git Branch:** `feat/step-sw-update-apply-fast`
 - **Источник:** memory-bank/backlog.md (step-sw-update-apply-fast)
 - **Связь:** развивает `step-sw-update-ux` (`swUpdateController`, `useSwUpdate`, `SwUpdateBanner`)
-- **Статус:** BUILD COMPLETE → переход к REFLECT
+- **Статус:** REFLECT COMPLETE → переход к CLOSE
 
 ### Описание
 
@@ -57,8 +57,16 @@
 - [x] Planning complete (PLAN)
 - [x] Technology validation complete
 - [x] Implementation (BUILD)
-- [ ] Reflection (REFLECT)
+- [x] Reflection (REFLECT)
 - [ ] Close task (CLOSE)
+
+## Reflection Highlights
+
+- **What Went Well**: TDD по слоям; module-level `isApplying`; proactive update по доке плагина; честные docs про CDN
+- **Challenges**: двойной клик до re-render; throttle `update()`; Pages CDN; mobile QA без стенда
+- **Lessons Learned**: in-flight в модуле обязателен для SW apply UX; ручную проверку Pages отделять от lint/test/build
+- **Next Steps**: `/close-task`; ручная проверка mobile после деплоя
+- **Reflection:** [memory-bank/reflection/reflection-step-sw-update-apply-fast.md](reflection/reflection-step-sw-update-apply-fast.md)
 
 ## Build Progress
 
@@ -142,7 +150,7 @@
 - [x] BUILD: Docs — GitHub Pages / CDN `sw.js`
 - [x] BUILD: verify — lint + tests + build
 - [ ] BUILD: Ручная проверка mobile (Android / iOS по возможности)
-- [ ] REFLECT: Рефлексия по задаче
+- [x] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task
 
 ## Last Completed Task

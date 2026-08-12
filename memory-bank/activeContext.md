@@ -2,22 +2,23 @@
 
 ## Current Focus
 
-`feat/step-sw-update-apply-fast` — BUILD COMPLETE
+REFLECT завершён — `step-sw-update-apply-fast`
 
 ## Current Mode
 
-BUILD COMPLETE — ожидание `/reflect`
+REFLECT → CLOSE
 
 ## Next Steps
 
-1. Ручная проверка (по возможности): Android Chrome (установленное PWA) / iOS Safari на GitHub Pages
-2. `/reflect` → `/close-task`
+1. `/close-task` — закрыть задачу (архив + completed-tasks по workflow)
+2. После merge/deploy: ручная проверка Android Chrome / iOS Safari на Pages
 
 ## Context for AI
 
 - Task ID: `step-sw-update-apply-fast`
 - Level 2 — Simple Enhancement
-- Реализовано: `isApplying` + one-shot `applySwUpdate`; проактивный `registration.update()` (visibility/focus/online, throttle 30s, interval 60m + fetch no-store); banner disabled «Обновляется…»; docs Pages/CDN
-- Verify: lint ✅, test --run ✅, build ✅
+- Reflection: [memory-bank/reflection/reflection-step-sw-update-apply-fast.md](reflection/reflection-step-sw-update-apply-fast.md)
+- Реализовано: `isApplying` + one-shot `applySwUpdate`; проактивный `registration.update()`; banner «Обновляется…»; docs Pages/CDN
+- Verify: lint ✅, test --run ✅, build ✅; ручная mobile — открыта
 - Git Branch: `feat/step-sw-update-apply-fast`
 - Пакетный менеджер: pnpm
