@@ -96,6 +96,8 @@ Workflow: [`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml) �
 
 Для PWA в production **обязателен HTTPS** — Pages его обеспечивает. Ручная проверка на стенде: [pwa-checklist.md](./pwa-checklist.md) → секция «Проверка на GitHub Pages».
 
+**Ограничение кэша `sw.js`:** GitHub Pages не даёт настроить `Cache-Control` для service worker. CDN может отдавать старый `/edu.pwa-app/sw.js` после деплоя. Клиент смягчает это проактивным `registration.update()` и `fetch(..., { cache: 'no-store' })` (`swUpdateController`), но задержка обнаружения обновления на mobile всё же возможна. Подробнее: [pwa-checklist.md](./pwa-checklist.md) → «Обновление приложения».
+
 ## Полезные ссылки
 
 - [MDN: Progressive Web Apps](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)

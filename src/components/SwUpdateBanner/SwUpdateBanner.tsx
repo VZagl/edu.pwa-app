@@ -2,11 +2,13 @@ import { useSwUpdate } from '../../hooks/useSwUpdate.ts';
 import './SwUpdateBanner.scss';
 
 export function SwUpdateBanner() {
-	const { updateAvailable, applyUpdate } = useSwUpdate();
+	const { updateAvailable, isApplying, applyUpdate } = useSwUpdate();
 
 	if (!updateAvailable) {
 		return null;
 	}
+
+	const buttonLabel = isApplying ? 'Обновляется…' : 'Обновить';
 
 	return (
 		<div className='sw-update-banner' role='status'>
@@ -14,10 +16,12 @@ export function SwUpdateBanner() {
 			<button
 				type='button'
 				className='sw-update-banner__button'
-				aria-label='Обновить приложение'
+				aria-label={isApplying ? 'Приложение обновляется' : 'Обновить приложение'}
+				aria-busy={isApplying}
+				disabled={isApplying}
 				onClick={applyUpdate}
 			>
-				Обновить
+				{buttonLabel}
 			</button>
 		</div>
 	);

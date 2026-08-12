@@ -3,10 +3,12 @@ import { applySwUpdate, subscribeSwUpdate } from '../pwa/swUpdateController.ts';
 
 export function useSwUpdate() {
 	const [updateAvailable, setUpdateAvailable] = useState(false);
+	const [isApplying, setIsApplying] = useState(false);
 
 	useEffect(() => {
-		return subscribeSwUpdate(({ updateAvailable: available }) => {
+		return subscribeSwUpdate(({ updateAvailable: available, isApplying: applying }) => {
 			setUpdateAvailable(available);
+			setIsApplying(applying);
 		});
 	}, []);
 
@@ -14,5 +16,5 @@ export function useSwUpdate() {
 		applySwUpdate();
 	}, []);
 
-	return { updateAvailable, applyUpdate };
+	return { updateAvailable, isApplying, applyUpdate };
 }

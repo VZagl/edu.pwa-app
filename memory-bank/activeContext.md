@@ -14,6 +14,8 @@ IDLE — ожидание новой задачи
 
 ## Context for AI
 
-- Учебное PWA на React + Vite; менеджер пакетов — pnpm
+- Учебное Progressive Web App на React + Vite (только frontend)
+- Менеджер пакетов: pnpm
 - План шагов: `docs/project/implementation-plan.md`
 - Дорожная карта: `docs/project/product-roadmap.md`
+- Последняя завершённая задача: `step-sw-update-apply-fast` (2026-08-12)

@@ -27,9 +27,10 @@
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 
-## [2026-08-11]: step-github-pages-deploy — ЗАВЕРШЕНО
+## [2026-08-12]: step-sw-update-apply-fast — ЗАВЕРШЕНО
 
-Деплой project site на GitHub Pages: `base: '/edu.pwa-app/'`, гибрид PWA-путей, workflow pnpm на `develop`, docs. Verify OK; ручная проверка HTTPS — после merge/dispatch.
+Ускорение UX применения обновления PWA: in-flight `isApplying`, одноразовый `applySwUpdate`, проактивный `registration.update()` (visibility/focus/online + интервал 60м), баннер «Обновляется…», docs про CDN `sw.js` на GitHub Pages. Verify: lint / test / build ✅. Ручная проверка mobile — после деплоя.
 
-**Completed:** [memory-bank/completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md](completed-tasks/2026/08/step-github-pages-deploy_2026-08-11.md)
+**Completed:** [memory-bank/completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md](completed-tasks/2026/08/step-sw-update-apply-fast_2026-08-12.md)
