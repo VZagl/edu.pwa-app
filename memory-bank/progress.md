@@ -29,6 +29,11 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 В работе (VAN → PLAN)        |
+
+## [2026-08-12]: step-sw-update-download-progress — В РАБОТЕ
+
+Level 3: индикатор прогресса скачивания assets новой версии на этапе install/precache. Ветка: `feat/step-sw-update-download-progress`. VAN завершён → `/plan`.
 
 ## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
 
