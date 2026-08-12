@@ -1,6 +1,6 @@
-# git-merge-to-develop — Merge в develop (feature) или в main (из develop)
+# git-merge-to — Merge в develop (feature) или в main (из develop)
 
-**Назначение:** При вызове `/git-merge-to-develop` выполни merge с `--no-ff` и сообщением merge-коммита в формате Conventional Commits. Сценарии:
+**Назначение:** При вызове `/git-merge-to` выполни merge с `--no-ff` и сообщением merge-коммита в формате Conventional Commits. Сценарии:
 
 - **feature-ветка** → merge в `develop` (если `develop` нет — в `main`)
 - **`develop`** → merge в `main`
