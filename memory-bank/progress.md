@@ -30,6 +30,11 @@
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Прогресс precache SW (step-sw-update-download-progress)  | ✅ ЗАВЕРШЕНО (2026-08-12)       |
+| README для ученика (step-readme-learner-guide)           | 🔄 В работе (2026-08-12)        |
+
+## [2026-08-12]: step-readme-learner-guide — В РАБОТЕ
+
+VAN: ветка `feat/step-readme-learner-guide`, Level 2. Ожидание `/plan`.
 
 ## [2026-08-12]: step-sw-update-download-progress — ЗАВЕРШЕНО
 
