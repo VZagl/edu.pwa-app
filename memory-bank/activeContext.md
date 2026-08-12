@@ -16,4 +16,5 @@ IDLE — ожидание новой задачи
 
 - Учебное Progressive Web App на React + Vite (только frontend)
 - Менеджер пакетов: pnpm
-- Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)
+- План шагов: `docs/project/implementation-plan.md`
+- Дорожная карта: `docs/project/product-roadmap.md`

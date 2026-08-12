@@ -6,12 +6,7 @@
 
 ## Средний
 
-- [ ] README «с нуля» для ученика (step-readme-learner-guide)
-  - **Создано:** 2026-08-07
-  - Порядок экранов, DevTools, preview, ссылка на pwa-checklist.
-  - **Источник:** docs/project/implementation-plan.md (step-readme-learner-guide)
-  - **Зависит от:** step-home-lesson-ui, step-sw-lesson-ui, step-install-lesson-ui
-  - **Причина:** Онбординг без истории Memory Bank
+(Нет активных задач)
 
 ## Низкий
 
