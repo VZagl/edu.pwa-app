@@ -29,7 +29,17 @@
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Быстрый apply SW update (step-sw-update-apply-fast)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
 | Удаление LessonStubScreen (step-remove-lesson-stub)      | ✅ ЗАВЕРШЕНО (2026-08-12)       |
-| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 BUILD ✅ → `/reflect`        |
+| Прогресс precache SW (step-sw-update-download-progress)  | 🔄 REFLECT ✅ → `/close-task`   |
+
+## [2026-08-12]: step-sw-update-download-progress — REFLECT COMPLETE
+
+Level 3: рефлексия записана. CREATIVE A + UI Option 1 воплощены без отклонений по стратегии SW; E2E пропущен осознанно; Pages/mobile — после деплоя.
+
+**Reflection:** [reflection/reflection-step-sw-update-download-progress.md](reflection/reflection-step-sw-update-download-progress.md)
+
+### Next Steps
+
+→ `/close-task`
 
 ## [2026-08-12]: step-sw-update-download-progress — BUILD COMPLETE
 
@@ -53,10 +63,6 @@ Lifecycle клиента (`updatefound` / `installing` + `statechange`) в `swUp
 - [x] `pnpm typecheck`
 - [x] `pnpm test --run` — 164 passed
 - [x] `pnpm build` — `generateSW`, `sw.js`, precache 13 entries
-
-### Next Steps
-
-→ `/reflect`
 
 ## [2026-08-12]: step-remove-lesson-stub — ЗАВЕРШЕНО
 

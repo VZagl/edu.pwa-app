@@ -2,23 +2,24 @@
 
 ## Current Focus
 
-`feat/step-sw-update-download-progress` — BUILD COMPLETE (`step-sw-update-download-progress`)
+REFLECT завершён — `step-sw-update-download-progress` (`feat/step-sw-update-download-progress`)
 
 ## Current Mode
 
-BUILD COMPLETE → следующий шаг: `/reflect`
+REFLECT → ARCHIVE / `/close-task`
 
 ## Next Steps
 
-1. `/reflect` — рефлексия по задаче
-2. `/close-task`
-3. GIT: работать только в `feat/step-sw-update-download-progress`
+1. `/close-task` — архивация + completed-tasks
+2. Merge feature-ветки и деплой Pages
+3. Ручная проверка download → «Обновить» → reload (в т.ч. установленное PWA)
+4. GIT: работать только в `feat/step-sw-update-download-progress` до close/merge
 
 ## Context for AI
 
 - Учебное Progressive Web App на React + Vite (только frontend)
 - Менеджер пакетов: pnpm
-- Реализовано: lifecycle `updatefound`/`installing` → `isDownloading` + indeterminate UI в `SwUpdateBanner`; waiting → «Обновить»; apply → «Обновляется…»
-- CREATIVE: Option A + UI Option 1; `injectManifest` не трогали
-- Verify: lint ✅, typecheck ✅, unit 164 ✅, build ✅
+- Reflection: [reflection/reflection-step-sw-update-download-progress.md](reflection/reflection-step-sw-update-download-progress.md)
+- CREATIVE: Option A (lifecycle indeterminate) + UI Option 1 (`SwUpdateBanner`); `injectManifest` не трогали
+- Verify BUILD: lint ✅, typecheck ✅, unit 164 ✅, build ✅
 - Не трогать `.vscode/settings.json` (локальное изменение вне скоупа)

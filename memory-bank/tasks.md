@@ -10,8 +10,9 @@
 - **Зависит от:** `step-sw-update-apply-fast` ✅
 - **Complexity:** Level 3 — Intermediate Feature
 - **Тип:** Enhancement (PWA update UX / precache progress)
-- **Статус:** BUILD COMPLETE → следующий шаг `/reflect`
+- **Статус:** REFLECT COMPLETE → следующий шаг `/close-task`
 - **Creative doc:** [creative/creative-sw-update-download-progress.md](creative/creative-sw-update-download-progress.md)
+- **Reflection:** [reflection/reflection-step-sw-update-download-progress.md](reflection/reflection-step-sw-update-download-progress.md)
 
 ### Описание
 
@@ -31,7 +32,7 @@
 - [x] PLAN: Детальный план реализации (`/plan`)
 - [x] CREATIVE: Выбор подхода к прогрессу precache и UX (`/creative`)
 - [x] BUILD: Реализация по TDD (`/build`)
-- [ ] REFLECT: Рефлексия (`/reflect`)
+- [x] REFLECT: Рефлексия (`/reflect`)
 - [ ] CLOSE: Финализировать задачу командой `/close-task`
 
 ---
@@ -196,8 +197,15 @@
 - [x] Creative phases complete
 - [x] Technology validation complete (финальный checkpoint после CREATIVE)
 - [x] Implementation complete (BUILD)
-- [ ] Reflection complete
+- [x] Reflection complete
 - [ ] Task closed (`/close-task`)
+
+## Reflection Highlights
+
+- **What Went Well:** CREATIVE Option A без миграции SW; TDD state-машины; один баннер на три фазы; контракт `downloadProgress` на будущее
+- **Challenges:** короткий precache → прогресс может мелькать; Pages/mobile verify после деплоя
+- **Lessons Learned:** `onNeedRefresh` слишком поздно — нужен lifecycle `installing`; indeterminate честнее ложного %
+- **Next Steps:** `/close-task` → merge/deploy → ручная проверка update flow
 
 ## Last Completed Task
 
