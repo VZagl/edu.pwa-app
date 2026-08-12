@@ -27,6 +27,16 @@
 | Web Push урок (step-push-notifications)                  | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | Версия в header (step-app-version-header)                | ✅ ЗАВЕРШЕНО (2026-08-11)       |
 | GitHub Pages deploy (step-github-pages-deploy)           | ✅ ЗАВЕРШЕНО (2026-08-11)       |
+| Быстрый apply SW update (step-sw-update-apply-fast)      | 🔄 BUILD COMPLETE (2026-08-12)  |
+
+## [2026-08-12]: step-sw-update-apply-fast — BUILD COMPLETE
+
+Ускорение UX применения обновления PWA: in-flight `isApplying`, одноразовый `applySwUpdate`, проактивный `registration.update()` (visibility/focus/online + интервал 60м), баннер «Обновляется…», docs про CDN `sw.js` на GitHub Pages.
+
+**Verify:** `pnpm lint` ✅ · `pnpm test --run` ✅ · `pnpm build` ✅  
+**Ручная проверка mobile:** открыта (нужен стенд Pages).
+
+**Файлы:** `src/pwa/swUpdateController.ts`, `src/hooks/useSwUpdate.ts`, `src/components/SwUpdateBanner/*`, `docs/project/pwa-checklist.md`, `docs/project/run-and-build.md`
 
 ## [2026-08-11]: step-github-pages-deploy — ЗАВЕРШЕНО
 

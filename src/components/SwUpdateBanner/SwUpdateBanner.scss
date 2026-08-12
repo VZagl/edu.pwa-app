@@ -37,7 +37,12 @@
 		outline-offset: 2px;
 	}
 
-	&:hover {
+	&:hover:not(:disabled) {
 		opacity: 0.9;
+	}
+
+	&:disabled {
+		opacity: 0.65;
+		cursor: not-allowed;
 	}
 }

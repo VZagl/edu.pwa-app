@@ -10,7 +10,7 @@
 - **Git Branch:** `feat/step-sw-update-apply-fast`
 - **Источник:** memory-bank/backlog.md (step-sw-update-apply-fast)
 - **Связь:** развивает `step-sw-update-ux` (`swUpdateController`, `useSwUpdate`, `SwUpdateBanner`)
-- **Статус:** PLAN COMPLETE → переход к BUILD
+- **Статус:** BUILD COMPLETE → переход к REFLECT
 
 ### Описание
 
@@ -56,9 +56,19 @@
 - [x] Initialization complete (VAN)
 - [x] Planning complete (PLAN)
 - [x] Technology validation complete
-- [ ] Implementation (BUILD)
+- [x] Implementation (BUILD)
 - [ ] Reflection (REFLECT)
 - [ ] Close task (CLOSE)
+
+## Build Progress
+
+- **Controller (isApplying + one-shot apply):** Complete — `src/pwa/swUpdateController.ts`
+- **Controller (proactive update):** Complete — `onRegisteredSW`, throttle 30s, events visibility/focus/online, interval 60m + `fetch(no-store)`
+- **Hook:** Complete — `isApplying` в `useSwUpdate`
+- **Banner UX:** Complete — disabled + «Обновляется…» + `aria-busy`
+- **Docs:** Complete — `pwa-checklist.md`, `run-and-build.md` (Pages CDN / `sw.js`)
+- **Verify:** `pnpm lint` ✅ · `pnpm test --run` ✅ · `pnpm build` ✅
+- **Ручная проверка mobile:** ожидает стенд (Android Chrome / iOS Safari на Pages)
 
 ## Implementation Plan
 
@@ -125,12 +135,12 @@
 
 - [x] GIT: Работа в feature-ветке feat/step-sw-update-apply-fast
 - [x] PLAN: Детальный план реализации
-- [ ] BUILD: TDD — одноразовый `applySwUpdate` + `isApplying`
-- [ ] BUILD: TDD — проактивный `registration.update()` (visibility/focus/online + интервал)
-- [ ] BUILD: Hook — проброс `isApplying`
-- [ ] BUILD: Banner — disabled + «Обновляется…»
-- [ ] BUILD: Docs — GitHub Pages / CDN `sw.js`
-- [ ] BUILD: verify — lint + tests + build
+- [x] BUILD: TDD — одноразовый `applySwUpdate` + `isApplying`
+- [x] BUILD: TDD — проактивный `registration.update()` (visibility/focus/online + интервал)
+- [x] BUILD: Hook — проброс `isApplying`
+- [x] BUILD: Banner — disabled + «Обновляется…»
+- [x] BUILD: Docs — GitHub Pages / CDN `sw.js`
+- [x] BUILD: verify — lint + tests + build
 - [ ] BUILD: Ручная проверка mobile (Android / iOS по возможности)
 - [ ] REFLECT: Рефлексия по задаче
 - [ ] CLOSE: Финализировать задачу командой /close-task

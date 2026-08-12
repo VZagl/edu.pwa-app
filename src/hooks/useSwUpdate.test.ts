@@ -13,41 +13,60 @@ vi.mock('../pwa/swUpdateController.ts', () => ({
 
 import { useSwUpdate } from './useSwUpdate.ts';
 
+type SwUpdateState = { updateAvailable: boolean; isApplying: boolean };
+
 describe('useSwUpdate', () => {
 	beforeEach(() => {
-		controllerMocks.subscribeSwUpdate.mockImplementation(
-			(listener: (state: { updateAvailable: boolean }) => void) => {
-				listener({ updateAvailable: false });
-				return vi.fn();
-			},
-		);
+		controllerMocks.subscribeSwUpdate.mockImplementation((listener: (state: SwUpdateState) => void) => {
+			listener({ updateAvailable: false, isApplying: false });
+			return vi.fn();
+		});
 	});
 
 	afterEach(() => {
 		vi.restoreAllMocks();
 	});
 
-	it('должен вернуть updateAvailable: false по умолчанию', () => {
+	it('должен вернуть updateAvailable: false и isApplying: false по умолчанию', () => {
 		const { result } = renderHook(() => useSwUpdate());
 
 		expect(result.current.updateAvailable).toBe(false);
+		expect(result.current.isApplying).toBe(false);
 	});
 
 	it('должен обновить updateAvailable при уведомлении от controller', () => {
-		let notify: ((state: { updateAvailable: boolean }) => void) | undefined;
+		let notify: ((state: SwUpdateState) => void) | undefined;
 		controllerMocks.subscribeSwUpdate.mockImplementation((listener) => {
 			notify = listener;
-			listener({ updateAvailable: false });
+			listener({ updateAvailable: false, isApplying: false });
 			return vi.fn();
 		});
 
 		const { result } = renderHook(() => useSwUpdate());
 
 		act(() => {
-			notify?.({ updateAvailable: true });
+			notify?.({ updateAvailable: true, isApplying: false });
 		});
 
 		expect(result.current.updateAvailable).toBe(true);
+		expect(result.current.isApplying).toBe(false);
+	});
+
+	it('должен обновить isApplying при уведомлении от controller', () => {
+		let notify: ((state: SwUpdateState) => void) | undefined;
+		controllerMocks.subscribeSwUpdate.mockImplementation((listener) => {
+			notify = listener;
+			listener({ updateAvailable: true, isApplying: false });
+			return vi.fn();
+		});
+
+		const { result } = renderHook(() => useSwUpdate());
+
+		act(() => {
+			notify?.({ updateAvailable: true, isApplying: true });
+		});
+
+		expect(result.current.isApplying).toBe(true);
 	});
 
 	it('должен вызвать applySwUpdate при applyUpdate', () => {
